@@ -1,0 +1,2606 @@
+[
+  {
+    "name": "Adzuki Bean",
+    "i18n": {
+      "de": "Adzukibohne",
+      "en": "Adzuki Bean",
+      "es": "Frijol Adzuki",
+      "fr": "Haricot Adzuki",
+      "it": "Fagiolo Adzuki",
+      "pt": "Feijão Adzuki"
+    },
+    "percentage": 0.0,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Almond",
+    "i18n": {
+      "de": "Mandeln",
+      "en": "Almond",
+      "es": "Almendra",
+      "fr": "Amande",
+      "it": "Mandorla",
+      "pt": "Amêndoa"
+    },
+    "percentage": 1.0,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Almond Milk",
+    "i18n": {
+      "de": "Mandelmilch",
+      "en": "Almond Milk",
+      "es": "Leche de Almendra",
+      "fr": "Lait d'Amande",
+      "it": "Latte di Mandorla",
+      "pt": "Leite de Amêndoa"
+    },
+    "percentage": 0.0,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Amoxicillin",
+    "i18n": {
+      "de": "Amoxicillin",
+      "en": "Amoxicillin",
+      "es": "Amoxicilina",
+      "fr": "Amoxicilline",
+      "it": "Amoxicillina",
+      "pt": "Amoxicilina"
+    },
+    "percentage": 0.01,
+    "code": "ATC J01CA04",
+    "type": "medicamento"
+  },
+  {
+    "name": "Animal Dander",
+    "i18n": {
+      "de": "Tierhaare",
+      "en": "Animal Dander",
+      "es": "Caspa de Animal",
+      "fr": "Dander Animal",
+      "it": "Dander Animale",
+      "pt": "Caspa de Animal"
+    },
+    "percentage": 10.0,
+    "code": "",
+    "type": "ambiental"
+  },
+  {
+    "name": "Antibiotic",
+    "i18n": {
+      "de": "Antibiotikum",
+      "en": "Antibiotic",
+      "es": "Antibiótico",
+      "fr": "Antibiotique",
+      "it": "Antibiotico",
+      "pt": "Antibiótico"
+    },
+    "percentage": 0.01,
+    "code": "",
+    "type": "medicamento"
+  },
+  {
+    "name": "Apple",
+    "i18n": {
+      "de": "Apfel",
+      "en": "Apple",
+      "es": "Manzana",
+      "fr": "Pomme",
+      "it": "Mela",
+      "pt": "Maçã"
+    },
+    "percentage": 0.5,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Apricot",
+    "i18n": {
+      "de": "Aprikose",
+      "en": "Apricot",
+      "es": "Albaricoque",
+      "fr": "Abricot",
+      "it": "Albicocca",
+      "pt": "Damasco"
+    },
+    "percentage": 0.1,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Artichoke",
+    "i18n": {
+      "de": "Artischocke",
+      "en": "Artichoke",
+      "es": "Alcachofa",
+      "fr": "Artichaut",
+      "it": "Carciofo",
+      "pt": "Alcachofra"
+    },
+    "percentage": 0.05,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Artificial Sweeteners",
+    "i18n": {
+      "de": "Künstliche Süßstoffe",
+      "en": "Artificial Sweeteners",
+      "es": "Edulcorantes Artificiales",
+      "fr": "Édulcorants Artificiels",
+      "it": "Dolcificanti Artificiali",
+      "pt": "Adoçantes Artificiais"
+    },
+    "percentage": 0.0,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Asparagus",
+    "i18n": {
+      "de": "Spargel",
+      "en": "Asparagus",
+      "es": "Espárrago",
+      "fr": "Asperge",
+      "it": "Asparago",
+      "pt": "Aspargo"
+    },
+    "percentage": 0.01,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Aspirin",
+    "i18n": {
+      "de": "Aspirin",
+      "en": "Aspirin",
+      "es": "Aspirina",
+      "fr": "Aspirine",
+      "it": "Aspirina",
+      "pt": "Aspirina"
+    },
+    "percentage": 0.02,
+    "code": "ATC B01AC06",
+    "type": "medicamento"
+  },
+  {
+    "name": "Avocado",
+    "i18n": {
+      "de": "Avocado",
+      "en": "Avocado",
+      "es": "Aguacate",
+      "fr": "Avocat",
+      "it": "Avocado",
+      "pt": "Abacate"
+    },
+    "percentage": 0.03,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Banana",
+    "i18n": {
+      "de": "Banane",
+      "en": "Banana",
+      "es": "Plátano",
+      "fr": "Banane",
+      "it": "Banana",
+      "pt": "Banana"
+    },
+    "percentage": 0.5,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Basil",
+    "i18n": {
+      "de": "Basilikum",
+      "en": "Basil",
+      "es": "Albahaca",
+      "fr": "Basilic",
+      "it": "Basilico",
+      "pt": "Manjericão"
+    },
+    "percentage": 0.01,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Bean",
+    "i18n": {
+      "de": "Bohne",
+      "en": "Bean",
+      "es": "Frijol",
+      "fr": "Haricot",
+      "it": "Fagiolo",
+      "pt": "Feijão"
+    },
+    "percentage": 0.1,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Beeswax",
+    "i18n": {
+      "de": "Bienenwachs",
+      "en": "Beeswax",
+      "es": "Cera de Abeja",
+      "fr": "Cire d'Abeille",
+      "it": "Cera d'Api",
+      "pt": "Cera de Abelha"
+    },
+    "percentage": 0.0,
+    "code": "",
+    "type": "ambiental"
+  },
+  {
+    "name": "Beet",
+    "i18n": {
+      "de": "Rübe",
+      "en": "Beet",
+      "es": "Remolacha",
+      "fr": "Betterave",
+      "it": "Barbabietola",
+      "pt": "Beterraba"
+    },
+    "percentage": 0.05,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Beetroot",
+    "i18n": {
+      "de": "Rote Bete",
+      "en": "Beetroot",
+      "es": "Remolacha Roja",
+      "fr": "Betterave Rouge",
+      "it": "Barbabietola Rossa",
+      "pt": "Beterraba"
+    },
+    "percentage": 0.05,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Bell Peppers",
+    "i18n": {
+      "de": "Paprika",
+      "en": "Bell Peppers",
+      "es": "Pimientos",
+      "fr": "Poivrons",
+      "it": "Peperoni",
+      "pt": "Pimentão"
+    },
+    "percentage": 0.1,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Benzocaine",
+    "i18n": {
+      "de": "Benzocain",
+      "en": "Benzocaine",
+      "es": "Benzocaína",
+      "fr": "Benzocaïne",
+      "it": "Benzocaina",
+      "pt": "Benzocaína"
+    },
+    "percentage": 0.0,
+    "code": "ATC N01BA02",
+    "type": "medicamento"
+  },
+  {
+    "name": "Birch Pollen",
+    "i18n": {
+      "de": "Birkenpollen",
+      "en": "Birch Pollen",
+      "es": "Polen de Abedul",
+      "fr": "Pollen de Bouleau",
+      "it": "Polline di Betulla",
+      "pt": "Pólen de Bétula"
+    },
+    "percentage": 5.0,
+    "code": "",
+    "type": "ambiental"
+  },
+  {
+    "name": "Black Bean",
+    "i18n": {
+      "de": "Schwarze Bohne",
+      "en": "Black Bean",
+      "es": "Frijol Negro",
+      "fr": "Haricot Noir",
+      "it": "Fagiolo Nero",
+      "pt": "Feijão Preto"
+    },
+    "percentage": 0.05,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Blackberry",
+    "i18n": {
+      "de": "Brombeere",
+      "en": "Blackberry",
+      "es": "Mora",
+      "fr": "Mûre",
+      "it": "More",
+      "pt": "Amora"
+    },
+    "percentage": 0.01,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Blueberry",
+    "i18n": {
+      "de": "Blaubeere",
+      "en": "Blueberry",
+      "es": "Arándano",
+      "fr": "Myrtille",
+      "it": "Mirtillo",
+      "pt": "Mirtilo"
+    },
+    "percentage": 0.1,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Brazil Nut",
+    "i18n": {
+      "de": "Paranuss",
+      "en": "Brazil Nut",
+      "es": "Nuez de Brasil",
+      "fr": "Noix du Brésil",
+      "it": "Noce del Brasile",
+      "pt": "Castanha-do-Pará"
+    },
+    "percentage": 0.01,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Broccoli",
+    "i18n": {
+      "de": "Brokkoli",
+      "en": "Broccoli",
+      "es": "Brócoli",
+      "fr": "Brocoli",
+      "it": "Broccoli",
+      "pt": "Brócolos"
+    },
+    "percentage": 0.05,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Brussels Sprouts",
+    "i18n": {
+      "de": "Rosenkohl",
+      "en": "Brussels Sprouts",
+      "es": "Coles de Bruselas",
+      "fr": "Choux de Bruxelles",
+      "it": "Cavoletti di Bruxelles",
+      "pt": "Couve-de-Bruxelas"
+    },
+    "percentage": 0.02,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Butter",
+    "i18n": {
+      "de": "Butter",
+      "en": "Butter",
+      "es": "Mantequilla",
+      "fr": "Beurre",
+      "it": "Burro",
+      "pt": "Manteiga"
+    },
+    "percentage": 0.1,
+    "code": "",
+    "type": "alimento"
+  },
+  {
+    "name": "Cacao",
+    "i18n": {
+      "de": "Kakao",
+      "en": "Cocoa",
+      "es": "Cacao",
+      "fr": "Cacao",
+      "it": "Cacao",
+      "pt": "Cacau"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Canola",
+    "i18n": {
+      "de": "Raps",
+      "en": "Canola",
+      "es": "Canola",
+      "fr": "Canola",
+      "it": "Canola",
+      "pt": "Canola"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cantaloupe",
+    "i18n": {
+      "de": "Cantaloupe",
+      "en": "Cantaloupe",
+      "es": "Cantalupo",
+      "fr": "Cantaloup",
+      "it": "Cantalupo",
+      "pt": "Cantalupo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Carrot",
+    "i18n": {
+      "de": "Karotte",
+      "en": "Carrot",
+      "es": "Zanahoria",
+      "fr": "Carotte",
+      "it": "Carota",
+      "pt": "Cenoura"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Casein",
+    "i18n": {
+      "de": "Kasein",
+      "en": "Casein",
+      "es": "Caseína",
+      "fr": "Caséine",
+      "it": "Caseina",
+      "pt": "Caseína"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cashew",
+    "i18n": {
+      "de": "Cashew",
+      "en": "Cashew",
+      "es": "Anacardo",
+      "fr": "Noix de cajou",
+      "it": "Anacardo",
+      "pt": "Caju"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cashew Milk",
+    "i18n": {
+      "de": "Cashewmilch",
+      "en": "Cashew Milk",
+      "es": "Leche de Anacardo",
+      "fr": "Lait de cajou",
+      "it": "Latte di Anacardo",
+      "pt": "Leite de Caju"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cat",
+    "i18n": {
+      "de": "Katze",
+      "en": "Cat",
+      "es": "Gato",
+      "fr": "Chat",
+      "it": "Gatto",
+      "pt": "Gato"
+    },
+    "percentage": "0.00",
+    "type": "animal",
+    "code": ""
+  },
+  {
+    "name": "Cauliflower",
+    "i18n": {
+      "de": "Blumenkohl",
+      "en": "Cauliflower",
+      "es": "Coliflor",
+      "fr": "Chou-fleur",
+      "it": "Cavolfiore",
+      "pt": "Couve-flor"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Celery",
+    "i18n": {
+      "de": "Sellerie",
+      "en": "Celery",
+      "es": "Apio",
+      "fr": "Céleri",
+      "it": "Sedano",
+      "pt": "Aipo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Chamomile",
+    "i18n": {
+      "de": "Kamille",
+      "en": "Chamomile",
+      "es": "Manzanilla",
+      "fr": "Camomille",
+      "it": "Camomilla",
+      "pt": "Camomila"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Cheese",
+    "i18n": {
+      "de": "Käse",
+      "en": "Cheese",
+      "es": "Queso",
+      "fr": "Fromage",
+      "it": "Formaggio",
+      "pt": "Queijo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Chemical",
+    "i18n": {
+      "de": "Chemisch",
+      "en": "Chemical",
+      "es": "Químico",
+      "fr": "Chimique",
+      "it": "Chimico",
+      "pt": "Químico"
+    },
+    "percentage": "0.00",
+    "type": "otra",
+    "code": ""
+  },
+  {
+    "name": "Cherry",
+    "i18n": {
+      "de": "Kirsche",
+      "en": "Cherry",
+      "es": "Cereza",
+      "fr": "Cerise",
+      "it": "Ciliegia",
+      "pt": "Cereja"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Chestnut",
+    "i18n": {
+      "de": "Maronen",
+      "en": "Chestnut",
+      "es": "Castaña",
+      "fr": "Châtaigne",
+      "it": "Castagna",
+      "pt": "Castanha"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Chewing Gum",
+    "i18n": {
+      "de": "Kaugummi",
+      "en": "Chewing Gum",
+      "es": "Chicle",
+      "fr": "Gomme à mâcher",
+      "it": "Gomma da masticare",
+      "pt": "Chiclete"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Chia Seed",
+    "i18n": {
+      "de": "Chiasamen",
+      "en": "Chia Seed",
+      "es": "Semilla de Chía",
+      "fr": "Graine de chia",
+      "it": "Semi di Chia",
+      "pt": "Semente de Chia"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Chickpea",
+    "i18n": {
+      "de": "Kichererbse",
+      "en": "Chickpea",
+      "es": "Garbanzos",
+      "fr": "Pois chiche",
+      "it": "Ceci",
+      "pt": "Grão-de-bico"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Chocolate",
+    "i18n": {
+      "de": "Schokolade",
+      "en": "Chocolate",
+      "es": "Chocolate",
+      "fr": "Chocolat",
+      "it": "Cioccolato",
+      "pt": "Chocolate"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cilantro",
+    "i18n": {
+      "de": "Koriander",
+      "en": "Cilantro",
+      "es": "Cilantro",
+      "fr": "Coriandre",
+      "it": "Coriandolo",
+      "pt": "Coentro"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cinnamon",
+    "i18n": {
+      "de": "Zimt",
+      "en": "Cinnamon",
+      "es": "Canela",
+      "fr": "Cannelle",
+      "it": "Cannella",
+      "pt": "Canela"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Clove",
+    "i18n": {
+      "de": "Gewürznelke",
+      "en": "Clove",
+      "es": "Clavo",
+      "fr": "Clou de girofle",
+      "it": "Chiodo di garofano",
+      "pt": "Cravo-da-índia"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cockroach",
+    "i18n": {
+      "de": "Kakerlake",
+      "en": "Cockroach",
+      "es": "Cucaracha",
+      "fr": "Cafard",
+      "it": "Scarafaggio",
+      "pt": "Barata"
+    },
+    "percentage": "0.00",
+    "type": "animal",
+    "code": ""
+  },
+  {
+    "name": "Cocoa",
+    "i18n": {
+      "de": "Kakao",
+      "en": "Cocoa",
+      "es": "Cacao",
+      "fr": "Cacao",
+      "it": "Cacao",
+      "pt": "Cacau"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Coconut",
+    "i18n": {
+      "de": "Kokosnuss",
+      "en": "Coconut",
+      "es": "Coco",
+      "fr": "Noix de coco",
+      "it": "Cocco",
+      "pt": "Coco"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Coconut Milk",
+    "i18n": {
+      "de": "Kokosmilch",
+      "en": "Coconut Milk",
+      "es": "Leche de Coco",
+      "fr": "Lait de coco",
+      "it": "Latte di cocco",
+      "pt": "Leite de Coco"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Coffee",
+    "i18n": {
+      "de": "Kaffee",
+      "en": "Coffee",
+      "es": "Café",
+      "fr": "Café",
+      "it": "Caffè",
+      "pt": "Café"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Coriander",
+    "i18n": {
+      "de": "Koriander",
+      "en": "Coriander",
+      "es": "Cilantro",
+      "fr": "Coriandre",
+      "it": "Coriandolo",
+      "pt": "Coentro"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cottage Cheese",
+    "i18n": {
+      "de": "Hüttenkäse",
+      "en": "Cottage Cheese",
+      "es": "Requesón",
+      "fr": "Fromage blanc",
+      "it": "Ricotta",
+      "pt": "Queijo Cottage"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cranberry",
+    "i18n": {
+      "de": "Cranberry",
+      "en": "Cranberry",
+      "es": "Arándano",
+      "fr": "Canneberge",
+      "it": "Cranberry",
+      "pt": "Cranberry"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cream",
+    "i18n": {
+      "de": "Sahne",
+      "en": "Cream",
+      "es": "Crema",
+      "fr": "Crème",
+      "it": "Panna",
+      "pt": "Creme"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Cucumber",
+    "i18n": {
+      "de": "Gurke",
+      "en": "Cucumber",
+      "es": "Pepino",
+      "fr": "Concombre",
+      "it": "Cetriolo",
+      "pt": "Pepino"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Dairy",
+    "i18n": {
+      "de": "Milchprodukte",
+      "en": "Dairy",
+      "es": "Lácteo",
+      "fr": "Produits laitiers",
+      "it": "Latticini",
+      "pt": "Laticínios"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Dairy Products",
+    "i18n": {
+      "de": "Milchprodukte",
+      "en": "Dairy Products",
+      "es": "Productos Lácteos",
+      "fr": "Produits laitiers",
+      "it": "Prodotti lattiero-caseari",
+      "pt": "Produtos Lácteos"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Date",
+    "i18n": {
+      "de": "Dattel",
+      "en": "Date",
+      "es": "Dátil",
+      "fr": "Datte",
+      "it": "Dattero",
+      "pt": "Tâmara"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Dill",
+    "i18n": {
+      "de": "Dill",
+      "en": "Dill",
+      "es": "Eneldo",
+      "fr": "Aneth",
+      "it": "Aneto",
+      "pt": "Endro"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Dog",
+    "i18n": {
+      "de": "Hund",
+      "en": "Dog",
+      "es": "Perro",
+      "fr": "Chien",
+      "it": "Cane",
+      "pt": "Cachorro"
+    },
+    "percentage": "0.00",
+    "type": "animal",
+    "code": ""
+  },
+  {
+    "name": "Dragon Fruit",
+    "i18n": {
+      "de": "Drachenfrucht",
+      "en": "Dragon Fruit",
+      "es": "Fruta del Dragón",
+      "fr": "Fruit du dragon",
+      "it": "Frutto del drago",
+      "pt": "Fruta do Dragão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Durian",
+    "i18n": {
+      "de": "Durian",
+      "en": "Durian",
+      "es": "Durian",
+      "fr": "Durian",
+      "it": "Durian",
+      "pt": "Durian"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Dust Mite",
+    "i18n": {
+      "de": "Staubmilbe",
+      "en": "Dust Mite",
+      "es": "Ácaro del Polvo",
+      "fr": "Acariens",
+      "it": "Acari della polvere",
+      "pt": "Ácaros do Poeira"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Echinacea",
+    "i18n": {
+      "de": "Echinacea",
+      "en": "Echinacea",
+      "es": "Equinácea",
+      "fr": "Échinacée",
+      "it": "Echinacea",
+      "pt": "Echinacea"
+    },
+    "percentage": "0.00",
+    "type": "medicamento",
+    "code": ""
+  },
+  {
+    "name": "Edamame",
+    "i18n": {
+      "de": "Edamame",
+      "en": "Edamame",
+      "es": "Edamame",
+      "fr": "Edamame",
+      "it": "Edamame",
+      "pt": "Edamame"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Egg",
+    "i18n": {
+      "de": "Ei",
+      "en": "Egg",
+      "es": "Huevo",
+      "fr": "Œuf",
+      "it": "Uovo",
+      "pt": "Ovo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Feather",
+    "i18n": {
+      "de": "Feder",
+      "en": "Feather",
+      "es": "Pluma",
+      "fr": "Plume",
+      "it": "Piuma",
+      "pt": "Pena"
+    },
+    "percentage": "0.00",
+    "type": "animal",
+    "code": ""
+  },
+  {
+    "name": "Fig",
+    "i18n": {
+      "de": "Feige",
+      "en": "Fig",
+      "es": "Higo",
+      "fr": "Figue",
+      "it": "Fico",
+      "pt": "Figo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Fish",
+    "i18n": {
+      "de": "Fisch",
+      "en": "Fish",
+      "es": "Pescado",
+      "fr": "Poisson",
+      "it": "Pesce",
+      "pt": "Peixe"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Flax Milk",
+    "i18n": {
+      "de": "Leinsamenmilch",
+      "en": "Flax Milk",
+      "es": "Leche de Linaza",
+      "fr": "Lait de lin",
+      "it": "Latte di lino",
+      "pt": "Leite de Linhaça"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Food",
+    "i18n": {
+      "de": "Essen",
+      "en": "Food",
+      "es": "Comida",
+      "fr": "Nourriture",
+      "it": "Cibo",
+      "pt": "Comida"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Fruit",
+    "i18n": {
+      "de": "Frucht",
+      "en": "Fruit",
+      "es": "Fruta",
+      "fr": "Fruit",
+      "it": "Frutta",
+      "pt": "Fruta"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Garlic",
+    "i18n": {
+      "de": "Knoblauch",
+      "en": "Garlic",
+      "es": "Ajo",
+      "fr": "Ail",
+      "it": "Aglio",
+      "pt": "Alho"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Ghee",
+    "i18n": {
+      "de": "Ghee",
+      "en": "Ghee",
+      "es": "Ghee",
+      "fr": "Ghee",
+      "it": "Ghee",
+      "pt": "Ghee"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Ginger",
+    "i18n": {
+      "de": "Ingwer",
+      "en": "Ginger",
+      "es": "Jengibre",
+      "fr": "Gingembre",
+      "it": "Zenzero",
+      "pt": "Gengibre"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Gluten",
+    "i18n": {
+      "de": "Gluten",
+      "en": "Gluten",
+      "es": "Gluten",
+      "fr": "Gluten",
+      "it": "Glutine",
+      "pt": "Glúten"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Goat Milk",
+    "i18n": {
+      "de": "Ziegenmilch",
+      "en": "Goat Milk",
+      "es": "Leche de Cabra",
+      "fr": "Lait de chèvre",
+      "it": "Latte di capra",
+      "pt": "Leite de Cabra"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Grapefruit",
+    "i18n": {
+      "de": "Grapefruit",
+      "en": "Grapefruit",
+      "es": "Pomelo",
+      "fr": "Pamplemousse",
+      "it": "Pompelmo",
+      "pt": "Grapefruit"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Grapes",
+    "i18n": {
+      "de": "Trauben",
+      "en": "Grapes",
+      "es": "Uvas",
+      "fr": "Raisins",
+      "it": "Uva",
+      "pt": "Uvas"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Grass",
+    "i18n": {
+      "de": "Gras",
+      "en": "Grass",
+      "es": "Hierba",
+      "fr": "Herbe",
+      "it": "Erba",
+      "pt": "Grama"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Grass Pollen",
+    "i18n": {
+      "de": "Gräserpollen",
+      "en": "Grass Pollen",
+      "es": "Polen de Hierba",
+      "fr": "Pollen d'herbe",
+      "it": "Polline d'erba",
+      "pt": "Pólen de Grama"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Green Bean",
+    "i18n": {
+      "de": "Grüne Bohnen",
+      "en": "Green Bean",
+      "es": "Judías Verdes",
+      "fr": "Haricots verts",
+      "it": "Fagiolini",
+      "pt": "Feijão Verde"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Guava",
+    "i18n": {
+      "de": "Guave",
+      "en": "Guava",
+      "es": "Guayaba",
+      "fr": "Goyave",
+      "it": "Guava",
+      "pt": "Goiaba"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Hazelnut",
+    "i18n": {
+      "de": "Haselnüsse",
+      "en": "Hazelnut",
+      "es": "Avellana",
+      "fr": "Noisette",
+      "it": "Nocciola",
+      "pt": "Avelã"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Hemp Milk",
+    "i18n": {
+      "de": "Hanfmilch",
+      "en": "Hemp Milk",
+      "es": "Leche de Cáñamo",
+      "fr": "Lait de chanvre",
+      "it": "Latte di canapa",
+      "pt": "Leite de Cânhamo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Honey",
+    "i18n": {
+      "de": "Honig",
+      "en": "Honey",
+      "es": "Miel",
+      "fr": "Miel",
+      "it": "Miele",
+      "pt": "Mel"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Honeydew",
+    "i18n": {
+      "de": "Honigmelone",
+      "en": "Honeydew",
+      "es": "Melón",
+      "fr": "Melon miel",
+      "it": "Melone",
+      "pt": "Melão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Horse",
+    "i18n": {
+      "de": "Pferd",
+      "en": "Horse",
+      "es": "Caballo",
+      "fr": "Cheval",
+      "it": "Cavallo",
+      "pt": "Cavalo"
+    },
+    "percentage": "0.00",
+    "type": "animal",
+    "code": ""
+  },
+  {
+    "name": "House Dust",
+    "i18n": {
+      "de": "Hausstaub",
+      "en": "House Dust",
+      "es": "Ácaros del Polvo",
+      "fr": "Poussière domestique",
+      "it": "Polvere domestica",
+      "pt": "Pó de Casa"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Hummus",
+    "i18n": {
+      "de": "Hummus",
+      "en": "Hummus",
+      "es": "Hummus",
+      "fr": "Houmous",
+      "it": "Hummus",
+      "pt": "Hummus"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Hydroxyzine",
+    "i18n": {
+      "de": "Hydroxyzin",
+      "en": "Hydroxyzine",
+      "es": "Hidroxicina",
+      "fr": "Hydroxyzine",
+      "it": "Idrossizina",
+      "pt": "Hidroxizina"
+    },
+    "percentage": "0.00",
+    "type": "medicamento",
+    "code": ""
+  },
+  {
+    "name": "Ice Cream",
+    "i18n": {
+      "de": "Eiscreme",
+      "en": "Ice Cream",
+      "es": "Helado",
+      "fr": "Glace",
+      "it": "Gelato",
+      "pt": "Sorvete"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Insect Sting",
+    "i18n": {
+      "de": "Insektenstich",
+      "en": "Insect Sting",
+      "es": "Picadura de Insecto",
+      "fr": "Piqûre d'insecte",
+      "it": "Puntura di insetto",
+      "pt": "Picada de Inseto"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Jackfruit",
+    "i18n": {
+      "de": "Jackfrucht",
+      "en": "Jackfruit",
+      "es": "Yaca",
+      "fr": "Jacquier",
+      "it": "Jackfruit",
+      "pt": "Jaca"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Kidney Bean",
+    "i18n": {
+      "de": "Kidneybohnen",
+      "en": "Kidney Bean",
+      "es": "Frijol Rojo",
+      "fr": "Haricot rouge",
+      "it": "Fagiolo rosso",
+      "pt": "Feijão Vermelho"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Kiwi",
+    "i18n": {
+      "de": "Kiwi",
+      "en": "Kiwi",
+      "es": "Kiwi",
+      "fr": "Kiwi",
+      "it": "Kiwi",
+      "pt": "Kiwi"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Lactose",
+    "i18n": {
+      "de": "Laktose",
+      "en": "Lactose",
+      "es": "Lactosa",
+      "fr": "Lactose",
+      "it": "Lattosio",
+      "pt": "Lactose"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Latex",
+    "i18n": {
+      "de": "Latex",
+      "en": "Latex",
+      "es": "Látex",
+      "fr": "Latex",
+      "it": "Lattice",
+      "pt": "Látex"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Lavender",
+    "i18n": {
+      "de": "Lavendel",
+      "en": "Lavender",
+      "es": "Lavanda",
+      "fr": "Lavande",
+      "it": "Lavanda",
+      "pt": "Lavanda"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Lemon",
+    "i18n": {
+      "de": "Zitrone",
+      "en": "Lemon",
+      "es": "Limón",
+      "fr": "Citron",
+      "it": "Limone",
+      "pt": "Limão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Lentil",
+    "i18n": {
+      "de": "Linsen",
+      "en": "Lentil",
+      "es": "Lenteja",
+      "fr": "Lentille",
+      "it": "Lenticchia",
+      "pt": "Lentilha"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Lettuce",
+    "i18n": {
+      "de": "Kopfsalat",
+      "en": "Lettuce",
+      "es": "Lechuga",
+      "fr": "Laitue",
+      "it": "Lattuga",
+      "pt": "Alface"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Lima Bean",
+    "i18n": {
+      "de": "Lima-Bohnen",
+      "en": "Lima Bean",
+      "es": "Frijol Lima",
+      "fr": "Haricot de Lima",
+      "it": "Fagiolo di Lima",
+      "pt": "Feijão-de-Lima"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Lime",
+    "i18n": {
+      "de": "Limette",
+      "en": "Lime",
+      "es": "Lima",
+      "fr": "Citron vert",
+      "it": "Lime",
+      "pt": "Limão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Longan",
+    "i18n": {
+      "de": "Longan",
+      "en": "Longan",
+      "es": "Longan",
+      "fr": "Longane",
+      "it": "Longan",
+      "pt": "Longan"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Lychee",
+    "i18n": {
+      "de": "Litschi",
+      "en": "Lychee",
+      "es": "Lichi",
+      "fr": "Litchi",
+      "it": "Litchi",
+      "pt": "Lichia"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Macadamia Milk",
+    "i18n": {
+      "de": "Macadamia-Milch",
+      "en": "Macadamia Milk",
+      "es": "Leche de Macadamia",
+      "fr": "Lait de macadamia",
+      "it": "Latte di macadamia",
+      "pt": "Leite de Macadâmia"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Macadamia Nut",
+    "i18n": {
+      "de": "Macadamianuss",
+      "en": "Macadamia Nut",
+      "es": "Nuez de Macadamia",
+      "fr": "Noix de macadamia",
+      "it": "Noce di macadamia",
+      "pt": "Noz de Macadâmia"
+    },
+    "percentage": "0.01",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Mango",
+    "i18n": {
+      "de": "Mango",
+      "en": "Mango",
+      "es": "Mango",
+      "fr": "Mangue",
+      "it": "Mango",
+      "pt": "Manga"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Mangosteen",
+    "i18n": {
+      "de": "Mangostan",
+      "en": "Mangosteen",
+      "es": "Mangostán",
+      "fr": "Mangoustan",
+      "it": "Mangostano",
+      "pt": "Mangostão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Margarine",
+    "i18n": {
+      "de": "Margarine",
+      "en": "Margarine",
+      "es": "Margarina",
+      "fr": "Margarine",
+      "it": "Margarina",
+      "pt": "Margarina"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Metals",
+    "i18n": {
+      "de": "Metalle",
+      "en": "Metals",
+      "es": "Metales",
+      "fr": "Métaux",
+      "it": "Metalli",
+      "pt": "Metais"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Milk",
+    "i18n": {
+      "de": "Milch",
+      "en": "Milk",
+      "es": "Leche",
+      "fr": "Lait",
+      "it": "Latte",
+      "pt": "Leite"
+    },
+    "percentage": "0.70",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Mint",
+    "i18n": {
+      "de": "Minze",
+      "en": "Mint",
+      "es": "Menta",
+      "fr": "Menthe",
+      "it": "Menta",
+      "pt": "Hortelã"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Misso",
+    "i18n": {
+      "de": "Miso",
+      "en": "Miso",
+      "es": "Miso",
+      "fr": "Miso",
+      "it": "Miso",
+      "pt": "Miso"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Mold",
+    "i18n": {
+      "de": "Schimmel",
+      "en": "Mold",
+      "es": "Moho",
+      "fr": "Moisissure",
+      "it": "Muffa",
+      "pt": "Mofo"
+    },
+    "percentage": "0.05",
+    "type": "ambiental",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Mold Spores",
+    "i18n": {
+      "de": "Schimmelsporen",
+      "en": "Mold Spores",
+      "es": "Esporas de Moho",
+      "fr": "Spores de moisissure",
+      "it": "Spore di muffa",
+      "pt": "Esporos de Mofo"
+    },
+    "percentage": "0.05",
+    "type": "ambiental",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Mulberry",
+    "i18n": {
+      "de": "Maulbeere",
+      "en": "Mulberry",
+      "es": "Mora",
+      "fr": "Mûrier",
+      "it": "Gelso",
+      "pt": "Amoreira"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Mung Bean",
+    "i18n": {
+      "de": "Mungbohne",
+      "en": "Mung Bean",
+      "es": "Frijol Mung",
+      "fr": "Haricot mungo",
+      "it": "Fagiolo mung",
+      "pt": "Feijão Mungo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Mustard",
+    "i18n": {
+      "de": "Senf",
+      "en": "Mustard",
+      "es": "Mostaza",
+      "fr": "Moutarde",
+      "it": "Senape",
+      "pt": "Mostarda"
+    },
+    "percentage": "0.05",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Nectarine",
+    "i18n": {
+      "de": "Nektarine",
+      "en": "Nectarine",
+      "es": "Nectarina",
+      "fr": "Nectarine",
+      "it": "Nettarina",
+      "pt": "Nectarina"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Nickel",
+    "i18n": {
+      "de": "Nickel",
+      "en": "Nickel",
+      "es": "Níquel",
+      "fr": "Nickel",
+      "it": "Nichel",
+      "pt": "Níquel"
+    },
+    "percentage": "0.01",
+    "type": "ambiental",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Non-Dairy Milk",
+    "i18n": {
+      "de": "Milchalternativen",
+      "en": "Non-Dairy Milk",
+      "es": "Leche No Láctea",
+      "fr": "Lait non laitier",
+      "it": "Latte non caseario",
+      "pt": "Leite Não Lácteo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Oat Milk",
+    "i18n": {
+      "de": "Hafermilch",
+      "en": "Oat Milk",
+      "es": "Leche de Avena",
+      "fr": "Lait d'avoine",
+      "it": "Latte d'avena",
+      "pt": "Leite de Aveia"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Oats",
+    "i18n": {
+      "de": "Hafer",
+      "en": "Oats",
+      "es": "Avena",
+      "fr": "Avoine",
+      "it": "Avena",
+      "pt": "Aveia"
+    },
+    "percentage": "0.05",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Okra",
+    "i18n": {
+      "de": "Okra",
+      "en": "Okra",
+      "es": "Quimbombó",
+      "fr": "Gombo",
+      "it": "Okra",
+      "pt": "Quiabo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Olive",
+    "i18n": {
+      "de": "Olive",
+      "en": "Olive",
+      "es": "Aceituna",
+      "fr": "Olive",
+      "it": "Oliva",
+      "pt": "Azeitona"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Onion",
+    "i18n": {
+      "de": "Zwiebel",
+      "en": "Onion",
+      "es": "Cebolla",
+      "fr": "Oignon",
+      "it": "Cipolla",
+      "pt": "Cebola"
+    },
+    "percentage": "0.05",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Orange",
+    "i18n": {
+      "de": "Orange",
+      "en": "Orange",
+      "es": "Naranja",
+      "fr": "Orange",
+      "it": "Arancia",
+      "pt": "Laranja"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Papaya",
+    "i18n": {
+      "de": "Papaya",
+      "en": "Papaya",
+      "es": "Papaya",
+      "fr": "Papaye",
+      "it": "Papaya",
+      "pt": "Papaya"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Parsley",
+    "i18n": {
+      "de": "Petersilie",
+      "en": "Parsley",
+      "es": "Perejil",
+      "fr": "Persil",
+      "it": "Prezzemolo",
+      "pt": "Salsa"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Passion Fruit",
+    "i18n": {
+      "de": "Passionsfrucht",
+      "en": "Passion Fruit",
+      "es": "Maracuyá",
+      "fr": "Fruit de la passion",
+      "it": "Frutto della passione",
+      "pt": "Maracujá"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pea",
+    "i18n": {
+      "de": "Erbse",
+      "en": "Pea",
+      "es": "Guisante",
+      "fr": "Pois",
+      "it": "Pisello",
+      "pt": "Ervilha"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Peach",
+    "i18n": {
+      "de": "Pfirsich",
+      "en": "Peach",
+      "es": "Durazno",
+      "fr": "Pêche",
+      "it": "Pesca",
+      "pt": "Pêssego"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Peanut",
+    "i18n": {
+      "de": "Erdnuss",
+      "en": "Peanut",
+      "es": "Cacahuate",
+      "fr": "Arachide",
+      "it": "Arachide",
+      "pt": "Amendoim"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Peanut Butter",
+    "i18n": {
+      "de": "Erdnussbutter",
+      "en": "Peanut Butter",
+      "es": "Mantequilla de Cacahuate",
+      "fr": "Beurre de cacahuète",
+      "it": "Burro di arachidi",
+      "pt": "Manteiga de Amendoim"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Pear",
+    "i18n": {
+      "de": "Birne",
+      "en": "Pear",
+      "es": "Pera",
+      "fr": "Poire",
+      "it": "Pera",
+      "pt": "Pêra"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Penicillin",
+    "i18n": {
+      "de": "Penicillin",
+      "en": "Penicillin",
+      "es": "Penicilina",
+      "fr": "Pénicilline",
+      "it": "Penicillina",
+      "pt": "Penicilina"
+    },
+    "percentage": "0.01",
+    "type": "medicamento",
+    "code": "ICD-10 T88.0"
+  },
+  {
+    "name": "Pepper",
+    "i18n": {
+      "de": "Pfeffer",
+      "en": "Pepper",
+      "es": "Pimienta",
+      "fr": "Poivre",
+      "it": "Pepe",
+      "pt": "Pimenta"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Persimmon",
+    "i18n": {
+      "de": "Kaki",
+      "en": "Persimmon",
+      "es": "Caqui",
+      "fr": "Kaki",
+      "it": "Cachi",
+      "pt": "Caqui"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pet",
+    "i18n": {
+      "de": "Haustier",
+      "en": "Pet",
+      "es": "Mascota",
+      "fr": "Animal de compagnie",
+      "it": "Animale domestico",
+      "pt": "Animal de estimação"
+    },
+    "percentage": "0.01",
+    "type": "animal",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Pine Nut",
+    "i18n": {
+      "de": "Pinienkern",
+      "en": "Pine Nut",
+      "es": "Pino",
+      "fr": "Pignon de pin",
+      "it": "Pinolo",
+      "pt": "Pinhão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pine Nut Milk",
+    "i18n": {
+      "de": "Pinienmilch",
+      "en": "Pine Nut Milk",
+      "es": "Leche de Pino",
+      "fr": "Lait de pignon de pin",
+      "it": "Latte di pinolo",
+      "pt": "Leite de Pinhão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pineapple",
+    "i18n": {
+      "de": "Ananas",
+      "en": "Pineapple",
+      "es": "Piña",
+      "fr": "Ananas",
+      "it": "Ananas",
+      "pt": "Abacaxi"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pinto Bean",
+    "i18n": {
+      "de": "Pinto-Bohnen",
+      "en": "Pinto Bean",
+      "es": "Frijol Pinto",
+      "fr": "Haricot pinto",
+      "it": "Fagiolo pinto",
+      "pt": "Feijão pinto"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Plum",
+    "i18n": {
+      "de": "Pflaume",
+      "en": "Plum",
+      "es": "Ciruela",
+      "fr": "Prune",
+      "it": "Prugna",
+      "pt": "Ameixa"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pluot",
+    "i18n": {
+      "de": "Pluot",
+      "en": "Pluot",
+      "es": "Pluot",
+      "fr": "Pluot",
+      "it": "Pluot",
+      "pt": "Pluot"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pollen",
+    "i18n": {
+      "de": "Pollen",
+      "en": "Pollen",
+      "es": "Polen",
+      "fr": "Pollen",
+      "it": "Polline",
+      "pt": "Pólen"
+    },
+    "percentage": "0.10",
+    "type": "ambiental",
+    "code": "ICD-10 T78.4"
+  },
+  {
+    "name": "Pomelo",
+    "i18n": {
+      "de": "Pomelo",
+      "en": "Pomelo",
+      "es": "Pomelo",
+      "fr": "Pomelo",
+      "it": "Pomelo",
+      "pt": "Pomelo"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Poppy Seed",
+    "i18n": {
+      "de": "Mohn",
+      "en": "Poppy Seed",
+      "es": "Semilla de Amapola",
+      "fr": "Graine de pavot",
+      "it": "Semi di papavero",
+      "pt": "Semente de Papoula"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Pork",
+    "i18n": {
+      "de": "Schweinefleisch",
+      "en": "Pork",
+      "es": "Cerdo",
+      "fr": "Porc",
+      "it": "Maiale",
+      "pt": "Porco"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Radish",
+    "i18n": {
+      "de": "Radieschen",
+      "en": "Radish",
+      "es": "Rábano",
+      "fr": "Radis",
+      "it": "Ravanello",
+      "pt": "Rabanete"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Raisin",
+    "i18n": {
+      "de": "Rosine",
+      "en": "Raisin",
+      "es": "Raisin",
+      "fr": "Raisin",
+      "it": "Uva passa",
+      "pt": "Uva passa"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Raspberry",
+    "i18n": {
+      "de": "Himbeere",
+      "en": "Raspberry",
+      "es": "Frambuesa",
+      "fr": "Framboise",
+      "it": "Lampone",
+      "pt": "Framboesa"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Rice",
+    "i18n": {
+      "de": "Reis",
+      "en": "Rice",
+      "es": "Arroz",
+      "fr": "Riz",
+      "it": "Riso",
+      "pt": "Arroz"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Salmon",
+    "i18n": {
+      "de": "Lachs",
+      "en": "Salmon",
+      "es": "Salmón",
+      "fr": "Saumon",
+      "it": "Salmone",
+      "pt": "Salmão"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Sesame",
+    "i18n": {
+      "de": "Sesam",
+      "en": "Sesame",
+      "es": "Sésamo",
+      "fr": "Sésame",
+      "it": "Sesamo",
+      "pt": "Sésamo"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Shellfish",
+    "i18n": {
+      "de": "Schalentiere",
+      "en": "Shellfish",
+      "es": "Mariscos",
+      "fr": "Crustacés",
+      "it": "Crostacei",
+      "pt": "Mariscos"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.0"
+  },
+  {
+    "name": "Soy",
+    "i18n": {
+      "de": "Soja",
+      "en": "Soy",
+      "es": "Soja",
+      "fr": "Soja",
+      "it": "Soia",
+      "pt": "Soja"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Spinach",
+    "i18n": {
+      "de": "Spinat",
+      "en": "Spinach",
+      "es": "Espinaca",
+      "fr": "Épinard",
+      "it": "Spinaci",
+      "pt": "Espinafre"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Strawberry",
+    "i18n": {
+      "de": "Erdbeere",
+      "en": "Strawberry",
+      "es": "Fresa",
+      "fr": "Fraise",
+      "it": "Fragola",
+      "pt": "Morango"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Tea",
+    "i18n": {
+      "de": "Tee",
+      "en": "Tea",
+      "es": "Té",
+      "fr": "Thé",
+      "it": "Tè",
+      "pt": "Chá"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Tempeh",
+    "i18n": {
+      "de": "Tempeh",
+      "en": "Tempeh",
+      "es": "Tempeh",
+      "fr": "Tempeh",
+      "it": "Tempeh",
+      "pt": "Tempeh"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Thyme",
+    "i18n": {
+      "de": "Thymian",
+      "en": "Thyme",
+      "es": "Tomillo",
+      "fr": "Thym",
+      "it": "Timo",
+      "pt": "Tomilho"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Tofu",
+    "i18n": {
+      "de": "Tofu",
+      "en": "Tofu",
+      "es": "Tofu",
+      "fr": "Tofu",
+      "it": "Tofu",
+      "pt": "Tofu"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Tomato",
+    "i18n": {
+      "de": "Tomate",
+      "en": "Tomato",
+      "es": "Tomate",
+      "fr": "Tomate",
+      "it": "Pomodoro",
+      "pt": "Tomate"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Tree Nut",
+    "i18n": {
+      "de": "Baumnüsse",
+      "en": "Tree Nut",
+      "es": "Nuez",
+      "fr": "Noix",
+      "it": "Frutta a guscio",
+      "pt": "Noz"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Tree Pollen",
+    "i18n": {
+      "de": "Baumpollen",
+      "en": "Tree Pollen",
+      "es": "Polen de Árbol",
+      "fr": "Pollen d’arbre",
+      "it": "Polline degli alberi",
+      "pt": "Pólen de Árvore"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Turmeric",
+    "i18n": {
+      "de": "Kurkuma",
+      "en": "Turmeric",
+      "es": "Cúrcuma",
+      "fr": "Curcuma",
+      "it": "Curcuma",
+      "pt": "Cúrcuma"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Vanilla",
+    "i18n": {
+      "de": "Vanille",
+      "en": "Vanilla",
+      "es": "Vainilla",
+      "fr": "Vanille",
+      "it": "Vaniglia",
+      "pt": "Baunilha"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Vegetable",
+    "i18n": {
+      "de": "Gemüse",
+      "en": "Vegetable",
+      "es": "Vegetal",
+      "fr": "Légume",
+      "it": "Ortaggio",
+      "pt": "Legume"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Walnut",
+    "i18n": {
+      "de": "Walnuss",
+      "en": "Walnut",
+      "es": "Nuez",
+      "fr": "Noix",
+      "it": "Noci",
+      "pt": "Noz"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Watermelon",
+    "i18n": {
+      "de": "Wassermelone",
+      "en": "Watermelon",
+      "es": "Sandía",
+      "fr": "Pastèque",
+      "it": "Anguria",
+      "pt": "Melancia"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Wheat",
+    "i18n": {
+      "de": "Weizen",
+      "en": "Wheat",
+      "es": "Trigo",
+      "fr": "Blé",
+      "it": "Grano",
+      "pt": "Trigo"
+    },
+    "percentage": "0.10",
+    "type": "alimentario",
+    "code": "ICD-10 T78.1"
+  },
+  {
+    "name": "Whey",
+    "i18n": {
+      "de": "Molke",
+      "en": "Whey",
+      "es": "Suero",
+      "fr": "Lait de laitier",
+      "it": "Siero",
+      "pt": "Soro"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "White Fish",
+    "i18n": {
+      "de": "Weißfisch",
+      "en": "White Fish",
+      "es": "Pescado Blanco",
+      "fr": "Poisson blanc",
+      "it": "Pesce bianco",
+      "pt": "Peixe Branco"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Wool",
+    "i18n": {
+      "de": "Wolle",
+      "en": "Wool",
+      "es": "Lana",
+      "fr": "Laine",
+      "it": "Lana",
+      "pt": "Lã"
+    },
+    "percentage": "0.00",
+    "type": "ambiental",
+    "code": ""
+  },
+  {
+    "name": "Yams",
+    "i18n": {
+      "de": "Yams",
+      "en": "Yams",
+      "es": "Ñames",
+      "fr": "Ignames",
+      "it": "Yam",
+      "pt": "Inhame"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Yeast",
+    "i18n": {
+      "de": "Hefe",
+      "en": "Yeast",
+      "es": "Levadura",
+      "fr": "Levure",
+      "it": "Lievito",
+      "pt": "Levedura"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  },
+  {
+    "name": "Yogurt",
+    "i18n": {
+      "de": "Joghurt",
+      "en": "Yogurt",
+      "es": "Yogur",
+      "fr": "Yaourt",
+      "it": "Yogurt",
+      "pt": "Iogurte"
+    },
+    "percentage": "0.00",
+    "type": "alimentario",
+    "code": ""
+  }
+]

@@ -1,6 +1,11 @@
+import * as countries from "./processors/countries";
 import * as spotify from "./processors/spotify";
 
-const result = spotify.processJsonFile("./data/output.json");
+spotify.main();
+countries.main();
+// const result = spotify.processGenres("./data/spotify/output_02_09_2024.json");
+
+// const result = countries.processJsonFile("./data/geo/continents.json");
 
 // spotify.join_files(
 //   [

@@ -1,0 +1,86 @@
+[
+  {
+    "key": "AF",
+    "name": "Africa",
+    "i18n": {
+      "DE": "Afrika",
+      "EN": "Africa",
+      "ES": "África",
+      "FR": "Afrique",
+      "IT": "Africa",
+      "PR": "África"
+    }
+  },
+  {
+    "key": "AN",
+    "name": "Antarctica",
+    "i18n": {
+      "DE": "Antarktis",
+      "EN": "Antarctica",
+      "ES": "Antártida",
+      "FR": "Antarctique",
+      "IT": "Antartide",
+      "PR": "Antártida"
+    }
+  },
+  {
+    "key": "AS",
+    "name": "Asia",
+    "i18n": {
+      "DE": "Asien",
+      "EN": "Asia",
+      "ES": "Asia",
+      "FR": "Asie",
+      "IT": "Asia",
+      "PR": "Ásia"
+    }
+  },
+  {
+    "key": "EU",
+    "name": "Europe",
+    "i18n": {
+      "DE": "Europa",
+      "EN": "Europe",
+      "ES": "Europa",
+      "FR": "Europe",
+      "IT": "Europa",
+      "PR": "Europa"
+    }
+  },
+  {
+    "key": "NA",
+    "name": "North America",
+    "i18n": {
+      "DE": "Nordamerika",
+      "EN": "North America",
+      "ES": "América del Norte",
+      "FR": "Amérique du Nord",
+      "IT": "America del Nord",
+      "PR": "América do Norte"
+    }
+  },
+  {
+    "key": "OC",
+    "name": "Oceania",
+    "i18n": {
+      "DE": "Ozeanien",
+      "EN": "Oceania",
+      "ES": "Oceanía",
+      "FR": "Océanie",
+      "IT": "Oceania",
+      "PR": "Oceania"
+    }
+  },
+  {
+    "key": "SA",
+    "name": "South America",
+    "i18n": {
+      "DE": "Südamerika",
+      "EN": "South America",
+      "ES": "América del Sur",
+      "FR": "Amérique du Sud",
+      "IT": "America del Sud",
+      "PR": "América do Sul"
+    }
+  }
+]

@@ -1,0 +1,1305 @@
+[
+  {
+    "key": "aa",
+    "main_flag_2": "DJ",
+    "main_flag_3": "DJI",
+    "other_flags_2": ["ET", "ER"],
+    "other_flags_3": ["ETH", "ERI"]
+  },
+  {
+    "key": "ab",
+    "main_flag_2": "GE",
+    "main_flag_3": "GEO",
+    "other_flags_2": ["RU"],
+    "other_flags_3": ["RUS"]
+  },
+  {
+    "key": "af",
+    "main_flag_2": "ZA",
+    "main_flag_3": "ZAF",
+    "other_flags_2": ["NA"],
+    "other_flags_3": ["NAM"]
+  },
+  {
+    "key": "ak",
+    "main_flag_2": "GH",
+    "main_flag_3": "GHA",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "am",
+    "main_flag_2": "ET",
+    "main_flag_3": "ETH",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "an",
+    "main_flag_2": "ES",
+    "main_flag_3": "ESP",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "ar",
+    "main_flag_2": "SA",
+    "main_flag_3": "SAU",
+    "other_flags_2": [
+      "AE",
+      "EG",
+      "IQ",
+      "JO",
+      "KW",
+      "LB",
+      "LY",
+      "MA",
+      "OM",
+      "QA",
+      "SD",
+      "SY",
+      "TN",
+      "YE"
+    ],
+    "other_flags_3": [
+      "ARE",
+      "EGY",
+      "IRQ",
+      "JOR",
+      "KWT",
+      "LBN",
+      "LBY",
+      "MAR",
+      "OMN",
+      "QAT",
+      "SDN",
+      "SYR",
+      "TUN",
+      "YEM"
+    ],
+    "rtl": 1
+  },
+  {
+    "key": "as",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "av",
+    "main_flag_2": "RU",
+    "main_flag_3": "RUS",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "ay",
+    "main_flag_2": "BO",
+    "main_flag_3": "BOL",
+    "other_flags_2": ["PE"],
+    "other_flags_3": ["PER"]
+  },
+  {
+    "key": "az",
+    "main_flag_2": "AZ",
+    "main_flag_3": "AZE",
+    "other_flags_2": ["IR", "TR"],
+    "other_flags_3": ["IRN", "TUR"]
+  },
+  {
+    "key": "ba",
+    "main_flag_2": "RU",
+    "main_flag_3": "RUS",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "be",
+    "main_flag_2": "BY",
+    "main_flag_3": "BLR",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "bg",
+    "main_flag_2": "BG",
+    "main_flag_3": "BGR",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "bh",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "bi",
+    "main_flag_2": "VU",
+    "main_flag_3": "VUT",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "bm",
+    "main_flag_2": "ML",
+    "main_flag_3": "MLI",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "bn",
+    "main_flag_2": "BD",
+    "main_flag_3": "BGD",
+    "other_flags_2": ["IN"],
+    "other_flags_3": ["IND"]
+  },
+  {
+    "key": "bo",
+    "main_flag_2": "CN",
+    "main_flag_3": "CHN",
+    "other_flags_2": ["IN"],
+    "other_flags_3": ["IND"]
+  },
+  {
+    "key": "br",
+    "main_flag_2": "FR",
+    "main_flag_3": "FRA",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "bs",
+    "main_flag_2": "BA",
+    "main_flag_3": "BIH",
+    "other_flags_2": ["ME"],
+    "other_flags_3": ["MNE"]
+  },
+  {
+    "key": "ca",
+    "main_flag_2": "ES",
+    "main_flag_3": "ESP",
+    "other_flags_2": ["AD"],
+    "other_flags_3": ["AND"]
+  },
+  {
+    "key": "ce",
+    "main_flag_2": "RU",
+    "main_flag_3": "RUS",
+    "other_flags_2": ["GE"],
+    "other_flags_3": ["GEO"],
+    "rtl": 1
+  },
+  {
+    "key": "ch",
+    "main_flag_2": "CN",
+    "main_flag_3": "CHN",
+    "other_flags_2": ["SG"],
+    "other_flags_3": ["SGP"]
+  },
+  {
+    "key": "co",
+    "main_flag_2": "CO",
+    "main_flag_3": "COL",
+    "other_flags_2": ["VE"],
+    "other_flags_3": ["VEN"]
+  },
+  {
+    "key": "cr",
+    "main_flag_2": "CR",
+    "main_flag_3": "CRI",
+    "other_flags_2": []
+  },
+  {
+    "key": "cs",
+    "main_flag_2": "CZ",
+    "main_flag_3": "CZE",
+    "other_flags_2": ["SK"],
+    "other_flags_3": ["SVK"]
+  },
+  {
+    "key": "cu",
+    "main_flag_2": "CU",
+    "main_flag_3": "CUB",
+    "other_flags_2": []
+  },
+  {
+    "key": "cv",
+    "main_flag_2": "CV",
+    "main_flag_3": "CPV",
+    "other_flags_2": []
+  },
+  {
+    "key": "cy",
+    "main_flag_2": "GB",
+    "main_flag_3": "GBR",
+    "other_flags_2": ["CY"],
+    "other_flags_3": ["CYP"]
+  },
+  {
+    "key": "da",
+    "main_flag_2": "DK",
+    "main_flag_3": "DNK",
+    "other_flags_2": []
+  },
+  {
+    "key": "de",
+    "main_flag_2": "DE",
+    "main_flag_3": "DEU",
+    "other_flags_2": ["AT", "CH", "LI"],
+    "other_flags_3": ["AUT", "CHE", "LIE"]
+  },
+  {
+    "key": "dv",
+    "main_flag_2": "MV",
+    "main_flag_3": "MDV",
+    "other_flags_2": []
+  },
+  {
+    "key": "dz",
+    "main_flag_2": "DZ",
+    "main_flag_3": "DZA",
+    "other_flags_2": []
+  },
+  {
+    "key": "ee",
+    "main_flag_2": "EE",
+    "main_flag_3": "EST",
+    "other_flags_2": []
+  },
+  {
+    "key": "el",
+    "main_flag_2": "GR",
+    "main_flag_3": "GRC",
+    "other_flags_2": []
+  },
+  {
+    "key": "en",
+    "main_flag_2": "GB",
+    "main_flag_3": "GBR",
+    "other_flags_2": ["US", "AU", "CA", "NZ", "IE"],
+    "other_flags_3": ["USA", "AUS", "CAN", "NZL", "IRL"]
+  },
+  {
+    "key": "eo",
+    "main_flag_2": "EO",
+    "main_flag_3": "EPO",
+    "other_flags_2": []
+  },
+  {
+    "key": "es",
+    "main_flag_2": "ES",
+    "main_flag_3": "ESP",
+    "other_flags_2": [
+      "AR",
+      "BO",
+      "CL",
+      "CO",
+      "CR",
+      "CU",
+      "DO",
+      "EC",
+      "GQ",
+      "GT",
+      "HN",
+      "MX",
+      "NI",
+      "PA",
+      "PY",
+      "PE",
+      "SV",
+      "UY",
+      "VE"
+    ],
+    "other_flags_3": [
+      "ARG",
+      "BOL",
+      "CHL",
+      "COL",
+      "CRI",
+      "CUB",
+      "DOM",
+      "ECU",
+      "GNQ",
+      "GTM",
+      "HND",
+      "MEX",
+      "NIC",
+      "PAN",
+      "PRY",
+      "PER",
+      "SLV",
+      "URY",
+      "VEN"
+    ]
+  },
+  {
+    "key": "et",
+    "main_flag_2": "EE",
+    "main_flag_3": "EST",
+    "other_flags_2": []
+  },
+  {
+    "key": "eu",
+    "main_flag_2": "ES",
+    "main_flag_3": "ESP",
+    "other_flags_2": ["FR"],
+    "other_flags_3": ["FRA"]
+  },
+  {
+    "key": "fa",
+    "main_flag_2": "IR",
+    "main_flag_3": "IRN",
+    "other_flags_2": ["AF"],
+    "other_flags_3": ["AFG"]
+  },
+  {
+    "key": "ff",
+    "main_flag_2": "SN",
+    "main_flag_3": "SEN",
+    "other_flags_2": ["CM", "GQ", "NG"],
+    "other_flags_3": ["CMR", "GNQ", "NGA"]
+  },
+  {
+    "key": "fi",
+    "main_flag_2": "FI",
+    "main_flag_3": "FIN",
+    "other_flags_2": []
+  },
+  {
+    "key": "fj",
+    "main_flag_2": "FJ",
+    "main_flag_3": "FJI",
+    "other_flags_2": []
+  },
+  {
+    "key": "fo",
+    "main_flag_2": "FO",
+    "main_flag_3": "FRO",
+    "other_flags_2": []
+  },
+  {
+    "key": "fr",
+    "main_flag_2": "FR",
+    "main_flag_3": "FRA",
+    "other_flags_2": [
+      "BE",
+      "CA",
+      "CH",
+      "CI",
+      "CM",
+      "DJ",
+      "GA",
+      "GF",
+      "GP",
+      "ML",
+      "MQ",
+      "NE",
+      "RE",
+      "SN",
+      "TD",
+      "TG",
+      "VA"
+    ],
+    "other_flags_3": [
+      "BEL",
+      "CAN",
+      "CHE",
+      "CIV",
+      "CMR",
+      "DJI",
+      "GAB",
+      "GUF",
+      "GLP",
+      "MLI",
+      "MTQ",
+      "NER",
+      "REU",
+      "SEN",
+      "TCD",
+      "TGO",
+      "VAT"
+    ]
+  },
+  {
+    "key": "fy",
+    "main_flag_2": "NL",
+    "main_flag_3": "NLD",
+    "other_flags_2": ["DE"],
+    "other_flags_3": ["DEU"]
+  },
+  {
+    "key": "ga",
+    "main_flag_2": "IE",
+    "main_flag_3": "IRL",
+    "other_flags_2": []
+  },
+  {
+    "key": "gd",
+    "main_flag_2": "GB",
+    "main_flag_3": "GBR",
+    "other_flags_2": []
+  },
+  {
+    "key": "gl",
+    "main_flag_2": "ES",
+    "main_flag_3": "ESP",
+    "other_flags_2": []
+  },
+  {
+    "key": "gn",
+    "main_flag_2": "PY",
+    "main_flag_3": "PRY",
+    "other_flags_2": ["BO", "BR", "CO"],
+    "other_flags_3": ["BOL", "BRA", "COL"]
+  },
+  {
+    "key": "gu",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "gv",
+    "main_flag_2": "IM",
+    "main_flag_3": "IMN",
+    "other_flags_2": []
+  },
+  {
+    "key": "ha",
+    "main_flag_2": "NG",
+    "main_flag_3": "NGA",
+    "other_flags_2": ["NE"],
+    "other_flags_3": ["NER"]
+  },
+  {
+    "key": "he",
+    "main_flag_2": "IL",
+    "main_flag_3": "ISR",
+    "other_flags_2": []
+  },
+  {
+    "key": "hi",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "ho",
+    "main_flag_2": "HN",
+    "main_flag_3": "HND",
+    "other_flags_2": []
+  },
+  {
+    "key": "hr",
+    "main_flag_2": "HR",
+    "main_flag_3": "HRV",
+    "other_flags_2": []
+  },
+  {
+    "key": "ht",
+    "main_flag_2": "HT",
+    "main_flag_3": "HTI",
+    "other_flags_2": []
+  },
+  {
+    "key": "hu",
+    "main_flag_2": "HU",
+    "main_flag_3": "HUN",
+    "other_flags_2": []
+  },
+  {
+    "key": "hy",
+    "main_flag_2": "AM",
+    "main_flag_3": "ARM",
+    "other_flags_2": []
+  },
+  {
+    "key": "hz",
+    "main_flag_2": "NA",
+    "main_flag_3": "NAM",
+    "other_flags_2": []
+  },
+  {
+    "key": "ia",
+    "main_flag_2": "ia",
+    "main_flag_3": "ina",
+    "other_flags_2": []
+  },
+  {
+    "key": "id",
+    "main_flag_2": "ID",
+    "main_flag_3": "IDN",
+    "other_flags_2": []
+  },
+  {
+    "key": "ie",
+    "main_flag_2": "ie",
+    "main_flag_3": "ile",
+    "other_flags_2": []
+  },
+  {
+    "key": "ig",
+    "main_flag_2": "NG",
+    "main_flag_3": "NGA",
+    "other_flags_2": []
+  },
+  {
+    "key": "ii",
+    "main_flag_2": "CN",
+    "main_flag_3": "CHN",
+    "other_flags_2": []
+  },
+  {
+    "key": "ik",
+    "main_flag_2": "US",
+    "main_flag_3": "USA",
+    "other_flags_2": ["CA"],
+    "other_flags_3": ["CAN"]
+  },
+  {
+    "key": "io",
+    "main_flag_2": "io",
+    "main_flag_3": "ido",
+    "other_flags_2": []
+  },
+  {
+    "key": "is",
+    "main_flag_2": "IS",
+    "main_flag_3": "ISL",
+    "other_flags_2": []
+  },
+  {
+    "key": "it",
+    "main_flag_2": "IT",
+    "main_flag_3": "ITA",
+    "other_flags_2": ["CH", "SM", "VA"],
+    "other_flags_3": ["CHE", "SMR", "VAT"]
+  },
+  {
+    "key": "iu",
+    "main_flag_2": "CA",
+    "main_flag_3": "CAN",
+    "other_flags_2": []
+  },
+  {
+    "key": "ja",
+    "main_flag_2": "JP",
+    "main_flag_3": "JPN",
+    "other_flags_2": []
+  },
+  {
+    "key": "jv",
+    "main_flag_2": "ID",
+    "main_flag_3": "IDN",
+    "other_flags_2": []
+  },
+  {
+    "key": "ka",
+    "main_flag_2": "GE",
+    "main_flag_3": "GEO",
+    "other_flags_2": []
+  },
+  {
+    "key": "kg",
+    "main_flag_2": "CG",
+    "main_flag_3": "COG",
+    "other_flags_2": []
+  },
+  {
+    "key": "ki",
+    "main_flag_2": "KE",
+    "main_flag_3": "KEN",
+    "other_flags_2": []
+  },
+  {
+    "key": "kj",
+    "main_flag_2": "AO",
+    "main_flag_3": "AGO",
+    "other_flags_2": []
+  },
+  {
+    "key": "kk",
+    "main_flag_2": "KZ",
+    "main_flag_3": "KAZ",
+    "other_flags_2": []
+  },
+  {
+    "key": "mh",
+    "main_flag_2": "MH",
+    "main_flag_3": "MHL",
+    "other_flags_2": []
+  },
+  {
+    "key": "mi",
+    "main_flag_2": "NZ",
+    "main_flag_3": "NZL",
+    "other_flags_2": []
+  },
+  {
+    "key": "mk",
+    "main_flag_2": "MK",
+    "main_flag_3": "MKD",
+    "other_flags_2": []
+  },
+  {
+    "key": "ml",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "mn",
+    "main_flag_2": "MN",
+    "main_flag_3": "MNG",
+    "other_flags_2": []
+  },
+  {
+    "key": "mo",
+    "main_flag_2": "MO",
+    "main_flag_3": "MAC",
+    "other_flags_2": []
+  },
+  {
+    "key": "mr",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "ms",
+    "main_flag_2": "MY",
+    "main_flag_3": "MYS",
+    "other_flags_2": ["SG", "BN"],
+    "other_flags_3": ["SGP", "BRN"]
+  },
+  {
+    "key": "mt",
+    "main_flag_2": "MT",
+    "main_flag_3": "MLT",
+    "other_flags_2": []
+  },
+  {
+    "key": "my",
+    "main_flag_2": "MM",
+    "main_flag_3": "MMR",
+    "other_flags_2": []
+  },
+  {
+    "key": "na",
+    "main_flag_2": "NA",
+    "main_flag_3": "NAM",
+    "other_flags_2": []
+  },
+  {
+    "key": "nb",
+    "main_flag_2": "NO",
+    "main_flag_3": "NOR",
+    "other_flags_2": []
+  },
+  {
+    "key": "nd",
+    "main_flag_2": "ZA",
+    "main_flag_3": "ZAF",
+    "other_flags_2": []
+  },
+  {
+    "key": "ne",
+    "main_flag_2": "NE",
+    "main_flag_3": "NER",
+    "other_flags_2": ["BF", "NG"],
+    "other_flags_3": ["BFA", "NGA"]
+  },
+  {
+    "key": "ng",
+    "main_flag_2": "NA",
+    "main_flag_3": "NAM",
+    "other_flags_2": []
+  },
+  {
+    "key": "nl",
+    "main_flag_2": "NL",
+    "main_flag_3": "NLD",
+    "other_flags_2": ["BE"],
+    "other_flags_3": ["BEL"]
+  },
+  {
+    "key": "nn",
+    "main_flag_2": "NO",
+    "main_flag_3": "NOR",
+    "other_flags_2": []
+  },
+  {
+    "key": "no",
+    "main_flag_2": "NO",
+    "main_flag_3": "NOR",
+    "other_flags_2": []
+  },
+  {
+    "key": "nr",
+    "main_flag_2": "ZA",
+    "main_flag_3": "ZAF",
+    "other_flags_2": []
+  },
+  {
+    "key": "nv",
+    "main_flag_2": "US",
+    "main_flag_3": "USA",
+    "other_flags_2": []
+  },
+  {
+    "key": "ny",
+    "main_flag_2": "MW",
+    "main_flag_3": "MWI",
+    "other_flags_2": ["MZ", "TZ"],
+    "other_flags_3": ["MOZ", "TZA"]
+  },
+  {
+    "key": "oc",
+    "main_flag_2": "FR",
+    "main_flag_3": "FRA",
+    "other_flags_2": ["IT", "ES"],
+    "other_flags_3": ["ITA", "ESP"]
+  },
+  {
+    "key": "oj",
+    "main_flag_2": "US",
+    "main_flag_3": "USA",
+    "other_flags_2": ["CA"],
+    "other_flags_3": ["CAN"]
+  },
+  {
+    "key": "om",
+    "main_flag_2": "ET",
+    "main_flag_3": "ETH",
+    "other_flags_2": ["KE"],
+    "other_flags_3": ["KEN"]
+  },
+  {
+    "key": "or",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "os",
+    "main_flag_2": "RU",
+    "main_flag_3": "RUS",
+    "other_flags_2": ["GE"],
+    "other_flags_3": ["GEO"]
+  },
+  {
+    "key": "pa",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": ["PK"],
+    "other_flags_3": ["PAK"]
+  },
+  {
+    "key": "pi",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "pl",
+    "main_flag_2": "PL",
+    "main_flag_3": "POL",
+    "other_flags_2": []
+  },
+  {
+    "key": "ps",
+    "main_flag_2": "AF",
+    "main_flag_3": "AFG",
+    "other_flags_2": ["PK", "IR"],
+    "other_flags_3": ["PAK", "IRN"]
+  },
+  {
+    "key": "pt",
+    "main_flag_2": "PT",
+    "main_flag_3": "PRT",
+    "other_flags_2": ["BR", "AO", "MZ", "GW", "ST"],
+    "other_flags_3": ["BRA", "AGO", "MOZ", "GNB", "STP"]
+  },
+  {
+    "key": "qu",
+    "main_flag_2": "PE",
+    "main_flag_3": "PER",
+    "other_flags_2": ["BO", "EC"],
+    "other_flags_3": ["BOL", "ECU"]
+  },
+  {
+    "key": "rm",
+    "main_flag_2": "CH",
+    "main_flag_3": "CHE",
+    "other_flags_2": []
+  },
+  {
+    "key": "rn",
+    "main_flag_2": "BI",
+    "main_flag_3": "BDI",
+    "other_flags_2": []
+  },
+  {
+    "key": "ro",
+    "main_flag_2": "RO",
+    "main_flag_3": "ROU",
+    "other_flags_2": []
+  },
+  {
+    "key": "ru",
+    "main_flag_2": "RU",
+    "main_flag_3": "RUS",
+    "other_flags_2": ["BY", "KZ", "UA"],
+    "other_flags_3": ["BLR", "KAZ", "UKR"]
+  },
+  {
+    "key": "rw",
+    "main_flag_2": "RW",
+    "main_flag_3": "RWA",
+    "other_flags_2": []
+  },
+  {
+    "key": "sa",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "sc",
+    "main_flag_2": "SC",
+    "main_flag_3": "SYC",
+    "other_flags_2": []
+  },
+  {
+    "key": "sd",
+    "main_flag_2": "PK",
+    "main_flag_3": "PAK",
+    "other_flags_2": ["IN"],
+    "other_flags_3": ["IND"]
+  },
+  {
+    "key": "se",
+    "main_flag_2": "SE",
+    "main_flag_3": "SWE",
+    "other_flags_2": ["FI", "NO"],
+    "other_flags_3": ["FIN", "NOR"]
+  },
+  {
+    "key": "sg",
+    "main_flag_2": "CF",
+    "main_flag_3": "CAF",
+    "other_flags_2": []
+  },
+  {
+    "key": "sh",
+    "main_flag_2": "SH",
+    "main_flag_3": "SHN",
+    "other_flags_2": []
+  },
+  {
+    "key": "si",
+    "main_flag_2": "LK",
+    "main_flag_3": "LKA",
+    "other_flags_2": []
+  },
+  {
+    "key": "sk",
+    "main_flag_2": "SK",
+    "main_flag_3": "SVK",
+    "other_flags_2": []
+  },
+  {
+    "key": "sl",
+    "main_flag_2": "SI",
+    "main_flag_3": "SVN",
+    "other_flags_2": []
+  },
+  {
+    "key": "sm",
+    "main_flag_2": "WS",
+    "main_flag_3": "WSM",
+    "other_flags_2": []
+  },
+  {
+    "key": "sn",
+    "main_flag_2": "ZW",
+    "main_flag_3": "ZWE",
+    "other_flags_2": ["MZ"],
+    "other_flags_3": ["MOZ"]
+  },
+  {
+    "key": "so",
+    "main_flag_2": "SO",
+    "main_flag_3": "SOM",
+    "other_flags_2": ["KE", "ET"],
+    "other_flags_3": ["KEN", "ETH"]
+  },
+  {
+    "key": "sq",
+    "main_flag_2": "AL",
+    "main_flag_3": "ALB",
+    "other_flags_2": ["MK"],
+    "other_flags_3": ["MKD"]
+  },
+  {
+    "key": "sr",
+    "main_flag_2": "RS",
+    "main_flag_3": "SRB",
+    "other_flags_2": ["BA", "ME"],
+    "other_flags_3": ["BIH", "MNE"]
+  },
+  {
+    "key": "ss",
+    "main_flag_2": "SZ",
+    "main_flag_3": "SWZ",
+    "other_flags_2": ["ZA"],
+    "other_flags_3": ["ZAF"]
+  },
+  {
+    "key": "st",
+    "main_flag_2": "LS",
+    "main_flag_3": "LSO",
+    "other_flags_2": ["ZA"],
+    "other_flags_3": ["ZAF"]
+  },
+  {
+    "key": "su",
+    "main_flag_2": "ID",
+    "main_flag_3": "IDN",
+    "other_flags_2": ["MY"],
+    "other_flags_3": ["MYS"]
+  },
+  {
+    "key": "sv",
+    "main_flag_2": "SE",
+    "main_flag_3": "SWE",
+    "other_flags_2": ["FI"],
+    "other_flags_3": ["FIN"]
+  },
+  {
+    "key": "sw",
+    "main_flag_2": "TZ",
+    "main_flag_3": "TZA",
+    "other_flags_2": ["KE", "UG", "RW"],
+    "other_flags_3": ["KEN", "UGA", "RWA"]
+  },
+  {
+    "key": "ta",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": ["LK", "MY", "SG"],
+    "other_flags_3": ["LKA", "MYS", "SGP"]
+  },
+  {
+    "key": "te",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": []
+  },
+  {
+    "key": "tg",
+    "main_flag_2": "TG",
+    "main_flag_3": "TGO",
+    "other_flags_2": []
+  },
+  {
+    "key": "th",
+    "main_flag_2": "TH",
+    "main_flag_3": "THA",
+    "other_flags_2": []
+  },
+  {
+    "key": "ti",
+    "main_flag_2": "ER",
+    "main_flag_3": "ERI",
+    "other_flags_2": ["ET"],
+    "other_flags_3": ["ETH"]
+  },
+  {
+    "key": "tk",
+    "main_flag_2": "TM",
+    "main_flag_3": "TKM",
+    "other_flags_2": []
+  },
+  {
+    "key": "tl",
+    "main_flag_2": "PH",
+    "main_flag_3": "PHL",
+    "other_flags_2": ["TL"],
+    "other_flags_3": ["TLS"]
+  },
+  {
+    "key": "tn",
+    "main_flag_2": "ZA",
+    "main_flag_3": "ZAF",
+    "other_flags_2": ["BW", "SZ"],
+    "other_flags_3": ["BWA", "SWZ"]
+  },
+  {
+    "key": "to",
+    "main_flag_2": "TO",
+    "main_flag_3": "TON",
+    "other_flags_2": []
+  },
+  {
+    "key": "tr",
+    "main_flag_2": "TR",
+    "main_flag_3": "TUR",
+    "other_flags_2": ["CY"],
+    "other_flags_3": ["CYP"]
+  },
+  {
+    "key": "ts",
+    "main_flag_2": "TZ",
+    "main_flag_3": "TZA",
+    "other_flags_2": []
+  },
+  {
+    "key": "tt",
+    "main_flag_2": "RU",
+    "main_flag_3": "RUS",
+    "other_flags_2": ["KZ"],
+    "other_flags_3": ["KAZ"]
+  },
+  {
+    "key": "tw",
+    "main_flag_2": "TW",
+    "main_flag_3": "TWN",
+    "other_flags_2": []
+  },
+  {
+    "key": "ty",
+    "main_flag_2": "PF",
+    "main_flag_3": "PYF",
+    "other_flags_2": []
+  },
+  {
+    "key": "ug",
+    "main_flag_2": "CN",
+    "main_flag_3": "CHN",
+    "other_flags_2": []
+  },
+  {
+    "key": "uk",
+    "main_flag_2": "UA",
+    "main_flag_3": "UKR",
+    "other_flags_2": []
+  },
+  {
+    "key": "ur",
+    "main_flag_2": "PK",
+    "main_flag_3": "PAK",
+    "other_flags_2": ["IN"],
+    "other_flags_3": ["IND"]
+  },
+  {
+    "key": "uz",
+    "main_flag_2": "UZ",
+    "main_flag_3": "UZB",
+    "other_flags_2": []
+  },
+  {
+    "key": "ve",
+    "main_flag_2": "VE",
+    "main_flag_3": "VEN",
+    "other_flags_2": []
+  },
+  {
+    "key": "vi",
+    "main_flag_2": "VN",
+    "main_flag_3": "VNM",
+    "other_flags_2": []
+  },
+  {
+    "key": "vo",
+    "main_flag_2": "DE",
+    "main_flag_3": "DEU",
+    "other_flags_2": []
+  },
+  {
+    "key": "wa",
+    "main_flag_2": "BE",
+    "main_flag_3": "BEL",
+    "other_flags_2": []
+  },
+  {
+    "key": "wo",
+    "main_flag_2": "SN",
+    "main_flag_3": "SEN",
+    "other_flags_2": ["MR"],
+    "other_flags_3": ["MRT"]
+  },
+  {
+    "key": "xh",
+    "main_flag_2": "ZA",
+    "main_flag_3": "ZAF",
+    "other_flags_2": ["ZW"],
+    "other_flags_3": ["ZWE"]
+  },
+  {
+    "key": "yi",
+    "main_flag_2": "IL",
+    "main_flag_3": "ISR",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "yo",
+    "main_flag_2": "NG",
+    "main_flag_3": "NGA",
+    "other_flags_2": ["BJ"],
+    "other_flags_3": ["BEN"]
+  },
+  {
+    "key": "za",
+    "main_flag_2": "CN",
+    "main_flag_3": "CHN",
+    "other_flags_2": [],
+    "other_flags_3": []
+  },
+  {
+    "key": "zh",
+    "main_flag_2": "CN",
+    "main_flag_3": "CHN",
+    "other_flags_2": ["SG", "TW", "MY"],
+    "other_flags_3": ["SGP", "TWN", "MYS"]
+  },
+  {
+    "key": "zu",
+    "main_flag_2": "ZA",
+    "main_flag_3": "ZAF",
+    "other_flags_2": ["SZ"],
+    "other_flags_3": ["SWZ"]
+  },
+  {
+    "key": "kl",
+    "main_flag_2": "GL",
+    "main_flag_3": "GRL",
+    "other_flags_2": []
+  },
+  {
+    "key": "km",
+    "main_flag_2": "KH",
+    "main_flag_3": "KHM",
+    "other_flags_2": []
+  },
+  {
+    "key": "kn",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": ["SG"],
+    "other_flags_3": ["SGP"]
+  },
+  {
+    "key": "ko",
+    "main_flag_2": "KR",
+    "main_flag_3": "KOR",
+    "other_flags_2": ["KP"],
+    "other_flags_3": ["PRK"]
+  },
+  {
+    "key": "kr",
+    "main_flag_2": "KR",
+    "main_flag_3": "KOR",
+    "other_flags_2": ["KP"],
+    "other_flags_3": ["PRK"]
+  },
+  {
+    "key": "ks",
+    "main_flag_2": "IN",
+    "main_flag_3": "IND",
+    "other_flags_2": ["PK"],
+    "other_flags_3": ["PAK"]
+  },
+  {
+    "key": "ku",
+    "main_flag_2": "TR",
+    "main_flag_3": "TUR",
+    "other_flags_2": ["IQ", "SY", "IR"],
+    "other_flags_3": ["IRQ", "SYR", "IRN"]
+  },
+  {
+    "key": "kv",
+    "main_flag_2": "RU",
+    "main_flag_3": "RUS",
+    "other_flags_2": []
+  },
+  {
+    "key": "kw",
+    "main_flag_2": "GB",
+    "main_flag_3": "GBR",
+    "other_flags_2": []
+  },
+  {
+    "key": "ky",
+    "main_flag_2": "KY",
+    "main_flag_3": "CYM",
+    "other_flags_2": ["JM"],
+    "other_flags_3": ["JAM"]
+  },
+  {
+    "key": "la",
+    "main_flag_2": "VA",
+    "main_flag_3": "VAT",
+    "other_flags_2": []
+  },
+  {
+    "key": "lb",
+    "main_flag_2": "LB",
+    "main_flag_3": "LBN",
+    "other_flags_2": []
+  },
+  {
+    "key": "lg",
+    "main_flag_2": "UG",
+    "main_flag_3": "UGA",
+    "other_flags_2": ["TZ"],
+    "other_flags_3": ["TZA"]
+  },
+  {
+    "key": "li",
+    "main_flag_2": "LI",
+    "main_flag_3": "LIE",
+    "other_flags_2": []
+  },
+  {
+    "key": "ln",
+    "main_flag_2": "CD",
+    "main_flag_3": "COD",
+    "other_flags_2": ["CF", "CG"],
+    "other_flags_3": ["CAF", "COG"]
+  },
+  {
+    "key": "lo",
+    "main_flag_2": "LA",
+    "main_flag_3": "LAO",
+    "other_flags_2": []
+  },
+  {
+    "key": "lt",
+    "main_flag_2": "LT",
+    "main_flag_3": "LTU",
+    "other_flags_2": []
+  },
+  {
+    "key": "lu",
+    "main_flag_2": "LU",
+    "main_flag_3": "LUX",
+    "other_flags_2": []
+  },
+  {
+    "key": "lv",
+    "main_flag_2": "LV",
+    "main_flag_3": "LVA",
+    "other_flags_2": []
+  },
+  {
+    "key": "mg",
+    "main_flag_2": "MG",
+    "main_flag_3": "MDG",
+    "other_flags_2": []
+  }
+]

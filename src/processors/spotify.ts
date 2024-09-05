@@ -1,5 +1,10 @@
 import * as fs from "fs";
 
+export function main(args?: any) {}
+
+export function extractAlbumsIDs() {
+}
+
 export function processJsonFile(filePath: string): any {
   const data: any = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
@@ -20,17 +25,18 @@ export function processGenres(filePath: string): any {
   const data: any = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
   const artists = Object.values(data);
-
+  console.log(artists.length);
   let genres: string[] = [];
 
   artists.forEach((artist: any, index: number) => {
     genres = [...genres, ...artist.info.genres];
   });
-
+  console.log("genres", genres.length);
   const uniqueArray = [...new Set(genres)];
 
   // Convierte el objeto a una cadena de texto en formato JSON
   const jsonString = JSON.stringify(uniqueArray, null, 2);
+  console.log(jsonString);
 
   // Escribe el archivo JSON
   //   fs.writeFileSync("./data/genres.json", jsonString, "utf-8");
