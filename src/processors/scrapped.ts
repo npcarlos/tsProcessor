@@ -2,39 +2,34 @@ import * as fs from "fs";
 
 export function main(args?: any) {
   // check_status();
-  const config_data: any = JSON.parse(
-    fs.readFileSync("./data/scrapped/config/spotify_bands.json", "utf-8")
-  );
-
-  fs.writeFileSync(
-    "./data/scrapped/config/spotify_bands.json",
-    JSON.stringify(
-      config_data.map((artist: any) => {
-        return { ...artist, artist_downloaded: 0 };
-      }),
-      null,
-      2
-    ),
-    "utf-8"
-  );
-
-  // find
-  // console.log(findDuplicates(config_data));
+  // const config_data: any = JSON.parse(
+  //   fs.readFileSync("./data/scrapped/config/chartmetric_bands.json", "utf-8")
+  // );
+  // // find
+  // console.log(findDuplicates(config_data, "chartmetric"));
+  // const config_data2: any = JSON.parse(
+  //   fs.readFileSync("./data/scrapped/config/spotify_bands.json", "utf-8")
+  // );
+  // // find
+  // console.log(findDuplicates(config_data2, "spotify"));
 }
 
 // Función para verificar duplicados en el arreglo
-function findDuplicates(arr: any[]): {
+function findDuplicates(
+  arr: any[],
+  property: string
+): {
   duplicates: any[];
   hasDuplicates: boolean;
 } {
-  const seen = new Set<string>();
+  const seen = new Set<any>();
   const duplicates: any[] = [];
 
   for (const item of arr) {
-    if (seen.has(item.spotify)) {
+    if (seen.has(item[property])) {
       duplicates.push(item);
     } else {
-      seen.add(item.spotify);
+      seen.add(item[property]);
     }
   }
 

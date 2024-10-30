@@ -2,6 +2,7 @@ import * as fs from "fs";
 
 export function main(args?: any) {
   // extractAlbumsIDs();
+  processGenres_batch_scrapping();
 }
 
 export function extractAlbumsIDs() {
@@ -43,6 +44,28 @@ export function processJsonFile(filePath: string): any {
         `${a.info.name} - ${a.albums.items.length} - ${a.info.external_urls.spotify}`
     )
   );
+}
+
+export function processGenres_batch_scrapping(): any {
+  const bio_dir = "./data/scrapped/spotify/bands/artist_bio";
+  const files = fs.readdirSync(bio_dir);
+
+  let genres: string[] = [];
+  files.forEach((artistBioFile) => {
+    const data: any = JSON.parse(
+      fs.readFileSync(`${bio_dir}/${artistBioFile}`, "utf-8")
+    );
+    const artistGenres = data.genres || [];
+    genres = [...genres, ...artistGenres];
+  });
+
+  const uniqueArray = [...new Set(genres)];
+  // Convierte el objeto a una cadena de texto en formato JSON
+  const jsonString = JSON.stringify(uniqueArray, null, 2);
+  console.log(jsonString);
+
+  // Escribe el archivo JSON
+  //   fs.writeFileSync("./data/genres.json", jsonString, "utf-8");
 }
 
 export function processGenres(filePath: string): any {
