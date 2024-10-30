@@ -1,8 +1,32 @@
 import * as fs from "fs";
 
-export function main(args?: any) {}
+export function main(args?: any) {
+  // extractAlbumsIDs();
+}
 
 export function extractAlbumsIDs() {
+  const data: any = JSON.parse(
+    fs.readFileSync("./data/spotify/output_20_08_2024.json", "utf-8")
+  );
+
+  console.log("hay ", Object.keys(data).length, " en spotify");
+  let albumsIds: string[] = [];
+
+  Object.keys(data).forEach((artistSpotifyId) => {
+    const artistInfo = data[artistSpotifyId];
+    if (artistInfo?.albums?.total > 0) {
+      const currentArtistAlbums = artistInfo?.albums?.items
+        // .filter((album: any) => album.total_tracks > 20)
+        .map((album: any) => album.id);
+      albumsIds = [...albumsIds, ...currentArtistAlbums];
+    }
+  });
+
+  fs.writeFileSync(
+    "./data/spotify/albums/ids_04_09_2024.json",
+    JSON.stringify(albumsIds, null, 2),
+    "utf-8"
+  );
 }
 
 export function processJsonFile(filePath: string): any {

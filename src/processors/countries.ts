@@ -1,7 +1,38 @@
 import * as fs from "fs";
+import * as path from "path";
 
-export function main(args?: any) {}
+export function main(args?: any) {
+  // replaceInFilenames(
+  //   "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2022/bookmarks/images_ah_mock/img"
+  // );
+}
 
+const replaceInFilenames = async (dir: string) => {
+  try {
+    // Leer todos los archivos y carpetas en el directorio
+    const filesAndDirs = await fs.readdirSync(dir);
+
+    for (const fileOrDir of filesAndDirs) {
+      const fullPath = path.join(dir, fileOrDir);
+      const stats = await fs.statSync(fullPath);
+
+      if (stats.isDirectory()) {
+        // Si es un directorio, llama recursivamente
+        await replaceInFilenames(fullPath);
+      } else if (stats.isFile()) {
+        // Si es un archivo, realiza el reemplazo en el nombre
+        const newFileName = fileOrDir.replace(/-min\./g, ".");
+        if (fileOrDir !== newFileName) {
+          const newFilePath = path.join(dir, newFileName);
+          await fs.renameSync(fullPath, newFilePath);
+          console.log(`Renamed: ${fullPath} -> ${newFilePath}`);
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
 export function processJsonFile(filePath: string): any {
   processAllergiesJsonFile();
 }
