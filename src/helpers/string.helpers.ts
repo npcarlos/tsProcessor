@@ -1,3 +1,5 @@
+const he = require("he");
+
 export function cleanHtmlToString(html: string): string {
   // Eliminar todas las etiquetas HTML
   let text = html.replace(/<[^>]*>/g, " ");
@@ -7,6 +9,8 @@ export function cleanHtmlToString(html: string): string {
 
   // Eliminar espacios múltiples y trim
   text = text.replace(/\s+/g, " ").trim();
+
+  text = he.decode(text);
 
   return text;
 }

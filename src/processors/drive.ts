@@ -6,6 +6,28 @@ export function main(args?: any) {
   // consolidar_sitios();
   // consolidar_spotify_ids_para_scrapping();
   // consolidar_chartmetric_ids_para_scrapping();
+  // simple_stats();
+  // extract_ah_ids();
+  // const places_drive_data: any = JSON.parse(
+  //   fs.readFileSync("./data/drive/places_drive.json", "utf-8")
+  // );
+  // console.log(places_drive_data.length);
+  // const countryCounts = places_drive_data.reduce(
+  //   (counts: { [key: string]: number }, artist: any) => {
+  //     const country = artist.country_alpha2;
+  //     counts[country] = (counts[country] || 0) + 1;
+  //     return counts;
+  //   },
+  //   {}
+  // );
+  // // Convertimos a un array de [país, conteo], ordenamos y luego convertimos a objeto nuevamente
+  // const sortedCountryCounts = Object.entries(countryCounts)
+  //   .sort(([, a], [, b]) => Number(b) - Number(a)) // Orden descendente
+  //   .reduce((acc, [country, count]) => {
+  //     acc[country] = Number(count);
+  //     return acc;
+  //   }, {} as { [key: string]: number });
+  // console.log(sortedCountryCounts);
 }
 
 function consolidar_sitios() {
@@ -26,7 +48,8 @@ function consolidar_sitios() {
       username: place["instagram"] || "",
       place_type: place["place_type"] || "",
       music_genre: "",
-      country: place["country"] || "",
+      country_name: place["country"] || "",
+      country_alpha2: place["country_alpha2"] || "",
       state: place["state"] || "",
       city: place["city"] || "",
       address: place["address"] || "",
@@ -391,6 +414,9 @@ function consolidar_sitios() {
 }
 
 function consolidar_artistas() {
+  console.log(
+    "=====================    CONSOLIDAR ARTISTAS ========================="
+  );
   const artist_drive_data: any = JSON.parse(
     fs.readFileSync("./data/drive/artists_drive.json", "utf-8")
   );
@@ -410,130 +436,241 @@ function consolidar_artistas() {
     fs.readFileSync("./data/scrapped/config/spotify_bands.json", "utf-8")
   );
 
-  const existingDriveArtistsOutput = existingDriveArtists.map((artist: any) => {
-    const spotify_artist_config_data = artist["spotify"]
-      ? spotify_config_data.find(
-          (spotify_config_artist: any) =>
-            spotify_config_artist.spotify === artist["spotify"]
-        )
-      : undefined;
+  const existingDriveArtistsOutput = existingDriveArtists.map(
+    (artist: any, index: number) => {
+      const spotify_artist_config_data = artist["spotify"]
+        ? spotify_config_data.find(
+            (spotify_config_artist: any) =>
+              spotify_config_artist.spotify === artist["spotify"]
+          )
+        : undefined;
 
-    let spotify_artist_data = undefined;
-    if (spotify_artist_config_data) {
-      spotify_artist_data = JSON.parse(
-        fs.readFileSync(
-          `./data/scrapped/spotify/bands/artist_bio/${spotify_artist_config_data["artist_downloaded"]}_${spotify_artist_config_data["spotify"]}.json`,
-          "utf-8"
-        )
-      );
-    }
-    const chartmetric_artist_config_data = artist["chartmetric"]
-      ? chartmetric_config_data.find(
-          (chartmetric_config_artist: any) =>
-            chartmetric_config_artist.chartmetric === artist["chartmetric"]
-        )
-      : undefined;
+      let spotify_artist_data = undefined;
+      let spotify_artist_extra_data = undefined;
+      if (spotify_artist_config_data) {
+        spotify_artist_data = JSON.parse(
+          fs.readFileSync(
+            `./data/scrapped/spotify/bands/artist_bio/${spotify_artist_config_data["artist_downloaded"]}_${spotify_artist_config_data["spotify"]}.json`,
+            "utf-8"
+          )
+        );
+        spotify_artist_extra_data = JSON.parse(
+          fs.readFileSync(
+            `./data/scrapped/spotify/bands/artist_extra/${spotify_artist_config_data["downloaded"]}_${spotify_artist_config_data["spotify"]}.json`,
+            "utf-8"
+          )
+        );
+      }
+      const chartmetric_artist_config_data = artist["chartmetric"]
+        ? chartmetric_config_data.find(
+            (chartmetric_config_artist: any) =>
+              chartmetric_config_artist.chartmetric === artist["chartmetric"]
+          )
+        : undefined;
 
-    let chartmetric_artist_data = undefined;
-    if (chartmetric_artist_config_data) {
-      chartmetric_artist_data = JSON.parse(
-        fs.readFileSync(
-          `./data/scrapped/chartmetric/bands/${chartmetric_artist_config_data["downloaded"]}_${chartmetric_artist_config_data["chartmetric"]}.json`,
-          "utf-8"
-        )
-      );
-    }
+      let chartmetric_artist_data = undefined;
+      if (chartmetric_artist_config_data) {
+        chartmetric_artist_data = JSON.parse(
+          fs.readFileSync(
+            `./data/scrapped/chartmetric/bands/${chartmetric_artist_config_data["downloaded"]}_${chartmetric_artist_config_data["chartmetric"]}.json`,
+            "utf-8"
+          )
+        );
+      }
+      const albums = spotify_artist_extra_data?.albums?.items;
+      const lastAlbum =
+        albums && albums.length > 0 ? albums[albums.length - 1] : null;
 
-    return {
-      artistType: "musician",
-      name: artist["name"] || "",
-      username: artist["instagram"] || "",
-      subtitle: "",
-      verified_status: 1,
-      profile_pic:
-        (spotify_artist_data?.images || []).find(
-          (image: any) => image.height === 640
-        )?.url || "",
-      photo: "",
-      description: cleanHtmlToString(
-        chartmetric_artist_data?.initial?.obj?.description || ""
-      ),
-      is_active:
-        chartmetric_artist_data?.initial?.obj?.inactive ||
-        artist["is_active"] ||
-        "",
+      const top_tracks = spotify_artist_extra_data
+        ? spotify_artist_extra_data["top-tracks"]
+        : { tracks: [] };
+      const related_artists = spotify_artist_extra_data
+        ? spotify_artist_extra_data["related_artists"]
+        : { artists: [] };
 
-      country:
-        chartmetric_artist_data?.initial?.obj?.code2 ||
-        artist["country"] ||
-        null,
-      city: artist["city"] || "",
+      if (index % 100 === 0) {
+        console.log("artista ", index + 1, ": ", artist["name"]);
+      }
+      return {
+        artistType: "musician",
+        name: artist["name"] || "",
+        username: artist["instagram"] || "",
+        subtitle: "",
+        verified_status: 1,
+        profile_pic:
+          (spotify_artist_data?.images || []).find(
+            (image: any) => image.height === 640
+          )?.url || "",
+        photo: "",
+        description: cleanHtmlToString(
+          chartmetric_artist_data?.initial?.obj?.description || ""
+        ),
+        is_active:
+          chartmetric_artist_data?.initial?.obj?.inactive ||
+          artist["is_active"] ||
+          "",
 
-      since: 0,
-      home_city: "",
-      genres: {
-        music: spotify_artist_data?.genres || [],
-      },
-      spoken_languages: [],
-      stage_languages: [],
-      arts_languages: [],
+        country:
+          chartmetric_artist_data?.initial?.obj?.code2 ||
+          artist["country"] ||
+          null,
+        city: artist["city"] || "",
 
-      website: artist["website"] || "",
-      email: artist["email"] || "",
-      mobile_phone: artist["mobile_phone"] || "",
-      whatsapp: artist["whatsapp"] || "",
-
-      facebook: artist["facebook"] || "",
-      tiktok: artist["tiktok"] || "",
-      twitch: artist["twitch"] || "",
-      instagram: artist["instagram"] || "",
-      spotify: artist["spotify"] || "",
-      soundcloud: artist["soundcloud"] || "",
-      youtube: artist["youtube"] || "",
-      youtube_widget_id: artist["youtube_widget_id"] || "",
-      chartmetric: artist["chartmetric"] || "",
-
-      spotify_data: {
-        followers: spotify_artist_data?.followers?.total || 0,
-        name: spotify_artist_data?.name || 0,
-        popularity: spotify_artist_data?.popularity || 0,
-      },
-      chartmetric_data: {
-        name: chartmetric_artist_data?.initial?.obj?.name || "",
-        sp_where_people_listen:
-          chartmetric_artist_data?.cmStats?.obj?.sp_where_people_listen,
-        stats: chartmetric_artist_data?.cmStats?.obj?.latest,
-      },
-
-      general_rate: 4.6,
-      followers: 0,
-      event_followers: 0,
-      stats: {
-        rating: {
-          overall: 1.9526856251219205,
-          talent: 0.25238794935722564,
-          performance: 0.48012940099588236,
-          proffesionalism: 3.7132583055733512,
-          stage_presence: 4.569076484520532,
-          charisma: 4.315508331689809,
-          timeliness: 4.776021096801581,
-          communication: 1.4758946837965081,
-          respectfulness: 1.8984376596560317,
-          total_rates: 8290,
+        since:
+          lastAlbum && lastAlbum.release_date
+            ? `${lastAlbum.release_date}T00:00:00-05:00`
+            : null,
+        home_city: "",
+        genres: {
+          music: spotify_artist_data?.genres || [],
         },
-      },
-      arts: {
-        music: {
-          albums: [],
+        spoken_languages: [],
+        stage_languages: [],
+        arts_languages: [],
+
+        website: artist["website"] || "",
+        email: artist["email"] || "",
+        mobile_phone: artist["mobile_phone"] || "",
+        whatsapp: artist["whatsapp"] || "",
+
+        facebook: artist["facebook"] || "",
+        tiktok: artist["tiktok"] || "",
+        twitch: artist["twitch"] || "",
+        instagram: artist["instagram"] || "",
+        spotify: artist["spotify"] || "",
+        soundcloud: artist["soundcloud"] || "",
+        youtube: artist["youtube"] || "",
+        youtube_widget_id: artist["youtube_widget_id"] || "",
+        chartmetric: artist["chartmetric"] || "",
+
+        spotify_data: {
+          followers: spotify_artist_data?.followers?.total || 0,
+          name: spotify_artist_data?.name || 0,
+          popularity: spotify_artist_data?.popularity || 0,
         },
-      },
-    };
-  });
+        chartmetric_data: {
+          name: chartmetric_artist_data?.initial?.obj?.name || "",
+          sp_where_people_listen:
+            chartmetric_artist_data?.cmStats?.obj?.sp_where_people_listen,
+          stats: chartmetric_artist_data?.cmStats?.obj?.latest,
+        },
+
+        general_rate: Math.random() * 3 + 2,
+        followers: 0,
+        event_followers: 0,
+        stats: {
+          rating: {
+            overall: Math.random() * 3 + 2,
+            talent: Math.random() * 3 + 2,
+            performance: Math.random() * 3 + 2,
+            proffesionalism: Math.random() * 3 + 2,
+            stage_presence: Math.random() * 3 + 2,
+            charisma: Math.random() * 3 + 2,
+            timeliness: Math.random() * 3 + 2,
+            communication: Math.random() * 3 + 2,
+            respectfulness: Math.random() * 3 + 2,
+            total_rates: Math.floor(Math.random() * 20000),
+          },
+        },
+        arts: {
+          music: {
+            albums: [],
+            top_tracks:
+              top_tracks?.tracks.map((track: any) => {
+                return {
+                  album: {
+                    album_type: "album",
+                    artists: track.album.artists.map((artist: any) => {
+                      return {
+                        id: artist.id,
+                        name: artist.name,
+                      };
+                    }),
+                    //   [
+                    //   {
+                    //     // external_urls: {
+                    //     //   spotify:
+                    //     //     "https://open.spotify.com/artist/3UxjBvP0pvz35UevSs25eh",
+                    //     // },
+                    //     // href: "https://api.spotify.com/v1/artists/3UxjBvP0pvz35UevSs25eh",
+                    //     // id: "3UxjBvP0pvz35UevSs25eh",
+                    //     name: "Ennui Bogotá",
+                    //     // type: "artist",
+                    //     // uri: "spotify:artist:3UxjBvP0pvz35UevSs25eh",
+                    //   },
+                    // ],
+
+                    // external_urls: {
+                    //   spotify:
+                    //     "https://open.spotify.com/album/0zhmVMJVKMddTgS9Lpm3Oj",
+                    // },
+                    // href: "https://api.spotify.com/v1/albums/0zhmVMJVKMddTgS9Lpm3Oj",
+                    id: track.album.id,
+                    images: track.album.images,
+                    is_playable: true,
+                    name: track.album.name,
+                    release_date: track.album.release_date,
+                    release_date_precision: track.album.release_date_precision,
+                    total_tracks: track.album.total_tracks,
+                    type: track.album.type,
+                    // uri: "spotify:album:0zhmVMJVKMddTgS9Lpm3Oj",
+                  },
+                  artists: track.artists.map((artist: any) => {
+                    return {
+                      id: artist.id,
+                      name: artist.name,
+                    };
+                  }),
+                  // [
+                  // {
+                  //   external_urls: {
+                  //     spotify:
+                  //       "https://open.spotify.com/artist/3UxjBvP0pvz35UevSs25eh",
+                  //   },
+                  //   href: "https://api.spotify.com/v1/artists/3UxjBvP0pvz35UevSs25eh",
+                  //   id: "3UxjBvP0pvz35UevSs25eh",
+                  //   name: "Ennui Bogotá",
+                  //   type: "artist",
+                  //   uri: "spotify:artist:3UxjBvP0pvz35UevSs25eh",
+                  // },
+                  // ],
+
+                  disc_number: track.disc_number,
+                  duration_ms: track.duration_ms,
+                  // explicit: false,
+                  // external_ids: {
+                  //   isrc: "PEBQ91612219",
+                  // },
+                  // external_urls: {
+                  //   spotify:
+                  //     "https://open.spotify.com/track/7aGijbDrGiQljyhW1uzzPC",
+                  // },
+                  // href: "https://api.spotify.com/v1/tracks/7aGijbDrGiQljyhW1uzzPC",
+                  id: track.id,
+                  // is_local: false,
+                  // is_playable: true,
+                  name: track.name,
+                  popularity: track.popularity,
+                  // preview_url:
+                  //   "https://p.scdn.co/mp3-preview/260585c09c913acf2fbf16459a2745dc0023b055?cid=443b515a44c7481c883ae25f747e80ca",
+                  track_number: track.track_number,
+                  type: track.type,
+                  // uri: "spotify:track:7aGijbDrGiQljyhW1uzzPC",
+                };
+              }) || [],
+            related_artist_spotify:
+              related_artists?.artists.map((artist: any) => artist.id) || [],
+          },
+        },
+      };
+    }
+  );
 
   fs.writeFileSync(
     "./data/drive/artists_drive_db_output.json",
     JSON.stringify(
       existingDriveArtistsOutput.filter((artist: any) => !!artist.name),
+      // .slice(0, 20),
       null,
       2
     ),
@@ -622,6 +759,118 @@ function consolidar_chartmetric_ids_para_scrapping() {
       null,
       2
     ),
+    "utf-8"
+  );
+}
+
+function simple_stats() {
+  const path =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2022/bookmarks/ah-mock-api/assets/mocks/parametrics/general/countries/fullCountriesTips.json";
+  const data: any = JSON.parse(fs.readFileSync(path, "utf-8"));
+  // console.log(
+  //   "Total paiese ",
+  //   data.filter((pais: any) => !pais.alpha2).map((pais: any) => pais.name)
+  // );
+
+  const dataArtists: any = JSON.parse(
+    fs.readFileSync("./data/drive/artists_drive_db_output.json", "utf-8")
+  );
+  const countryCounts = dataArtists.reduce(
+    (counts: { [key: string]: number }, artist: any) => {
+      const country = artist.country;
+      counts[country] = (counts[country] || 0) + 1;
+      return counts;
+    },
+    {}
+  );
+
+  // Convertimos a un array de [país, conteo], ordenamos y luego convertimos a objeto nuevamente
+  const sortedCountryCounts = Object.entries(countryCounts)
+    .sort(([, a], [, b]) => Number(b) - Number(a)) // Orden descendente
+    .reduce((acc, [country, count]) => {
+      acc[country] = Number(count);
+      return acc;
+    }, {} as { [key: string]: number });
+
+  console.log("Artistas");
+  console.log(sortedCountryCounts);
+
+  const dataPlaces: any = JSON.parse(
+    fs.readFileSync("./data/drive/places_drive_db_output.json", "utf-8")
+  );
+  const countryCountsPlaces = dataPlaces.reduce(
+    (counts: { [key: string]: number }, place: any) => {
+      const country = place.country_alpha2;
+      counts[country] = (counts[country] || 0) + 1;
+      return counts;
+    },
+    {}
+  );
+
+  // Convertimos a un array de [país, conteo], ordenamos y luego convertimos a objeto nuevamente
+  const sortedCountryCountsPlaces = Object.entries(countryCountsPlaces)
+    .sort(([, a], [, b]) => Number(b) - Number(a)) // Orden descendente
+    .reduce((acc, [country, count]) => {
+      acc[country] = Number(count);
+      return acc;
+    }, {} as { [key: string]: number });
+
+  console.log("Places");
+  console.log(sortedCountryCountsPlaces);
+
+  const paises: any[] = [
+    // "mx",
+    // "us",
+    // "es",
+    // "ar",
+    // "cl",
+    // "be",
+    // "fr",
+    // "de",
+    // "gb",
+    // "br",
+    // "ve",
+    // "ec",
+    // "it",
+    // "se",
+    // "pr",
+    // "nl",
+    // "ca",
+    // "au",
+    // "ch",
+    // "cr",
+    // "tr",
+  ];
+
+  paises.forEach((pais) => {
+    console.log(
+      "==============   ",
+      pais,
+      "    ==========\n",
+      dataArtists
+        .filter((artist: any) => artist.country === pais)
+        .map((artist: any) => artist.username)
+    );
+  });
+}
+function extract_ah_ids() {
+  const places_drive_data: any = JSON.parse(
+    fs.readFileSync("./data/drive/places_drive_db_output.json", "utf-8")
+  );
+  const artists_drive_data: any = JSON.parse(
+    fs.readFileSync("./data/drive/artists_drive_db_output.json", "utf-8")
+  );
+
+  const artists = artists_drive_data
+    .map((artist: any) => artist.username)
+    .filter((v: any) => !!v);
+  const places = places_drive_data
+    .map((place: any) => place.username)
+    .filter((v: any) => !!v);
+
+  fs.writeFileSync(
+    "./data/drive/ah_ids.json",
+    JSON.stringify({ artists, places }, null, 2),
     "utf-8"
   );
 }
