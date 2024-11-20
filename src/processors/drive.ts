@@ -28,93 +28,6 @@ export function main(args?: any) {
   //     return acc;
   //   }, {} as { [key: string]: number });
   // console.log(sortedCountryCounts);
-
-  const allArtists: any = JSON.parse(
-    fs.readFileSync("./data/drive/all_artists.json", "utf-8")
-  );
-
-  const spotify_config_artist: any = JSON.parse(
-    fs.readFileSync(
-      "./data/scrapped/config/spotify_bands_complete.json",
-      "utf-8"
-    )
-  );
-  // Encontrar el máximo de seguidores para normalización
-  const maxFollowers = Math.max(
-    ...allArtists.map((artist: any) => artist.followers)
-  );
-
-  // Pesos de popularidad y seguidores
-  const weightPopularity = 0.7;
-  const weightFollowers = 0.3;
-
-  allArtists.forEach((artist: any) => {
-    if (!!artist.spotify_user && !Number(artist.popularity)) {
-      const artistConfig = spotify_config_artist.find(
-        (sa: any) => sa.spotify === artist.spotify_user
-      );
-      if (artistConfig) {
-        let artistInfo: any;
-        try {
-          artistInfo = JSON.parse(
-            fs.readFileSync(
-              `./data/scrapped/spotify/bands/artist_bio/${artistConfig.artist_downloaded}_${artistConfig.spotify}.json`,
-              "utf-8"
-            )
-          );
-        } catch (e) {}
-
-        artist.popularity = artistInfo?.popularity || 0;
-        artist.followers = artistInfo?.followers?.total || 0;
-      }
-    }
-    artist.popularity = Number(artist.popularity);
-
-    artist.followers = Number(artist.followers);
-    const normalizedFollowers = (artist.followers / maxFollowers) * 100;
-
-    artist.priority = Math.round(
-      weightPopularity * artist.popularity +
-        weightFollowers * normalizedFollowers
-    );
-    const segment_interval = 5;
-    artist.priority_group =
-      Math.floor(artist.priority / segment_interval) * segment_interval;
-  });
-
-  console.log(
-    allArtists.reduce((frequencies: any, artist: any) => {
-      // Incrementar el conteo de la prioridad actual
-      frequencies[artist.priority_group] =
-        (frequencies[artist.priority_group] || 0) + 1;
-      return frequencies;
-    }, {})
-  );
-
-  console.log(
-    Math.max(...allArtists.map((artist: any) => artist.priority)),
-    Math.min(...allArtists.map((artist: any) => artist.priority))
-  );
-
-  // const sorted = [...allArtists].sort((a: any, b: any) => {
-  //   let popularity = b.popularity - a.popularity;
-  //   let followers = b.followers - a.followers;
-  //   if (popularity === 0) {
-  //     return followers;
-  //   }
-  //   return popularity;
-  // });
-
-  // allArtists.forEach((artist: any) => {
-  //   artist.priority_group = sorted.findIndex((a: any) => a.num === artist.num);
-  // });
-
-  fs.writeFileSync(
-    "./data/drive/all_artists_filled.json",
-    JSON.stringify(allArtists, null, 2),
-    "utf-8"
-  );
-  console.log("Total: ", allArtists.length, !Number(12));
 }
 
 function calculatePriority(artists: any[], segments: number) {
@@ -988,4 +901,93 @@ function extract_ah_ids() {
     JSON.stringify({ artists, places }, null, 2),
     "utf-8"
   );
+}
+
+function juntarArtistasAutomaticosYManuales() {
+  const allArtists: any = JSON.parse(
+    fs.readFileSync("./data/drive/all_artists.json", "utf-8")
+  );
+
+  const spotify_config_artist: any = JSON.parse(
+    fs.readFileSync(
+      "./data/scrapped/config/spotify_bands_complete.json",
+      "utf-8"
+    )
+  );
+  // Encontrar el máximo de seguidores para normalización
+  const maxFollowers = Math.max(
+    ...allArtists.map((artist: any) => artist.followers)
+  );
+
+  // Pesos de popularidad y seguidores
+  const weightPopularity = 0.7;
+  const weightFollowers = 0.3;
+
+  allArtists.forEach((artist: any) => {
+    if (!!artist.spotify_user && !Number(artist.popularity)) {
+      const artistConfig = spotify_config_artist.find(
+        (sa: any) => sa.spotify === artist.spotify_user
+      );
+      if (artistConfig) {
+        let artistInfo: any;
+        try {
+          artistInfo = JSON.parse(
+            fs.readFileSync(
+              `./data/scrapped/spotify/bands/artist_bio/${artistConfig.artist_downloaded}_${artistConfig.spotify}.json`,
+              "utf-8"
+            )
+          );
+        } catch (e) {}
+
+        artist.popularity = artistInfo?.popularity || 0;
+        artist.followers = artistInfo?.followers?.total || 0;
+      }
+    }
+    artist.popularity = Number(artist.popularity);
+
+    artist.followers = Number(artist.followers);
+    const normalizedFollowers = (artist.followers / maxFollowers) * 100;
+
+    artist.priority = Math.round(
+      weightPopularity * artist.popularity +
+        weightFollowers * normalizedFollowers
+    );
+    const segment_interval = 5;
+    artist.priority_group =
+      Math.floor(artist.priority / segment_interval) * segment_interval;
+  });
+
+  console.log(
+    allArtists.reduce((frequencies: any, artist: any) => {
+      // Incrementar el conteo de la prioridad actual
+      frequencies[artist.priority_group] =
+        (frequencies[artist.priority_group] || 0) + 1;
+      return frequencies;
+    }, {})
+  );
+
+  console.log(
+    Math.max(...allArtists.map((artist: any) => artist.priority)),
+    Math.min(...allArtists.map((artist: any) => artist.priority))
+  );
+
+  // const sorted = [...allArtists].sort((a: any, b: any) => {
+  //   let popularity = b.popularity - a.popularity;
+  //   let followers = b.followers - a.followers;
+  //   if (popularity === 0) {
+  //     return followers;
+  //   }
+  //   return popularity;
+  // });
+
+  // allArtists.forEach((artist: any) => {
+  //   artist.priority_group = sorted.findIndex((a: any) => a.num === artist.num);
+  // });
+
+  fs.writeFileSync(
+    "./data/drive/all_artists_filled.json",
+    JSON.stringify(allArtists, null, 2),
+    "utf-8"
+  );
+  console.log("Total: ", allArtists.length, !Number(12));
 }
