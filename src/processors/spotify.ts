@@ -5,30 +5,6 @@ export function main(args?: any) {
   // processGenres_batch_scrapping();
   // process_batch_scrapping_extra_info();
   // extractNonScrappedAlbumsIDs();
-
-  const bio_dir = "./data/scrapped/spotify/bands/artist_extra";
-  const files = fs.readdirSync(bio_dir);
-  const drive_artists_data: any = JSON.parse(
-    fs.readFileSync("./data/drive/artists_drive.json", "utf-8")
-  );
-
-  const artistas: any[] = [];
-  files.forEach((artistBioFile) => {
-    const data: any = JSON.parse(
-      fs.readFileSync(`${bio_dir}/${artistBioFile}`, "utf-8")
-    );
-    const spotify = artistBioFile.split(".json")[0].split("_")[1];
-    const relatedArtists = data.related_artists?.artists || [];
-
-    artistas.push({
-      name: drive_artists_data.find((artist: any) => artist.spotify === spotify)
-        .name,
-      related: relatedArtists,
-    });
-  });
-  console.log(
-    artistas.filter((artista: any) => artista.related.length == 20).length
-  );
 }
 
 export function extractAlbumsIDs() {
@@ -370,6 +346,73 @@ function extractNonScrappedAlbumsIDs() {
   fs.writeFileSync(
     "./data/spotify/albums/no_scraped_albums.json",
     JSON.stringify(missingScrapped, null, 2),
+    "utf-8"
+  );
+}
+
+function extract_related_bios_batch() {
+  const bio_dir = "./data/scrapped/spotify/bands/artist_extra";
+  const files = fs.readdirSync(bio_dir);
+  const spotify_scrapped_config: any = JSON.parse(
+    fs.readFileSync("./data/scrapped/config/spotify_bands.json", "utf-8")
+  );
+  const drive_artists_data: any = JSON.parse(
+    fs.readFileSync("./data/drive/artists_drive.json", "utf-8")
+  );
+
+  console.log("ANTES ", spotify_scrapped_config.length);
+  const times: number[] = [];
+  const artistas: any[] = [];
+  let print = true;
+  files.forEach((artistBioFile) => {
+    const data: any = JSON.parse(
+      fs.readFileSync(`${bio_dir}/${artistBioFile}`, "utf-8")
+    );
+    const scrappedTimestamp = Number(
+      artistBioFile.split(".json")[0].split("_")[0]
+    );
+    const spotify = artistBioFile.split(".json")[0].split("_")[1];
+    const relatedArtists = data.related_artists?.artists || [];
+
+    relatedArtists.forEach((relatedArtist: any) => {
+      fs.writeFileSync(
+        `./data/scrapped/spotify/bands/artist_bio/automatic/${scrappedTimestamp}_${relatedArtist.id}.json`,
+        JSON.stringify(relatedArtist, null, 2),
+        "utf-8"
+      );
+
+      const existingRelated = spotify_scrapped_config.find(
+        (artist: any) => artist.spotify === relatedArtist.id
+      );
+
+      // Se debe actualizar config/spotify_bands.json
+      // No se había registrado
+      if (!existingRelated) {
+        spotify_scrapped_config.push({
+          spotify: relatedArtist.id,
+          downloaded: 0,
+          artist_downloaded: scrappedTimestamp,
+        });
+      }
+      // Han pasado más de 7 días
+      else if (
+        scrappedTimestamp - existingRelated?.artist_downloaded >
+        7 * 24 * 60 * 60
+      ) {
+        existingRelated.artist_downloaded = scrappedTimestamp;
+      }
+    });
+
+    artistas.push({
+      name: drive_artists_data.find((artist: any) => artist.spotify === spotify)
+        .name,
+      related: relatedArtists,
+    });
+  });
+
+  fs.writeFileSync(
+    "./data/scrapped/config/spotify_bands_complete.json",
+    JSON.stringify(spotify_scrapped_config, null, 2),
     "utf-8"
   );
 }
