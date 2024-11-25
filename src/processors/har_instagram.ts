@@ -18,9 +18,7 @@ export function procesar_har() {
 
   console.log(requests.length);
 
-  const harDataPuerto = leerArchivo(
-    "./data/har/instagram/puertocandelaria.har"
-  );
+  const harDataPuerto = leerArchivo("./data/har/instagram/marta_gomez.har");
 
   //-------------------------------------------------------------------------------------------------
   // Busca una imagen y la guarda como archivo aparte
@@ -30,15 +28,15 @@ export function procesar_har() {
       "https://instagram.fbog7-1.fna.fbcdn.net/v/t39.30808-6/455714598_17947879856850016_1540943423838251400_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fbog7-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=cf1Qp5MLia4Q7kNvgE1c-yA&_nc_gid=01119f29ce0546bcb8d36ab84058a7bf&edm=APoiHPcAAAAA&ccb=7-5&ig_cache_key=MzQzNjAwNjU0NDU0MDc2MDMwMA%3D%3D.3-ccb7-5&oh=00_AYA7GGWf-HG8uFfNRo5qaSUNuxxAYFQ6sbFqXnSFit7Wzw&oe=674353EA&_nc_sid=22de04"
   );
 
-  const { response, request } = post;
-  const contentType = response.headers.find(
+  const { response, request } = post || {};
+  const contentType = response?.headers?.find(
     (h: any) => h.name.toLowerCase() === "content-type"
   )?.value;
 
   if (contentType?.startsWith("image/")) {
     const url = request.url;
-    const base64Content = response.content.text; // Contenido en base64
-    const extension = contentType.split("/")[1]; // Obtener extensión (jpg, png, etc.)
+    const base64Content = response?.content?.text; // Contenido en base64
+    const extension = contentType?.split("/")[1]; // Obtener extensión (jpg, png, etc.)
 
     if (base64Content) {
       const filePath = `./data/har/instagram/fotos/imagen_2.${extension}`;
