@@ -1,8 +1,22 @@
 import * as fs from "fs";
+import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 import { cleanHtmlToString } from "../helpers/string.helpers";
 
+interface SpotifyData {
+  spotify: string;
+  downloaded: number;
+  artist_downloaded: number;
+}
+
+interface ChartmetricData {
+  chartmetric: number;
+  downloaded: number;
+}
+
 export function main(args?: any) {
+  // unirDriveConConfigFile();
   // consolidar_artistas();
+  consolidar_artistas_new_artist_completo();
   // consolidar_sitios();
   // consolidar_spotify_ids_para_scrapping();
   // consolidar_chartmetric_ids_para_scrapping();
@@ -28,6 +42,680 @@ export function main(args?: any) {
   //     return acc;
   //   }, {} as { [key: string]: number });
   // console.log(sortedCountryCounts);
+  // consolidar_nuevos_artistas_dic();
+
+  // ============================ CHARTMETRIC
+  extraerConfigFromSprotifyBioToChartmetricSearch();
+  chartmetricSearchResultToCSV();
+}
+
+interface SocialMedia {
+  id: number | null;
+  url: string[] | null;
+}
+
+interface SnUrls {
+  obj: Record<string, SocialMedia>;
+}
+
+const extractSocialLinks = (
+  sn_urls: SnUrls,
+  networks: string[]
+): Record<string, string> => {
+  const result: Record<string, string> = {};
+
+  // console.log(sn_urls);
+
+  networks.forEach((network) => {
+    const social = sn_urls?.obj?.[network]; // Accede a la red social en el objeto
+
+    if (social) {
+      result[network] = social.url?.[0] || (social.id ? String(social.id) : ""); // Obtener URL o ID
+    } else {
+      result[network] = ""; // Si no existe la red, asignar ""
+    }
+  });
+
+  return result;
+};
+
+function chartmetricSearchResultToCSV() {
+  const todosLosArtistas = leerArchivo(
+    "./data/drive/2025/automatic/chartmetric_search/nuevos.json"
+  );
+
+  const toCSV = todosLosArtistas.map((artista: any) => {
+    const socialList = [
+      "instagram",
+      "youtube",
+      "tiktok",
+      "songkick",
+      "facebook",
+      "twitter",
+      "website",
+    ];
+    const socialLinks = extractSocialLinks(artista.sn_urls, socialList);
+
+    return {
+      spotify: artista.spt,
+      chartmetric_url: artista.cm_id,
+      ...socialLinks,
+    };
+  });
+
+  crearArchivo(
+    "./data/drive/2025/automatic/chartmetric_search (to csv).json",
+    toCSV
+    // mergedSpotify.filter((s) => s.artist_downloaded === 0)
+  );
+}
+
+function extraerConfigFromSprotifyBioToChartmetricSearch() {
+  const todosLosArtistas = leerArchivo(
+    "./data/drive/new_artists_drive_consolidado_prev.json"
+  );
+  const configSpotifyArtists = leerArchivo(
+    "./data/scrapped/config/spotify_bands_complete.json"
+  );
+
+  const scrappedSpotifyBioFilesUnique = todosLosArtistas
+    .filter(
+      (artista: any) => !!artista.spotify_user && !artista.chartmetric_user
+    )
+    .map((artista: any, index: number) => {
+      const artistaConfig = configSpotifyArtists.find(
+        (spotifyArtistConfig: any) =>
+          spotifyArtistConfig.spotify === artista.spotify_user
+      );
+
+      const spotifyBio =
+        artistaConfig?.artist_downloaded > 0
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_bio/${artistaConfig["artist_downloaded"]}_${artistaConfig.spotify}.json`
+            )
+          : undefined;
+
+      if (index % 5000 === 0) {
+        console.log(index);
+      }
+      return spotifyBio
+        ? {
+            n: spotifyBio?.name,
+            spt: spotifyBio?.id,
+            img: spotifyBio?.images?.[0]?.url,
+            cert: -1,
+            cm_id: 0,
+            cm_options: [],
+            sn_urls: {},
+          }
+        : undefined;
+    })
+    .filter((a: any) => !!a && !!a.img);
+
+  crearArchivo(
+    "./data/drive/2025/automatic/chartmetric_search.json",
+    scrappedSpotifyBioFilesUnique
+    // mergedSpotify.filter((s) => s.artist_downloaded === 0)
+  );
+
+  console.log("bio ", scrappedSpotifyBioFilesUnique.length);
+}
+
+function unirDriveConConfigFile() {
+  // Se debe poner el JSON del CSV del drive completo
+  const driveInfo = leerArchivo(
+    "./data/drive/new_artists_drive_consolidado_prev.json"
+  );
+
+  // El archivo completo de configuración Spotify_bands.json
+  const spotifyConfig = leerArchivo(
+    "./data/scrapped/config/spotify_bands_complete.json"
+  );
+
+  const driveSpotifyIds = driveInfo
+    .map((drive: any) => drive.spotify_user)
+    .filter((a: any) => !!a);
+  const spotifyNewDiscovered = spotifyConfig.filter(
+    (spotifyArtist: any) =>
+      !driveSpotifyIds.find(
+        (driveArtist: any) => driveArtist === spotifyArtist.spotify
+      )
+  );
+
+  console.log(
+    "♫ ♫ Drive: ",
+    driveInfo.length,
+    ", SpotifyConf: ",
+    spotifyConfig.length,
+    ", Drive Spoty: ",
+    driveSpotifyIds.length,
+    ", new: ",
+    spotifyNewDiscovered.length
+  );
+
+  const newArtistsDriveRows = spotifyNewDiscovered.map(
+    (spotifyConfig: any, index: number) => {
+      const spotifyBio = spotifyConfig
+        ? leerArchivo(
+            `./data/scrapped/spotify/bands/artist_bio/${spotifyConfig["artist_downloaded"]}_${spotifyConfig.spotify}.json`
+          )
+        : undefined;
+      return {
+        num: 113032 + index + 1,
+        grupo: "",
+        Prioridad: -1,
+        popularity:
+          spotifyBio?.popularity === undefined ? "" : spotifyBio?.popularity,
+        followers:
+          spotifyBio?.followers?.total === undefined
+            ? ""
+            : spotifyBio?.followers?.total,
+        spotify_url: spotifyBio?.external_urls?.spotify || "",
+        spotify_url_link: spotifyBio?.external_urls?.spotify || "",
+        name: spotifyBio?.name || "",
+        spotify_user: spotifyConfig.spotify,
+        spotify_user_count: 1,
+        chartmetric_url: "",
+        chartmetric_user: "",
+        chartmetric_error: "",
+        chartmetric_user_count: "",
+        instagram_url: "",
+        instagram_user: "",
+        "instagram_user count": "",
+        youtube: "",
+        tiktok: "",
+        songkick: "",
+        facebook: "",
+        twitter: "",
+        website: "",
+        Inactivo: "",
+        video_youtube: "",
+      };
+    }
+  );
+
+  crearArchivo(
+    "./data/drive/2025/automatic/drive Nuevos Artistas (con descubrimientos).json",
+    newArtistsDriveRows
+    // mergedSpotify.filter((s) => s.artist_downloaded === 0)
+  );
+}
+
+function consolidar_nuevos_artistas_dic() {
+  // const scrappedSpotify = leerArchivo(
+  //   "./data/scrapped/config/spotify_bands.json"
+  // );
+
+  // ========= Archivo de config en Drive (completo)
+  const scrappedSpotifyComplete = leerArchivo(
+    "./data/scrapped/config/spotify_bands_complete.json"
+  );
+
+  const scrappedChartmetric = leerArchivo(
+    "./data/scrapped/config/chartmetric_bands.json"
+  );
+  // const diciembreSpotify = leerArchivo(
+  //   "C:/Users/fnp/Desktop/diciembre/DataDiciembre/config/spotify_bands.json"
+  // );
+  // const diciembreChartmetric = leerArchivo(
+  //   "C:/Users/fnp/Desktop/diciembre/DataDiciembre/config/chartmetric_bands.json"
+  // );
+  // const newArtistsEnero = leerArchivo(
+  //   "./data/drive/2025/new_artists_20250108.json"
+  // );
+
+  // const spotifyEnero09 = leerArchivo("./data/drive/2025/Enero09/spotify.json");
+  // const chartmetricEnero09 = leerArchivo(
+  //   "./data/drive/2025/Enero09/chartmetric.json"
+  // );
+
+  // console.log("Scrapped Spotify: ", scrappedSpotify.length);
+  console.log(
+    "Scrapped Spotify scrappedSpotifyComplete ",
+    scrappedSpotifyComplete.length
+  );
+  console.log("Scrapped scrappedChartmetric ", scrappedChartmetric.length);
+  // console.log("diciembreSpotify ", diciembreSpotify.length);
+  // console.log("diciembreChartmetric ", diciembreChartmetric.length);
+
+  // ========================================= MERGE SPOTIFY
+  const spotifyMap = new Map<string, SpotifyData>();
+
+  // Función para actualizar o agregar un objeto en el Map
+  const addOrUpdateSpotify = (data: SpotifyData) => {
+    const existingData = spotifyMap.get(data.spotify);
+    if (existingData) {
+      // Si ya existe el spotify, comparamos los valores y tomamos el máximo
+      existingData.downloaded = Math.max(
+        existingData.downloaded,
+        data.downloaded
+      );
+      existingData.artist_downloaded = Math.max(
+        existingData.artist_downloaded,
+        data.artist_downloaded
+      );
+    } else {
+      // Si no existe, agregamos el nuevo objeto
+      spotifyMap.set(data.spotify, { ...data });
+    }
+  };
+
+  // Iteramos sobre ambas listas y agregamos o actualizamos el Map
+  scrappedSpotifyComplete.forEach(addOrUpdateSpotify);
+  // diciembreSpotify.forEach(addOrUpdateSpotify);
+  // spotifyEnero09.forEach(addOrUpdateSpotify);
+
+  // ========================================= MERGE CHARTMETRIC
+  const chartmetricMap = new Map<string, ChartmetricData>();
+
+  // Función para actualizar o agregar un objeto en el Map
+  const addOrUpdateChartmetric = (data: ChartmetricData) => {
+    const existingData = chartmetricMap.get(`${data.chartmetric}`);
+    if (existingData) {
+      // Si ya existe el spotify, comparamos los valores y tomamos el máximo
+      existingData.downloaded = Math.max(
+        existingData.downloaded,
+        data.downloaded
+      );
+    } else {
+      // Si no existe, agregamos el nuevo objeto
+      chartmetricMap.set(`${data.chartmetric}`, { ...data });
+    }
+  };
+
+  // Iteramos sobre ambas listas y agregamos o actualizamos el Map
+  scrappedChartmetric.forEach(addOrUpdateChartmetric);
+  // diciembreChartmetric.forEach(addOrUpdateChartmetric);
+  // chartmetricEnero09.forEach(addOrUpdateChartmetric);
+
+  // ===================================================================== Compare to newArtists
+  // const faltantesScrapeConfigSpotify = newArtistsEnero.filter(
+  //   (artistEnero: any) =>
+  //     !!artistEnero.spotify && !spotifyMap.get(artistEnero.spotify)
+  // );
+  // const faltantesScrapeConfigChartmetric = newArtistsEnero.filter(
+  //   (artistEnero: any) =>
+  //     !!artistEnero.chartmetric &&
+  //     !chartmetricMap.get(`${artistEnero.chartmetric}`)
+  // );
+
+  // console.log(
+  //   "Faltantes desde Nuevos Artistas==>> ",
+  //   faltantesScrapeConfigSpotify.length,
+  //   faltantesScrapeConfigChartmetric.length
+  // );
+
+  // faltantesScrapeConfigSpotify
+  //   .map((e: any) => {
+  //     return { spotify: e.spotify, downloaded: 0, artist_downloaded: 0 };
+  //   })
+  //   .forEach(addOrUpdateSpotify);
+  // faltantesScrapeConfigChartmetric
+  //   .map((e: any) => {
+  //     return { chartmetric: Number(e.chartmetric), downloaded: 0 };
+  //   })
+  //   .forEach(addOrUpdateChartmetric);
+
+  // Al final, devolvemos la lista de objetos únicos con los valores máximos
+  const mergedSpotify = Array.from(spotifyMap.values());
+  mergedSpotify.sort((a, b) => a.spotify.localeCompare(b.spotify));
+
+  console.log(
+    "MERGED  ",
+    mergedSpotify.filter((s) => s.downloaded === 0).length,
+    " - ",
+    mergedSpotify.filter((s) => s.artist_downloaded === 0).length,
+    " / ",
+    mergedSpotify.length
+  );
+
+  // Al final, devolvemos la lista de objetos únicos con los valores máximos
+  const mergedChartmetric = Array.from(chartmetricMap.values());
+  mergedChartmetric.sort((a, b) => a.chartmetric - b.chartmetric);
+
+  console.log(
+    "MERGED CM: ",
+    mergedChartmetric.filter((s) => s.downloaded === 0).length,
+    " / ",
+    mergedChartmetric.length
+  );
+
+  crearArchivo(
+    "./data/drive/2025/spotify_bands.json",
+    mergedSpotify
+    // mergedSpotify.filter((s) => s.artist_downloaded === 0)
+  );
+  crearArchivo("./data/drive/2025/chartmetric_bands.json", mergedChartmetric);
+}
+
+function consolidar_artistas_new_artist_completo() {
+  console.log(
+    "=====================    CONSOLIDAR ARTISTAS COMPLETO ========================="
+  );
+
+  // Todos los artistas en el drive
+  const todosLosArtistas = leerArchivo(
+    "./data/drive/new_artists_drive_consolidado_prev.json"
+  );
+  const infoInicial = leerArchivo("./data/drive/artists_drive_db_output.json");
+  const driveInfo = leerArchivo("./data/drive/2025/drive_artists.json");
+  console.log(todosLosArtistas.length, infoInicial.length);
+
+  const configSpotifyArtists = leerArchivo(
+    "./data/scrapped/config/spotify_bands_complete.json"
+  );
+
+  const configChartmetricArtists = leerArchivo(
+    "./data/scrapped/config/chartmetric_bands.json"
+  );
+
+  const countries = leerArchivo(`./data/geo/mongo/artist_hive.countries.json`);
+
+  console.log(
+    "Config: ",
+    todosLosArtistas.length,
+    ", Info previa: ",
+    infoInicial.length,
+    ", Drive: ",
+    driveInfo.length,
+    ", Spotify: ",
+    configSpotifyArtists.length,
+    ", C M: ",
+    configChartmetricArtists.length
+  );
+
+  const mocks = leerArchivo("./data/drive/artists_mock.json");
+
+  const all = todosLosArtistas
+    .filter(
+      (a: any) =>
+        a.spotify_user === "27neIga89YKdkCk6Yzv0ni" ||
+        a.spotify_user === "7cC14jlZcFQueGrGHDYg51" ||
+        a.spotify_user === "5OfRvW5SYGif5Q8LrklFjV" ||
+        a.instagram_user === "prevalecen" ||
+        a.instagram_user === "lissdasilvaa"
+    )
+    // .slice(500, 510)
+    .map((artistaConfig: any) => {
+      // Drive
+      const artistaDrive = !!artistaConfig.spotify_user
+        ? driveInfo.find(
+            (artistaEnDrive: any) =>
+              (!!artistaConfig.spotify_user &&
+                artistaEnDrive.spotify_user === artistaConfig.spotify_user) ||
+              (!!artistaConfig.instagram_user &&
+                artistaEnDrive.instagram_user === artistaConfig.instagram)
+          )
+        : undefined;
+
+      const artistaInfoPrevia = infoInicial.find(
+        (artistaEnInfoPrevia: any) =>
+          (!!artistaConfig.spotify_user &&
+            artistaEnInfoPrevia.spotify === artistaConfig.spotify_user) ||
+          (!!artistaConfig.instagram_user &&
+            !!artistaDrive &&
+            !!artistaDrive.instagram_user &&
+            !!artistaEnInfoPrevia.instagram &&
+            artistaDrive.instagram_user === artistaEnInfoPrevia.instagram)
+      );
+
+      const artistaMock = artistaConfig?.spotify_user
+        ? mocks.find(
+            (artistaEnMock: any) =>
+              artistaEnMock.spotify === artistaConfig?.spotify_user
+          )
+        : undefined;
+
+      const artistaChartmetricConfig = !!artistaConfig?.chartmetric_user
+        ? configChartmetricArtists.find(
+            (artistEnCM: any) =>
+              artistEnCM.chartmetric === artistaConfig?.chartmetric_user
+          )
+        : undefined;
+
+      const chartmetricBio =
+        artistaChartmetricConfig?.downloaded > 0
+          ? leerArchivo(
+              `./data/scrapped/chartmetric/bands/${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`
+            )
+          : undefined;
+
+      // if (artistaChartmetricConfig?.downloaded > 0) {
+      //   if (
+      //     fs.existsSync(
+      //       `./data/scrapped/chartmetric/bands/${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`
+      //     )
+      //   ) {
+      //     // File exists in path
+      //   } else {
+      //     const scrappedChartmetricFiles =
+      //       fs.readdirSync("./data/scrapped/chartmetric/bands") || [];
+
+      //     const files = scrappedChartmetricFiles.filter((f) =>
+      //       f.includes(`_${artistaChartmetricConfig["chartmetric"]}`)
+      //     );
+
+      //     if (!!files && files.length) {
+      //       console.log("Se encontraron estos archivos: ", files);
+      //     }
+      //     console.log(
+      //       `${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`
+      //     );
+      //     // File doesn't exist in path
+      //   }
+      // }
+
+      const artistaSpotifyConfig = !!artistaConfig?.spotify_user
+        ? configSpotifyArtists.find(
+            (artistEnSpotifyConfig: any) =>
+              artistEnSpotifyConfig.spotify === artistaConfig?.spotify_user
+          )
+        : undefined;
+
+      const spotifyBio =
+        artistaSpotifyConfig?.artist_downloaded > 0
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_bio/${artistaSpotifyConfig["artist_downloaded"]}_${artistaSpotifyConfig.spotify}.json`
+            )
+          : undefined;
+
+      const spotifyExtra =
+        artistaSpotifyConfig?.downloaded > 0
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_extra/${artistaSpotifyConfig["downloaded"]}_${artistaSpotifyConfig.spotify}.json`
+            )
+          : undefined;
+
+      const spotifyRelated =
+        !!artistaConfig?.spotify_user &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_related/${artistaConfig.spotify}.json`
+        )
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_related/${artistaConfig.spotify}.json`
+            )
+          : undefined;
+
+      const albums = spotifyExtra?.albums?.items;
+      const lastAlbum =
+        albums && albums.length > 0 ? albums[albums.length - 1] : null;
+
+      const top_tracks = spotifyExtra
+        ? spotifyExtra["top-tracks"]
+        : { tracks: [] };
+
+      const countryCode =
+        artistaInfoPrevia?.["country"] ||
+        artistaInfoPrevia?.initial?.obj?.code2;
+
+      const artistCountryId = !!countryCode
+        ? countries.find((country: any) => country.alpha2 === countryCode)?._id
+        : null;
+
+      const languages = !!countryCode
+        ? countries.find((country: any) => country.alpha2 === countryCode)
+            ?.languages
+        : undefined;
+
+      // console.log(
+      //   "\n",
+      //   artistaConfig?.name || "N.N.",
+      //   "\nPrevia: ",
+      //   !!artistaInfoPrevia,
+      //   "Drive ",
+      //   !!artistaDrive,
+      //   "Mock ",
+      //   !!artistaMock,
+      //   "CM ",
+      //   // artistaChartmetricConfig,
+      //   !!chartmetricBio,
+      //   "spt",
+      //   // artistaSpotifyConfig,
+      //   !!spotifyBio,
+      //   "spt extra",
+      //   // artistaSpotifyConfig,
+      //   !!spotifyExtra,
+      //   "related ",
+      //   !!spotifyRelated
+      // );
+
+      // if (artistaConfig.instagram_user === "lissdasilvaa") {
+      //   console.log("##### \n", artistaInfoPrevia, "\n\n\n", artistaDrive);
+      // }
+
+      return {
+        artistType: "musician",
+        is_inactive:
+          artistaInfoPrevia?.["is_inactive"] || artistaConfig["Inactivo"] || 0,
+        num: artistaConfig["num"] || -1,
+        name:
+          spotifyBio?.name ||
+          artistaInfoPrevia?.["name"] ||
+          artistaConfig["name"] ||
+          null,
+        username:
+          artistaInfoPrevia?.["username"] ||
+          artistaConfig["instagram_user"] ||
+          null,
+        subtitle: artistaInfoPrevia?.["subtitle"] || "",
+        verified_status: artistaInfoPrevia?.["verified_status"] || 1,
+        profile_pic:
+          artistaInfoPrevia?.["profile_pic"] ||
+          (spotifyBio?.images?.length
+            ? spotifyBio?.images?.[0].url
+            : undefined) ||
+          "",
+        photo: artistaInfoPrevia?.["photo"] || "",
+        description: cleanHtmlToString(
+          chartmetricBio?.initial?.obj?.description ||
+            artistaInfoPrevia?.["description"] ||
+            ""
+        ),
+
+        country: artistCountryId,
+        city: artistaInfoPrevia?.["city"] || artistaConfig["Inactivo"] || null,
+        since:
+          lastAlbum && lastAlbum.release_date
+            ? `${lastAlbum.release_date}T00:00:00-05:00`
+            : null,
+        home_city: artistaInfoPrevia?.["home_city"] || "",
+        genres: spotifyBio?.genres ||
+          artistaInfoPrevia?.["genres"] || {
+            music: [],
+          },
+        spoken_languages:
+          languages || artistaInfoPrevia?.["spoken_languages"] || [],
+        stage_languages:
+          languages || artistaInfoPrevia?.["stage_languages"] || [],
+        arts_languages:
+          languages || artistaInfoPrevia?.["arts_languages"] || [],
+        website:
+          artistaInfoPrevia?.["website"] || artistaConfig["website"] || "",
+        email: artistaInfoPrevia?.["email"] || artistaConfig["website"] || "",
+        mobile_phone:
+          artistaInfoPrevia?.["mobile_phone"] || artistaConfig["website"] || "",
+        whatsapp:
+          artistaInfoPrevia?.["whatsapp"] || artistaConfig["website"] || "",
+        facebook:
+          artistaInfoPrevia?.["facebook"] ||
+          artistaConfig["website"] ||
+          artistaConfig["facebook"] ||
+          "",
+        tiktok:
+          artistaInfoPrevia?.["tiktok"] ||
+          artistaConfig["website"] ||
+          artistaConfig["tiktok"] ||
+          "",
+        twitter:
+          artistaInfoPrevia?.["twitter"] || artistaConfig["twitter"] || "",
+        twitch: artistaInfoPrevia?.["twitch"] || artistaConfig["website"] || "",
+        instagram:
+          artistaInfoPrevia?.["instagram"] ||
+          artistaConfig["instagram_user"] ||
+          "",
+        spotify:
+          artistaInfoPrevia?.["spotify"] || artistaConfig["spotify_user"] || "",
+        soundcloud: artistaInfoPrevia?.["soundcloud"] || "",
+        songkick:
+          artistaInfoPrevia?.["songkick"] || artistaConfig["songkick"] || "",
+        youtube:
+          artistaInfoPrevia?.["youtube"] || artistaConfig["youtube"] || "",
+        youtube_widget_id:
+          artistaMock?.["youtube_widget_id"] ||
+          artistaInfoPrevia?.["youtube_widget_id"] ||
+          "",
+        chartmetric:
+          artistaInfoPrevia?.["chartmetric"] ||
+          artistaConfig["chartmetric_user"] ||
+          "",
+        spotify_data: !!spotifyBio
+          ? {
+              followers: spotifyBio?.followers?.total || 0,
+              name: spotifyBio?.name || 0,
+              popularity: spotifyBio?.popularity || 0,
+            }
+          : artistaInfoPrevia?.["spotify_data"] || {},
+
+        chartmetric_data: !!chartmetricBio
+          ? {
+              name: chartmetricBio?.initial?.obj?.name || "",
+              sp_where_people_listen:
+                chartmetricBio?.cmStats?.obj?.sp_where_people_listen,
+              stats: chartmetricBio?.cmStats?.obj?.latest,
+            }
+          : artistaInfoPrevia?.["chartmetric_data"] || {},
+        general_rate: Math.random() * 2 + 3,
+        followers: 0,
+        event_followers: 0,
+        stats: {
+          rating: {
+            overall: Math.random() * 2 + 3,
+            talent: Math.random() * 2 + 3,
+            performance: Math.random() * 2 + 3,
+            proffesionalism: Math.random() * 2 + 3,
+            stage_presence: Math.random() * 2 + 3,
+            charisma: Math.random() * 2 + 3,
+            timeliness: Math.random() * 2 + 3,
+            communication: Math.random() * 2 + 3,
+            respectfulness: Math.random() * 2 + 3,
+            total_rates: 269 + Math.floor(Math.random() * 2500),
+          },
+        },
+        arts: {
+          music: {
+            albums: [],
+            top_tracks: [],
+            related_artist_spotify:
+              spotifyRelated?.data?.artistUnion?.relatedContent?.relatedArtist
+                ?.items ||
+              artistaInfoPrevia?.arts?.music?.related_artist_spotify ||
+              [],
+          },
+        },
+      };
+    });
+
+  crearArchivo("./data/drive/2025/artists_db.json", all);
 }
 
 function calculatePriority(artists: any[], segments: number) {
@@ -445,8 +1133,8 @@ function consolidar_artistas() {
   console.log(
     "=====================    CONSOLIDAR ARTISTAS ========================="
   );
-  const artist_drive_data: any = JSON.parse(
-    fs.readFileSync("./data/drive/artists_drive.json", "utf-8")
+  const artist_drive_data: any = leerArchivo(
+    "./data/drive/new_artists_drive_consolidado_prev.json"
   );
 
   const nonEmptyFields = ["instagram", "spotify", "chartmetric", "name"];
@@ -464,40 +1152,51 @@ function consolidar_artistas() {
     fs.readFileSync("./data/scrapped/config/spotify_bands.json", "utf-8")
   );
 
+  console.log("Artistas con al menos un dato: ", existingDriveArtists.length);
+
   const existingDriveArtistsOutput = existingDriveArtists.map(
     (artist: any, index: number) => {
-      const spotify_artist_config_data = artist["spotify"]
+      const spotify_artist_config_data = artist["spotify_user"]
         ? spotify_config_data.find(
             (spotify_config_artist: any) =>
-              spotify_config_artist.spotify === artist["spotify"]
+              spotify_config_artist.spotify === artist["spotify_user"]
           )
         : undefined;
 
       let spotify_artist_data = undefined;
       let spotify_artist_extra_data = undefined;
       if (spotify_artist_config_data) {
-        spotify_artist_data = JSON.parse(
-          fs.readFileSync(
-            `./data/scrapped/spotify/bands/artist_bio/${spotify_artist_config_data["artist_downloaded"]}_${spotify_artist_config_data["spotify"]}.json`,
-            "utf-8"
-          )
-        );
-        spotify_artist_extra_data = JSON.parse(
-          fs.readFileSync(
-            `./data/scrapped/spotify/bands/artist_extra/${spotify_artist_config_data["downloaded"]}_${spotify_artist_config_data["spotify"]}.json`,
-            "utf-8"
-          )
-        );
+        if (spotify_artist_config_data["artist_downloaded"] > 0) {
+          spotify_artist_data = JSON.parse(
+            fs.readFileSync(
+              `./data/scrapped/spotify/bands/artist_bio/${spotify_artist_config_data["artist_downloaded"]}_${spotify_artist_config_data["spotify"]}.json`,
+              "utf-8"
+            )
+          );
+        }
+
+        if (spotify_artist_config_data["downloaded"] > 0) {
+          spotify_artist_extra_data = JSON.parse(
+            fs.readFileSync(
+              `./data/scrapped/spotify/bands/artist_extra/${spotify_artist_config_data["downloaded"]}_${spotify_artist_config_data["spotify"]}.json`,
+              "utf-8"
+            )
+          );
+        }
       }
       const chartmetric_artist_config_data = artist["chartmetric"]
         ? chartmetric_config_data.find(
             (chartmetric_config_artist: any) =>
-              chartmetric_config_artist.chartmetric === artist["chartmetric"]
+              parseInt(chartmetric_config_artist.chartmetric) ===
+              Number(artist["chartmetric"])
           )
         : undefined;
 
       let chartmetric_artist_data = undefined;
-      if (chartmetric_artist_config_data) {
+      if (
+        chartmetric_artist_config_data &&
+        chartmetric_artist_config_data["downloaded"] > 0
+      ) {
         chartmetric_artist_data = JSON.parse(
           fs.readFileSync(
             `./data/scrapped/chartmetric/bands/${chartmetric_artist_config_data["downloaded"]}_${chartmetric_artist_config_data["chartmetric"]}.json`,
@@ -512,6 +1211,7 @@ function consolidar_artistas() {
       const top_tracks = spotify_artist_extra_data
         ? spotify_artist_extra_data["top-tracks"]
         : { tracks: [] };
+
       const related_artists = spotify_artist_extra_data
         ? spotify_artist_extra_data["related_artists"]
         : { artists: [] };
@@ -519,6 +1219,7 @@ function consolidar_artistas() {
       if (index % 100 === 0) {
         console.log("artista ", index + 1, ": ", artist["name"]);
       }
+      // return {}
       return {
         artistType: "musician",
         name: artist["name"] || "",
@@ -583,21 +1284,21 @@ function consolidar_artistas() {
           stats: chartmetric_artist_data?.cmStats?.obj?.latest,
         },
 
-        general_rate: Math.random() * 3 + 2,
+        general_rate: Math.random() * 2 + 3,
         followers: 0,
         event_followers: 0,
         stats: {
           rating: {
-            overall: Math.random() * 3 + 2,
-            talent: Math.random() * 3 + 2,
-            performance: Math.random() * 3 + 2,
-            proffesionalism: Math.random() * 3 + 2,
-            stage_presence: Math.random() * 3 + 2,
-            charisma: Math.random() * 3 + 2,
-            timeliness: Math.random() * 3 + 2,
-            communication: Math.random() * 3 + 2,
-            respectfulness: Math.random() * 3 + 2,
-            total_rates: Math.floor(Math.random() * 20000),
+            overall: Math.random() * 2 + 3,
+            talent: Math.random() * 2 + 3,
+            performance: Math.random() * 2 + 3,
+            proffesionalism: Math.random() * 2 + 3,
+            stage_presence: Math.random() * 2 + 3,
+            charisma: Math.random() * 2 + 3,
+            timeliness: Math.random() * 2 + 3,
+            communication: Math.random() * 2 + 3,
+            respectfulness: Math.random() * 2 + 3,
+            total_rates: 269 + Math.floor(Math.random() * 2500),
           },
         },
         arts: {
@@ -694,6 +1395,13 @@ function consolidar_artistas() {
     }
   );
 
+  crearArchivo(
+    "./data/drive/2025/automatic/allArtists (Completo).json",
+    existingDriveArtistsOutput
+    // mergedSpotify.filter((s) => s.artist_downloaded === 0)
+  );
+
+  /*
   fs.writeFileSync(
     "./data/drive/artists_drive_db_output.json",
     JSON.stringify(
@@ -728,6 +1436,7 @@ function consolidar_artistas() {
     ),
     "utf-8"
   );
+  */
 }
 
 function consolidar_spotify_ids_para_scrapping() {
