@@ -396,35 +396,44 @@ export function processJsonFile(filePath: string): any {
 }
 
 export function processGenres_batch_scrapping(): any {
+  console.log(new Date());
   const bio_dir = "./data/scrapped/spotify/bands/artist_bio";
   const files = fs.readdirSync(bio_dir);
 
+  console.log("Total archivos encontrados: ", files.length);
+
   let genres: string[] = [];
-  files.forEach((artistBioFile) => {
+  files.forEach((artistBioFile, index) => {
     const data: any = JSON.parse(
       fs.readFileSync(`${bio_dir}/${artistBioFile}`, "utf-8")
     );
     const artistGenres = data.genres || [];
     genres = [...genres, ...artistGenres];
-  });
-
-  const data_new_artists: any = JSON.parse(
-    fs.readFileSync(`./data/drive/new_artists_drive.json`, "utf-8")
-  );
-
-  data_new_artists.forEach((artist: any) => {
-    if (!!artist.genres.length) {
-      genres = [...genres, ...artist.genres];
+    if ((index + 1) % 10000 === 0) {
+      console.log(".....  ", index + 1);
     }
   });
+
+  // const data_new_artists: any = JSON.parse(
+  //   fs.readFileSync(`./data/drive/new_artists_drive.json`, "utf-8")
+  // );
+
+  // data_new_artists.forEach((artist: any) => {
+  //   if (!!artist.genres.length) {
+  //     genres = [...genres, ...artist.genres];
+  //   }
+  // });
 
   const uniqueArray = [...new Set(genres)].sort();
   // Convierte el objeto a una cadena de texto en formato JSON
   const jsonString = JSON.stringify(uniqueArray, null, 2);
-  console.log(jsonString);
+  // console.log(jsonString);
 
+  console.log("hay ", uniqueArray.length);
   // Escribe el archivo JSON
   fs.writeFileSync("./data/genres.json", jsonString, "utf-8");
+  console.log("fin");
+  console.log(new Date());
 }
 
 export function processGenres(filePath: string): any {

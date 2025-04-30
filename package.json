@@ -8,20 +8,24 @@
     "watch": "npx tsc --watch",
     "play": "npx tsc & node dist/index.js",
     "dev": "nodemon --watch dist --exec \"node dist/index.js\"",
-    "startP": "concurrently \"tsc --watch\" \"nodemon dist/index.js\""
+    "startP": "tsc && concurrently \"tsc --watch\" \"nodemon --watch dist dist/index.js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/mongoose": "^5.11.96",
     "@types/node": "^22.4.2",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.4",
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "cheerio": "^1.0.0",
+    "fast-json-stringify": "^6.0.1",
     "he": "^1.2.0",
+    "mongoose": "^8.12.1",
     "tsprocessor": "file:"
   }
 }

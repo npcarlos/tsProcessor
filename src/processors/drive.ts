@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import mongoose from "mongoose";
 import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 import { cleanHtmlToString } from "../helpers/string.helpers";
 
@@ -14,9 +15,60 @@ interface ChartmetricData {
 }
 
 export function main(args?: any) {
+  // corregirSpotifyBandsConfig();
   // unirDriveConConfigFile();
   // consolidar_artistas();
-  consolidar_artistas_new_artist_completo();
+  // =========================================================
+  // console.log("Iniciando....");
+  // const configInicialDrive = leerArchivo(
+  //   "./data/drive/2025/automatic/new/newDrive.json"
+  // );
+  // const related = leerArchivo(
+  //   "./data/drive/2025/automatic/new/relatedIndex.json"
+  // );
+  // console.log(
+  //   "archivos leídos....",
+  //   configInicialDrive.filter((a: any) => !a.name && !!a.spotify_user).length
+  // );
+  // configInicialDrive.forEach((a: any) => {
+  //   if (!a.name && !!a.spotify_user) {
+  //     const relatedA = related.find(
+  //       (rA: any) => rA.spotify_user === a.spotify_user
+  //     );
+  //     a.name = relatedA?.name || "";
+  //   }
+  // });
+  // console.log(
+  //   "Cambios ",
+  //   configInicialDrive.filter((a: any) => !a.name && !!a.spotify_user).length
+  // );
+  // console.log("actualizando archivo....");
+  // crearArchivo(
+  //   "./data/drive/2025/automatic/new/newDrive.json",
+  //   configInicialDrive
+  // );
+  // console.log(
+  //   "Total: ",
+  //   configInicialDrive.length,
+  //   configInicialDrive.filter((a: any) => !a.name && !!a.spotify_user).length
+  // );
+  // extract_related();
+  // const fqMap = new Map<string, number>();
+  // configInicialDrive.forEach((artist: any) => {
+  //   const id = artist?.spotify;
+  //   fqMap.set(id, (fqMap.get(id) || 0) + 1);
+  // });
+  // console.log(
+  //   " CONFIG ",
+  //   configInicialDrive.length,
+  //   Array.from(fqMap.entries()).filter((a: any) => a[1] > 1)
+  // );
+  // revisar_duplicados();
+  //
+  // ==============================================================================================
+  // consolidar_artistas_new_artist_completo();
+  // compilarAlbumes();
+  // calcular_artistas_mas_relacionados();
   // consolidar_sitios();
   // consolidar_spotify_ids_para_scrapping();
   // consolidar_chartmetric_ids_para_scrapping();
@@ -43,12 +95,117 @@ export function main(args?: any) {
   //   }, {} as { [key: string]: number });
   // console.log(sortedCountryCounts);
   // consolidar_nuevos_artistas_dic();
-
+  // consolidarAlbums();
+  // convertAlbumsToDatabase();
   // ============================ CHARTMETRIC
-  extraerConfigFromSprotifyBioToChartmetricSearch();
-  chartmetricSearchResultToCSV();
+  // extraerConfigFromSprotifyBioToChartmetricSearch();
+  // chartmetricSearchResultToCSV();
+  // compilarChartmetricUsers();
+  // // //  // -// FIN
+  // validarDatosCompletos();
+  // mongodb+srv://ahcmetrics:FNzgptUweIwGB09g@cluster0.imxovdf.mongodb.net/
+  // const stream = fs.createReadStream(
+  //   "./data/drive/2025/automatic/spotify/albumsConsolidado_db.json",
+  //   { encoding: "utf8" }
+  // );
+  // let count = 0;
+  // let buffer = "";
+  // stream.on("data", (chunk) => {
+  //   buffer += chunk; // Acumulamos los datos en un buffer
+  //   let parts = buffer.split(/[\[\],]/); // Separa por `,` pero mantiene los `[` y `]`
+  //   // Procesa cada elemento válido
+  //   for (let i = 0; i < parts.length - 1; i++) {
+  //     if (parts[i].trim()) count++; // Si no es vacío, es un elemento válido
+  //   }
+  //   buffer = parts[parts.length - 1]; // Guarda el resto para la próxima lectura
+  // });
+  // stream.on("end", () => {
+  //   console.log(`Cantidad de elementos en el JSON: ${count}`);
+  // });
+  // stream.on("error", (err) => {
+  //   console.error("Error leyendo el archivo:", err);
+  // });
+  // convertRelatedArtistsId();
+  // generateSpotifyConfigFileFromFiles();
+  // reassingDBIdsInEvents();
 }
 
+function compilarChartmetricUsers() {
+  const todosLosArtistas = leerArchivo(
+    "./data/drive/2025/automatic/chartmetric_search/all_searches.json"
+  ).map((a: any) => a.cm_id);
+
+  const driveCM = leerArchivo(
+    "./data/drive/2025/automatic/chartmetric_search/drive.json"
+  ).map((a: any) => a.chartmetric_user);
+
+  const configCMArtists = leerArchivo(
+    "./data/scrapped/config/chartmetric_bands.json"
+  );
+
+  const compiladoMap = new Map<number, number>();
+  configCMArtists.forEach((a: any, index: number) => {
+    if (!compiladoMap.get(a.chartmetric)) {
+      compiladoMap.set(a.chartmetric, a.downloaded);
+    }
+  });
+  console.log(compiladoMap.size);
+
+  const search = [...todosLosArtistas, ...driveCM];
+  search.forEach((a: any) => {
+    if (!compiladoMap.get(a)) {
+      compiladoMap.set(a, 0);
+    }
+  });
+  const result = Array.from(compiladoMap, ([chartmetric, downloaded]) => ({
+    chartmetric,
+    downloaded,
+  }));
+  console.log(todosLosArtistas.length, driveCM.length, configCMArtists.length);
+  console.log(compiladoMap.size);
+  crearArchivo("./data/drive/2025/automatic/chartmetric_bands.json", result);
+}
+function validarDatosCompletos() {
+  const datosED = leerArchivo(
+    "./data/drive/2025/chunks/artists_db_entity_directory_0.json"
+  );
+  const datos = leerArchivo("./data/drive/2025/chunks/artists_db_0.json");
+  const mercedes = datos.find((a: any) => a.name === "Silvio Rodríguez");
+
+  const bios = fs.readdirSync("./data/scrapped/spotify/bands/artist_bio") || [];
+
+  const bioMercedes = bios.filter((file: string) =>
+    file.includes(mercedes?.spotify)
+  );
+
+  const configSpotifyArtists = leerArchivo(
+    "./data/scrapped/config/spotify_bands.json"
+  );
+
+  const config = configSpotifyArtists.find(
+    (c: any) => c.spotify === mercedes?.spotify
+  );
+
+  // console.log(config);
+
+  console.log(
+    datos.length,
+    bioMercedes.length
+    // mercedes,
+    // `./data/scrapped/spotify/bands/artist_bio/${bioMercedes[0]}`,
+    // config
+  );
+
+  const conSPSinPic = datos.filter((a: any) => !a.profile_pic && !!a.spotify);
+  const conSPSinPicConBio = conSPSinPic
+    .map((a: any) => bios.find((file: string) => file.includes(a?.spotify)))
+    .filter((a: any) => !!a);
+  crearArchivo(
+    "./data/drive/2025/automatic/faltantes/spotifyBio.json",
+    conSPSinPicConBio
+  );
+  console.log(conSPSinPic.length, conSPSinPicConBio.length);
+}
 interface SocialMedia {
   id: number | null;
   url: string[] | null;
@@ -56,6 +213,349 @@ interface SocialMedia {
 
 interface SnUrls {
   obj: Record<string, SocialMedia>;
+}
+
+function extract_related() {
+  const relatedFiles =
+    fs.readdirSync("./data/scrapped/spotify/bands/artist_related") || [];
+
+  const map = new Map<string, any>();
+
+  relatedFiles.forEach((fileName: string) => {
+    const infoInicial = leerArchivo(
+      `./data/scrapped/spotify/bands/artist_related/${fileName}`
+    );
+    const related =
+      infoInicial?.data?.artistUnion?.relatedContent?.relatedArtists?.items ||
+      [];
+
+    related.forEach((relatedArtist: any) => {
+      const id = relatedArtist?.id;
+      if (!map.get(id)) {
+        map.set(id, relatedArtist);
+      }
+    });
+  });
+
+  // {
+  //   "id": "0Y5FHnWSAGi9XaE5dmXyzG",
+  //   "profile": {
+  //     "name": "Isadora Melo"
+  //   },
+  //   "uri": "spotify:artist:0Y5FHnWSAGi9XaE5dmXyzG",
+  //   "visuals": {
+  //     "avatarImage": {
+  //       "sources": [
+  //         {
+  //           "height": 640,
+  //           "url": "https://i.scdn.co/image/ab6761610000e5eb1ba612e3ba6a70eacd1e7dfa",
+  //           "width": 640
+  //         },
+  //         {
+  //           "height": 160,
+  //           "url": "https://i.scdn.co/image/ab6761610000f1781ba612e3ba6a70eacd1e7dfa",
+  //           "width": 160
+  //         },
+  //         {
+  //           "height": 320,
+  //           "url": "https://i.scdn.co/image/ab676161000051741ba612e3ba6a70eacd1e7dfa",
+  //           "width": 320
+  //         }
+  //       ]
+  //     }
+  //   }
+  // },
+
+  const relatedInfo = Array.from(map.values()).map((info) => {
+    return {
+      spotify_user: info.id,
+      name: info.profile.name,
+      img: info?.visuals?.avatarImage?.sources?.[0]?.url,
+    };
+  });
+  crearArchivo(
+    "./data/drive/2025/automatic/new/relatedIndex.json",
+    relatedInfo
+  );
+  console.log("Related ", relatedFiles.length, relatedInfo[3]);
+}
+function revisar_duplicados() {
+  // const configInicial = leerArchivo(
+  //   "./data/scrapped/config/spotify_bands.json"
+  // );
+  // const fqMap = new Map<string, number>();
+
+  // configInicial.forEach((artist: any) => {
+  //   const id = artist?.spotify;
+  //   fqMap.set(id, (fqMap.get(id) || 0) + 1);
+  // });
+
+  // const fq = Array.from(fqMap.entries());
+  // console.log(
+  //   fq.length,
+  //   fq.filter((fqAct: any) => fqAct[1] > 2)
+  // );
+  const contarCamposLlenos = (item: any): number => {
+    return Object.values(item).filter(
+      (value) => value !== "" && value !== null && value !== undefined
+    ).length;
+  };
+
+  const configInicialDrive = leerArchivo(
+    "./data/drive/new_artists_drive_consolidado_prev.json"
+  );
+  const fqMapDrive_spotify = new Map<string, number>();
+  const fqMapDrive_cm = new Map<string, number>();
+  const fqMapDrive_instagram = new Map<string, number>();
+  const newDriveMap = new Map<string, any>();
+  const newDriveMap_ig = new Map<string, any>();
+  const newDriveMap_cm = new Map<string, any>();
+
+  configInicialDrive.forEach((artist: any) => {
+    const id_spotify = artist?.spotify_user;
+    const id_cm = artist?.chartmetric_user;
+    const id_instagram = artist?.instagram_user;
+
+    if (!!id_spotify) {
+      fqMapDrive_spotify.set(
+        id_spotify,
+        (fqMapDrive_spotify.get(id_spotify) || 0) + 1
+      );
+
+      const existingItem = newDriveMap.get(id_spotify);
+
+      if (
+        !existingItem ||
+        contarCamposLlenos(artist) > contarCamposLlenos(existingItem)
+      ) {
+        newDriveMap.set(id_spotify, artist);
+      }
+    } else if (!!id_instagram) {
+      const existingItem = newDriveMap_ig.get(id_instagram);
+
+      if (
+        !existingItem ||
+        contarCamposLlenos(artist) > contarCamposLlenos(existingItem)
+      ) {
+        newDriveMap_ig.set(id_instagram, artist);
+      }
+    } else if (!!id_cm) {
+      const existingItem = newDriveMap_cm.get(id_cm);
+
+      if (
+        !existingItem ||
+        contarCamposLlenos(artist) > contarCamposLlenos(existingItem)
+      ) {
+        newDriveMap_cm.set(id_cm, artist);
+      }
+    }
+
+    if (!!id_cm) {
+      fqMapDrive_cm.set(id_cm, (fqMapDrive_cm.get(id_cm) || 0) + 1);
+    }
+
+    if (!!id_instagram) {
+      fqMapDrive_instagram.set(
+        id_instagram,
+        (fqMapDrive_instagram.get(id_instagram) || 0) + 1
+      );
+    }
+  });
+
+  // const fqDrive_spotify = Array.from(fqMapDrive_spotify.entries());
+  // const fqDrive_cm = Array.from(fqMapDrive_cm.entries());
+  // const fqDrive_instagram = Array.from(fqMapDrive_instagram.entries());
+
+  // const idsRepetidos_sp = fqDrive_spotify
+  //   .filter((fqAct: any) => fqAct[1] != 1)
+  //   .map((f: any) => f[0]);
+  // const idsRepetidos_cm = fqDrive_cm
+  //   .filter((fqAct: any) => fqAct[1] > 1)
+  //   .map((f: any) => f[0]);
+  // const idsRepetidos_ig = fqDrive_instagram
+  //   .filter((fqAct: any) => fqAct[1] > 1)
+  //   .map((f: any) => f[0]);
+
+  // const repetidosSP_incompletos = configInicialDrive.filter(
+  //   (a: any) => idsRepetidos_sp.includes(a.spotify_user) && !a.name
+  // );
+  // const idsRepetidosSPIncompletos = repetidosSP_incompletos.map(
+  //   (a: any) => a.num
+  // );
+
+  // const limpios = configInicialDrive.filter(
+  //   (a: any) => !idsRepetidosSPIncompletos.includes(a.num)
+  // );
+
+  // crearArchivo(
+  //   "./data/drive/new_artists_drive_consolidado_prev (limpio).json",
+  //   limpios
+  // );
+
+  const mergedMap = new Map([
+    ...newDriveMap,
+    ...newDriveMap_ig,
+    ...newDriveMap_cm,
+  ]);
+
+  console.log("generando spotify ids ", new Date());
+  const spotifyIds = Array.from(mergedMap.values())
+    .filter((a: any) => !!a.spotify_user)
+    .sort()
+    .map((a: any) => {
+      return { spotify: a.spotify_user, downloaded: 0, artist_downloaded: 0 };
+    });
+
+  console.log("bios ", new Date());
+  const bioFiles =
+    fs.readdirSync("./data/scrapped/spotify/bands/artist_bio") || [];
+
+  bioFiles.forEach((file: string, num: number) => {
+    const parts = file.replace(".json", "").split("_");
+    const artistInConfig = spotifyIds.find(
+      (artist: any) => artist.spotify === parts[1]
+    );
+    if (artistInConfig) {
+      artistInConfig.artist_downloaded = Math.max(
+        Number(parts[0]),
+        Number(artistInConfig.artist_downloaded)
+      );
+    }
+  });
+
+  console.log("extra files ", new Date());
+  const extraFiles =
+    fs.readdirSync("./data/scrapped/spotify/bands/artist_extra") || [];
+
+  bioFiles.forEach((file: string, num: number) => {
+    const parts = file.replace(".json", "").split("_");
+    const artistInConfig = spotifyIds.find(
+      (artist: any) => artist.spotify === parts[1]
+    );
+    if (artistInConfig) {
+      artistInConfig.downloaded = Math.max(
+        Number(parts[0]),
+        Number(artistInConfig.downloaded)
+      );
+    }
+  });
+
+  crearArchivo(
+    "./data/drive/2025/automatic/new/newDrive.json",
+    Array.from(mergedMap.values()).sort((a: any, b: any) => a.num - b.num)
+  );
+
+  crearArchivo("./data/drive/2025/automatic/new/newSpotify.json", spotifyIds);
+
+  console.log(
+    "\n\n\n",
+    bioFiles.length,
+    extraFiles.length,
+    "NEW DRIVE ",
+    configInicialDrive.length,
+    mergedMap.size,
+    newDriveMap.size,
+    newDriveMap_ig.size,
+    newDriveMap_cm.size
+  );
+  // console.log(
+  //   "FQ",
+  //   fqDrive_spotify.length,
+  //   // fqDrive_cm.length,
+  //   // fqDrive_instagram.length,
+  //   idsRepetidos_sp.length,
+  //   "###",
+  //   idsRepetidos_sp,
+  //   idsRepetidos_cm.length,
+  //   idsRepetidos_ig.length,
+  //   " \n SP",
+  //   repetidosSP_incompletos.length,
+  //   // repetidosSP_incompletos.map((a: any) => a.num),
+  //   " \n CM",
+  //   idsRepetidos_cm,
+  //   " \n IG",
+  //   idsRepetidos_ig,
+  //   // configInicialDrive.filter(
+  //   //   (a: any) => idsRepetidos.includes(a.spotify_user) && !a.name
+  //   // ).length,
+
+  //   // configInicialDrive.filter(
+  //   //   (a: any) => a.spotify_user === "6mosurlsgIVZlWaAqvwiJE"
+  //   // )
+  //   configInicialDrive.filter(
+  //     (a: any) => a.spotify_user === "6mosurlsgIVZlWaAqvwiJE"
+  //     // (a: any) => a.spotify_user === "7He11U01wHq1zaIU6GXSKd"
+  //     // (a: any) => a.num === 156926
+  //   ),
+  //   "\n\nLimpios",
+  //   limpios.length
+  // );
+}
+
+function corregirSpotifyBandsConfig() {
+  const configInicial = leerArchivo(
+    "./data/scrapped/config/spotify_bands.json"
+  );
+  const configInicial2 = leerArchivo("./data/scrapped/spotify_bands.json");
+
+  console.log(configInicial.length, configInicial2.length);
+  console.log(
+    "extra ",
+    configInicial.filter((a: any) => a.downloaded === 0).length,
+    configInicial2.filter((a: any) => a.downloaded === 0).length,
+    configInicial.filter((a: any) => a.downloaded === 0).length -
+      configInicial2.filter((a: any) => a.downloaded === 0).length
+  );
+  console.log(
+    "bio ",
+    configInicial.filter((a: any) => a.artist_downloaded === 0).length,
+    configInicial2.filter((a: any) => a.artist_downloaded === 0).length,
+    configInicial.filter((a: any) => a.artist_downloaded === 0).length -
+      configInicial2.filter((a: any) => a.artist_downloaded === 0).length
+  );
+
+  console.log(
+    configInicial.find((a: any) => a.spotify === "6uB9xdMh9YcWLWnqhzXgTe")
+  );
+
+  const bioFiles =
+    fs.readdirSync("./data/scrapped/03_10/spotify/bands/artist_bio") || [];
+
+  bioFiles.forEach((file: string, num: number) => {
+    const parts = file.replace(".json", "").split("_");
+    const artistInConfig = configInicial.find(
+      (artist: any) => artist.spotify === parts[1]
+    );
+    artistInConfig.artist_downloaded = Number(parts[0]);
+  });
+
+  const extraFiles =
+    fs.readdirSync("./data/scrapped/03_10/spotify/bands/artist_extra") || [];
+
+  extraFiles.forEach((file: string, num: number) => {
+    const parts = file.replace(".json", "").split("_");
+    const artistInConfig = configInicial.find(
+      (artist: any) => artist.spotify === parts[1]
+    );
+    artistInConfig.artist_downloaded = Number(parts[0]);
+  });
+
+  console.log(
+    configInicial.find((a: any) => a.spotify === "6uB9xdMh9YcWLWnqhzXgTe")
+  );
+  console.log("Corrección ", configInicial.length, bioFiles.length);
+  console.log(
+    "Corrección ",
+    configInicial.filter((a: any) => a.artist_downloaded === 0).length,
+    bioFiles.length
+  );
+  console.log(
+    "Corrección ",
+    configInicial.filter((a: any) => a.downloaded === 0).length,
+    extraFiles.length
+  );
+
+  // crearArchivo("./data/scrapped/config/spotify_bands.json", configInicial);
 }
 
 const extractSocialLinks = (
@@ -112,16 +612,41 @@ function chartmetricSearchResultToCSV() {
 
 function extraerConfigFromSprotifyBioToChartmetricSearch() {
   const todosLosArtistas = leerArchivo(
-    "./data/drive/new_artists_drive_consolidado_prev.json"
+    // "./data/drive/new_artists_drive_consolidado_prev.json"
+    "./data/drive/2025/automatic/new/newDrive.json"
+  );
+  const drive14000Artistas = leerArchivo(
+    // "./data/drive/new_artists_drive_consolidado_prev.json"
+    "./data/drive/2025/automatic/new/drive14000.json"
   );
   const configSpotifyArtists = leerArchivo(
-    "./data/scrapped/config/spotify_bands_complete.json"
+    // "./data/scrapped/config/spotify_bands_complete.json"
+    "./data/scrapped/config/spotify_bands.json"
   );
 
-  const scrappedSpotifyBioFilesUnique = todosLosArtistas
-    .filter(
-      (artista: any) => !!artista.spotify_user && !artista.chartmetric_user
-    )
+  const nuevosChartmetric = drive14000Artistas.filter(
+    (a: any) => !!a.chartmetric_user && a.chartmetric_user !== "e"
+  );
+
+  console.log(
+    "La mamá ha encontrado nuevos chartmentric ",
+    nuevosChartmetric.length
+  );
+
+  nuevosChartmetric.forEach(
+    (a: any) =>
+      (todosLosArtistas.find(
+        (tA: any) => tA.spotify_user === a.spotify_user
+      ).chartmetric_user = a.chartmetric_user)
+  );
+
+  const chartmetricQueFaltan = todosLosArtistas.filter(
+    (artista: any) => !!artista.spotify_user && !artista.chartmetric_user
+  );
+
+  console.log("chartmetricQueFaltan: ", chartmetricQueFaltan.length);
+
+  const scrappedSpotifyBioFilesUnique = chartmetricQueFaltan
     .map((artista: any, index: number) => {
       const artistaConfig = configSpotifyArtists.find(
         (spotifyArtistConfig: any) =>
@@ -129,14 +654,17 @@ function extraerConfigFromSprotifyBioToChartmetricSearch() {
       );
 
       const spotifyBio =
-        artistaConfig?.artist_downloaded > 0
+        artistaConfig?.artist_downloaded > 0 &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_bio/${artistaConfig["artist_downloaded"]}_${artistaConfig.spotify}.json`
+        )
           ? leerArchivo(
               `./data/scrapped/spotify/bands/artist_bio/${artistaConfig["artist_downloaded"]}_${artistaConfig.spotify}.json`
             )
           : undefined;
 
       if (index % 5000 === 0) {
-        console.log(index);
+        console.log("buscando info para search chartmetric: ", index);
       }
       return spotifyBio
         ? {
@@ -152,6 +680,10 @@ function extraerConfigFromSprotifyBioToChartmetricSearch() {
     })
     .filter((a: any) => !!a && !!a.img);
 
+  console.log(
+    "Se encontraron nuevos chartmetric que toca buscar : ",
+    scrappedSpotifyBioFilesUnique.length
+  );
   crearArchivo(
     "./data/drive/2025/automatic/chartmetric_search.json",
     scrappedSpotifyBioFilesUnique
@@ -169,12 +701,13 @@ function unirDriveConConfigFile() {
 
   // El archivo completo de configuración Spotify_bands.json
   const spotifyConfig = leerArchivo(
-    "./data/scrapped/config/spotify_bands_complete.json"
+    "./data/scrapped/config/spotify_bands.json"
   );
 
   const driveSpotifyIds = driveInfo
     .map((drive: any) => drive.spotify_user)
     .filter((a: any) => !!a);
+
   const spotifyNewDiscovered = spotifyConfig.filter(
     (spotifyArtist: any) =>
       !driveSpotifyIds.find(
@@ -195,11 +728,15 @@ function unirDriveConConfigFile() {
 
   const newArtistsDriveRows = spotifyNewDiscovered.map(
     (spotifyConfig: any, index: number) => {
-      const spotifyBio = spotifyConfig
-        ? leerArchivo(
-            `./data/scrapped/spotify/bands/artist_bio/${spotifyConfig["artist_downloaded"]}_${spotifyConfig.spotify}.json`
-          )
-        : undefined;
+      const spotifyBio =
+        spotifyConfig &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_bio/${spotifyConfig["artist_downloaded"]}_${spotifyConfig.spotify}.json`
+        )
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_bio/${spotifyConfig["artist_downloaded"]}_${spotifyConfig.spotify}.json`
+            )
+          : undefined;
       return {
         num: 113032 + index + 1,
         grupo: "",
@@ -233,6 +770,10 @@ function unirDriveConConfigFile() {
       };
     }
   );
+
+  // calculatePriority(newArtistsDriveRows, 100);
+
+  console.log("FIN ", newArtistsDriveRows.length);
 
   crearArchivo(
     "./data/drive/2025/automatic/drive Nuevos Artistas (con descubrimientos).json",
@@ -388,21 +929,77 @@ function consolidar_nuevos_artistas_dic() {
   crearArchivo("./data/drive/2025/chartmetric_bands.json", mergedChartmetric);
 }
 
+function calcular_artistas_mas_relacionados() {
+  console.log("Organizando nuevos artistas por frecuencia...");
+  const relatedFiles =
+    fs.readdirSync("./data/scrapped/spotify/bands/artist_related") || [];
+
+  const repeticionesMap = new Map<string, number>();
+
+  console.log(relatedFiles.length);
+
+  let print = 0;
+
+  relatedFiles.forEach((fileName: string) => {
+    const infoInicial = leerArchivo(
+      `./data/scrapped/spotify/bands/artist_related/${fileName}`
+    );
+    const related =
+      infoInicial?.data?.artistUnion?.relatedContent?.relatedArtists?.items ||
+      [];
+
+    related.forEach((relatedArtist: any) => {
+      const id = relatedArtist?.id;
+      repeticionesMap.set(id, (repeticionesMap.get(id) || 0) + 1);
+    });
+    if (print === 0) {
+      console.log(
+        `./data/scrapped/spotify/bands/artist_related/${fileName}`,
+        related.length,
+        Array.from(repeticionesMap.entries()).length
+      );
+    }
+    print++;
+  });
+
+  // Convertir el Map a un array de objetos y ordenarlo por repeticiones descendente
+  const repeticiones = Array.from(repeticionesMap.entries())
+    .map(([id, reps]) => ({ id, reps }))
+    .sort((a, b) => b.reps - a.reps);
+
+  console.log("Total ", Array.from(repeticionesMap.entries()).length);
+  crearArchivo(
+    "./data/drive/2025/newArtists_sorted_reps.json",
+    repeticiones.map((artista: any) => {
+      return {
+        spotify: artista.id,
+        downloaded: 0,
+        artist_downloaded: 0,
+        // reps: artista.reps,
+      };
+    })
+  );
+
+  console.log("fin de nuevos artistas");
+}
+
 function consolidar_artistas_new_artist_completo() {
   console.log(
-    "=====================    CONSOLIDAR ARTISTAS COMPLETO ========================="
+    "\n=====================    CONSOLIDAR ARTISTAS COMPLETO =========================\n\n",
+    new Date()
   );
 
   // Todos los artistas en el drive
   const todosLosArtistas = leerArchivo(
-    "./data/drive/new_artists_drive_consolidado_prev.json"
+    // "./data/drive/new_artists_drive_consolidado_prev.json"
+    "./data/drive/2025/automatic/new/newDrive.json"
   );
   const infoInicial = leerArchivo("./data/drive/artists_drive_db_output.json");
   const driveInfo = leerArchivo("./data/drive/2025/drive_artists.json");
   console.log(todosLosArtistas.length, infoInicial.length);
 
   const configSpotifyArtists = leerArchivo(
-    "./data/scrapped/config/spotify_bands_complete.json"
+    "./data/scrapped/config/spotify_bands.json"
   );
 
   const configChartmetricArtists = leerArchivo(
@@ -412,6 +1009,8 @@ function consolidar_artistas_new_artist_completo() {
   const countries = leerArchivo(`./data/geo/mongo/artist_hive.countries.json`);
 
   console.log(
+    new Date(),
+    "\n\n",
     "Config: ",
     todosLosArtistas.length,
     ", Info previa: ",
@@ -420,23 +1019,24 @@ function consolidar_artistas_new_artist_completo() {
     driveInfo.length,
     ", Spotify: ",
     configSpotifyArtists.length,
-    ", C M: ",
+    ", CM: ",
     configChartmetricArtists.length
   );
 
   const mocks = leerArchivo("./data/drive/artists_mock.json");
 
   const all = todosLosArtistas
-    .filter(
-      (a: any) =>
-        a.spotify_user === "27neIga89YKdkCk6Yzv0ni" ||
-        a.spotify_user === "7cC14jlZcFQueGrGHDYg51" ||
-        a.spotify_user === "5OfRvW5SYGif5Q8LrklFjV" ||
-        a.instagram_user === "prevalecen" ||
-        a.instagram_user === "lissdasilvaa"
-    )
-    // .slice(500, 510)
-    .map((artistaConfig: any) => {
+    // .filter(
+    //   (a: any) =>
+    //     //     a.spotify_user === "27neIga89YKdkCk6Yzv0ni" ||
+    //     //     a.spotify_user === "7cC14jlZcFQueGrGHDYg51" ||
+    //     //     // a.spotify_user === "5OfRvW5SYGif5Q8LrklFjV" ||
+    //     //     // a.instagram_user === "prevalecen" ||
+    //     //     a.instagram_user === "lissdasilvaa"
+    //     a.num === 393
+    // )
+    // .slice(0, 5000)
+    .map((artistaConfig: any, artistIndex: number) => {
       // Drive
       const artistaDrive = !!artistaConfig.spotify_user
         ? driveInfo.find(
@@ -474,11 +1074,20 @@ function consolidar_artistas_new_artist_completo() {
         : undefined;
 
       const chartmetricBio =
-        artistaChartmetricConfig?.downloaded > 0
+        artistaChartmetricConfig?.downloaded > 0 &&
+        fs.existsSync(
+          `./data/scrapped/chartmetric/bands/${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`
+        )
           ? leerArchivo(
               `./data/scrapped/chartmetric/bands/${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`
             )
           : undefined;
+
+      // console.log(
+      //   artistaChartmetricConfig,
+      //   // `./data/scrapped/chartmetric/bands/${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`,
+      //   chartmetricBio
+      // );
 
       // if (artistaChartmetricConfig?.downloaded > 0) {
       //   if (
@@ -513,14 +1122,20 @@ function consolidar_artistas_new_artist_completo() {
         : undefined;
 
       const spotifyBio =
-        artistaSpotifyConfig?.artist_downloaded > 0
+        artistaSpotifyConfig?.artist_downloaded > 0 &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_bio/${artistaSpotifyConfig["artist_downloaded"]}_${artistaSpotifyConfig.spotify}.json`
+        )
           ? leerArchivo(
               `./data/scrapped/spotify/bands/artist_bio/${artistaSpotifyConfig["artist_downloaded"]}_${artistaSpotifyConfig.spotify}.json`
             )
           : undefined;
 
       const spotifyExtra =
-        artistaSpotifyConfig?.downloaded > 0
+        artistaSpotifyConfig?.downloaded > 0 &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_extra/${artistaSpotifyConfig["downloaded"]}_${artistaSpotifyConfig.spotify}.json`
+        )
           ? leerArchivo(
               `./data/scrapped/spotify/bands/artist_extra/${artistaSpotifyConfig["downloaded"]}_${artistaSpotifyConfig.spotify}.json`
             )
@@ -536,7 +1151,7 @@ function consolidar_artistas_new_artist_completo() {
             )
           : undefined;
 
-      const albums = spotifyExtra?.albums?.items;
+      const albums = spotifyExtra?.albums?.items || [];
       const lastAlbum =
         albums && albums.length > 0 ? albums[albums.length - 1] : null;
 
@@ -583,7 +1198,124 @@ function consolidar_artistas_new_artist_completo() {
       //   console.log("##### \n", artistaInfoPrevia, "\n\n\n", artistaDrive);
       // }
 
+      const createdAt = new Date();
+
+      if (artistIndex % 20000 === 0) {
+        console.log("... ", artistIndex, " ....");
+      }
+
+      //   {
+      //     "album_type": "album",
+      //     "total_tracks": 20,
+      //     "available_markets": [
+      //     ],
+      //     "external_urls": {
+      //         "spotify": "https://open.spotify.com/album/7pLfqv8Fr604oPSrMax7t3"
+      //     },
+      //     "href": "https://api.spotify.com/v1/albums/7pLfqv8Fr604oPSrMax7t3",
+      //     "id": "7pLfqv8Fr604oPSrMax7t3",
+      //     "images": [
+      //         {
+      //             "url": "https://i.scdn.co/image/ab67616d0000b273397b1525e21d15cad7c804e7",
+      //             "height": 640,
+      //             "width": 640
+      //         },
+      //         {
+      //             "url": "https://i.scdn.co/image/ab67616d00001e02397b1525e21d15cad7c804e7",
+      //             "height": 300,
+      //             "width": 300
+      //         },
+      //         {
+      //             "url": "https://i.scdn.co/image/ab67616d00004851397b1525e21d15cad7c804e7",
+      //             "height": 64,
+      //             "width": 64
+      //         }
+      //     ],
+      //     "name": "El Rey de la Montaña (Banda Sonora Original)",
+      //     "release_date": "2023-09-22",
+      //     "release_date_precision": "day",
+      //     "type": "album",
+      //     "uri": "spotify:album:7pLfqv8Fr604oPSrMax7t3",
+      //     "artists": [
+      //         {
+      //             "external_urls": {
+      //                 "spotify": "https://open.spotify.com/artist/1XPFAsXCMflKBKZuNIkru3"
+      //             },
+      //             "href": "https://api.spotify.com/v1/artists/1XPFAsXCMflKBKZuNIkru3",
+      //             "id": "1XPFAsXCMflKBKZuNIkru3",
+      //             "name": "Los Rolling Ruanas",
+      //             "type": "artist",
+      //             "uri": "spotify:artist:1XPFAsXCMflKBKZuNIkru3"
+      //         }
+      //     ],
+      //     "album_group": "album"
+      // },
+
+      // export interface TrackTemplate {
+      //   artists: ArtistInTrack[];
+      //   album?: AlbumTemplate;
+      //   disc_number: number;
+      //   duration_ms: number;
+      //   explicit: boolean;
+      //   id: string;
+      //   name: string;
+      //   track_number: number;
+      // }
+
+      // export interface AlbumTemplate extends EntityTemplate {
+      //   name: string;
+      //   images: [
+      //     {
+      //       height: number | string;
+      //       url: string;
+      //       width: number | string;
+      //     }
+      //   ];
+      //   release_date: string;
+      //   release_date_precision: string;
+      //   spotify: {
+      //     id: string;
+      //     url: string;
+      //   };
+      //   total_tracks: number;
+      //   tracks: TrackTemplate[];
+      // }
+
+      const albumsInfo = albums.map((album: any) => {
+        const albumInfo = fs.existsSync(
+          `./data/scrapped/spotify/albums/${album.id}.json`
+        )
+          ? leerArchivo(`./data/scrapped/spotify/albums/${album.id}.json`)
+          : undefined;
+
+        return {
+          name: album.name,
+          images: album.images,
+          release_date: album.release_date,
+          release_date_precision: album.release_date_precision,
+          spotify: {
+            id: album.id,
+            url: album.external_urls?.spotify,
+          },
+          total_tracks: album?.total_tracks,
+          tracks:
+            albumInfo?.tracks?.items?.map((track: any) => {
+              return {
+                artists: track.artists,
+
+                disc_number: track.disc_number,
+                duration_ms: track.duration_ms,
+                explicit: track.explicit,
+                id: track.id,
+                name: track.name,
+                track_number: track.track_number,
+              };
+            }) || [],
+        };
+      });
+
       return {
+        _id: { $oid: new mongoose.Types.ObjectId().toHexString() },
         artistType: "musician",
         is_inactive:
           artistaInfoPrevia?.["is_inactive"] || artistaConfig["Inactivo"] || 0,
@@ -619,7 +1351,9 @@ function consolidar_artistas_new_artist_completo() {
             ? `${lastAlbum.release_date}T00:00:00-05:00`
             : null,
         home_city: artistaInfoPrevia?.["home_city"] || "",
-        genres: spotifyBio?.genres ||
+        genres: (!!spotifyBio?.genres?.length && {
+          music: spotifyBio.genres,
+        }) ||
           artistaInfoPrevia?.["genres"] || {
             music: [],
           },
@@ -703,8 +1437,8 @@ function consolidar_artistas_new_artist_completo() {
         },
         arts: {
           music: {
-            albums: [],
-            top_tracks: [],
+            albums: [], // albumsInfo,
+            top_tracks: top_tracks,
             related_artist_spotify:
               spotifyRelated?.data?.artistUnion?.relatedContent?.relatedArtist
                 ?.items ||
@@ -712,10 +1446,92 @@ function consolidar_artistas_new_artist_completo() {
               [],
           },
         },
+        followed_by: [],
+        followed_profiles: [],
+        createdAt: createdAt,
+        updatedAt: createdAt,
+        __v: 0,
       };
     });
 
-  crearArchivo("./data/drive/2025/artists_db.json", all);
+  // const fakeChartmetricFiles =
+  //   fs.readdirSync("D:/har/scrapped/chartmetric/bands") || [];
+
+  // const files = fakeChartmetricFiles.map((f) => {
+  //   const partes = f.replace(".json", "").split("_");
+  //   return partes[0] + " " + partes[1];
+  // });
+
+  // crearArchivo("./data/drive/2025/fake_chartmetric.json", files);
+
+  console.log("Creando Database", new Date());
+
+  // Función para dividir una lista en chunks de tamaño `size`
+  function chunkArray<T>(arr: T[], size: number): T[][] {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+      arr.slice(i * size, i * size + size)
+    );
+  }
+  const chunkSize = 1000000;
+
+  // 🟢 Dividir `all` en partes de `chunkSize`
+  const chunks = chunkArray(all, chunkSize);
+  console.log("total chunks: ", chunks.length);
+  // 🔹 Guardar cada chunk con un sufijo (_0, _1, _2, ...)
+  chunks.forEach((chunk, index) => {
+    console.log("   CHUNK ", index + 1);
+    const filename = `./data/drive/2025/chunks/artists_db_${index}.json`;
+    crearArchivo(filename, chunk);
+
+    console.log("Creando índice Entity Directories (chunk) ", index + 1);
+
+    crearArchivo(
+      `./data/drive/2025/chunks/artists_db_entity_directory_${index}.json`,
+      chunk.map((a: any) => {
+        return {
+          id: a._id,
+          entityType: "Artist",
+          profile_pic: a.profile_pic,
+          name: a.name,
+          username: a.username,
+          subtitle: a.subtitle,
+          verified_status: a.verified_status,
+          isActive: a.isActive,
+          location: [],
+          createdAt: a.createdAt,
+          updatedAt: a.updatedAt,
+          __v: 0,
+        };
+      })
+    );
+  });
+
+  // crearArchivo("./data/drive/2025/artists_db.json", all);
+
+  console.log(" FIN ", new Date());
+}
+
+function compilarAlbumes() {
+  const spotify_config_data: any = JSON.parse(
+    fs.readFileSync("./data/scrapped/config/spotify_bands.json", "utf-8")
+  ).filter((a: any) => a.downloaded > 0);
+
+  let num = 0;
+  const albums = spotify_config_data.map((config: any) => {
+    const path = `./data/scrapped/spotify/bands/artist_extra/${config["downloaded"]}_${config.spotify}.json`;
+    const spotifyBio =
+      config?.downloaded > 0 && fs.existsSync(path)
+        ? leerArchivo(path)
+        : undefined;
+    return spotifyBio?.albums?.items || [];
+  });
+
+  crearArchivo("./data/drive/2025/automatic/new/albums.json", albums);
+  // .map((a: any) => a.albums);
+  // .filter((a: any) => !!a);
+
+  console.log(num);
+  console.log(spotify_config_data.length);
 }
 
 function calculatePriority(artists: any[], segments: number) {
@@ -748,8 +1564,13 @@ function calculatePriority(artists: any[], segments: number) {
 
 function consolidar_sitios() {
   const places_drive_data: any = JSON.parse(
-    fs.readFileSync("./data/drive/places_drive.json", "utf-8")
+    fs.readFileSync("./data/drive/places_drive_04_25.json", "utf-8")
   );
+  const continents = leerArchivo(
+    `./data/geo/mongo/artist_hive.continents.json`
+  );
+
+  const countries = leerArchivo(`./data/geo/mongo/artist_hive.countries.json`);
 
   const nonEmptyFields = ["instagram", "spotify", "chartmetric", "name"];
   const existingDrivePlaces = places_drive_data.filter((place: any) => {
@@ -759,11 +1580,32 @@ function consolidar_sitios() {
   });
 
   const existingDrivePlacesOutput = existingDrivePlaces.map((place: any) => {
+    const placeCountryInfo = !!place["country_alpha2"]
+      ? countries.find(
+          (country: any) => country.alpha2 === place["country_alpha2"]
+        )
+      : null;
+
+    const continent = continents.find(
+      (continent: any) =>
+        placeCountryInfo?.continent?.["$oid"] === continent._id?.["$oid"]
+    );
+
     return {
       name: place["name"] || "",
       username: place["instagram"] || "",
       place_type: place["place_type"] || "",
       music_genre: "",
+      country: placeCountryInfo?._id || "",
+      country_search: `${continent?.name || ""} ${
+        continent?.i18n?.es?.name || ""
+      }  ${continent?.i18n?.fr?.name || ""} ${
+        continent?.i18n?.de?.name || ""
+      }  ${placeCountryInfo?.name || ""} ${placeCountryInfo?.native || ""} ${
+        placeCountryInfo?.i18n?.en?.name || ""
+      } ${placeCountryInfo?.i18n?.fr?.name || ""} ${
+        placeCountryInfo?.i18n?.de?.name || ""
+      }`,
       country_name: place["country"] || "",
       country_alpha2: place["country_alpha2"] || "",
       state: place["state"] || "",
@@ -786,7 +1628,7 @@ function consolidar_sitios() {
       website: place["website"] || "",
       promoter: "",
       tiktok: place["tiktok"] || "",
-      profile_pic: "",
+      profile_pic: place["ig_img"] ? `s3://public/${place["ig_img"]}` : "",
       image_gallery: [
         { src: "s3://public/galeria/lp_1.jpg" },
         { src: "s3://public/galeria/lp_2.jpg" },
@@ -797,15 +1639,15 @@ function consolidar_sitios() {
 
       genres: {
         music: [
-          "salsa",
-          "timba",
-          "músicas improvisadas",
-          "jazz",
-          "fusiones",
-          "cumbia",
-          "porro",
-          "ska",
-          "crossover",
+          // "salsa",
+          // "timba",
+          // "músicas improvisadas",
+          // "jazz",
+          // "fusiones",
+          // "cumbia",
+          // "porro",
+          // "ska",
+          // "crossover",
         ],
       },
 
@@ -1098,34 +1940,69 @@ function consolidar_sitios() {
       },
       stats: {
         rating: {
-          overall: 0.7341335884211364,
-          stage: 4.992712277223668,
-          sound: 2.2198114813543954,
-          backline: 0.6555007014728664,
-          lights: 2.228682229309499,
-          dressing_room: 2.49464302154375,
-          hospitality_food: 3.2476047703406072,
-          hospitality_drinks: 0.07304123198966117,
-          timeliness: 0.6993761803171261,
-          communication: 1.9933898897972568,
-          transportation: 2.103412855512059,
-          logistic: 2.7721849091316764,
-          location: 2.5536700451747616,
-          seating_capacity: 3.491467082819754,
-          total_rates: 5613,
+          overall: Math.random() * 2 + 3,
+          stage: Math.random() * 2 + 3,
+          sound: Math.random() * 2 + 3,
+          backline: Math.random() * 2 + 3,
+          lights: Math.random() * 2 + 3,
+          dressing_room: Math.random() * 2 + 3,
+          hospitality_food: Math.random() * 2 + 3,
+          hospitality_drinks: Math.random() * 2 + 3,
+          timeliness: Math.random() * 2 + 3,
+          communication: Math.random() * 2 + 3,
+          transportation: Math.random() * 2 + 3,
+          logistic: Math.random() * 2 + 3,
+          location: Math.random() * 2 + 3,
+          seating_capacity: Math.random() * 2 + 3,
+          total_rates: Math.round(Math.random() * 10000),
         },
       },
     };
   });
 
   fs.writeFileSync(
-    "./data/drive/places_drive_db_output.json",
+    "./data/drive/places_drive_db_output2.json",
     JSON.stringify(
       existingDrivePlacesOutput.filter((place: any) => !!place.name),
       null,
       2
     ),
     "utf-8"
+  );
+
+  console.log("Creando índice Entity Directories (chunk) ");
+
+  crearArchivo(
+    `./data/drive/2025/chunks/places_db_entity_directory.json`,
+    existingDrivePlacesOutput.map((p: any) => {
+      const [latitude, long] = p.location.split(",").map(Number);
+      return {
+        id: p._id,
+        entityType: "Place",
+        profile_pic: p.profile_pic,
+        name: p.name,
+        username: p.username,
+        subtitle: p.subtitle,
+        verified_status: p.verified_status,
+        isActive: p.isActive,
+        search_cache: [p.name, p.username, p.country_search, p.city].join(" "),
+        location: [
+          {
+            country_name: p.country_name,
+            country_alpha2: p.country_alpha2,
+            state: p.state,
+            city: p.city,
+            address: p.address,
+            latitude: latitude,
+            longitude: long,
+            locationPrecision: "POINT",
+          },
+        ],
+        createdAt: p.createdAt,
+        updatedAt: p.updatedAt,
+        __v: 0,
+      };
+    })
   );
 }
 
@@ -1481,7 +2358,7 @@ function consolidar_chartmetric_ids_para_scrapping() {
       (artist_config: any) => artist_config.chartmetric === driveChartmetricID
     );
     if (!artistInConfig) {
-      console.log(driveChartmetricID);
+      // console.log(driveChartmetricID);
       chartmetric_config.push({
         chartmetric: driveChartmetricID,
         downloaded: 0,
@@ -1699,4 +2576,388 @@ function juntarArtistasAutomaticosYManuales() {
     "utf-8"
   );
   console.log("Total: ", allArtists.length, !Number(12));
+}
+
+function consolidarAlbums() {
+  // const configSpotifyArtists = leerArchivo(
+  //   "./data/scrapped/config/spotify_bands.json"
+  // ).filter((a: any) => a.downloaded > 0);
+
+  // const albumsList: string[] = [];
+  // const albumsAllArtist = configSpotifyArtists.forEach(
+  //   (configA: any, artistIndex: number) => {
+  //     const extraInfoFile = `./data/scrapped/spotify/bands/artist_extra/${configA.downloaded}_${configA.spotify}.json`;
+  //     const extraInfo = fs.existsSync(extraInfoFile)
+  //       ? leerArchivo(extraInfoFile)
+  //       : undefined;
+
+  //     if (artistIndex === 10) {
+  //       console.log(extraInfoFile, extraInfo);
+  //     }
+  //     const albumsInArtist =
+  //       extraInfo?.albums?.items?.filter(
+  //         (album: any) => album.album_type === "album"
+  //       ) || [];
+
+  //     albumsInArtist.forEach((album: any) => {
+  //       albumsList.push(album.id);
+  //     });
+  //   }
+  // );
+  // // .filter((x: any) => !!x);
+
+  // console.log(
+  //   // albumsAllArtist.length,
+  //   albumsList.length,
+  //   [...new Set(albumsList)].length
+  // );
+
+  // const albumsDir = fs.readdirSync("./data/scrapped/spotify/albums");
+  const bioPath = "./data/scrapped/spotify/bands/artist_extra";
+  const biosDir = fs.readdirSync(bioPath);
+
+  const biosMap = new Map<string, any>();
+
+  console.log("Total archivos por leer: ", biosDir.length);
+
+  biosDir.forEach((bioFile: any, artistIndex: number) => {
+    try {
+      const spotifyId = bioFile.replace(".json", "").split("_")[1];
+      const extraInfo = fs.existsSync(`${bioPath}/${bioFile}`)
+        ? leerArchivo(`${bioPath}/${bioFile}`)
+        : undefined;
+
+      if (artistIndex + (1 % 1000) === 0) {
+        console.log(extraInfo);
+      }
+      const albumsInArtist = (
+        extraInfo?.albums?.items?.filter(
+          (album: any) => album.album_type === "album"
+        ) || []
+      ).map((album: any) => {
+        const albumInfo = fs.existsSync(
+          `./data/scrapped/spotify/albums/${album.id}.json`
+        )
+          ? leerArchivo(`./data/scrapped/spotify/albums/${album.id}.json`)
+          : undefined;
+
+        return {
+          name: album.name,
+          images: album.images,
+          release_date: album.release_date,
+          release_date_precision: album.release_date_precision,
+          spotify: {
+            id: album.id,
+            url: album.external_urls?.spotify,
+          },
+          total_tracks: album?.total_tracks,
+          tracks:
+            albumInfo?.tracks?.items?.map((track: any) => {
+              return {
+                artists: track.artists,
+
+                disc_number: track.disc_number,
+                duration_ms: track.duration_ms,
+                explicit: track.explicit,
+                id: track.id,
+                name: track.name,
+                track_number: track.track_number,
+              };
+            }) || [],
+        };
+      });
+
+      if (albumsInArtist.length > 0) {
+        biosMap.set(spotifyId, albumsInArtist);
+      }
+    } catch (error) {
+      console.log("ERROR...... ", artistIndex, "  ", `${bioPath}/${bioFile}`);
+      console.log(error);
+      throw Error("Parar");
+    }
+  });
+
+  crearArchivo(
+    "./data/drive/2025/automatic/spotify/albumsConsolidado.json",
+    Array.from(biosMap, ([spotify, albums]) => ({
+      spotify,
+      albums,
+    }))
+  );
+
+  console.log("Total: ", biosDir.length, biosMap.size);
+}
+
+function convertAlbumsToDatabase() {
+  const info = leerArchivo(
+    "./data/drive/2025/automatic/spotify/albumsConsolidado.json"
+  );
+  // console.log(JSON.stringify(info[0].albums, null, 2));
+
+  const albumsMap = new Map<string, any>();
+  let totalDescargados = 0;
+
+  info.forEach((artist: any) => {
+    artist.albums.forEach((album: any) => {
+      if (
+        true ||
+        album.spotify.id === "000uAiBjY6I5LQnPBHyytH" ||
+        album.spotify.id === "7fJEer6X6zpSWW7Rbm2w7t"
+      ) {
+        const albumFile = `./data/scrapped/spotify/albums/${album.spotify.id}.json`;
+        const albumDownloadedInfo = fs.existsSync(albumFile)
+          ? leerArchivo(albumFile)
+          : undefined;
+
+        let artistsIds = albumDownloadedInfo?.artists?.map(
+          (artistInAlbum: any) => artistInAlbum.id
+        ) || [artist.spotify];
+
+        // console.log("ARTIST !!!!!! !!!! ", artist);
+
+        const tracks = (albumDownloadedInfo?.tracks?.items || []).map(
+          (track: any) => {
+            const { disc_number, duration_ms, id, name, track_number } = track;
+            return {
+              artists: track.artists.map((artistTrack: any) => {
+                return { name: artistTrack.name, id: artistTrack.id };
+              }),
+              // Disc numbers
+              d_n: disc_number,
+              // Duration
+              dur: duration_ms,
+              id,
+              // Name
+              n: name,
+              // Track number
+              num: track_number,
+            };
+          }
+        );
+
+        const albumFinalInfo = {
+          // Album Id
+          aId: album.spotify.id,
+          // name
+          n: albumDownloadedInfo?.name || album.name,
+          // Artist Spotify Ids
+          asp: artistsIds,
+          // Images
+          img: (album.images || []).map((image: any) => {
+            return {
+              url: image.url.replace("https://i.scdn.co/image/", ""),
+              s: image.height,
+            };
+          }),
+          // Release date
+          rd: album.release_date,
+          // Release date
+          rdp: album.release_date_precision,
+          // Total Tracks
+          nt: album.total_tracks,
+          // Tracks
+          t: tracks,
+          // Label
+          lab: albumDownloadedInfo?.label,
+          // Index
+          idx: artistsIds.join(","),
+        };
+
+        if (!albumsMap.get(albumFinalInfo.aId)) {
+          albumsMap.set(albumFinalInfo.aId, albumFinalInfo);
+        }
+      }
+    });
+  });
+
+  // Función para dividir una lista en chunks de tamaño `size`
+  function chunkArray<T>(arr: T[], size: number): T[][] {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+      arr.slice(i * size, i * size + size)
+    );
+  }
+  const chunkSize = 150000;
+
+  // 🟢 Dividir `all` en partes de `chunkSize`
+  const chunks = chunkArray(Array.from(albumsMap.values()), chunkSize);
+  console.log("Total albums: ", albumsMap.size);
+  console.log("total chunks: ", chunks.length);
+
+  chunks.forEach((chunk, chunkNumber) => {
+    crearArchivo(
+      `./data/drive/2025/automatic/spotify/albums/albumsConsolidado_db_${chunkNumber}.json`,
+      Array.from(chunk)
+    );
+  });
+}
+
+// ============================   Related  ===================================
+
+function convertRelatedArtistsId() {
+  const data = leerArchivo(
+    "./data/drive/2025/chunks/export/artist_hive.artists.json"
+  );
+  const videos = leerArchivo("./data/drive/2025/chunks/export/yt_videos.json");
+
+  const spotifyIds: Record<string, any> = {};
+  const numIds: Record<string, any> = {};
+
+  const idsArray = data
+    .filter((artist: any) => !!artist?.spotify)
+    .map((artist: any) => {
+      return { spotify: artist.spotify, dbid: artist["_id"]["$oid"] };
+    });
+
+  idsArray.forEach((artist: any) => (spotifyIds[artist.spotify] = artist.dbid));
+  data.forEach((artist: any) => (numIds[artist.num] = artist));
+
+  const related = data.filter(
+    (artist: any) => artist?.arts?.music?.related_artist_spotify?.length
+  );
+
+  related.forEach((artist: any) => {
+    numIds[artist.num].arts.music.related_artists =
+      artist?.arts?.music?.related_artist_spotify.map(
+        (relatedArtist: string) => spotifyIds[relatedArtist]
+      );
+  });
+
+  videos.forEach((video: any) => {
+    numIds[video.num].youtube_widget_id =
+      numIds[video.num].youtube_widget_id || video.video_youtube_auto;
+  });
+
+  crearArchivo(
+    "./data/drive/2025/chunks/export/artist_hive.artists_related.json",
+    data
+  );
+}
+
+// =========================== CONFIG FILES =================================
+
+function generateSpotifyConfigFileFromFiles() {
+  const dirPath = `./data/scrapped/spotify/bands`;
+
+  const spotifyConfig: Record<string, any> = {}; // Diccionario por spotify ID
+  const sliceLimit = 1000000;
+  const logModule = 10000;
+
+  console.log("BIOS....");
+  const bios = fs.readdirSync(`${dirPath}/artist_bio`).reverse();
+
+  bios.slice(0, sliceLimit).forEach((bioFile: string, index: number) => {
+    const parts = bioFile.replace(".json", "").split("_");
+    const spotifyId = parts[1];
+    const artistDownloaded = Number(parts[0]);
+
+    if (spotifyConfig[spotifyId]) {
+      spotifyConfig[spotifyId].artist_downloaded = Math.max(
+        artistDownloaded,
+        spotifyConfig[spotifyId].artist_downloaded
+      );
+    } else {
+      spotifyConfig[spotifyId] = {
+        spotify: spotifyId,
+        downloaded: 0,
+        artist_downloaded: artistDownloaded,
+        related_downloaded: 0,
+      };
+    }
+
+    if (index % logModule === 0) {
+      console.log(index);
+    }
+  });
+  console.log("EXTRAS....");
+
+  const extras = fs.readdirSync(`${dirPath}/artist_extra`).reverse();
+
+  extras.slice(0, sliceLimit).forEach((bioFile: string, index: number) => {
+    const parts = bioFile.replace(".json", "").split("_");
+    const spotifyId = parts[1];
+    const downloaded = Number(parts[0]);
+
+    if (spotifyConfig[spotifyId]) {
+      spotifyConfig[spotifyId].downloaded = Math.max(
+        downloaded,
+        spotifyConfig[spotifyId].downloaded
+      );
+    } else {
+      spotifyConfig[spotifyId] = {
+        spotify: spotifyId,
+        downloaded: downloaded,
+        artist_downloaded: 0,
+        related_downloaded: 0,
+      };
+    }
+
+    if (index % logModule === 0) {
+      console.log(index);
+    }
+  });
+
+  console.log("RELATED....");
+  const related = fs.readdirSync(`${dirPath}/artist_related`);
+
+  related.slice(0, sliceLimit).forEach((bioFile: string, index: number) => {
+    const parts = bioFile.replace(".json", "").split("_");
+    const spotifyId = parts[1];
+    const relatedDownloaded = 100;
+
+    if (spotifyConfig[spotifyId]) {
+      spotifyConfig[spotifyId].related_download = Math.max(
+        relatedDownloaded,
+        spotifyConfig[spotifyId].related_download
+      );
+    } else {
+      spotifyConfig[spotifyId] = {
+        spotify: spotifyId,
+        downloaded: 0,
+        artist_downloaded: 0,
+        related_downloaded: relatedDownloaded,
+      };
+    }
+
+    if (index % logModule === 0) {
+      console.log(index);
+    }
+  });
+
+  console.log(bios.length, " vs ", Object.values(spotifyConfig).length);
+
+  crearArchivo(
+    `./data/scrapped/config/new/sportify_bands.json`,
+    Object.values(spotifyConfig)
+  );
+
+  // console.log(spotifyConfig);
+}
+
+function reassingDBIdsInEvents() {
+  const eventos = leerArchivo(
+    "./data/drive/2025/chunks/export/artist_hive.events.json"
+  );
+  const artistas = leerArchivo(
+    "./data/drive/2025/chunks/export/artist_hive.artists.json"
+  );
+  const places = leerArchivo(
+    "./data/drive/2025/chunks/export/artist_hive.places.json"
+  );
+
+  eventos.forEach((evento: any) => {
+    const pos = Math.floor(Math.random() * places.length);
+    evento.place = places[pos]._id;
+
+    evento.artists.map((art: any) => {
+      const posA = Math.floor(Math.random() * artistas.length);
+      return artistas[posA]._id;
+    });
+  });
+
+  console.log(eventos[0]);
+
+  crearArchivo(
+    "./data/drive/2025/chunks/export/artist_hive.events_new.json",
+    eventos
+  );
 }
