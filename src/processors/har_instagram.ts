@@ -2,28 +2,30 @@ const fs = require("fs");
 import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 
 const PROFILES_DIR_PATH =
-  "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/places/profiles";
+  "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/profiles";
 export function main(args?: any) {
+  // extract_unique_ids_from_timeline();
   // procesar_har();
   // extract_user_profile();
   // extract_instagram_data();
   // copyProfilePics();
   console.log("=============== INICINAOD   ?????????");
-
   // console.log("=============== TIMELINE   ?????????");
   // process_timelines();
   console.log("=============== tags in timeline   ?????????");
-  extract_tags_in_timeline();
-  console.log("=============== genres   ?????????");
-  generate_genres_from_tags_in_timeline();
-  console.log("=============== stats   ?????????");
-  generate_instagram_stats();
+  // extract_tags_in_timeline();
+  // extract_tags_in_timeline_with_frequency();
+  // consolidar_menciones_absolutas();
+  // consolidar_menciones_globales();
+  // console.log("=============== genres   ?????????");
+  // generate_genres_from_tags_in_timeline();
+  // console.log("=============== stats   ?????????");
+  // generate_instagram_stats();
   console.log("=============== FIN   ?????????");
 
+  // sort_profiles();
   // const files = fs.readdirSync(`${PROFILES_DIR_PATH}/clean`);
-
   // const data: any[] = [];
-
   // let totalPosts: number[] = [];
   // files.forEach((file: string) => {
   //   const dataFile = leerArchivo(`${PROFILES_DIR_PATH}/clean/${file}`);
@@ -37,34 +39,110 @@ export function main(args?: any) {
   //   });
   // });
   // console.log("Promedio ", mean(totalPosts), median(totalPosts));
-
   // crearArchivo(`${PROFILES_DIR_PATH}/processed/postNumber.json`, data);
 }
 
-function copyProfilePics() {
+function sort_profiles() {
   const dirPath =
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/places";
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/profiles";
+  const profilesURL = fs.readdirSync(`${dirPath}/clean`);
+  const users = profilesURL.map((profileURL: any) => {
+    const profile = leerArchivo(`${dirPath}/clean/${profileURL}`);
+    // console.log(profile);
+    const username = profile.username || "";
+    const full_name = profile.full_name || "";
+    const follower_count = profile.follower_count || 0;
+    const media_count = profile.media_count || 0;
+    const category = profile.category || "";
+    const is_verified = profile.is_verified || false;
+    const is_private = profile.is_private || false;
+
+    return {
+      username,
+      full_name,
+      follower_count,
+      media_count,
+      category,
+      is_verified,
+      is_private,
+    };
+  });
+
+  // const SEP = "\u001F";
+  const SEP = "*";
+  // Ordena los usuarios según los criterios
+  users.sort((a: any, b: any) => {
+    if (a.is_private !== b.is_private)
+      return Number(a.is_private) - Number(b.is_private); // públicos primero
+    if (a.follower_count !== b.follower_count)
+      return b.follower_count - a.follower_count; // descendente
+    if (a.media_count !== b.media_count) return b.media_count - a.media_count; // descendente
+    if (a.is_verified !== b.is_verified)
+      return Number(a.is_verified) - Number(b.is_verified); // no verificados primero
+    return 0;
+  });
+
+  // Convierte a formato "CSV" con el separador especial
+  const csvLines = users.map((user: any) => {
+    return [
+      user.username,
+      user.full_name,
+      user.follower_count,
+      user.media_count,
+      user.category,
+      user.is_verified,
+      user.is_private,
+    ].join(SEP);
+  });
+
+  // Une todas las líneas
+  const finalOutput = csvLines.join("\n");
+  crearArchivo(`${dirPath}/processed/sorted_usernames.txt`, finalOutput, false);
+}
+
+function extract_unique_ids_from_timeline() {
+  const dirPath =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download";
+  const timeline = fs.readdirSync(`${dirPath}/profiles/timeline`);
+  const usersList = timeline
+    .filter((file: string) => file.endsWith("_0.json"))
+    .map((file: string) => file.replace("_0.json", ""));
+  crearArchivo(
+    `${dirPath}/processed/scrapped_ig_usernames.txt`,
+    usersList.join("\n"),
+    false
+  );
+}
+
+function copyProfilePics() {
+  const dirPath = "E:/Data/places";
+  // "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/places";
   const users = fs.readdirSync(`${dirPath}/images`);
 
   let total = 0;
   let imagesURL = "";
   users.forEach((user: any) => {
     if (!["kirstenboschsummerconcerts", "muhle_hunziken"].includes(user)) {
-      const images = fs.readdirSync(`${dirPath}/images/${user}`);
-      const hd = images.find((image: string) => image.startsWith("HD_"));
-      total += !!hd ? 1 : 0;
-      if (hd) {
-        const newImage = hd.replace("HD_", "");
-        const ext = newImage.split(".")[1];
-        if (ext !== "jpg") {
-          console.log(ext);
-        } else {
-          fs.copyFileSync(
-            `${dirPath}/images/${user}/${newImage}`,
-            `${dirPath}/profile_pics/${user}.${ext}`
-          );
-          imagesURL += `${user}\n`;
+      try {
+        const images = fs.readdirSync(`${dirPath}/images/${user}`);
+        const hd = images.find((image: string) => image.startsWith("HD_"));
+        total += !!hd ? 1 : 0;
+        if (hd) {
+          const newImage = hd.replace("HD_", "");
+          const ext = newImage.split(".")[1];
+          if (ext !== "jpg") {
+            console.log(ext);
+          } else {
+            fs.copyFileSync(
+              `${dirPath}/images/${user}/${hd}`,
+              `${dirPath}/profile_pics/${user}.${ext}`
+            );
+            imagesURL += `${user}\n`;
+          }
         }
+      } catch (error) {
+        console.log("Errooooor    ", user);
+        console.log(error);
       }
     }
   });
@@ -1235,6 +1313,654 @@ function extract_tags_in_timeline() {
   }
   crearArchivo(`${timelinesPath}/processed/tags.json`, timelineSummary);
   // crearArchivo(`${timelinesPath}/processed/relatedUsers.json`, Object.values(timelineSummary).map((profile:any)=>));
+}
+
+const extractTagsAndHashtags = (text: string) => {
+  const userTagRegex = /@([\w\d._]+)/g;
+  const hashtagRegex = /#([\w\dáéíóúÁÉÍÓÚñÑüÜ]+)/g;
+
+  const tags_in_text: string[] = [];
+  const hashtags: string[] = [];
+
+  let match: RegExpExecArray | null;
+
+  // Extraer menciones @usuario
+  while ((match = userTagRegex.exec(text)) !== null) {
+    tags_in_text.push(match[1]);
+  }
+
+  // Extraer hashtags #hashtag
+  while ((match = hashtagRegex.exec(text)) !== null) {
+    hashtags.push(match[1]);
+  }
+
+  return { tags_in_text, hashtags };
+};
+
+// function extract_tags_in_timeline_with_frequency() {
+//   const timelinesPath = PROFILES_DIR_PATH;
+
+//   const files = fs.readdirSync(`${timelinesPath}/timeline`);
+
+//   const timelineSummary: Record<string, any> = {};
+//   let lastUserId: string = "";
+//   let userIndex = 0;
+
+//   console.log("****   ", files.length);
+//   files.forEach((file: string) => {
+//     const content = leerArchivo(`${timelinesPath}/timeline/${file}`);
+//     const match = file.match(/^(.*)_\d+\.json$/);
+//     const userId = match ? match[1] : null;
+
+//     if (userId === "01800.perreo") {
+//       console.log("   > ", file);
+//       if (!(userId in timelineSummary)) {
+//         timelineSummary[userId] = [];
+//       }
+//       if (lastUserId != userId) {
+//         console.log(userId);
+//         lastUserId = userId;
+//         userIndex++;
+//         if (userIndex % 200 == 0) {
+//           console.log(lastUserId);
+//         }
+//       }
+
+//       const posts = (content || []).map((post: any) => {
+//         const info = post.node;
+
+//         // Uso
+//         const { tags_in_text, hashtags } = extractTagsAndHashtags(
+//           info?.caption?.text || ""
+//         );
+
+//         // try {
+//         const tagsInPost = {
+//           "user.username": info.user.username,
+//           "owner.username": info.owner.username,
+//           "coauthor_producers.username": (info.coauthor_producers || []).map(
+//             (user: any) => user.username
+//           ),
+//           "invited_coauthor_producers.username": (
+//             info.invited_coauthor_producers || []
+//           ).map((user: any) => user.username),
+//           "usertags.username": (info.usertags?.in || []).map(
+//             (user: any) => user.user.username
+//           ),
+//           tags_in_text,
+//           // hashtags,
+//           carousel_media_tags: (info.carousel_media || []).map((media: any) =>
+//             media.usertags?.in?.map((tag: any) => tag.user?.username)
+//           ),
+//         };
+
+//         // console.log(tagsInPost);
+
+//         return tagsInPost;
+//       });
+
+//       const usernamesInPost = (posts || []).map((post: any) => {
+//         const usernames: string[] = [];
+
+//         Object.values(post).forEach((value: any) => {
+//           if (typeof value === "string") {
+//             usernames.push(value);
+//           } else if (Array.isArray(value)) {
+//             value.forEach((inner) => {
+//               if (inner) {
+//                 if (typeof inner === "string") {
+//                   usernames.push(inner);
+//                 } else if (Array.isArray(inner)) {
+//                   inner.forEach((nested) => {
+//                     if (typeof nested === "string") {
+//                       usernames.push(nested);
+//                     } else {
+//                       // console.log(
+//                       //   Object.keys(value),
+//                       //   value,
+//                       //   JSON.stringify(value)
+//                       // );
+//                       // throw new Error("FIN ENCONTRÖ UN OBJECT");
+//                     }
+//                   });
+//                 } else {
+//                   // console.log(Object.keys(value), value, JSON.stringify(value));
+//                   // throw new Error("FIN ENCONTRÖ UN OBJECT");
+//                   usernames.push(inner?.toString());
+//                 }
+//               }
+//             });
+//           } else {
+//             // console.log(Object.keys(value), value, JSON.stringify(value));
+//             // throw new Error("FIN ENCONTRÖ UN OBJECT");
+
+//             usernames.push(value.toString());
+//           }
+//         });
+//         return usernames.filter((u:string)=>u !== userId);
+//       });
+
+//       // console.log("XXX XXXX  xXXXXXX");
+//       // console.log(...new Set(usernamesInPost.flat()).values());
+//       // console.log("XXX XXXX  xXXXXXX");
+//       // console.log("==================", posts);
+//       // timelineSummary[userId].push(...posts);
+//       // Obtener todos los usernames existentes
+//       const flatUsernames: string[] = usernamesInPost.flat();
+// const newMentions = flatUsernames.map(username => ({
+//   username,
+//   count: 1,
+// }));
+
+//       console.log(allUsernames);
+//       // Contar ocurrencias
+//       const usernameCounts: Record<string, number> = {};
+
+//       for (const username of allUsernames) {
+//         usernameCounts[username] = (usernameCounts[username] || 0) + 1;
+//       }
+
+//       // Convertir a array de objetos
+//       timelineSummary[userId] = Object.entries(usernameCounts).map(
+//         ([username, count]) => ({ username, count })
+//       );
+
+//       // Ordenar: primero por count descendente, luego por username alfabéticamente
+//       timelineSummary[userId].sort((a: any, b: any) => {
+//         if (b.count !== a.count) return b.count - a.count;
+//         return a.username.localeCompare(b.username);
+//       });
+//     } else {
+//       throw Error(`No hay userId en  ${file}`);
+//     }
+//   });
+
+//   // console.log(timelineSummary);
+//   // const allPosts = Object.values(timelineSummary).flat();
+//   // console.log(allPosts.length);
+//   if (!fs.existsSync(`${timelinesPath}/processed`)) {
+//     fs.mkdirSync(`${timelinesPath}/processed`);
+//   }
+//   crearArchivo(`${timelinesPath}/processed/tags.json`, timelineSummary);
+//   // crearArchivo(`${timelinesPath}/processed/relatedUsers.json`, Object.values(timelineSummary).map((profile:any)=>));
+// }
+
+function extract_tags_in_timeline_with_frequency() {
+  const timelinesPath = PROFILES_DIR_PATH;
+
+  const files = fs.readdirSync(`${timelinesPath}/timeline`);
+  files.sort(); // asegurar orden alfabético
+
+  // ✅ Lista de usuarios a evaluar (vacía = todos)
+  const targetUserIds: string[] = [
+    // "monsieurperine",
+    // "puertocandelaria",
+    // "caribefunk",
+  ]; // Ejemplo: ['01800.perreo', 'otro.usuario']
+  const isFiltering = targetUserIds.length > 0;
+  const targetSet = new Set(targetUserIds);
+  const targetSorted = [...targetUserIds].sort();
+  const foundUserIds = new Set<string>();
+
+  const timelineSummary: Record<
+    string,
+    {
+      hashtags: { hashtag: string; count: number }[];
+      tags: { username: string; count: number }[];
+    }
+  > = {};
+
+  const userTagAccumulator: Record<string, Record<string, number>> = {};
+  const userHashtagAccumulator: Record<string, Record<string, number>> = {};
+
+  let lastUserId: string = "";
+  let userIndex = 0;
+
+  console.log("📂 Total archivos encontrados:", files.length);
+
+  for (const file of files) {
+    const match = file.match(/^(.+?)_\d+\.json$/);
+    const userId = match ? match[1] : null;
+    if (!userId) continue;
+
+    // ✅ Filtrado por userId (sin romper demasiado pronto)
+    if (isFiltering && !targetSet.has(userId)) {
+      const lastTarget = targetSorted[targetSorted.length - 1];
+      if (userId > lastTarget) break;
+      continue;
+    }
+
+    const content = leerArchivo(`${timelinesPath}/timeline/${file}`);
+    if (!content) continue;
+
+    foundUserIds.add(userId);
+
+    if (!(userId in userTagAccumulator)) {
+      userTagAccumulator[userId] = {};
+    }
+    if (!(userId in userHashtagAccumulator)) {
+      userHashtagAccumulator[userId] = {};
+    }
+
+    if (lastUserId !== userId) {
+      lastUserId = userId;
+      userIndex++;
+      if (userIndex % 200 === 0) {
+        console.log(`🔄 Procesando usuario #${userIndex}: ${userId}`);
+      }
+    }
+
+    const posts = content.map((post: any) => {
+      const info = post.node;
+      const { tags_in_text, hashtags } = extractTagsAndHashtags(
+        info?.caption?.text || ""
+      );
+
+      const tagsInPost = {
+        "user.username": info.user?.username,
+        "owner.username": info.owner?.username,
+        "coauthor_producers.username": (info.coauthor_producers || []).map(
+          (user: any) => user.username
+        ),
+        "invited_coauthor_producers.username": (
+          info.invited_coauthor_producers || []
+        ).map((user: any) => user.username),
+        "usertags.username": (info.usertags?.in || []).map(
+          (user: any) => user.user.username
+        ),
+        tags_in_text,
+        hashtags,
+        carousel_media_tags: (info.carousel_media || []).map((media: any) =>
+          media.usertags?.in?.map((tag: any) => tag.user?.username)
+        ),
+      };
+
+      return tagsInPost;
+    });
+
+    const usernamesInPost = posts.map((post: any) => {
+      const usernames: string[] = [];
+
+      Object.entries(post).forEach(([key, value]) => {
+        if (key === "hashtags") return;
+
+        if (typeof value === "string") {
+          usernames.push(value);
+        } else if (Array.isArray(value)) {
+          value.forEach((inner) => {
+            if (!inner) return;
+            if (typeof inner === "string") {
+              usernames.push(inner);
+            } else if (Array.isArray(inner)) {
+              inner.forEach((nested) => {
+                if (typeof nested === "string") {
+                  usernames.push(nested);
+                }
+              });
+            } else {
+              usernames.push(inner?.toString());
+            }
+          });
+        } else if (value) {
+          usernames.push(value.toString());
+        }
+      });
+
+      return usernames
+        .filter((u: string) => u !== userId)
+        .map((tag: string) => tag.toLowerCase().replace(/\.+$/, ""));
+    });
+
+    const hashtagsInPost = posts.flatMap((post: any) => {
+      const value = post.hashtags;
+      if (!value || !Array.isArray(value)) return [];
+      return value.map((tag: string) => tag.toLowerCase());
+    });
+
+    const flatUsernames: string[] = usernamesInPost.flat();
+    const flatHashtags: string[] = hashtagsInPost;
+
+    // 🔢 Acumular usernames
+    const tagCounter = userTagAccumulator[userId];
+    for (const username of flatUsernames) {
+      if (!username) continue;
+      tagCounter[username] = (tagCounter[username] || 0) + 1;
+    }
+
+    // 🔢 Acumular hashtags
+    const hashtagCounter = userHashtagAccumulator[userId];
+    for (const hashtag of flatHashtags) {
+      if (!hashtag) continue;
+      hashtagCounter[hashtag] = (hashtagCounter[hashtag] || 0) + 1;
+    }
+  }
+
+  // 🔄 Convertir acumuladores a arrays ordenados
+  for (const userId of Object.keys(userTagAccumulator)) {
+    const tagsArray = Object.entries(userTagAccumulator[userId])
+      .map(([username, count]) => ({ username, count }))
+      .sort(
+        (a, b) => b.count - a.count || a.username.localeCompare(b.username)
+      );
+
+    const hashtagsArray = Object.entries(userHashtagAccumulator[userId])
+      .map(([hashtag, count]) => ({ hashtag, count }))
+      .sort((a, b) => b.count - a.count || a.hashtag.localeCompare(b.hashtag));
+
+    timelineSummary[userId] = {
+      tags: tagsArray,
+      hashtags: hashtagsArray,
+    };
+  }
+
+  // 💾 Guardar resultado
+  if (!fs.existsSync(`${timelinesPath}/processed`)) {
+    fs.mkdirSync(`${timelinesPath}/processed`);
+  }
+
+  crearArchivo(
+    `${timelinesPath}/processed/tags_hashtags.json`,
+    timelineSummary
+  );
+
+  // 📢 Validar si hubo usuarios no encontrados
+  if (isFiltering) {
+    const notFound = targetUserIds.filter((id) => !foundUserIds.has(id));
+    if (notFound.length > 0) {
+      console.warn("⚠️ Algunos usuarios no tienen archivos:", notFound);
+    }
+  }
+}
+
+function consolidar_menciones_globales() {
+  const timelinesPath = PROFILES_DIR_PATH;
+  const inputPath = `${timelinesPath}/processed/tags_hashtags.json`;
+  const outputTagsPath = `${timelinesPath}/processed/consolidated_tags_tfidf.json`;
+  const outputHashtagsPath = `${timelinesPath}/processed/consolidated_hashtags_tfidf.json`;
+
+  // ✅ Lista de artistas a evaluar (vacía = todos)
+  const includedUserIds: string[] = []; // ["artista1", "artista2"]
+
+  if (!fs.existsSync(inputPath)) {
+    console.error("❌ No se encontró el archivo tags_hashtags.json");
+    return;
+  }
+
+  const summaryData = leerArchivo(inputPath);
+  if (!summaryData || typeof summaryData !== "object") {
+    console.error(
+      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+    );
+    return;
+  }
+
+  // ✅ Determinar artistas a considerar
+  const allUserIds = Object.keys(summaryData);
+  const effectiveUserIds =
+    includedUserIds.length > 0
+      ? includedUserIds.map((u) => u.toLowerCase())
+      : allUserIds.map((u) => u.toLowerCase());
+
+  const filterSet = new Set(effectiveUserIds);
+  const totalArtists = effectiveUserIds.length;
+
+  // 🔢 Estructuras para conteo
+  const tagCounts: Record<string, number> = {};
+  const tagUserMap: Map<string, Set<string>> = new Map();
+
+  const hashtagCounts: Record<string, number> = {};
+  const hashtagUserMap: Map<string, Set<string>> = new Map();
+
+  // 🔄 Recorrer todos los perfiles
+  for (const [userIdRaw, data] of Object.entries(summaryData)) {
+    const userId = userIdRaw.toLowerCase();
+    if (!filterSet.has(userId)) continue;
+
+    const tags = (data as any).tags || [];
+    for (const tag of tags) {
+      const username = tag.username?.toLowerCase().replace(/\.$/, "");
+      const count = tag.count || 0;
+      if (!username) continue;
+
+      tagCounts[username] = (tagCounts[username] || 0) + count;
+
+      if (!tagUserMap.has(username)) tagUserMap.set(username, new Set());
+      tagUserMap.get(username)!.add(userId);
+    }
+
+    const hashtags = (data as any).hashtags || [];
+    for (const h of hashtags) {
+      const hashtag = h.hashtag?.toLowerCase().replace(/\.$/, "");
+      const count = h.count || 0;
+      if (!hashtag) continue;
+
+      hashtagCounts[hashtag] = (hashtagCounts[hashtag] || 0) + count;
+
+      if (!hashtagUserMap.has(hashtag)) hashtagUserMap.set(hashtag, new Set());
+      hashtagUserMap.get(hashtag)!.add(userId);
+    }
+  }
+
+  // 📊 Consolidar TAGS
+  const consolidatedTags = Object.entries(tagCounts)
+    .map(([username, count]) => {
+      const weighted = tagUserMap.get(username)?.size || 0;
+      const adjustedCount =
+        totalArtists && weighted > 0
+          ? count * Math.pow(weighted / totalArtists, 1.5)
+          : 0;
+
+      return { username, count, weighted, adjustedCount };
+    })
+    .filter((tag) => tag.adjustedCount > 0)
+    .sort(
+      (a, b) =>
+        b.adjustedCount - a.adjustedCount ||
+        b.count - a.count ||
+        a.username.localeCompare(b.username)
+    );
+
+  // 📊 Consolidar HASHTAGS
+  const consolidatedHashtags = Object.entries(hashtagCounts)
+    .map(([hashtag, count]) => {
+      const weighted = hashtagUserMap.get(hashtag)?.size || 0;
+      const adjustedCount =
+        totalArtists && weighted > 0
+          ? count * Math.pow(weighted / totalArtists, 1.5)
+          : 0;
+
+      return { hashtag, count, weighted, adjustedCount };
+    })
+    .filter((tag) => tag.adjustedCount > 0)
+    .sort(
+      (a, b) =>
+        b.adjustedCount - a.adjustedCount ||
+        b.count - a.count ||
+        a.hashtag.localeCompare(b.hashtag)
+    );
+
+  // 💾 Guardar resultados
+  crearArchivo(
+    outputTagsPath,
+    consolidatedTags.map(
+      (tag) => `${tag.username} - ${Math.round(tag.adjustedCount)}`
+    )
+  );
+  crearArchivo(
+    outputHashtagsPath,
+    consolidatedHashtags.map(
+      (tag) => `${tag.hashtag} - ${Math.round(tag.adjustedCount)}`
+    )
+  );
+
+  console.log("✅ Consolidado generado con análisis ponderado:");
+  console.log("  • Tags:", outputTagsPath);
+  console.log("  • Hashtags:", outputHashtagsPath);
+}
+
+function consolidar_menciones_absolutas() {
+  const timelinesPath = PROFILES_DIR_PATH;
+  const inputPath = `${timelinesPath}/processed/tags_hashtags.json`;
+  const outputTagsPath = `${timelinesPath}/processed/consolidated_tags_totals.json`;
+  const outputHashtagsPath = `${timelinesPath}/processed/consolidated_hashtags_totals.json`;
+
+  if (!fs.existsSync(inputPath)) {
+    console.error("❌ No se encontró el archivo tags_hashtags.json");
+    return;
+  }
+
+  const summaryData = leerArchivo(inputPath);
+  if (!summaryData || typeof summaryData !== "object") {
+    console.error(
+      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+    );
+    return;
+  }
+
+  const tagCounts: Record<string, number> = {};
+  const hashtagCounts: Record<string, number> = {};
+
+  for (const [userId, data] of Object.entries(summaryData)) {
+    const tags = (data as any).tags || [];
+    for (const tag of tags) {
+      const username = tag.username?.toLowerCase().replace(/\.$/, "");
+      const count = tag.count || 0;
+      if (!username) continue;
+
+      tagCounts[username] = (tagCounts[username] || 0) + count;
+    }
+
+    const hashtags = (data as any).hashtags || [];
+    for (const h of hashtags) {
+      const hashtag = h.hashtag?.toLowerCase().replace(/\.$/, "");
+      const count = h.count || 0;
+      if (!hashtag) continue;
+
+      hashtagCounts[hashtag] = (hashtagCounts[hashtag] || 0) + count;
+    }
+  }
+
+  const consolidatedTags = Object.entries(tagCounts)
+    .map(([username, count]) => ({ username, count }))
+    .sort((a, b) => b.count - a.count || a.username.localeCompare(b.username));
+
+  const consolidatedHashtags = Object.entries(hashtagCounts)
+    .map(([hashtag, count]) => ({ hashtag, count }))
+    .sort((a, b) => b.count - a.count || a.hashtag.localeCompare(b.hashtag));
+
+  crearArchivo(outputTagsPath, consolidatedTags);
+  crearArchivo(outputHashtagsPath, consolidatedHashtags);
+
+  console.log("✅ Consolidado total generado:");
+  console.log("  • Tags:", outputTagsPath);
+  console.log("  • Hashtags:", outputHashtagsPath);
+}
+
+function consolidar_menciones_globales_original() {
+  const timelinesPath = PROFILES_DIR_PATH;
+  const inputPath = `${timelinesPath}/processed/tags_hashtags.json`;
+  const outputTagsPath = `${timelinesPath}/processed/consolidated_tags.json`;
+  const outputHashtagsPath = `${timelinesPath}/processed/consolidated_hashtags.json`;
+
+  const includedUserIds: string[] = [
+    // "monsieurperine",
+    // "caribefunk",
+    // "puertocandelaria",
+    // "nicolasospinamusic",
+    // "juanandresospina",
+    // "gregoriouribe",
+    "brielaojeda",
+    "luciofeuillet",
+    "lasguaguasdepank",
+    "la_muchacha_isabel",
+  ];
+  const filterSet = new Set(includedUserIds);
+  const isFiltering = includedUserIds.length > 0;
+  const totalArtists = isFiltering ? includedUserIds.length : undefined;
+
+  if (!fs.existsSync(inputPath)) {
+    console.error("❌ No se encontró el archivo tags_hashtags.json");
+    return;
+  }
+
+  const summaryData = leerArchivo(inputPath);
+  if (!summaryData || typeof summaryData !== "object") {
+    console.error(
+      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+    );
+    return;
+  }
+
+  const tagCounts: Record<string, number> = {};
+  const tagUserMap: Map<string, Set<string>> = new Map();
+
+  const hashtagCounts: Record<string, number> = {};
+  const hashtagUserMap: Map<string, Set<string>> = new Map();
+
+  for (const [userId, data] of Object.entries(summaryData)) {
+    if (isFiltering && !filterSet.has(userId)) continue;
+
+    const tags = (data as any).tags || [];
+    for (const tag of tags) {
+      const username = tag.username?.toLowerCase();
+      const count = tag.count || 0;
+      if (!username) continue;
+
+      tagCounts[username] = (tagCounts[username] || 0) + count;
+
+      if (!tagUserMap.has(username)) tagUserMap.set(username, new Set());
+      tagUserMap.get(username)!.add(userId);
+    }
+
+    const hashtags = (data as any).hashtags || [];
+    for (const h of hashtags) {
+      const hashtag = h.hashtag?.toLowerCase();
+      const count = h.count || 0;
+      if (!hashtag) continue;
+
+      hashtagCounts[hashtag] = (hashtagCounts[hashtag] || 0) + count;
+
+      if (!hashtagUserMap.has(hashtag)) hashtagUserMap.set(hashtag, new Set());
+      hashtagUserMap.get(hashtag)!.add(userId);
+    }
+  }
+
+  const consolidatedTags = Object.entries(tagCounts)
+    .map(([username, count]) => {
+      const weighted = tagUserMap.get(username)?.size || 0;
+      const adjustedCount = totalArtists
+        ? (count * weighted) / totalArtists
+        : count;
+      return { username, count, weighted, adjustedCount };
+    })
+    .sort(
+      (a, b) =>
+        b.adjustedCount - a.adjustedCount ||
+        b.count - a.count ||
+        a.username.localeCompare(b.username)
+    );
+
+  const consolidatedHashtags = Object.entries(hashtagCounts)
+    .map(([hashtag, count]) => {
+      const weighted = hashtagUserMap.get(hashtag)?.size || 0;
+      const adjustedCount = totalArtists
+        ? (count * weighted) / totalArtists
+        : count;
+      return { hashtag, count, weighted, adjustedCount };
+    })
+    .sort(
+      (a, b) =>
+        b.adjustedCount - a.adjustedCount ||
+        b.count - a.count ||
+        a.hashtag.localeCompare(b.hashtag)
+    );
+
+  crearArchivo(outputTagsPath, consolidatedTags);
+  crearArchivo(outputHashtagsPath, consolidatedHashtags);
+
+  console.log("✅ Consolidado generado:");
+  console.log("  • Tags:", outputTagsPath);
+  console.log("  • Hashtags:", outputHashtagsPath);
 }
 
 function generate_genres_from_tags_in_timeline() {

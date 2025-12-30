@@ -20,6 +20,8 @@ export function crearArchivo(filePath: string, content: any, isJSON = true) {
   let text = content;
   if (isJSON) {
     text = stringify(content);
+    const result = JSON.parse(text); // convierte a objeto JS nuevamente
+    text = JSON.stringify(result, null, 2);
   }
   fs.writeFileSync(filePath, text, "utf-8");
 }

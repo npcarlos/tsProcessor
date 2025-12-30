@@ -1,32 +1,66 @@
-import * as asobares from "./processors/asobares";
+// Import all processors
+import * as db from "./newProcessors/db";
+import * as drive_converter from "./newProcessors/drive_converter";
+import * as instagram_scrapers from "./newProcessors/instagram_scrapers";
+import * as posts_analytics from "./newProcessors/posts_analytics";
+import * as scrapers from "./newProcessors/scrapers";
+import * as analyzeGeoData from "./processors/analyzeGeoData";
+import * as applyAliases from "./processors/applyAliases";
 import * as chartmetric from "./processors/chartmetric";
-import * as countries from "./processors/countries";
+import * as completeStates from "./processors/completeStates";
 import * as drive from "./processors/drive";
-import * as instagramHar from "./processors/har_instagram";
-import * as scrapped from "./processors/scrapped";
+import * as generateCities from "./processors/generateCities";
+import * as generateStates from "./processors/generateStates";
+import * as har_instagram from "./processors/har_instagram";
 import * as spotify from "./processors/spotify";
+import * as verifyStates from "./processors/verifyStates";
 
-spotify.main();
-countries.main();
-drive.main();
-scrapped.main();
-instagramHar.main();
-asobares.main();
-chartmetric.main();
-// const result = spotify.processGenres("./data/spotify/output_02_09_2024.json");
+// Processors registry - Register once
+const processors = {
+  // Geographic data processors
+  analyzeGeoData,
+  generateStates,
+  generateCities,
+  applyAliases,
+  verifyStates,
+  completeStates,
 
-// const result = countries.processJsonFile("./data/geo/continents.json");
+  // Data processors
+  spotify,
+  chartmetric,
+  scrapers,
+  drive_converter,
+  drive,
 
-// spotify.join_files(
-//   [
-//     "./data/chunks/example (10).json",
-//     "./data/chunks/example (11).json",
-//     "./data/chunks/example (12).json",
-//     "./data/chunks/example (13).json",
-//     "./data/chunks/example (14).json",
-//     "./data/chunks/example (15).json",
-//     "./data/chunks/example (16).json",
-//   ],
-//   "./data/pre/spotify.json"
-// );
-console.log("FIN");
+  // Instagram processors
+  instagram_scrapers,
+  har_instagram,
+
+  posts_analytics,
+
+  // Database processors
+  db,
+};
+
+// Configuration: Only list the ones you want to ENABLE
+const enabledProcessors: (keyof typeof processors)[] = [
+  // "instagram_scrapers",
+  // "drive_converter",
+  // "har_instagram",
+  // "scrapers",
+  // "db",
+  // "spotify",
+  // "posts_analytics",
+  // "drive",
+];
+
+// Execute enabled processors
+function main() {
+  enabledProcessors.forEach((processorKey) => {
+    processors[processorKey].main();
+  });
+
+  console.log("FIN");
+}
+
+main();

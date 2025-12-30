@@ -8,11 +8,59 @@ export function main(args?: any) {
   // extractNonScrappedAlbumsIDs();
   // extractNonScrappedAlbumsIDsCompilation();
   // unifyScrappedArtistsData();
+
   // ------------------------------------------------------
-  // scrapeRelatedArtists();
+  scrapeRelatedArtists();
   // whichArtistsLeftForRelatedArtists();
   // discoverNewArtistsFromRelated();
+  // discoverNewArtistsFromRelatedFolder();
+  // exportProfilesFromRelated();
+  // classifyRelatedArtists();
+  // ------------------------------------------------------
+  // resetBandsBioAndNewBands();
+  // getSortedMissingAlbums();
 }
+
+export function discoverNewArtistsFromRelatedFolder() {
+  const related_folder =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_related_export/new";
+
+  const files = fs.readdirSync(related_folder);
+
+  const artists = shuffleArray(files).map((file) => {
+    return {
+      spotify: file.replace(".json", ""),
+      downloaded: 0,
+      artist_downloaded: 0,
+      related_downloaded: 0,
+    };
+  });
+
+  crearArchivo(
+    related_folder.replace("artist_related_export/new", "spotify_bands.json"),
+    artists
+  );
+}
+function shuffleArray<T>(array: T[]): T[] {
+  let currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element using array destructuring.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
 export function discoverNewArtistsFromRelated() {
   const inDriveDB = leerArchivo(
     // `./data/drive/2025/02 - 06/spotify_drive_new_artists.json`
@@ -49,41 +97,187 @@ export function discoverNewArtistsFromRelated() {
   );
 }
 export function scrapeRelatedArtists() {
-  console.log("\n Artistas relacionados:");
+  console.log("\nArtistas relacionados: ");
   const assets_folder =
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/har_logs/correctos_utf8";
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/har_logs/correctos_utf8/done";
 
   const scrappedRelatedArtists = fs.readdirSync(assets_folder) || [];
 
   let total = 0;
   scrappedRelatedArtists.forEach((artist: any) => {
-    try {
-      const dataHAR = leerArchivo(`${assets_folder}/${artist}`);
-      const relatedArtistJSON = (dataHAR?.log?.entries || []).find(
-        (entry: any) =>
-          entry.request?.url?.includes(
-            "https://api-partner.spotify.com/pathfinder/v1/query?operationName=queryArtistRelated"
-          ) && entry?.request?.method === "GET"
-      )?.response?.content?.text;
+    if (!artist.endsWith(".json")) {
+      try {
+        const dataHAR = leerArchivo(`${assets_folder}/${artist}`);
+        const relatedArtistJSON = (dataHAR?.log?.entries || []).find(
+          (entry: any) =>
+            entry.request?.url?.includes(
+              // "https://api-partner.spotify.com/pathfinder/v1/query?operationName=queryArtistRelated"
+              "https://api-partner.spotify.com/pathfinder/v2/query"
+            ) &&
+            entry?.request?.method === "POST" &&
+            entry?.request?.postData?.text?.includes("queryArtistRelated")
+        )?.response?.content?.text;
 
-      if (relatedArtistJSON) {
-        crearArchivo(
-          `./data/scrapped/spotify/bands/artist_related/${artist.replace(
-            ".har",
-            ""
-          )}.json`,
-          JSON.parse(relatedArtistJSON)
-        );
-        total++;
-      } else {
+        if (relatedArtistJSON) {
+          crearArchivo(
+            `${assets_folder}/${artist.replace(
+              // `./data/scrapped/spotify/bands/artist_related/${artist.replace(
+              ".har",
+              ""
+            )}.json`,
+            JSON.parse(relatedArtistJSON)
+          );
+          total++;
+        } else {
+          console.log("ERROR: ", artist, " => archivo eliminado");
+        }
         fs.rmSync(`${assets_folder}/${artist}`);
-        console.log("ERROR: ", artist, " => archivo eliminado");
+      } catch (error) {
+        console.log("ERROR ", artist);
       }
-    } catch (error) {
-      console.log("ERROR ", artist);
     }
   });
-  console.log("Total: ", total);
+  console.log("Total: ", total, " artistas");
+}
+
+export function exportProfilesFromRelated() {
+  const related_folder =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_related";
+
+  const files = fs.readdirSync(related_folder);
+
+  console.log(
+    "\n\n================  Export Related Profile  ======================"
+  );
+  console.log("Total main artists: ", files.length);
+  let artistsWithImage = 0;
+  let totalFiles = 0;
+
+  files.forEach((file: string, index: number) => {
+    try {
+      const mainArtist = leerArchivo(`${related_folder}/${file}`);
+
+      const relatedArtists =
+        mainArtist?.data?.artistUnion?.relatedContent?.relatedArtists?.items ||
+        [];
+
+      relatedArtists.forEach((relatedArtist: any) => {
+        const relatedFile = `${related_folder}_export/${relatedArtist.id}.json`;
+        artistsWithImage += !!relatedArtist.visuals?.avatarImage?.sources?.[0]
+          ?.url
+          ? 1
+          : 0;
+        crearArchivo(relatedFile, {
+          id: relatedArtist.id,
+          name: relatedArtist.profile.name,
+          img: relatedArtist.visuals?.avatarImage?.sources?.[0]?.url,
+          height: relatedArtist.visuals?.avatarImage?.sources?.[0]?.height,
+        });
+        totalFiles++;
+      });
+    } catch (error) {
+      console.log(error);
+    }
+
+    if (index % 2000 === 0 && index > 0) {
+      console.log("...  ", index);
+    }
+  });
+  console.log(
+    "\n\n Total nuevos artistas: ",
+    totalFiles,
+    ",   Total con imagen: ",
+    artistsWithImage
+  );
+}
+
+export function classifyRelatedArtists() {
+  console.log("\n\n=== Clasificando Related Artists ===");
+  const startTime = Date.now();
+
+  const bio_folder =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_bio";
+
+  const related_folder =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_related_export";
+
+  const new_folder = `${related_folder}/new`;
+  const old_folder = `${related_folder}/old`;
+
+  // Crear carpeta old si no existe
+  if (!fs.existsSync(old_folder)) {
+    fs.mkdirSync(old_folder, { recursive: true });
+  }
+
+  // Crear carpeta old si no existe
+  if (!fs.existsSync(new_folder)) {
+    fs.mkdirSync(new_folder, { recursive: true });
+  }
+
+  // Paso 1: Indexar artist_bio (extraer IDs de archivos con formato <id>_<timestamp>.json)
+  console.log("\n[1/2] Indexando artistas en artist_bio...");
+  const bioFiles = fs.readdirSync(bio_folder);
+  const bioArtistsSet = new Set<string>();
+
+  bioFiles.forEach((file: string, index: number) => {
+    // Extraer ID del artista (antes del primer underscore)
+    // Formato: <id>_<timestamp>.json
+    const artistId = file.split("_")[0];
+    bioArtistsSet.add(artistId);
+
+    if ((index + 1) % 5000 === 0) {
+      const percentage = (((index + 1) / bioFiles.length) * 100).toFixed(2);
+      console.log(
+        `  -> Procesados: ${index + 1}/${bioFiles.length} (${percentage}%)`
+      );
+    }
+  });
+
+  console.log(`  -> Total artistas en bio: ${bioArtistsSet.size}`);
+
+  // Paso 2: Procesar related_folder y mover a old si existe en bio
+  console.log("\n[2/2] Clasificando artistas en related_export...");
+  const relatedFiles = fs
+    .readdirSync(related_folder)
+    .filter((file: string) => file.endsWith(".json"));
+  let movedCount = 0;
+  let keptCount = 0;
+
+  relatedFiles.forEach((file: string, index: number) => {
+    // Extraer ID del artista (formato: <id>.json)
+    const artistId = file.replace(".json", "");
+
+    // Si existe en bio, mover a old
+    if (bioArtistsSet.has(artistId)) {
+      const sourcePath = `${related_folder}/${file}`;
+      const destPath = `${old_folder}/${file}`;
+      fs.renameSync(sourcePath, destPath);
+      movedCount++;
+    } else {
+      const sourcePath = `${related_folder}/${file}`;
+      const destPath = `${new_folder}/${file}`;
+      fs.renameSync(sourcePath, destPath);
+      keptCount++;
+    }
+
+    if ((index + 1) % 5000 === 0) {
+      const percentage = (((index + 1) / relatedFiles.length) * 100).toFixed(2);
+      console.log(
+        `  -> Procesados: ${index + 1}/${
+          relatedFiles.length
+        } (${percentage}%) | Movidos: ${movedCount} | Conservados: ${keptCount}`
+      );
+    }
+  });
+
+  const endTime = Date.now();
+  const duration = ((endTime - startTime) / 1000).toFixed(2);
+
+  console.log("\n\n=== RESUMEN ===");
+  console.log(`Total archivos en related_export: ${relatedFiles.length}`);
+  console.log(`Artistas movidos a /old: ${movedCount}`);
+  console.log(`Artistas conservados (nuevos): ${keptCount}`);
+  console.log(`Tiempo total: ${duration}s`);
 }
 
 export function whichArtistsLeftForRelatedArtists() {
@@ -92,26 +286,35 @@ export function whichArtistsLeftForRelatedArtists() {
   );
 
   const assets_folder =
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/har_logs/correctos_utf8";
+    // "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/har_logs/correctos_utf8";
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_related";
 
   const scrappedRelatedArtists = fs.readdirSync(assets_folder);
 
-  const filteredArtists = inDriveDB
-    .filter(
-      (inDB: any) =>
-        !scrappedRelatedArtists.find((scrappedArtist) =>
-          scrappedArtist.includes(inDB.spotify)
-        )
-    )
-    .sort((a: any, b: any) => {
-      if (a.spotify.toLowerCase() < b.spotify.toLowerCase()) {
-        return -1;
-      }
-      if (a.spotify.toLowerCase() > b.spotify.toLowerCase()) {
-        return 1;
-      }
-      return 0;
-    });
+  // Crear un Set con los IDs de artistas ya scrapeados para búsquedas O(1)
+  // Extraemos el ID del Spotify del nombre del archivo (asumiendo formato: <algo>_<spotifyId>.json o <spotifyId>.json)
+  const scrappedArtistsSet = new Set<string>();
+  scrappedRelatedArtists.forEach((fileName: string) => {
+    // Remover la extensión .json
+    const nameWithoutExt = fileName.replace(".json", "");
+    // Si el formato es timestamp_spotifyId, tomar la última parte
+    const parts = nameWithoutExt.split("_");
+    const spotifyId = parts[parts.length - 1];
+    scrappedArtistsSet.add(spotifyId);
+  });
+
+  const filteredArtists = inDriveDB.filter(
+    (inDB: any) => !scrappedArtistsSet.has(inDB.spotify)
+  );
+  // .sort((a: any, b: any) => {
+  //   if (a.spotify.toLowerCase() < b.spotify.toLowerCase()) {
+  //     return -1;
+  //   }
+  //   if (a.spotify.toLowerCase() > b.spotify.toLowerCase()) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
 
   const delta = 7000;
   let inicio = 0;
@@ -669,4 +872,151 @@ function extract_related_bios_batch() {
     JSON.stringify(spotify_scrapped_config, null, 2),
     "utf-8"
   );
+}
+
+function resetBandsBioAndNewBands() {
+  const dirPath = "./data/drive/2025/10-31";
+  const newIdsPath = `${dirPath}/spotify_ids_unique.json`;
+  const configPath = `${dirPath}/spotify_bands_old.json`;
+
+  // Leer el archivo de texto (uno por línea)
+  const fileContent = fs.readFileSync(newIdsPath, "utf-8");
+  const newIds = fileContent
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+
+  const config = leerArchivo(configPath);
+
+  console.log("PRE: ", config.length);
+  let indexId: number = -1;
+  let id: any = undefined;
+
+  // Crear Map para búsquedas O(1)
+  const configMap = new Map<string, any>();
+  config.forEach((row: any) => {
+    configMap.set(row.spotify, row);
+  });
+
+  newIds.forEach((newId: string, index: number) => {
+    if (index % 5000 === 0) {
+      console.log(index, " - ", newId);
+    }
+    const existing = configMap.get(newId);
+    if (existing) {
+      existing.artist_downloaded = 0;
+      if (!id) {
+        indexId = index;
+        id = newId;
+      }
+    } else {
+      const newEntry = {
+        spotify: newId,
+        downloaded: 0,
+        artist_downloaded: 0,
+        related_downloaded: 0,
+      };
+      config.push(newEntry);
+      configMap.set(newId, newEntry);
+    }
+  });
+
+  console.log("POST: ", config.length);
+  console.log(config[indexId]);
+  crearArchivo(`${dirPath}/spotify_bands.json`, config);
+}
+
+function getSortedMissingAlbums() {
+  console.log("=== Iniciando getSortedMissingAlbums ===");
+  const startTime = Date.now();
+
+  const dirPath = "./data/drive/2025/10-31";
+  const artistsExtraPath = "./data/scrapped/spotify/bands/artist_extra";
+  const downloadedAlbumsPath = "./data/scrapped/spotify/albums";
+
+  // Paso 1: Cargar artistas (rápido)
+  console.log("\n[1/4] Cargando lista de artistas...");
+  const artistsSet = new Set(
+    leerArchivo(`${dirPath}/Nuevos Artistas - Bandas.json`)
+      .filter((a: any) => !!a.spotify_user)
+      .map((a: any) => a.spotify_user)
+  );
+  console.log(`  -> ${artistsSet.size} artistas encontrados`);
+
+  // Paso 2: Construir Set de álbumes ya descargados (solo nombres, sin leer contenido)
+  console.log("\n[2/4] Indexando álbumes descargados...");
+  const downloadedAlbumsSet = new Set<string>();
+  const downloadedAlbums = fs.readdirSync(downloadedAlbumsPath);
+
+  downloadedAlbums.forEach((file: string, index: number) => {
+    const albumId = file.replace(".json", "");
+    downloadedAlbumsSet.add(albumId);
+
+    if ((index + 1) % 5000 === 0) {
+      console.log(`  -> Procesados: ${index + 1}/${downloadedAlbums.length}`);
+    }
+  });
+  console.log(`  -> ${downloadedAlbumsSet.size} álbumes descargados indexados`);
+
+  // Paso 3: Procesar archivos artist_extra (solo artistas relevantes)
+  console.log("\n[3/4] Extrayendo álbumes de artist_extra...");
+  const extraFiles = fs.readdirSync(artistsExtraPath);
+  const allAlbumsSet = new Set<string>();
+  let processedFiles = 0;
+  let relevantFiles = 0;
+
+  extraFiles.forEach((file: string) => {
+    // Extraer ID del artista del nombre del archivo
+    // Formato: <timestamp>_<artistId>.json
+    const parts = file.split("_");
+    const artistId = parts[0]; // Reconstruir ID (puede tener underscores)
+
+    // Solo procesar si el artista está en nuestra lista
+    // if (artistsSet.has(artistId)) {
+    const artistInfo = leerArchivo(`${artistsExtraPath}/${file}`);
+    const albums = (artistInfo?.albums?.items ?? [])
+      .filter((album: any) => album.album_type === "album")
+      .map((album: any) => album.id);
+
+    albums.forEach((albumId: string) => allAlbumsSet.add(albumId));
+    relevantFiles++;
+    // }
+
+    processedFiles++;
+    if (processedFiles % 10000 === 0) {
+      console.log(
+        `  -> Procesados: ${processedFiles}/${extraFiles.length} ` +
+          `(relevantes: ${relevantFiles}, álbumes únicos: ${allAlbumsSet.size})`
+      );
+    }
+  });
+
+  console.log(
+    `  -> Total procesados: ${processedFiles} ` +
+      `(relevantes: ${relevantFiles}, álbumes únicos: ${allAlbumsSet.size})`
+  );
+
+  // Paso 4: Calcular diferencia usando Sets (muy rápido)
+  console.log("\n[4/4] Calculando álbumes faltantes...");
+  const nonScraped = Array.from(allAlbumsSet).filter(
+    (albumId) => !downloadedAlbumsSet.has(albumId)
+  );
+
+  // Guardar resultado
+  crearArchivo(
+    `${downloadedAlbumsPath}_non_scraped.json`,
+    nonScraped.map((album: any) => {
+      return { albumID: album, downloaded: 0 };
+    })
+  );
+
+  const endTime = Date.now();
+  const duration = ((endTime - startTime) / 1000).toFixed(2);
+
+  console.log("\n\n=== RESUMEN ===");
+  console.log(`Total de álbumes únicos: ${allAlbumsSet.size}`);
+  console.log(`Álbumes descargados: ${downloadedAlbumsSet.size}`);
+  console.log(`Álbumes faltantes: ${nonScraped.length}`);
+  console.log(`Tiempo total: ${duration}s`);
+  console.log(`Archivo guardado: ${downloadedAlbumsPath}_non_scraped.json`);
 }

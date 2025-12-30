@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import mongoose from "mongoose";
+import { compressJSON } from "../helpers/compression";
 import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 import { cleanHtmlToString } from "../helpers/string.helpers";
 
@@ -97,13 +98,13 @@ export function main(args?: any) {
   // consolidar_nuevos_artistas_dic();
   // consolidarAlbums();
   // convertAlbumsToDatabase();
+  compressDBAlbums();
   // ============================ CHARTMETRIC
   // extraerConfigFromSprotifyBioToChartmetricSearch();
   // chartmetricSearchResultToCSV();
   // compilarChartmetricUsers();
   // // //  // -// FIN
   // validarDatosCompletos();
-  // mongodb+srv://ahcmetrics:FNzgptUweIwGB09g@cluster0.imxovdf.mongodb.net/
   // const stream = fs.createReadStream(
   //   "./data/drive/2025/automatic/spotify/albumsConsolidado_db.json",
   //   { encoding: "utf8" }
@@ -2579,67 +2580,62 @@ function juntarArtistasAutomaticosYManuales() {
 }
 
 function consolidarAlbums() {
-  // const configSpotifyArtists = leerArchivo(
-  //   "./data/scrapped/config/spotify_bands.json"
-  // ).filter((a: any) => a.downloaded > 0);
+  console.log("=== Consolidando álbumes ===\n");
+  const startTime = Date.now();
 
-  // const albumsList: string[] = [];
-  // const albumsAllArtist = configSpotifyArtists.forEach(
-  //   (configA: any, artistIndex: number) => {
-  //     const extraInfoFile = `./data/scrapped/spotify/bands/artist_extra/${configA.downloaded}_${configA.spotify}.json`;
-  //     const extraInfo = fs.existsSync(extraInfoFile)
-  //       ? leerArchivo(extraInfoFile)
-  //       : undefined;
-
-  //     if (artistIndex === 10) {
-  //       console.log(extraInfoFile, extraInfo);
-  //     }
-  //     const albumsInArtist =
-  //       extraInfo?.albums?.items?.filter(
-  //         (album: any) => album.album_type === "album"
-  //       ) || [];
-
-  //     albumsInArtist.forEach((album: any) => {
-  //       albumsList.push(album.id);
-  //     });
-  //   }
-  // );
-  // // .filter((x: any) => !!x);
-
-  // console.log(
-  //   // albumsAllArtist.length,
-  //   albumsList.length,
-  //   [...new Set(albumsList)].length
-  // );
-
-  // const albumsDir = fs.readdirSync("./data/scrapped/spotify/albums");
   const bioPath = "./data/scrapped/spotify/bands/artist_extra";
+  const albumsPath = "./data/scrapped/spotify/albums";
   const biosDir = fs.readdirSync(bioPath);
 
-  const biosMap = new Map<string, any>();
+  console.log(`Total archivos por procesar: ${biosDir.length}`);
 
-  console.log("Total archivos por leer: ", biosDir.length);
+  // Configuración de chunks
+  const CHUNK_SIZE = 10000; // Artistas por chunk
+  const CACHE_LIMIT = 5000; // Límite de álbumes en cache antes de limpiar
 
-  biosDir.forEach((bioFile: any, artistIndex: number) => {
+  // Cache de álbumes ya leídos para evitar lecturas duplicadas
+  const albumsCache = new Map<string, any>();
+
+  let processedFiles = 0;
+  let artistsWithAlbums = 0;
+  let totalAlbums = 0;
+  let albumReads = 0;
+  let currentChunk: any[] = [];
+  let chunkNumber = 0;
+
+  const nonScrappedAlbums: string[] = [];
+
+  biosDir.forEach((bioFile: string, artistIndex: number) => {
     try {
-      const spotifyId = bioFile.replace(".json", "").split("_")[1];
-      const extraInfo = fs.existsSync(`${bioPath}/${bioFile}`)
-        ? leerArchivo(`${bioPath}/${bioFile}`)
-        : undefined;
+      // Extraer ID del artista del nombre de archivo
+      const parts = bioFile.replace(".json", "").split("_");
+      const spotifyId = parts[0]; // Reconstruir ID (puede tener underscores)
 
-      if (artistIndex + (1 % 1000) === 0) {
-        console.log(extraInfo);
-      }
+      const bioFilePath = `${bioPath}/${bioFile}`;
+      const extraInfo = leerArchivo(bioFilePath);
+
+      // Filtrar solo álbumes (no singles ni compilations)
       const albumsInArtist = (
         extraInfo?.albums?.items?.filter(
           (album: any) => album.album_type === "album"
         ) || []
       ).map((album: any) => {
-        const albumInfo = fs.existsSync(
-          `./data/scrapped/spotify/albums/${album.id}.json`
-        )
-          ? leerArchivo(`./data/scrapped/spotify/albums/${album.id}.json`)
-          : undefined;
+        const albumId = album.id;
+
+        // Buscar en cache primero
+        let albumInfo = albumsCache.get(albumId);
+
+        // Si no está en cache, leer del disco
+        if (!albumInfo) {
+          const albumFilePath = `${albumsPath}/${albumId}.json`;
+          if (fs.existsSync(albumFilePath)) {
+            albumInfo = leerArchivo(albumFilePath);
+            albumsCache.set(albumId, albumInfo);
+            albumReads++;
+          } else {
+            nonScrappedAlbums.push(albumId as string);
+          }
+        }
 
         return {
           name: album.name,
@@ -2647,7 +2643,7 @@ function consolidarAlbums() {
           release_date: album.release_date,
           release_date_precision: album.release_date_precision,
           spotify: {
-            id: album.id,
+            id: albumId,
             url: album.external_urls?.spotify,
           },
           total_tracks: album?.total_tracks,
@@ -2655,7 +2651,6 @@ function consolidarAlbums() {
             albumInfo?.tracks?.items?.map((track: any) => {
               return {
                 artists: track.artists,
-
                 disc_number: track.disc_number,
                 duration_ms: track.duration_ms,
                 explicit: track.explicit,
@@ -2668,127 +2663,264 @@ function consolidarAlbums() {
       });
 
       if (albumsInArtist.length > 0) {
-        biosMap.set(spotifyId, albumsInArtist);
+        currentChunk.push({
+          spotify: spotifyId,
+          albums: albumsInArtist,
+        });
+        artistsWithAlbums++;
+        totalAlbums += albumsInArtist.length;
+      }
+
+      processedFiles++;
+
+      // Guardar chunk cuando alcanza el tamaño límite
+      if (currentChunk.length >= CHUNK_SIZE) {
+        const outputPath = `./data/drive/2025/automatic/spotify/albumsConsolidado_chunk_${chunkNumber}.json`;
+        console.log(
+          `  -> Guardando chunk ${chunkNumber} (${currentChunk.length} artistas)...`
+        );
+        crearArchivo(outputPath, currentChunk);
+
+        // Liberar memoria
+        currentChunk = [];
+        chunkNumber++;
+
+        // Limpiar cache si supera el límite
+        if (albumsCache.size > CACHE_LIMIT) {
+          albumsCache.clear();
+          if (global.gc) {
+            global.gc();
+          }
+        }
+      }
+
+      // Log de progreso cada 5000 archivos
+      if (processedFiles % 5000 === 0) {
+        console.log(
+          `  -> Procesados: ${processedFiles}/${biosDir.length} ` +
+            `(${Math.round((processedFiles / biosDir.length) * 100)}%) | ` +
+            `Artistas con álbumes: ${artistsWithAlbums} | ` +
+            `Total álbumes: ${totalAlbums}`
+        );
       }
     } catch (error) {
-      console.log("ERROR...... ", artistIndex, "  ", `${bioPath}/${bioFile}`);
-      console.log(error);
-      throw Error("Parar");
+      console.error(
+        `\nERROR procesando archivo ${artistIndex}: ${bioPath}/${bioFile}`
+      );
+      console.error(error);
+      throw new Error("Proceso detenido por error");
     }
   });
 
+  // Guardar el último chunk si tiene datos
+  if (currentChunk.length > 0) {
+    const outputPath = `./data/drive/2025/automatic/spotify/albumsConsolidado_chunk_${chunkNumber}.json`;
+    console.log(
+      `  -> Guardando chunk final ${chunkNumber} (${currentChunk.length} artistas)...`
+    );
+    crearArchivo(outputPath, currentChunk);
+    chunkNumber++;
+  }
+
+  const endTime = Date.now();
+  const duration = ((endTime - startTime) / 1000).toFixed(2);
+
   crearArchivo(
-    "./data/drive/2025/automatic/spotify/albumsConsolidado.json",
-    Array.from(biosMap, ([spotify, albums]) => ({
-      spotify,
-      albums,
-    }))
+    "./data/scrapped/spotify/spotify_albums_2.json",
+    nonScrappedAlbums.map((albumID) => {
+      return {};
+    })
   );
 
-  console.log("Total: ", biosDir.length, biosMap.size);
+  console.log("\n=== RESUMEN ===");
+  console.log(`Archivos procesados: ${processedFiles}`);
+  console.log(`Artistas con álbumes: ${artistsWithAlbums}`);
+  console.log(`Total álbumes consolidados: ${totalAlbums}`);
+  console.log(`Lecturas de álbumes del disco: ${albumReads}`);
+  console.log(`Chunks creados: ${chunkNumber}`);
+  console.log(`Tiempo total: ${duration}s`);
 }
 
 function convertAlbumsToDatabase() {
-  const info = leerArchivo(
-    "./data/drive/2025/automatic/spotify/albumsConsolidado.json"
-  );
-  // console.log(JSON.stringify(info[0].albums, null, 2));
+  console.log("=== Convirtiendo álbumes a formato de base de datos ===\n");
+  const startTime = Date.now();
+
+  const inputPath = "./data/drive/2025/automatic/spotify";
+  const outputPath = "./data/drive/2025/automatic/spotify/albums";
+
+  const notFound: any[] = [];
+
+  // Leer todos los archivos de chunks
+  const chunkFiles = fs
+    .readdirSync(inputPath)
+    .filter((file) => file.startsWith("albumsConsolidado_chunk_"));
+
+  console.log(`Total chunks a procesar: ${chunkFiles.length}\n`);
 
   const albumsMap = new Map<string, any>();
-  let totalDescargados = 0;
+  let totalProcessedArtists = 0;
+  let totalDuplicateAlbums = 0;
 
-  info.forEach((artist: any) => {
-    artist.albums.forEach((album: any) => {
-      if (
-        true ||
-        album.spotify.id === "000uAiBjY6I5LQnPBHyytH" ||
-        album.spotify.id === "7fJEer6X6zpSWW7Rbm2w7t"
-      ) {
-        const albumFile = `./data/scrapped/spotify/albums/${album.spotify.id}.json`;
-        const albumDownloadedInfo = fs.existsSync(albumFile)
-          ? leerArchivo(albumFile)
-          : undefined;
+  // Función helper para procesar álbumes de un artista
+  const processAlbum = (artist: any, album: any) => {
+    const albumId = album.spotify.id;
 
-        let artistsIds = albumDownloadedInfo?.artists?.map(
-          (artistInAlbum: any) => artistInAlbum.id
-        ) || [artist.spotify];
+    // Solo procesar si no existe ya en el map
+    if (albumsMap.has(albumId)) {
+      totalDuplicateAlbums++;
+      return;
+    }
 
-        // console.log("ARTIST !!!!!! !!!! ", artist);
+    const albumFile = `./data/scrapped/spotify/albums/${albumId}.json`;
+    const albumDownloadedInfo = fs.existsSync(albumFile)
+      ? leerArchivo(albumFile)
+      : undefined;
 
-        const tracks = (albumDownloadedInfo?.tracks?.items || []).map(
-          (track: any) => {
-            const { disc_number, duration_ms, id, name, track_number } = track;
-            return {
-              artists: track.artists.map((artistTrack: any) => {
-                return { name: artistTrack.name, id: artistTrack.id };
-              }),
-              // Disc numbers
-              d_n: disc_number,
-              // Duration
-              dur: duration_ms,
-              id,
-              // Name
-              n: name,
-              // Track number
-              num: track_number,
-            };
-          }
-        );
+    if (!albumDownloadedInfo) {
+      notFound.push(albumId);
+    }
 
-        const albumFinalInfo = {
-          // Album Id
-          aId: album.spotify.id,
-          // name
-          n: albumDownloadedInfo?.name || album.name,
-          // Artist Spotify Ids
-          asp: artistsIds,
-          // Images
-          img: (album.images || []).map((image: any) => {
-            return {
-              url: image.url.replace("https://i.scdn.co/image/", ""),
-              s: image.height,
-            };
-          }),
-          // Release date
-          rd: album.release_date,
-          // Release date
-          rdp: album.release_date_precision,
-          // Total Tracks
-          nt: album.total_tracks,
-          // Tracks
-          t: tracks,
-          // Label
-          lab: albumDownloadedInfo?.label,
-          // Index
-          idx: artistsIds.join(","),
+    const artistsIds = albumDownloadedInfo?.artists?.map(
+      (artistInAlbum: any) => artistInAlbum.id
+    ) || [artist.spotify];
+
+    const tracks = (albumDownloadedInfo?.tracks?.items || []).map(
+      (track: any) => {
+        const { disc_number, duration_ms, id, name, track_number } = track;
+        return {
+          as: track.artists.map((artistTrack: any) => ({
+            n: artistTrack.name,
+            id: artistTrack.id,
+          })),
+          d_n: disc_number, // Disc number
+          dur: duration_ms, // Duration
+          id,
+          n: name, // Name
+          num: track_number, // Track number
         };
+      }
+    );
 
-        if (!albumsMap.get(albumFinalInfo.aId)) {
-          albumsMap.set(albumFinalInfo.aId, albumFinalInfo);
-        }
+    const albumFinalInfo = {
+      aId: albumId, // Album Id
+      n: albumDownloadedInfo?.name || album.name, // Name
+      asp: artistsIds, // Artist Spotify Ids
+      img: (album.images || [])
+        .filter((image: any) => image.height === 640)
+        .map((image: any) => ({
+          url: image.url.replace("https://i.scdn.co/image/", ""),
+          s: image.height,
+        })), // Images
+      rd: album.release_date, // Release date
+      rdp: album.release_date_precision, // Release date precision
+      nt: album.total_tracks, // Total tracks
+      t: tracks, // Tracks
+      // lab: albumDownloadedInfo?.label, // Label
+      idx: artistsIds.join(","), // Index
+    };
+
+    albumsMap.set(albumId, albumFinalInfo);
+  };
+
+  // Procesar cada chunk
+  chunkFiles.forEach((chunkFile, chunkIndex) => {
+    console.log(
+      `\n[${chunkIndex + 1}/${chunkFiles.length}] Procesando ${chunkFile}...`
+    );
+
+    const chunkData = leerArchivo(`${inputPath}/${chunkFile}`);
+    let processedArtistsInChunk = 0;
+
+    chunkData.forEach((artist: any) => {
+      artist.albums.forEach((album: any) => {
+        processAlbum(artist, album);
+      });
+
+      processedArtistsInChunk++;
+
+      // Log de progreso cada 1000 artistas dentro del chunk
+      if (processedArtistsInChunk % 1000 === 0) {
+        console.log(
+          `  -> Artistas en chunk: ${processedArtistsInChunk}/${chunkData.length} | ` +
+            `Álbumes únicos totales: ${albumsMap.size} | ` +
+            `Duplicados: ${totalDuplicateAlbums}`
+        );
       }
     });
+
+    totalProcessedArtists += processedArtistsInChunk;
+
+    console.log(
+      `  -> Chunk completado: ${processedArtistsInChunk} artistas | ` +
+        `Total álbumes únicos: ${albumsMap.size}`
+    );
   });
 
-  // Función para dividir una lista en chunks de tamaño `size`
+  console.log("\n=== Dividiendo álbumes en chunks de salida ===");
+
+  // Función para dividir una lista en chunks
   function chunkArray<T>(arr: T[], size: number): T[][] {
     return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
       arr.slice(i * size, i * size + size)
     );
   }
-  const chunkSize = 150000;
 
-  // 🟢 Dividir `all` en partes de `chunkSize`
-  const chunks = chunkArray(Array.from(albumsMap.values()), chunkSize);
-  console.log("Total albums: ", albumsMap.size);
-  console.log("total chunks: ", chunks.length);
+  // Usar chunks de 50000 álbumes para evitar el error de string demasiado grande
+  const albumChunkSize = 50000;
+  const albumsArray = Array.from(albumsMap.values());
+  const albumChunks = chunkArray(albumsArray, albumChunkSize);
 
-  chunks.forEach((chunk, chunkNumber) => {
-    crearArchivo(
-      `./data/drive/2025/automatic/spotify/albums/albumsConsolidado_db_${chunkNumber}.json`,
-      Array.from(chunk)
+  console.log(`Total álbumes únicos: ${albumsMap.size}`);
+  console.log(`Total chunks de salida a crear: ${albumChunks.length}`);
+  console.log(`Tamaño de chunk de salida: ~${albumChunkSize} álbumes\n`);
+
+  albumChunks.forEach((chunk, chunkNumber) => {
+    const outputFilePath = `${outputPath}/albumsConsolidado_db_${chunkNumber}.json`;
+
+    console.log(
+      `  -> Guardando chunk ${chunkNumber + 1}/${albumChunks.length} ` +
+        `(${chunk.length} álbumes)...`
     );
+
+    crearArchivo(outputFilePath, chunk);
   });
+
+  const endTime = Date.now();
+  const duration = ((endTime - startTime) / 1000).toFixed(2);
+
+  console.log("\n=== RESUMEN ===");
+  console.log(`Chunks de entrada procesados: ${chunkFiles.length}`);
+  console.log(`Artistas procesados: ${totalProcessedArtists}`);
+  console.log(`Álbumes únicos: ${albumsMap.size}`);
+  console.log(`Álbumes duplicados omitidos: ${totalDuplicateAlbums}`);
+  console.log(`Chunks de salida creados: ${albumChunks.length}`);
+  console.log(`Álbumes no encontrados: ${notFound.length}`);
+  console.log(`Tiempo total: ${duration}s`);
+
+  crearArchivo(`${outputPath}/notfound.json`, notFound);
+}
+
+async function compressDBAlbums() {
+  const inputPath = "./data/drive/2025/automatic/spotify/albums";
+  const outputPath = "./data/drive/2025/automatic/spotify/albums/compressed";
+  const chunks = fs.readdirSync(inputPath);
+
+  for (const chunk of chunks) {
+    if (chunk.startsWith("albumsConsolidado_db")) {
+      console.log(chunk);
+      const contenido = leerArchivo(`${inputPath}/${chunk}`);
+      const compressed = await Promise.all(
+        contenido.map(async (album: any, index: number) => {
+          const { aId, idx, ...elemento } = album;
+          if (index % 1000 === 0 && index > 0) {
+            console.log("... ", index);
+          }
+          return { aId, idx, c: await compressJSON(JSON.stringify(elemento)) };
+        })
+      );
+      crearArchivo(`${outputPath}/compressed_${chunk}`, compressed);
+    }
+  }
 }
 
 // ============================   Related  ===================================
