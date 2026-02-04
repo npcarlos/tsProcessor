@@ -3,8 +3,8 @@ import * as path from "path";
 import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 
 // Paths
-const TIMELINE_DIR = "E:/places_timeline";
-const OUTPUT_DIR = "E:/places_analytics";
+const TIMELINE_DIR = "C:/Users/fnp/Documents/Artist Hive/Data/complete";
+const OUTPUT_DIR = "C:/Users/fnp/Documents/Artist Hive/Data/places_analytics";
 
 // Types
 interface PostNode {
@@ -20,11 +20,14 @@ interface TaggedAccount {
   count: number;
   first_seen: string;
   last_seen: string;
+  avg_tagged_date: string;
+  median_tagged_date: string;
 }
 
 interface AccountAnalytics {
   account: string;
   processed_at: string;
+  downloaded_at: string;
   total_posts: number;
   date_range: {
     first_post: string;
@@ -103,6 +106,12 @@ interface AccountAnalytics {
 
 // Main function
 export function main(args?: any) {
+  crearAnalytics();
+  // complementarGeoReferenciacion();
+  // cualesUsuariosFaltan();
+}
+
+export function crearAnalytics() {
   console.log("🚀 Iniciando análisis de posts de Instagram");
 
   if (!fs.existsSync(OUTPUT_DIR)) {
@@ -142,6 +151,8 @@ export function main(args?: any) {
   console.log(`   Procesadas: ${processed}`);
   console.log(`   Omitidas: ${skipped}`);
   console.log(`   Total: ${accountGroups.size}`);
+
+  complementarGeoReferenciacion();
 }
 
 // Group files by account
@@ -168,6 +179,19 @@ function processAccount(
   fileList: string[]
 ): AccountAnalytics {
   const allPosts: Array<{ timestamp: number; node: PostNode }> = [];
+
+  // Get downloaded_at from first file's modification time
+  let downloadedAt = new Date().toISOString();
+  let lastIndex = fileList.length;
+  if (fileList.length > 0) {
+    try {
+      const firstFilePath = path.join(TIMELINE_DIR, fileList[0]);
+      const stats = fs.statSync(firstFilePath);
+      downloadedAt = stats.mtime.toISOString();
+    } catch (error) {
+      // If error reading file stats, use current time
+    }
+  }
 
   // Read all files for this account
   for (const file of fileList) {
@@ -200,9 +224,11 @@ function processAccount(
   const firstPost = allPosts[0]?.timestamp || 0;
   const lastPost = allPosts[allPosts.length - 1]?.timestamp || 0;
 
+  // Response
   return {
     account: accountName,
     processed_at: new Date().toISOString(),
+    downloaded_at: downloadedAt,
     total_posts: allPosts.length,
     date_range: {
       first_post: timestampToDate(firstPost),
@@ -216,11 +242,45 @@ function processAccount(
   };
 }
 
+// Helper function to extract tags and hashtags from caption text
+function extractTagsAndHashtagsFromText(text: string) {
+  // Regex para menciones: @ debe estar al inicio, después de espacio o puntuación (no después de caracteres de palabra)
+  // Esto evita capturar emails como usuario@email.com
+  const userTagRegex = /(?:^|(?<=\s)|(?<=[^\w]))@([\w][\w\d._]*)/g;
+  const hashtagRegex = /#([\w\dáéíóúÁÉÍÓÚñÑüÜ]+)/g;
+
+  const tags_in_text: string[] = [];
+  const hashtags: string[] = [];
+
+  let match: RegExpExecArray | null;
+
+  // Extraer menciones @usuario (evitando emails)
+  while ((match = userTagRegex.exec(text)) !== null) {
+    const username = match[1].toLowerCase();
+    // Validar que no esté vacío y tenga longitud razonable (Instagram max 30 chars)
+    if (username && username.length <= 30) {
+      tags_in_text.push(username);
+    }
+  }
+
+  // Extraer hashtags #hashtag
+  while ((match = hashtagRegex.exec(text)) !== null) {
+    hashtags.push(match[1].toLowerCase());
+  }
+
+  return { tags_in_text, hashtags };
+}
+
 // Extract tags from posts
 function extractTags(posts: Array<{ timestamp: number; node: PostNode }>) {
   const globalTags: Record<
     string,
-    { count: number; first_seen: number; last_seen: number }
+    {
+      count: number;
+      first_seen: number;
+      last_seen: number;
+      timestamps: number[];
+    }
   > = {};
   const byMonth: Record<string, Record<string, number>> = {};
   const byYear: Record<string, Record<string, number>> = {};
@@ -230,26 +290,42 @@ function extractTags(posts: Array<{ timestamp: number; node: PostNode }>) {
   const last24MonthsTags: Record<string, number> = {};
 
   for (const post of posts) {
-    const tags = post.node.usertags?.in || [];
     const monthKey = timestampToMonth(post.timestamp);
     const yearKey = timestampToYear(post.timestamp);
 
     if (!byMonth[monthKey]) byMonth[monthKey] = {};
     if (!byYear[yearKey]) byYear[yearKey] = {};
 
-    for (const tag of tags) {
-      const username = tag.user.username.toLowerCase();
+    // Recopilar todos los usernames de diferentes fuentes
+    const allUsernames = new Set<string>();
 
+    // 1. Tags de usertags.in
+    const usertagsIn = post.node.usertags?.in || [];
+    usertagsIn.forEach((tag) => {
+      allUsernames.add(tag.user.username.toLowerCase());
+    });
+
+    // 2. Tags del caption text
+    const captionText = post.node.caption?.text || "";
+    if (captionText) {
+      const { tags_in_text } = extractTagsAndHashtagsFromText(captionText);
+      tags_in_text.forEach((tag) => allUsernames.add(tag));
+    }
+
+    // Procesar todos los usernames únicos
+    for (const username of allUsernames) {
       // Global
       if (!globalTags[username]) {
         globalTags[username] = {
           count: 0,
           first_seen: post.timestamp,
           last_seen: post.timestamp,
+          timestamps: [],
         };
       }
       globalTags[username].count++;
       globalTags[username].last_seen = post.timestamp;
+      globalTags[username].timestamps.push(post.timestamp);
 
       // By month
       byMonth[monthKey][username] = (byMonth[monthKey][username] || 0) + 1;
@@ -266,12 +342,19 @@ function extractTags(posts: Array<{ timestamp: number; node: PostNode }>) {
 
   return {
     global: Object.entries(globalTags)
-      .map(([username, data]) => ({
-        username,
-        count: data.count,
-        first_seen: timestampToMonth(data.first_seen),
-        last_seen: timestampToMonth(data.last_seen),
-      }))
+      .map(([username, data]) => {
+        const avgTimestamp = mean(data.timestamps);
+        const medianTimestamp = median(data.timestamps);
+
+        return {
+          username,
+          count: data.count,
+          first_seen: timestampToMonth(data.first_seen),
+          last_seen: timestampToMonth(data.last_seen),
+          avg_tagged_date: timestampToDate(avgTimestamp),
+          median_tagged_date: timestampToDate(medianTimestamp),
+        };
+      })
       .sort((a, b) => b.count - a.count),
     by_month: Object.fromEntries(
       Object.entries(byMonth).map(([month, tags]) => [
@@ -305,32 +388,32 @@ function extractHashtags(posts: Array<{ timestamp: number; node: PostNode }>) {
   const twentyFourMonthsAgo = now - 24 * 30 * 24 * 60 * 60;
   const last24MonthsHashtags: Record<string, number> = {};
 
-  const hashtagRegex = /#(\w+)/g;
-
   for (const post of posts) {
-    const caption = post.node.caption?.text || "";
-    const hashtags = caption.match(hashtagRegex) || [];
+    const captionText = post.node.caption?.text || "";
     const monthKey = timestampToMonth(post.timestamp);
     const yearKey = timestampToYear(post.timestamp);
 
     if (!byMonth[monthKey]) byMonth[monthKey] = {};
     if (!byYear[yearKey]) byYear[yearKey] = {};
 
-    for (const hashtag of hashtags) {
-      const tag = hashtag.toLowerCase().substring(1); // Remove #
+    // Usar la función helper para extraer hashtags
+    if (captionText) {
+      const { hashtags } = extractTagsAndHashtagsFromText(captionText);
 
-      // Global
-      globalHashtags[tag] = (globalHashtags[tag] || 0) + 1;
+      for (const tag of hashtags) {
+        // Global
+        globalHashtags[tag] = (globalHashtags[tag] || 0) + 1;
 
-      // By month
-      byMonth[monthKey][tag] = (byMonth[monthKey][tag] || 0) + 1;
+        // By month
+        byMonth[monthKey][tag] = (byMonth[monthKey][tag] || 0) + 1;
 
-      // By year
-      byYear[yearKey][tag] = (byYear[yearKey][tag] || 0) + 1;
+        // By year
+        byYear[yearKey][tag] = (byYear[yearKey][tag] || 0) + 1;
 
-      // Last 24 months
-      if (post.timestamp >= twentyFourMonthsAgo) {
-        last24MonthsHashtags[tag] = (last24MonthsHashtags[tag] || 0) + 1;
+        // Last 24 months
+        if (post.timestamp >= twentyFourMonthsAgo) {
+          last24MonthsHashtags[tag] = (last24MonthsHashtags[tag] || 0) + 1;
+        }
       }
     }
   }
@@ -387,7 +470,8 @@ function calculateActivityMetrics(
     }
 
     if (i > 0) {
-      const daysDiff = (post.timestamp - posts[i - 1].timestamp) / (24 * 60 * 60);
+      const daysDiff =
+        (post.timestamp - posts[i - 1].timestamp) / (24 * 60 * 60);
       daysBetweenPosts.push(daysDiff);
     }
   }
@@ -418,7 +502,9 @@ function calculateActivityMetrics(
   const sixMonthsAgo = now - 6 * 30 * 24 * 60 * 60;
   const twelveMonthsAgo = now - 12 * 30 * 24 * 60 * 60;
 
-  const last6MonthsPosts = posts.filter((p) => p.timestamp >= sixMonthsAgo).length;
+  const last6MonthsPosts = posts.filter(
+    (p) => p.timestamp >= sixMonthsAgo
+  ).length;
   const previous6MonthsPosts = posts.filter(
     (p) => p.timestamp >= twelveMonthsAgo && p.timestamp < sixMonthsAgo
   ).length;
@@ -512,7 +598,8 @@ function calculateTemporalPatterns(
     byYear[yearKey].hours.push(hour);
     byYear[yearKey].days.push(dayOfWeek);
     byYear[yearKey].dayOfWeekCounts[dayName]++;
-    byYear[yearKey].hourCounts[hour] = (byYear[yearKey].hourCounts[hour] || 0) + 1;
+    byYear[yearKey].hourCounts[hour] =
+      (byYear[yearKey].hourCounts[hour] || 0) + 1;
   }
 
   const avgHour = mean(globalHours);
@@ -520,9 +607,8 @@ function calculateTemporalPatterns(
   const mostCommonDay = Object.entries(dayOfWeekCounts).sort(
     (a, b) => b[1] - a[1]
   )[0][0];
-  const mostCommonHour = Object.entries(hourCounts).sort(
-    (a, b) => b[1] - a[1]
-  )[0]?.[0] || 0;
+  const mostCommonHour =
+    Object.entries(hourCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || 0;
 
   return {
     global: {
@@ -558,11 +644,21 @@ function calculateEngagementMetrics(
 
   const byYear: Record<
     string,
-    { likes: number[]; comments: number[]; totalLikes: number; totalComments: number }
+    {
+      likes: number[];
+      comments: number[];
+      totalLikes: number;
+      totalComments: number;
+    }
   > = {};
   const byMonth: Record<
     string,
-    { likes: number[]; comments: number[]; totalLikes: number; totalComments: number }
+    {
+      likes: number[];
+      comments: number[];
+      totalLikes: number;
+      totalComments: number;
+    }
   > = {};
 
   for (const post of posts) {
@@ -577,7 +673,12 @@ function calculateEngagementMetrics(
     totalComments += comments;
 
     if (!byYear[yearKey]) {
-      byYear[yearKey] = { likes: [], comments: [], totalLikes: 0, totalComments: 0 };
+      byYear[yearKey] = {
+        likes: [],
+        comments: [],
+        totalLikes: 0,
+        totalComments: 0,
+      };
     }
     byYear[yearKey].likes.push(likes);
     byYear[yearKey].comments.push(comments);
@@ -585,7 +686,12 @@ function calculateEngagementMetrics(
     byYear[yearKey].totalComments += comments;
 
     if (!byMonth[monthKey]) {
-      byMonth[monthKey] = { likes: [], comments: [], totalLikes: 0, totalComments: 0 };
+      byMonth[monthKey] = {
+        likes: [],
+        comments: [],
+        totalLikes: 0,
+        totalComments: 0,
+      };
     }
     byMonth[monthKey].likes.push(likes);
     byMonth[monthKey].comments.push(comments);
@@ -634,7 +740,10 @@ function timestampToDate(timestamp: number): string {
 
 function timestampToMonth(timestamp: number): string {
   const date = new Date(timestamp * 1000);
-  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(
+    2,
+    "0"
+  )}`;
 }
 
 function timestampToYear(timestamp: number): string {
@@ -650,5 +759,355 @@ function median(arr: number[]): number {
   if (arr.length === 0) return 0;
   const sorted = [...arr].sort((a, b) => a - b);
   const mid = Math.floor(sorted.length / 2);
-  return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
+  return sorted.length % 2 === 0
+    ? (sorted[mid - 1] + sorted[mid]) / 2
+    : sorted[mid];
+}
+
+export function cualesUsuariosFaltan() {
+  const driveDatabasePath =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/drive/2025/10-31/Sitios - Sitios.json";
+
+  const driveVenues = leerArchivo(driveDatabasePath);
+  driveVenues.shift();
+  console.log(driveVenues[0]);
+
+  const scrappedVenuesDirPath =
+    "C:/Users/fnp/Documents/Artist Hive/Data/places_analytics";
+
+  const driveVenuesUsers = driveVenues.map((venue: any) => venue.instagram);
+
+  const scrappedVenues = fs.readdirSync(scrappedVenuesDirPath);
+
+  crearArchivo(
+    "C:/Users/fnp/Documents/Artist Hive/Data/missing.json",
+    driveVenuesUsers.filter(
+      (venue: any) =>
+        !!venue.trim() &&
+        !scrappedVenues.find(
+          (scrappedVenue: any) => scrappedVenue.replace(".json", "") === venue
+        )
+    )
+  );
+}
+
+export function complementarGeoReferenciacion() {
+  const driveDatabasePath =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/drive/2025/10-31/Sitios - Sitios.json";
+
+  const driveVenues = leerArchivo(driveDatabasePath);
+  driveVenues.shift(); // Remove header row
+
+  const scrappedVenuesDirPath =
+    "C:/Users/fnp/Documents/Artist Hive/Data/places_analytics";
+
+  const scrappedVenues = fs.readdirSync(scrappedVenuesDirPath);
+
+  let processedCount = 0;
+  let notFoundCount = 0;
+  let updatedCount = 0;
+
+  console.log(`Processing ${scrappedVenues.length} analytics files...`);
+
+  scrappedVenues.forEach((fileName, index) => {
+    if (!fileName.endsWith(".json")) return;
+
+    const filePath = `${scrappedVenuesDirPath}/${fileName}`;
+    const analytics = leerArchivo(filePath);
+    const username = fileName.replace(".json", "");
+
+    // Find matching venue in driveVenues by instagram username
+    const venue = driveVenues.find(
+      (v: any) =>
+        v.instagram && v.instagram.toLowerCase() === username.toLowerCase()
+    );
+
+    if (!venue) {
+      notFoundCount++;
+      analytics.activo = "NO";
+      analytics.location = null;
+    } else {
+      // Calculate activo status based on last post vs downloaded date
+      const downloadedDate = new Date(analytics.downloaded_at);
+      const lastPostDate = new Date(analytics.date_range.last_post);
+      const yearsDiff =
+        (downloadedDate.getTime() - lastPostDate.getTime()) /
+        (365.25 * 24 * 60 * 60 * 1000);
+
+      let activo = "YES";
+      if (yearsDiff >= 2) {
+        activo = "NO";
+      } else if (yearsDiff >= 1) {
+        activo = "POSSIBLE";
+      }
+
+      analytics.activo = activo;
+
+      // Add location fields
+      analytics.location = {
+        country: venue.country || null,
+        country_alpha2: venue.country_alpha2 || null,
+        state: venue.state || null,
+        city: venue.city || null,
+        district: venue.district || null,
+        neighbour: venue.neighbour || null,
+        lat: venue.lat || null,
+        lng: venue.lng || null,
+        zipcode: venue.zipcode || null,
+      };
+
+      updatedCount++;
+    }
+
+    // Save updated analytics
+    crearArchivo(filePath, analytics);
+    processedCount++;
+
+    // Progress logging every 100 files
+    if ((index + 1) % 100 === 0 || index + 1 === scrappedVenues.length) {
+      const percentage = (((index + 1) / scrappedVenues.length) * 100).toFixed(
+        2
+      );
+      console.log(
+        `Progress: ${index + 1}/${scrappedVenues.length} (${percentage}%)`
+      );
+    }
+  });
+
+  console.log("\n=== Summary ===");
+  console.log(`Total files processed: ${processedCount}`);
+  console.log(`Files updated with location data: ${updatedCount}`);
+  console.log(`Files not found in drive database: ${notFoundCount}`);
+
+  // generateGeographicAnalytics(scrappedVenuesDirPath);
+}
+
+export function generateGeographicAnalytics(scrappedVenuesDirPath: string) {
+  const outputDirPath =
+    "C:/Users/fnp/Documents/Artist Hive/Data/places_geo_analytics";
+
+  if (!fs.existsSync(outputDirPath)) {
+    fs.mkdirSync(outputDirPath, { recursive: true });
+  }
+
+  const scrappedVenues = fs.readdirSync(scrappedVenuesDirPath);
+
+  // Estructura para almacenar agregados por nivel geográfico
+  const geoAggregates: Record<
+    string,
+    Record<
+      string,
+      {
+        venues: string[];
+        total_posts: number;
+        total_likes: number;
+        total_comments: number;
+        date_range: { first_post: string; last_post: string };
+        all_tagged_accounts: Record<string, number>;
+        all_hashtags: Record<string, number>;
+        activity_distribution: {
+          high: number;
+          medium: number;
+          low: number;
+          inactive: number;
+        };
+        activo_distribution: {
+          YES: number;
+          POSSIBLE: number;
+          NO: number;
+        };
+      }
+    >
+  > = {
+    country_alpha2: {},
+    state: {},
+    city: {},
+    district: {},
+    neighbour: {},
+  };
+
+  console.log(
+    `\nProcessing ${scrappedVenues.length} files for geographic analytics...`
+  );
+
+  scrappedVenues.forEach((fileName, index) => {
+    if (!fileName.endsWith(".json")) return;
+
+    const filePath = `${scrappedVenuesDirPath}/${fileName}`;
+    const analytics = leerArchivo(filePath);
+
+    // Skip if no location data
+    if (!analytics.location) return;
+
+    const location = analytics.location;
+    const username = fileName.replace(".json", "");
+
+    // Process each geographic level
+    const levels = [
+      { key: "country_alpha2", value: location.country_alpha2 },
+      { key: "state", value: location.state },
+      { key: "city", value: location.city },
+      { key: "district", value: location.district },
+      { key: "neighbour", value: location.neighbour },
+    ];
+
+    levels.forEach(({ key, value }) => {
+      if (!value || value.trim() === "") return;
+
+      if (!geoAggregates[key][value]) {
+        geoAggregates[key][value] = {
+          venues: [],
+          total_posts: 0,
+          total_likes: 0,
+          total_comments: 0,
+          date_range: { first_post: "", last_post: "" },
+          all_tagged_accounts: {},
+          all_hashtags: {},
+          activity_distribution: {
+            high: 0,
+            medium: 0,
+            low: 0,
+            inactive: 0,
+          },
+          activo_distribution: {
+            YES: 0,
+            POSSIBLE: 0,
+            NO: 0,
+          },
+        };
+      }
+
+      const aggregate = geoAggregates[key][value];
+
+      // Add venue to list
+      aggregate.venues.push(username);
+
+      // Accumulate totals
+      aggregate.total_posts += analytics.total_posts || 0;
+      aggregate.total_likes +=
+        analytics.engagement_metrics?.global?.total_likes || 0;
+      aggregate.total_comments +=
+        analytics.engagement_metrics?.global?.total_comments || 0;
+
+      // Update date range
+      if (
+        !aggregate.date_range.first_post ||
+        analytics.date_range.first_post < aggregate.date_range.first_post
+      ) {
+        aggregate.date_range.first_post = analytics.date_range.first_post;
+      }
+      if (
+        !aggregate.date_range.last_post ||
+        analytics.date_range.last_post > aggregate.date_range.last_post
+      ) {
+        aggregate.date_range.last_post = analytics.date_range.last_post;
+      }
+
+      // Aggregate tagged accounts
+      if (analytics.tagged_accounts?.global) {
+        analytics.tagged_accounts.global.forEach((tag: TaggedAccount) => {
+          aggregate.all_tagged_accounts[tag.username] =
+            (aggregate.all_tagged_accounts[tag.username] || 0) + tag.count;
+        });
+      }
+
+      // Aggregate hashtags
+      if (analytics.hashtags?.global) {
+        analytics.hashtags.global.forEach(
+          (hashtag: { tag: string; count: number }) => {
+            aggregate.all_hashtags[hashtag.tag] =
+              (aggregate.all_hashtags[hashtag.tag] || 0) + hashtag.count;
+          }
+        );
+      }
+
+      // Activity distribution
+      const frequency =
+        analytics.activity_metrics?.posting_frequency || "inactive";
+      if (frequency in aggregate.activity_distribution) {
+        aggregate.activity_distribution[
+          frequency as keyof typeof aggregate.activity_distribution
+        ]++;
+      }
+
+      // Activo distribution
+      const activo = analytics.activo || "NO";
+      if (activo in aggregate.activo_distribution) {
+        aggregate.activo_distribution[
+          activo as keyof typeof aggregate.activo_distribution
+        ]++;
+      }
+    });
+
+    // Progress logging
+    if ((index + 1) % 100 === 0 || index + 1 === scrappedVenues.length) {
+      const percentage = (((index + 1) / scrappedVenues.length) * 100).toFixed(
+        2
+      );
+      console.log(
+        `Progress: ${index + 1}/${scrappedVenues.length} (${percentage}%)`
+      );
+    }
+  });
+
+  console.log("\nGenerating geographic analytics files...");
+
+  // Generate output files for each geographic level
+  let totalFilesGenerated = 0;
+
+  Object.entries(geoAggregates).forEach(([levelKey, levelData]) => {
+    Object.entries(levelData).forEach(([locationName, aggregate]) => {
+      const outputData = {
+        geographic_level: levelKey,
+        location_name: locationName,
+        generated_at: new Date().toISOString(),
+        total_venues: aggregate.venues.length,
+        venues: aggregate.venues.sort(),
+        total_posts: aggregate.total_posts,
+        total_likes: aggregate.total_likes,
+        total_comments: aggregate.total_comments,
+        avg_posts_per_venue:
+          Math.round((aggregate.total_posts / aggregate.venues.length) * 100) /
+          100,
+        avg_likes_per_venue:
+          Math.round((aggregate.total_likes / aggregate.venues.length) * 100) /
+          100,
+        avg_comments_per_venue:
+          Math.round(
+            (aggregate.total_comments / aggregate.venues.length) * 100
+          ) / 100,
+        date_range: aggregate.date_range,
+        activity_distribution: aggregate.activity_distribution,
+        activo_distribution: aggregate.activo_distribution,
+        top_tagged_accounts: Object.entries(aggregate.all_tagged_accounts)
+          .map(([username, count]) => ({ username, count }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 100), // Top 100
+        top_hashtags: Object.entries(aggregate.all_hashtags)
+          .map(([tag, count]) => ({ tag, count }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 100), // Top 100
+        all_tagged_accounts: Object.entries(aggregate.all_tagged_accounts)
+          .map(([username, count]) => ({ username, count }))
+          .sort((a, b) => b.count - a.count),
+        all_hashtags: Object.entries(aggregate.all_hashtags)
+          .map(([tag, count]) => ({ tag, count }))
+          .sort((a, b) => b.count - a.count),
+      };
+
+      const sanitizedName = locationName.replace(/[^a-zA-Z0-9_-]/g, "_");
+      const outputFileName = `${levelKey}_${sanitizedName}.json`;
+      const outputPath = `${outputDirPath}/${outputFileName}`;
+
+      crearArchivo(outputPath, outputData);
+      totalFilesGenerated++;
+    });
+  });
+
+  console.log("\n=== Geographic Analytics Summary ===");
+  console.log(`Total files generated: ${totalFilesGenerated}`);
+  Object.entries(geoAggregates).forEach(([levelKey, levelData]) => {
+    console.log(`  ${levelKey}: ${Object.keys(levelData).length} locations`);
+  });
+  console.log(`Output directory: ${outputDirPath}`);
 }

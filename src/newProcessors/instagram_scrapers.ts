@@ -20,6 +20,160 @@ export async function main(args?: any) {
   //   consolidar_menciones_absolutas();
   //
   // create_artists_related_genres();
+
+  unify_timeline(
+    [
+      "C:/Users/fnp/Documents/Artist Hive/Data/places_timeline",
+      "C:/Users/fnp/Documents/Artist Hive/Data/tm",
+      "C:/Users/fnp/Documents/Artist Hive/Data/timeline",
+      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_2",
+      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_last",
+      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_old",
+      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_b",
+    ],
+    "C:/Users/fnp/Documents/Artist Hive/Data/complete"
+  );
+}
+
+export function unify_timeline(input_dirs: string[], output_dir: string) {
+  console.log("🚀 Iniciando unificación de timelines");
+  console.log(`📁 Directorios de entrada: ${input_dirs.length}`);
+  console.log(`📁 Directorio de salida: ${output_dir}`);
+
+  // Crear directorio de salida si no existe
+  if (!fs.existsSync(output_dir)) {
+    fs.mkdirSync(output_dir, { recursive: true });
+  }
+
+  // Mapa para almacenar: filename -> { path: string, mtime: number, dirIndex: number }
+  const fileRegistry = new Map<
+    string,
+    { path: string; mtime: number; dirIndex: number }
+  >();
+
+  let totalFilesScanned = 0;
+
+  // Fase 1: Escanear todos los directorios y registrar archivos
+  console.log("\n📊 Fase 1: Escaneando directorios...");
+
+  input_dirs.forEach((dir, dirIndex) => {
+    if (!fs.existsSync(dir)) {
+      console.warn(`⚠️  Directorio no existe: ${dir}`);
+      return;
+    }
+
+    const files = fs.readdirSync(dir);
+    const totalFiles = files.length;
+
+    console.log(`\n📂 [${dirIndex + 1}/${input_dirs.length}] ${dir}`);
+    console.log(`   Total archivos: ${totalFiles.toLocaleString()}`);
+
+    files.forEach((filename, fileIndex) => {
+      const filePath = `${dir}/${filename}`;
+
+      // Mostrar progreso cada 5%
+      const progress = ((fileIndex + 1) / totalFiles) * 100;
+      if (
+        fileIndex % Math.ceil(totalFiles / 20) === 0 ||
+        fileIndex === totalFiles - 1
+      ) {
+        process.stdout.write(
+          `\r   Progreso: ${progress.toFixed(1)}% (${(
+            fileIndex + 1
+          ).toLocaleString()}/${totalFiles.toLocaleString()})`
+        );
+      }
+
+      try {
+        const stats = fs.statSync(filePath);
+
+        // Solo procesar archivos JSON
+        if (!filename.endsWith(".json") || !stats.isFile()) {
+          return;
+        }
+
+        totalFilesScanned++;
+        const mtime = stats.mtimeMs;
+
+        // Si el archivo no existe en el registro, agregarlo
+        if (!fileRegistry.has(filename)) {
+          fileRegistry.set(filename, { path: filePath, mtime, dirIndex });
+        } else {
+          // Si existe, conservar el más reciente
+          const existing = fileRegistry.get(filename)!;
+          if (mtime > existing.mtime) {
+            fileRegistry.set(filename, { path: filePath, mtime, dirIndex });
+          }
+        }
+      } catch (error) {
+        console.error(`\n   ❌ Error procesando ${filename}:`, error);
+      }
+    });
+
+    console.log(""); // Nueva línea después del progreso
+  });
+
+  console.log(`\n✅ Fase 1 completada`);
+  console.log(
+    `   Total archivos escaneados: ${totalFilesScanned.toLocaleString()}`
+  );
+  console.log(
+    `   Total archivos únicos encontrados: ${fileRegistry.size.toLocaleString()}`
+  );
+  console.log(
+    `   Duplicados detectados: ${(
+      totalFilesScanned - fileRegistry.size
+    ).toLocaleString()}`
+  );
+
+  // Fase 2: Mover solo los archivos más recientes al directorio de salida
+  console.log(
+    `\n📊 Fase 2: Moviendo archivos más recientes a ${output_dir}...`
+  );
+
+  const filesToMove = Array.from(fileRegistry.entries());
+  const totalToMove = filesToMove.length;
+  let movedCount = 0;
+  let errorCount = 0;
+
+  filesToMove.forEach(([filename, { path: sourcePath }], index) => {
+    const destPath = `${output_dir}/${filename}`;
+
+    // Mostrar progreso cada 5%
+    const progress = ((index + 1) / totalToMove) * 100;
+    if (
+      index % Math.ceil(totalToMove / 20) === 0 ||
+      index === totalToMove - 1
+    ) {
+      process.stdout.write(
+        `\r   Progreso: ${progress.toFixed(1)}% (${(
+          index + 1
+        ).toLocaleString()}/${totalToMove.toLocaleString()}) | Movidos: ${movedCount.toLocaleString()} | Errores: ${errorCount}`
+      );
+    }
+
+    try {
+      fs.renameSync(sourcePath, destPath);
+      movedCount++;
+    } catch (error) {
+      errorCount++;
+      console.error(`\n   ❌ Error moviendo ${filename}:`, error);
+    }
+  });
+
+  console.log(""); // Nueva línea después del progreso
+  console.log(`\n✅ Fase 2 completada`);
+  console.log(`   Archivos movidos: ${movedCount.toLocaleString()}`);
+  console.log(`   Errores: ${errorCount}`);
+
+  console.log(`\n✨ Unificación completada!`);
+  console.log(`   📁 Directorio de salida: ${output_dir}`);
+  console.log(`   📊 Total archivos únicos: ${movedCount.toLocaleString()}`);
+  console.log(
+    `   📊 Archivos viejos que permanecieron en origen: ${(
+      totalFilesScanned - movedCount
+    ).toLocaleString()}`
+  );
 }
 
 export function joinTimeLineOfUser(dirPath: string, username?: string) {

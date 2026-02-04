@@ -1,6 +1,8 @@
 // Import all processors
 import * as db from "./newProcessors/db";
 import * as drive_converter from "./newProcessors/drive_converter";
+import * as geoProcessor from "./newProcessors/geoProcessor";
+import * as instagram_artists from "./newProcessors/instagram_artists";
 import * as instagram_scrapers from "./newProcessors/instagram_scrapers";
 import * as posts_analytics from "./newProcessors/posts_analytics";
 import * as scrapers from "./newProcessors/scrapers";
@@ -24,6 +26,7 @@ const processors = {
   applyAliases,
   verifyStates,
   completeStates,
+  geoProcessor,
 
   // Data processors
   spotify,
@@ -34,6 +37,7 @@ const processors = {
 
   // Instagram processors
   instagram_scrapers,
+  instagram_artists,
   har_instagram,
 
   posts_analytics,
@@ -44,12 +48,14 @@ const processors = {
 
 // Configuration: Only list the ones you want to ENABLE
 const enabledProcessors: (keyof typeof processors)[] = [
+  "geoProcessor",
+  // "spotify",
   // "instagram_scrapers",
   // "drive_converter",
   // "har_instagram",
   // "scrapers",
   // "db",
-  // "spotify",
+  // "instagram_artists",
   // "posts_analytics",
   // "drive",
 ];

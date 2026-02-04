@@ -6,15 +6,20 @@ import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 export async function main(args?: any) {
   const dirPath = "./data/drive/2025/10-31";
   // Artists
-  await convertTSVFileToJSON({
-    cleanDataProcessor: cleanArtistData,
-    filePath: `${dirPath}/Nuevos Artistas - Bandas.tsv`,
-  });
+  // await convertTSVFileToJSON({
+  //   cleanDataProcessor: cleanArtistData,
+  //   filePath: `${dirPath}/Nuevos Artistas - Bandas.tsv`,
+  // });
 
-  // Venues
+  // // Venues
+  // await convertTSVFileToJSON({
+  //   cleanDataProcessor: cleanVenuesData,
+  //   filePath: `${dirPath}/Sitios - Sitios.tsv`,
+  // });
+
   await convertTSVFileToJSON({
     cleanDataProcessor: cleanVenuesData,
-    filePath: `${dirPath}/Sitios - Sitios.tsv`,
+    filePath: `${dirPath}/GeoData - DATOS.tsv`,
   });
   // get_usernames_missing_instagram_scrapping();
 

@@ -12,10 +12,10 @@ export function main(args?: any) {
   // ------------------------------------------------------
   scrapeRelatedArtists();
   // whichArtistsLeftForRelatedArtists();
+  // classifyRelatedArtists();
   // discoverNewArtistsFromRelated();
   // discoverNewArtistsFromRelatedFolder();
   // exportProfilesFromRelated();
-  // classifyRelatedArtists();
   // ------------------------------------------------------
   // resetBandsBioAndNewBands();
   // getSortedMissingAlbums();
@@ -68,7 +68,7 @@ export function discoverNewArtistsFromRelated() {
   );
 
   const scrappedRelatedArtists =
-    fs.readdirSync("./data/scrapped/spotify/bands/artist_related") || [];
+    fs.readdirSync("./data/scrapped/spotify/bands/artist_related_export") || [];
 
   let newArtists: any[] = [];
   scrappedRelatedArtists.forEach((artistRelated: string) => {
@@ -120,8 +120,8 @@ export function scrapeRelatedArtists() {
 
         if (relatedArtistJSON) {
           crearArchivo(
-            `${assets_folder}/${artist.replace(
-              // `./data/scrapped/spotify/bands/artist_related/${artist.replace(
+            // `${assets_folder}/${artist.replace(
+            `./data/scrapped/spotify/bands/artist_related/${artist.replace(
               ".har",
               ""
             )}.json`,
@@ -281,72 +281,65 @@ export function classifyRelatedArtists() {
 }
 
 export function whichArtistsLeftForRelatedArtists() {
-  const inDriveDB = leerArchivo(
-    `./data/scrapped/config/spotify_bands_complete.json`
-  );
-
   const assets_folder =
-    // "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/har_logs/correctos_utf8";
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_related";
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_related_export";
 
   const scrappedRelatedArtists = fs.readdirSync(assets_folder);
 
-  // Crear un Set con los IDs de artistas ya scrapeados para búsquedas O(1)
-  // Extraemos el ID del Spotify del nombre del archivo (asumiendo formato: <algo>_<spotifyId>.json o <spotifyId>.json)
+  // Set de artistas que YA tienen artist_related
   const scrappedArtistsSet = new Set<string>();
   scrappedRelatedArtists.forEach((fileName: string) => {
-    // Remover la extensión .json
-    const nameWithoutExt = fileName.replace(".json", "");
-    // Si el formato es timestamp_spotifyId, tomar la última parte
-    const parts = nameWithoutExt.split("_");
-    const spotifyId = parts[parts.length - 1];
-    scrappedArtistsSet.add(spotifyId);
+    if (fileName.endsWith(".json")) {
+      const nameWithoutExt = fileName.replace(".json", "");
+      const spotifyId = nameWithoutExt.split("_")[0];
+      scrappedArtistsSet.add(spotifyId);
+    }
   });
 
-  const filteredArtists = inDriveDB.filter(
-    (inDB: any) => !scrappedArtistsSet.has(inDB.spotify)
-  );
-  // .sort((a: any, b: any) => {
-  //   if (a.spotify.toLowerCase() < b.spotify.toLowerCase()) {
-  //     return -1;
-  //   }
-  //   if (a.spotify.toLowerCase() > b.spotify.toLowerCase()) {
-  //     return 1;
-  //   }
-  //   return 0;
-  // });
+  const artist_folder =
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_bio";
 
-  const delta = 7000;
-  let inicio = 0;
-  crearArchivo(
-    "./data/drive/2025/02 - 06/to Python scrapper.txt",
-    filteredArtists
-      .slice(inicio, inicio + delta)
-      .map((a: any) => a.spotify)
-      .join("\n"),
-    false
-  );
-  crearArchivo(
-    "./data/drive/2025/02 - 06/to Python scrapper 2.txt",
-    filteredArtists
-      .slice(inicio + delta, inicio + delta * 2)
-      .map((a: any) => a.spotify)
-      .join("\n"),
-    false
-  );
-  crearArchivo(
-    "./data/drive/2025/02 - 06/to Python scrapper 3.txt",
-    filteredArtists
-      .slice(inicio + delta * 2, inicio + delta * 3)
-      .map((a: any) => a.spotify)
-      .join("\n"),
-    false
-  );
+  const scrappedArtistsBio = fs.readdirSync(artist_folder);
+
+  // Set de artistas que tienen artist_bio
+  const scrappedArtistsBioSet = new Set<string>();
+  scrappedArtistsBio.forEach((fileName: string) => {
+    if (fileName.endsWith(".json")) {
+      const nameWithoutExt = fileName.replace(".json", "");
+      const spotifyId = nameWithoutExt.split("_")[0];
+      scrappedArtistsBioSet.add(spotifyId);
+    }
+  });
+
+  // Artistas que tienen bio PERO NO tienen related
+  const filteredArtists = Array.from(scrappedArtistsBioSet)
+    .filter((spotifyId) => !scrappedArtistsSet.has(spotifyId))
+    .sort(() => Math.random() - 0.5);
+
+  const delta = 8000;
+  const inicio = 0;
+  const chunks = [
+    { suffix: "", index: 0 },
+    { suffix: " 2", index: 1 },
+    { suffix: " 3", index: 2 },
+  ];
+
+  chunks.forEach(({ suffix, index }) => {
+    crearArchivo(
+      `./data/drive/2025/02 - 06/to Python scrapper${suffix}.txt`,
+      filteredArtists
+        .slice(inicio + delta * index, inicio + delta * (index + 1))
+        .join("\n"),
+      false
+    );
+  });
 
   console.log(
-    "Spotify related artists: ",
-    inDriveDB.length,
-    scrappedRelatedArtists.length,
+    "Artistas con bio:",
+    scrappedArtistsBioSet.size,
+    "\nArtistas con related:",
+    scrappedArtistsSet.size,
+    "\nFaltantes (tienen bio pero no related):",
     filteredArtists.length
   );
 }
