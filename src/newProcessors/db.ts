@@ -13,14 +13,17 @@ function completar_generos_en_places() {
 
   // Transform to Record<string, string[]> with genres_l1.keys
   const placesGenres: Record<string, any> = Object.entries(
-    placesGenresRaw
-  ).reduce((acc, [key, value]: [string, any]) => {
-    acc[key] = {
-      l1: [...(value.genres_l1?.keys || [])],
-      l2: [...(value.genres_l2?.keys || [])],
-    };
-    return acc;
-  }, {} as Record<string, any>);
+    placesGenresRaw,
+  ).reduce(
+    (acc, [key, value]: [string, any]) => {
+      acc[key] = {
+        l1: [...(value.genres_l1?.keys || [])],
+        l2: [...(value.genres_l2?.keys || [])],
+      };
+      return acc;
+    },
+    {} as Record<string, any>,
+  );
 
   const placesStatsFile = leerArchivo(`${placesDir}/stats.json`);
 
@@ -34,15 +37,15 @@ function completar_generos_en_places() {
       }
       return acc;
     },
-    {} as Record<string, number>
+    {} as Record<string, number>,
   );
 
   const entity_directory = leerArchivo(
-    `./data/drive/2025/10-31/bd/artist_hive.entitydirectories.json`
+    `./data/drive/2025/10-31/bd/artist_hive.entitydirectories.json`,
   );
 
   const places = entity_directory.filter(
-    (entity: any) => entity.entityType === "Place"
+    (entity: any) => entity.entityType === "Place",
   );
 
   places.forEach((place: any) => {
@@ -63,11 +66,11 @@ function completar_generos_en_places() {
 
   crearArchivo(
     `./data/drive/2025/10-31/bd/artist_hive.entitydirectories_nuevo.json`,
-    entity_directory
+    entity_directory,
   );
 
   const placesDB = leerArchivo(
-    `./data/drive/2025/10-31/bd/artist_hive.places.json`
+    `./data/drive/2025/10-31/bd/artist_hive.places.json`,
   );
 
   placesDB.forEach((place: any) => {
@@ -88,7 +91,7 @@ function completar_generos_en_places() {
 
   crearArchivo(
     `./data/drive/2025/10-31/bd/artist_hive.places_nuevo.json`,
-    placesDB
+    placesDB,
   );
 }
 
@@ -173,7 +176,7 @@ class MultiIndexArtistRegistry {
   }
 
   private cleanChartmetricId(
-    id: number | string | undefined | null
+    id: number | string | undefined | null,
   ): string | undefined {
     if (!id) return undefined;
     if (typeof id === "number") return id.toString();
@@ -190,7 +193,7 @@ class MultiIndexArtistRegistry {
 
   private cleanSocialHandle(
     handle: string | undefined | null,
-    _platform: string
+    _platform: string,
   ): string | undefined {
     if (!handle) return undefined;
     let cleaned = handle.trim();
@@ -283,7 +286,7 @@ class MultiIndexArtistRegistry {
   private updateIndex(
     index: Map<string, string>,
     value: string | undefined,
-    key: string
+    key: string,
   ) {
     if (value && value.trim()) {
       index.set(value, key);
@@ -293,7 +296,7 @@ class MultiIndexArtistRegistry {
   private updateIndexNormalized(
     index: Map<string, string>,
     value: string | undefined,
-    key: string
+    key: string,
   ) {
     if (value && value.trim()) {
       index.set(this.normalizeString(value), key);
@@ -333,7 +336,7 @@ class MultiIndexArtistRegistry {
   private mergeArtists(
     existing: ArtistIdentifiers,
     incoming: ArtistIdentifiers,
-    priority: number
+    priority: number,
   ): ArtistIdentifiers {
     // Si priority es alto, los datos entrantes tienen prioridad
     // Priority: 4 = Drive, 3 = Chartmetric, 2 = Spotify, 1 = BD
@@ -496,7 +499,7 @@ class MultiIndexArtistRegistry {
     if (artist.soundcloud) {
       const soundcloud = this.cleanSocialHandle(
         artist.soundcloud,
-        "soundcloud"
+        "soundcloud",
       );
       this.updateIndexNormalized(this.indexBySoundcloud, soundcloud, key);
     }
@@ -530,19 +533,19 @@ class MultiIndexArtistRegistry {
 function unir_todos_los_artistas() {
   console.log("Unificando ids de artistas....");
   const artists_drive_json = leerArchivo(
-    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`
+    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`,
   );
 
   const artists_old_db = leerArchivo(
-    `./data/drive/2025/10-31/bd/artist_hive.artists.json`
+    `./data/drive/2025/10-31/bd/artist_hive.artists.json`,
   );
 
   const chartmetric_artists = Object.values(
-    leerArchivo(`./data/scrapped/chartmetric/bands_sn.json`)
+    leerArchivo(`./data/scrapped/chartmetric/bands_sn.json`),
   );
 
   const spotify_artists = Object.values(
-    leerArchivo(`./data/scrapped/spotify/bands/artist_bio.extract.json`)
+    leerArchivo(`./data/scrapped/spotify/bands/artist_bio.extract.json`),
   );
 
   console.log("Total Artists Old BD: ", artists_old_db.length);
@@ -559,7 +562,7 @@ function unir_todos_los_artistas() {
     return (num >= 1 && num <= 1939) || (num >= 100001 && num <= 113032);
   });
   console.log(
-    `  - Registros filtrados de BD: ${filteredBD.length} de ${artists_old_db.length}`
+    `  - Registros filtrados de BD: ${filteredBD.length} de ${artists_old_db.length}`,
   );
 
   filteredBD.forEach((artist: any, index: number) => {
@@ -604,16 +607,16 @@ function unir_todos_los_artistas() {
         weibo: artist.weibo,
         source: "BD",
       },
-      1 // Prioridad baja
+      1, // Prioridad baja
     );
     if ((index + 1) % 5000 === 0) {
       console.log(
-        `  - Procesados ${index + 1} / ${filteredBD.length} registros de BD`
+        `  - Procesados ${index + 1} / ${filteredBD.length} registros de BD`,
       );
     }
   });
   console.log(
-    `  - Completado: ${filteredBD.length} registros de BD procesados`
+    `  - Completado: ${filteredBD.length} registros de BD procesados`,
   );
 
   // 2. Procesar Spotify
@@ -626,18 +629,18 @@ function unir_todos_los_artistas() {
         profile_pic: artist.img, // Imagen principal de Spotify
         source: "Spotify",
       },
-      2 // Prioridad media
+      2, // Prioridad media
     );
     if ((index + 1) % 5000 === 0) {
       console.log(
         `  - Procesados ${index + 1} / ${
           spotify_artists.length
-        } registros de Spotify`
+        } registros de Spotify`,
       );
     }
   });
   console.log(
-    `  - Completado: ${spotify_artists.length} registros de Spotify procesados`
+    `  - Completado: ${spotify_artists.length} registros de Spotify procesados`,
   );
 
   // 3. Procesar Chartmetric
@@ -650,18 +653,18 @@ function unir_todos_los_artistas() {
         profile_pic: artist.image_url, // Imagen de Chartmetric
         source: "Chartmetric",
       },
-      3 // Prioridad alta
+      3, // Prioridad alta
     );
     if ((index + 1) % 5000 === 0) {
       console.log(
         `  - Procesados ${index + 1} / ${
           chartmetric_artists.length
-        } registros de Chartmetric`
+        } registros de Chartmetric`,
       );
     }
   });
   console.log(
-    `  - Completado: ${chartmetric_artists.length} registros de Chartmetric procesados`
+    `  - Completado: ${chartmetric_artists.length} registros de Chartmetric procesados`,
   );
 
   // 4. Procesar Drive (máxima prioridad)
@@ -713,18 +716,18 @@ function unir_todos_los_artistas() {
         weibo: artist.weibo,
         source: "Drive",
       },
-      4 // Prioridad máxima
+      4, // Prioridad máxima
     );
     if ((index + 1) % 5000 === 0) {
       console.log(
         `  - Procesados ${index + 1} / ${
           artists_drive_json.length
-        } registros de Drive`
+        } registros de Drive`,
       );
     }
   });
   console.log(
-    `  - Completado: ${artists_drive_json.length} registros de Drive procesados`
+    `  - Completado: ${artists_drive_json.length} registros de Drive procesados`,
   );
 
   // Obtener estadísticas
@@ -748,18 +751,21 @@ function unir_todos_los_artistas() {
   const unifiedArtists = registry.getAllRecords();
   crearArchivo(
     `./data/drive/2025/10-31/artists_unified_identifiers.json`,
-    unifiedArtists
+    unifiedArtists,
   );
   console.log(
-    "\nArchivo guardado: ./data/drive/2025/10-31/artists_unified_identifiers.json"
+    "\nArchivo guardado: ./data/drive/2025/10-31/artists_unified_identifiers.json",
   );
 
   // Crear análisis de fuentes
-  const sourceAnalysis = unifiedArtists.reduce((acc, artist) => {
-    const source = artist.source || "Unknown";
-    acc[source] = (acc[source] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
+  const sourceAnalysis = unifiedArtists.reduce(
+    (acc, artist) => {
+      const source = artist.source || "Unknown";
+      acc[source] = (acc[source] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
 
   console.log("\n=== ANÁLISIS POR FUENTE ===");
   Object.entries(sourceAnalysis).forEach(([source, count]) => {
@@ -777,10 +783,10 @@ function unir_todos_los_artistas() {
   if (artistsWithConflicts.length > 0) {
     crearArchivo(
       `./data/drive/2025/10-31/artists_conflicts.json`,
-      artistsWithConflicts
+      artistsWithConflicts,
     );
     console.log(
-      "\nArchivo de conflictos guardado: ./data/drive/2025/10-31/artists_conflicts.json"
+      "\nArchivo de conflictos guardado: ./data/drive/2025/10-31/artists_conflicts.json",
     );
 
     // Mostrar top 10 con más conflictos
@@ -789,7 +795,7 @@ function unir_todos_los_artistas() {
       console.log(
         `  ${index + 1}. ${artist.name} (num: ${artist.num}) - ${
           artist.conflicts
-        } conflictos`
+        } conflictos`,
       );
     });
   }
@@ -803,7 +809,7 @@ function unir_todos_los_artistas() {
  */
 export function extractSocialUser(
   network: string,
-  url: string | null
+  url: string | null,
 ): string | null {
   if (!url) return null;
 
@@ -969,7 +975,7 @@ export function extractSocialUser(
       case "youtubeforartist":
         return (
           decodeURIComponent(
-            pathname.split("/artist/")[1]?.split("?")[0] || ""
+            pathname.split("/artist/")[1]?.split("?")[0] || "",
           ) || null
         );
 
@@ -998,7 +1004,7 @@ function isEmpty(value: any) {
  */
 interface DataSourceConfig {
   data: any[]; // Array de registros de la fuente
-  nombre: "BD" | "Drive" | "Chartmetric" | "Spotify";
+  nombre: "BD" | "Drive" | "Chartmetric" | "Spotify" | "LinkedTree";
   fieldMapping: Record<string, string>; // Mapeo de campos (campo_db -> campo_fuente)
   customFieldsAssignment?: (dbRow: any, sourceRow: any) => void; // Función para asignar campos personalizados
 }
@@ -1012,7 +1018,7 @@ function procesarFuenteDatos(
   indexes: Record<string, Map<string, any>>,
   indexesFields: string[],
   fields: Record<string, string[]>,
-  maxIndex: { value: number }
+  maxIndex: { value: number },
 ): { nuevos: number; total: number; repetidos: number } {
   console.log(`\n\nSe agregan los registros de ${config.nombre}:`);
 
@@ -1025,8 +1031,8 @@ function procesarFuenteDatos(
     if ((index + 1) % 5000 === 0) {
       console.log(
         `  - Procesados (${Math.round(
-          100 * ((index + 1) / config.data.length)
-        )}%) ${index + 1} / ${config.data.length} registros de ${config.nombre}`
+          100 * ((index + 1) / config.data.length),
+        )}%) ${index + 1} / ${config.data.length} registros de ${config.nombre}`,
       );
     }
 
@@ -1069,7 +1075,7 @@ function procesarFuenteDatos(
           "dbIndex:",
           dbIndex,
           "snInRow:",
-          snInRow
+          snInRow,
         );
       } else {
         // Actualización de los campos estándar
@@ -1187,25 +1193,30 @@ function unir_todos_los_artistas_nuevo() {
   console.log("\nLeyendo archivos...");
 
   let artists_drive_json = leerArchivo(
-    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`
+    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`,
   );
 
   let artists_old_db = leerArchivo(
-    `./data/drive/2025/10-31/bd/artist_hive.artists.json`
+    `./data/drive/2025/10-31/bd/artist_hive.artists.json`,
   );
 
   let chartmetric_artists = Object.values(
-    leerArchivo(`./data/scrapped/chartmetric/bands_sn.json`)
+    leerArchivo(`./data/scrapped/chartmetric/bands_sn.json`),
   );
 
   let spotify_artists = Object.values(
-    leerArchivo(`./data/scrapped/spotify/bands/artist_bio.extract.json`)
+    leerArchivo(`./data/scrapped/spotify/bands/artist_bio.extract.json`),
+  );
+
+  let linkedtree_artists = Object.values(
+    leerArchivo(`./data/drive/2025/10-31/linkedTree2.json`),
   );
 
   console.log("Total Artists Old BD: ", artists_old_db.length);
   console.log("Total Artists Drive JSON: ", artists_drive_json.length);
   console.log("Total Chartmetric Artists: ", chartmetric_artists.length);
   console.log("Total Spotify Artists: ", spotify_artists.length);
+  console.log("Total LinkedTree Artists: ", linkedtree_artists.length);
 
   // ========================================================================
   // Paso 0. Se eliminan de la base de datos los que ya no existen
@@ -1217,7 +1228,7 @@ function unir_todos_los_artistas_nuevo() {
   artists_old_db = artists_old_db.filter((row: any) =>
     row.num < 2000 || (row.num > 10000 && row.num <= 113032)
       ? existingNums.includes(row.num)
-      : true
+      : true,
   );
   console.log("\n[Filtrado] Existing nums: ", existingNums.length);
   console.log("[Filtrado] Total Artists Old BD: ", artists_old_db.length);
@@ -1244,7 +1255,7 @@ function unir_todos_los_artistas_nuevo() {
   ];
 
   const indexes: Record<string, Map<string, any>> = Object.fromEntries(
-    indexesFields.map((field) => [field, new Map<string, any>()])
+    indexesFields.map((field) => [field, new Map<string, any>()]),
   );
 
   // Cargar registros previos de la BD
@@ -1303,6 +1314,16 @@ function unir_todos_los_artistas_nuevo() {
         // profile_pic: "img",
       },
     },
+    // LinkedTree
+    {
+      data: linkedtree_artists,
+      nombre: "LinkedTree",
+      fieldMapping: {
+        instagram: "username",
+        spotify: "spotify",
+        name: "name",
+      },
+    },
   ];
 
   // ========================================================================
@@ -1315,7 +1336,7 @@ function unir_todos_los_artistas_nuevo() {
       indexes,
       indexesFields,
       fields,
-      maxIndex
+      maxIndex,
     );
   });
 
@@ -1330,16 +1351,16 @@ function unir_todos_los_artistas_nuevo() {
   console.log(
     "MAX num anterior:",
     Math.max(
-      ...artists_old_db.map((a: any) => a.num).filter((a: any) => a < 100001)
-    )
+      ...artists_old_db.map((a: any) => a.num).filter((a: any) => a < 100001),
+    ),
   );
-
+  console.log("creando archivo");
   crearArchivo(
     "./data/drive/2025/10-31/bd/db.txt",
     Object.values(newDB).map(
       (row: any) =>
-        `${row.num}\t${row.spotify}\t${row.chartmetric}\t${row.name}\t`
-    )
+        `${row.num}	${row.spotify || ""}	${row.chartmetric || ""}	${row.name || ""}	`,
+    ),
   );
 }
 
@@ -1390,19 +1411,19 @@ function unir_todos_los_artistas_nuevo_dos() {
   console.log("Unificando ids de artistas....");
   console.log("Leyendo archivos");
   let artists_drive_json = leerArchivo(
-    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`
+    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`,
   );
 
   let artists_old_db = leerArchivo(
-    `./data/drive/2025/10-31/bd/artist_hive.artists.json`
+    `./data/drive/2025/10-31/bd/artist_hive.artists.json`,
   );
 
   let chartmetric_artists = Object.values(
-    leerArchivo(`./data/scrapped/chartmetric/bands_sn.json`)
+    leerArchivo(`./data/scrapped/chartmetric/bands_sn.json`),
   );
 
   let spotify_artists = Object.values(
-    leerArchivo(`./data/scrapped/spotify/bands/artist_bio.extract.json`)
+    leerArchivo(`./data/scrapped/spotify/bands/artist_bio.extract.json`),
   );
 
   console.log("Total Artists Old BD: ", artists_old_db.length);
@@ -1420,7 +1441,7 @@ function unir_todos_los_artistas_nuevo_dos() {
   artists_old_db = artists_old_db.filter((row: any) =>
     row.num < 2000 || (row.num > 10000 && row.num <= 113032)
       ? existingNums.includes(row.num)
-      : true
+      : true,
   );
   console.log("[NEW] Existing: ", existingNums.length);
   console.log("[NEW] Total Artists Old BD: ", artists_old_db.length);
@@ -1447,7 +1468,7 @@ function unir_todos_los_artistas_nuevo_dos() {
   ];
 
   const indexes: Record<string, Map<string, any>> = Object.fromEntries(
-    indexesFields.map((field) => [field, new Map<string, any>()])
+    indexesFields.map((field) => [field, new Map<string, any>()]),
   );
 
   // ========================================================
@@ -1493,8 +1514,8 @@ function unir_todos_los_artistas_nuevo_dos() {
     if ((index + 1) % 5000 === 0) {
       console.log(
         `  - Procesados (${Math.round(
-          100 * ((index + 1) / artists_drive_json.length)
-        )}%) ${index + 1} / ${artists_drive_json.length} registros de Drive`
+          100 * ((index + 1) / artists_drive_json.length),
+        )}%) ${index + 1} / ${artists_drive_json.length} registros de Drive`,
       );
     }
 
@@ -1581,10 +1602,10 @@ function unir_todos_los_artistas_nuevo_dos() {
     if ((index + 1) % 5000 === 0) {
       console.log(
         `  - Procesados (${Math.round(
-          100 * ((index + 1) / chartmetric_artists.length)
+          100 * ((index + 1) / chartmetric_artists.length),
         )}%) ${index + 1} / ${
           chartmetric_artists.length
-        } registros de Chartmetric`
+        } registros de Chartmetric`,
       );
     }
     total++;
@@ -1628,7 +1649,7 @@ function unir_todos_los_artistas_nuevo_dos() {
           dbIndex,
           newDB[dbIndex],
           snInRow,
-          dbIndex_sub
+          dbIndex_sub,
         );
       } else {
         // Actualización de los campos
@@ -1673,7 +1694,7 @@ function unir_todos_los_artistas_nuevo_dos() {
     " - Total",
     total,
     " | Repetidos",
-    repetidos
+    repetidos,
   );
 
   // Se muestran los índices después de cada paso del proceso
@@ -1692,8 +1713,8 @@ function unir_todos_los_artistas_nuevo_dos() {
   console.log(
     "MAX ",
     Math.max(
-      ...artists_old_db.map((a: any) => a.num).filter((a: any) => a < 100001)
-    )
+      ...artists_old_db.map((a: any) => a.num).filter((a: any) => a < 100001),
+    ),
     // Math.max(...artists_old_db.map((a: any) => a.num))
     // newDB[10]
   );

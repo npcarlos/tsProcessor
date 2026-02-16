@@ -11,16 +11,22 @@ export async function main(args?: any) {
   //   filePath: `${dirPath}/Nuevos Artistas - Bandas.tsv`,
   // });
 
-  // // Venues
+  // // Artists
   // await convertTSVFileToJSON({
-  //   cleanDataProcessor: cleanVenuesData,
-  //   filePath: `${dirPath}/Sitios - Sitios.tsv`,
+  //   // cleanDataProcessor: cleanArtistData,
+  //   filePath: `${dirPath}/linkedTree.tsv`,
   // });
 
+  // Venues
   await convertTSVFileToJSON({
     cleanDataProcessor: cleanVenuesData,
-    filePath: `${dirPath}/GeoData - DATOS.tsv`,
+    filePath: `${dirPath}/Sitios - Sitios.tsv`,
   });
+
+  // await convertTSVFileToJSON({
+  //   cleanDataProcessor: cleanVenuesData,
+  //   filePath: `${dirPath}/GeoData - DATOS.tsv`,
+  // });
   // get_usernames_missing_instagram_scrapping();
 
   // const docs = leerArchivo(
@@ -31,6 +37,30 @@ export async function main(args?: any) {
 
   // console.log(docs.length);
   // crearArchivo(`${dirPath}/spotify_all_db.txt`, docs);
+
+  const sitios = leerArchivo(`${dirPath}/Sitios - Sitios.json`).filter(
+    (sitio: any) => !!sitio.instagram && sitio.existe.toLowerCase() !== "no",
+  );
+  console.log(sitios.length);
+
+  const pics = fs.readdirSync("C:/Users/fnp/Desktop/profile_pics_2");
+  const picsDict: { [key: string]: true } = {};
+  pics.forEach((sitio: any) => (picsDict[sitio.replace(".jpg", "")] = true));
+
+  const already = fs.readdirSync(
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/images",
+  );
+
+  const sitiosFaltantes = sitios.filter(
+    (sitio: any) =>
+      !picsDict[sitio.instagram] &&
+      !already.find((alredySitio) => alredySitio === sitio.instagram),
+  );
+  crearArchivo(
+    `${dirPath}/Sitios - Faltantes.json`,
+    sitiosFaltantes.map((sitio: any) => sitio.instagram),
+  );
+  console.log(sitiosFaltantes.length);
 }
 
 async function convertTSVFileToJSON(params: {
@@ -55,7 +85,7 @@ async function convertTSVFileToJSON(params: {
     console.log(
       `✓ Processed ${
         cleanedData.filter((v: any) => !!v.location).length
-      } rows with location`
+      } rows with location`,
     );
 
     console.log(cleanedData[1]);
@@ -142,7 +172,7 @@ function cleanArtistData<T extends Record<string, any>>(rawData: T[]): any[] {
     })
     .filter(
       (row) =>
-        !!row.instagram_user || !!row.chartmetric_user || !!row.spotify_user
+        !!row.instagram_user || !!row.chartmetric_user || !!row.spotify_user,
       // !!row.spotify_user
     )
     .sort((a, b) => (a.num || 0) - (b.num || 0));
@@ -192,7 +222,7 @@ function get_usernames_missing_instagram_scrapping() {
     "C:/Users/fnp/Documents/Artist Hive/Data Octubre 2025/places_3";
   const alreadyScrapped = fs.readdirSync(`${scrappedDirPath}/clean`);
   const elementsInDrive = leerArchivo(
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/drive/2025/10-31/Sitios - Sitios.json"
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/drive/2025/10-31/Sitios - Sitios.json",
   );
 
   const elementsInDriveWithInstagram = elementsInDrive
@@ -201,8 +231,8 @@ function get_usernames_missing_instagram_scrapping() {
         !!entity.instagram &&
         !alreadyScrapped.find(
           (scrappedEntity: string) =>
-            scrappedEntity === `${entity.instagram}.json`
-        )
+            scrappedEntity === `${entity.instagram}.json`,
+        ),
     )
     .map((entity: any) => entity.instagram);
 
@@ -210,6 +240,6 @@ function get_usernames_missing_instagram_scrapping() {
   crearArchivo(
     `${scrappedDirPath}/processed/instagram_missing_scrapped.txt`,
     elementsInDriveWithInstagram.join("\n"),
-    false
+    false,
   );
 }

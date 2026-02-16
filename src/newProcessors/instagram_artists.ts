@@ -23,12 +23,12 @@ export function main(args?: any) {
   // summarizeArtistProfiles();
   // compileLinksByDomain();
   // extractSocialMediaUsers();
-  generateConfigFile("linktr_ee");
+  // generateConfigFile("linktr_ee");
 }
 
 export function summarizeArtistProfiles(
   inputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/artists_profiles",
-  outputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/artist_profiles_summary"
+  outputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/artist_profiles_summary",
 ) {
   // Dominios de interés
   const targetDomains = [
@@ -91,8 +91,8 @@ export function summarizeArtistProfiles(
       const detectedInBioLinks: string[] = [
         ...new Set<string>(
           bioLinks.flatMap((link: { url: string }) =>
-            detectDomains(link.url)
-          ) as string[]
+            detectDomains(link.url),
+          ) as string[],
         ),
       ];
 
@@ -138,7 +138,7 @@ export function summarizeArtistProfiles(
 
 export function extractSocialMediaUsers(
   inputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/artist_profiles_summary",
-  outputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/social_media_users"
+  outputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/social_media_users",
 ) {
   // Instagram profile info that will be associated with each social media account
   interface InstagramInfo {
@@ -220,7 +220,7 @@ export function extractSocialMediaUsers(
   // Helper function to extract username from URL for a given network
   function extractUsername(
     url: string,
-    network: keyof typeof networkConfigs
+    network: keyof typeof networkConfigs,
   ): string | null {
     const config = networkConfigs[network];
     for (const pattern of config.patterns) {
@@ -236,7 +236,7 @@ export function extractSocialMediaUsers(
   function detectNetwork(url: string): keyof typeof networkConfigs | null {
     const lowerUrl = url.toLowerCase();
     for (const network of Object.keys(
-      networkConfigs
+      networkConfigs,
     ) as (keyof typeof networkConfigs)[]) {
       for (const pattern of networkConfigs[network].patterns) {
         if (pattern.test(lowerUrl)) {
@@ -298,7 +298,7 @@ export function extractSocialMediaUsers(
       // Helper to process a URL
       const processUrl = (
         url: string,
-        urlType: "biography" | "external_url" | "bio_link"
+        urlType: "biography" | "external_url" | "bio_link",
       ) => {
         const network = detectNetwork(url);
         if (network) {
@@ -373,7 +373,7 @@ export function extractSocialMediaUsers(
 
     // Sort by follower_count descending
     const sortedAccounts = accounts.sort(
-      (a, b) => b.follower_count - a.follower_count
+      (a, b) => b.follower_count - a.follower_count,
     );
 
     const networkData = {
@@ -432,7 +432,7 @@ export function extractSocialMediaUsers(
 
 export function compileLinksByDomain(
   inputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/artist_profiles_summary",
-  outputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/links_by_domain"
+  outputDir: string = "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/instagram/links_by_domain",
 ) {
   // Crear directorio de salida si no existe
   if (!fs.existsSync(outputDir)) {
@@ -473,7 +473,7 @@ export function compileLinksByDomain(
         } catch {
           // Si no es una URL válida, intentar extraer dominio manualmente
           const match = url.match(
-            /(?:https?:\/\/)?(?:www\.)?([^\/\s]+\.[a-z]{2,})/i
+            /(?:https?:\/\/)?(?:www\.)?([^\/\s]+\.[a-z]{2,})/i,
           );
           return match ? match[1] : null;
         }
@@ -564,14 +564,14 @@ export function compileLinksByDomain(
 
   // Ordenar dominios por cantidad de artistas
   const sortedDomains = Object.entries(linksByDomain).sort(
-    (a, b) => b[1].length - a[1].length
+    (a, b) => b[1].length - a[1].length,
   );
 
   // Generar un archivo por cada dominio
   sortedDomains.forEach(([domain, artists]) => {
     // Ordenar artistas por follower_count descendente
     const sortedArtists = artists.sort(
-      (a, b) => b.follower_count - a.follower_count
+      (a, b) => b.follower_count - a.follower_count,
     );
 
     const domainData = {
@@ -634,6 +634,6 @@ export function generateConfigFile(socialNetwork: string) {
     `${dirPath}/config_${socialNetwork}.json`,
     uniqueAccounts.map((account: any) => {
       return { username: account.username, downloaded: 0 };
-    })
+    }),
   );
 }

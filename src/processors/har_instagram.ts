@@ -8,7 +8,7 @@ export function main(args?: any) {
   // procesar_har();
   // extract_user_profile();
   // extract_instagram_data();
-  // copyProfilePics();
+  copyProfilePics();
   console.log("=============== INICINAOD   ?????????");
   // console.log("=============== TIMELINE   ?????????");
   // process_timelines();
@@ -110,17 +110,19 @@ function extract_unique_ids_from_timeline() {
   crearArchivo(
     `${dirPath}/processed/scrapped_ig_usernames.txt`,
     usersList.join("\n"),
-    false
+    false,
   );
 }
 
 function copyProfilePics() {
-  const dirPath = "E:/Data/places";
-  // "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/places";
+  const dirPath = //"E:/Data/places";
+    // "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/places";
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download";
   const users = fs.readdirSync(`${dirPath}/images`);
 
   let total = 0;
   let imagesURL = "";
+
   users.forEach((user: any) => {
     if (!["kirstenboschsummerconcerts", "muhle_hunziken"].includes(user)) {
       try {
@@ -135,7 +137,7 @@ function copyProfilePics() {
           } else {
             fs.copyFileSync(
               `${dirPath}/images/${user}/${hd}`,
-              `${dirPath}/profile_pics/${user}.${ext}`
+              `${dirPath}/profile_pics/${user}.${ext}`,
             );
             imagesURL += `${user}\n`;
           }
@@ -191,7 +193,7 @@ function extract_instagram_data() {
             (l: any) =>
               l.url
                 .replace("https://open.spotify.com/artist/", "")
-                .split("?")[0]
+                .split("?")[0],
           )
           .join(",") || undefined;
       return {
@@ -215,18 +217,18 @@ function extract_instagram_data() {
 
   crearArchivo(
     `./data/drive/2025/automatic/faltantes/${entityName}_profiles.json`,
-    result
+    result,
   );
 }
 
 function extractInstagramHDProfilePhotos() {
   let images = fs.readdirSync(
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/images"
+    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/images",
   );
   images = images.map((folder: any) => {
     const files = fs.readdirSync(
       "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/images/" +
-        folder
+        folder,
     );
     return {
       username: folder,
@@ -240,7 +242,7 @@ function extractInstagramHDProfilePhotos() {
   crearArchivo(
     "./data/drive/2025/automatic/faltantes/instagram_har_places.txt",
     images.map((i: any) => `${i.username},${i.hasHD ? 1 : 0}`).join("\n"),
-    false
+    false,
   );
 }
 
@@ -254,13 +256,13 @@ function extract_user_profile() {
   const username = "matikbogota";
   const raw = fs.readFileSync(
     `data/scrapped/instagram/scrapped/raw/${username}.json`,
-    "utf-8"
+    "utf-8",
   );
   const fixed = `[${raw.trim().replace(/,\s*$/, "")}]`;
   crearArchivo(
     `data/scrapped/instagram/scrapped/ok/${username}.json`,
     fixed,
-    false
+    false,
   );
 
   // Parsear
@@ -313,12 +315,12 @@ export function procesar_har() {
   const post = harDataPuerto.log.entries.find(
     (entry: any) =>
       entry.request.url ===
-      "https://instagram.fbog7-1.fna.fbcdn.net/v/t39.30808-6/455714598_17947879856850016_1540943423838251400_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fbog7-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=cf1Qp5MLia4Q7kNvgE1c-yA&_nc_gid=01119f29ce0546bcb8d36ab84058a7bf&edm=APoiHPcAAAAA&ccb=7-5&ig_cache_key=MzQzNjAwNjU0NDU0MDc2MDMwMA%3D%3D.3-ccb7-5&oh=00_AYA7GGWf-HG8uFfNRo5qaSUNuxxAYFQ6sbFqXnSFit7Wzw&oe=674353EA&_nc_sid=22de04"
+      "https://instagram.fbog7-1.fna.fbcdn.net/v/t39.30808-6/455714598_17947879856850016_1540943423838251400_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyLmYzMDgwOC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fbog7-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=cf1Qp5MLia4Q7kNvgE1c-yA&_nc_gid=01119f29ce0546bcb8d36ab84058a7bf&edm=APoiHPcAAAAA&ccb=7-5&ig_cache_key=MzQzNjAwNjU0NDU0MDc2MDMwMA%3D%3D.3-ccb7-5&oh=00_AYA7GGWf-HG8uFfNRo5qaSUNuxxAYFQ6sbFqXnSFit7Wzw&oe=674353EA&_nc_sid=22de04",
   );
 
   const { response, request } = post || {};
   const contentType = response?.headers?.find(
-    (h: any) => h.name.toLowerCase() === "content-type"
+    (h: any) => h.name.toLowerCase() === "content-type",
   )?.value;
 
   if (contentType?.startsWith("image/")) {
@@ -346,8 +348,8 @@ export function procesar_har() {
   const profileRequest = requestsP.find(
     (entry: any) =>
       !!entry.request.postData.params.find((param: any) =>
-        param.value.includes('"render_surface":"PROFILE"')
-      )
+        param.value.includes('"render_surface":"PROFILE"'),
+      ),
   );
 
   console.log(requestsP.length, !!profileRequest, !!post);
@@ -359,7 +361,7 @@ export function procesar_har() {
       " - ",
       json?.data?.user?.full_name,
       " - ",
-      json?.data?.user?.follower_count
+      json?.data?.user?.follower_count,
     );
   }
 
@@ -367,20 +369,20 @@ export function procesar_har() {
   const postsRQ = requestsP.filter(
     (entry: any) =>
       !!entry.request.postData.params.find((param: any) =>
-        param.value.includes("include_relationship_info")
-      )
+        param.value.includes("include_relationship_info"),
+      ),
   );
 
   const postsEDGES = postsRQ
     .filter(
       (RQ: any) =>
         JSON.parse(RQ.response.content.text)?.data
-          ?.xdt_api__v1__feed__user_timeline_graphql_connection
+          ?.xdt_api__v1__feed__user_timeline_graphql_connection,
     )
     .map(
       (RQ: any) =>
         JSON.parse(RQ.response.content.text)?.data
-          ?.xdt_api__v1__feed__user_timeline_graphql_connection.edges
+          ?.xdt_api__v1__feed__user_timeline_graphql_connection.edges,
     )
     .reduce((accumulator: any, value: any) => accumulator.concat(value), [])
     .map((post: any) => {
@@ -442,7 +444,7 @@ export function procesar_har() {
     "POSTS ",
     // JSON.parse(postsRQ[3].response.content.text)?.data
     //   ?.xdt_api__v1__feed__user_timeline_graphql_connection
-    results
+    results,
   );
 }
 
@@ -504,7 +506,7 @@ function process_timelines() {
             new Date((info.taken_at || 0) * 1000)
               .toISOString()
               .substring(11, 16)
-              .replace(":", "")
+              .replace(":", ""),
           ),
           // "inventory_source": null,
           // "video_versions": null,
@@ -566,13 +568,13 @@ function process_timelines() {
           "owner.username": info.owner.username,
           "owner.is_verified": info.owner.is_verified,
           "coauthor_producers.username": info.coauthor_producers.map(
-            (user: any) => user.username
+            (user: any) => user.username,
           ),
           "coauthor_producers.fullname": info.coauthor_producers.map(
-            (user: any) => user.full_name
+            (user: any) => user.full_name,
           ),
           "coauthor_producers.is_verified": info.coauthor_producers.map(
-            (user: any) => user.is_verified
+            (user: any) => user.is_verified,
           ),
           "invited_coauthor_producers.username":
             info.invited_coauthor_producers.map((user: any) => user.username),
@@ -580,7 +582,7 @@ function process_timelines() {
             info.invited_coauthor_producers.map((user: any) => user.full_name),
           "invited_coauthor_producers.is_verified":
             info.invited_coauthor_producers.map(
-              (user: any) => user.is_verified
+              (user: any) => user.is_verified,
             ),
           // "owner": {
           //     "pk": "328427237",
@@ -734,13 +736,13 @@ function process_timelines() {
           // "product_type": "carousel_container",
           // "media_type": 8,
           "usertags.username": info.usertags?.in?.map(
-            (user: any) => user.user.username
+            (user: any) => user.user.username,
           ),
           "usertags.fullname": info.usertags?.in?.map(
-            (user: any) => user.user.full_name
+            (user: any) => user.user.full_name,
           ),
           "usertags.is_verified": info.usertags?.in?.map(
-            (user: any) => user.user.is_verified
+            (user: any) => user.user.is_verified,
           ),
           // "usertags": {
           //     "in": [
@@ -1255,15 +1257,15 @@ function extract_tags_in_timeline() {
           "user.username": info.user.username,
           "owner.username": info.owner.username,
           "coauthor_producers.username": info.coauthor_producers.map(
-            (user: any) => user.username
+            (user: any) => user.username,
           ),
           "invited_coauthor_producers.username":
             info.invited_coauthor_producers.map((user: any) => user.username),
           "usertags.username": info.usertags?.in?.map(
-            (user: any) => user.user.username
+            (user: any) => user.user.username,
           ),
           carousel_media_tags: info.carousel_media?.map((media: any) =>
-            media.usertags?.in?.map((tag: any) => tag.user?.username)
+            media.usertags?.in?.map((tag: any) => tag.user?.username),
           ),
         };
       });
@@ -1553,25 +1555,25 @@ function extract_tags_in_timeline_with_frequency() {
     const posts = content.map((post: any) => {
       const info = post.node;
       const { tags_in_text, hashtags } = extractTagsAndHashtags(
-        info?.caption?.text || ""
+        info?.caption?.text || "",
       );
 
       const tagsInPost = {
         "user.username": info.user?.username,
         "owner.username": info.owner?.username,
         "coauthor_producers.username": (info.coauthor_producers || []).map(
-          (user: any) => user.username
+          (user: any) => user.username,
         ),
         "invited_coauthor_producers.username": (
           info.invited_coauthor_producers || []
         ).map((user: any) => user.username),
         "usertags.username": (info.usertags?.in || []).map(
-          (user: any) => user.user.username
+          (user: any) => user.user.username,
         ),
         tags_in_text,
         hashtags,
         carousel_media_tags: (info.carousel_media || []).map((media: any) =>
-          media.usertags?.in?.map((tag: any) => tag.user?.username)
+          media.usertags?.in?.map((tag: any) => tag.user?.username),
         ),
       };
 
@@ -1640,7 +1642,7 @@ function extract_tags_in_timeline_with_frequency() {
     const tagsArray = Object.entries(userTagAccumulator[userId])
       .map(([username, count]) => ({ username, count }))
       .sort(
-        (a, b) => b.count - a.count || a.username.localeCompare(b.username)
+        (a, b) => b.count - a.count || a.username.localeCompare(b.username),
       );
 
     const hashtagsArray = Object.entries(userHashtagAccumulator[userId])
@@ -1660,7 +1662,7 @@ function extract_tags_in_timeline_with_frequency() {
 
   crearArchivo(
     `${timelinesPath}/processed/tags_hashtags.json`,
-    timelineSummary
+    timelineSummary,
   );
 
   // 📢 Validar si hubo usuarios no encontrados
@@ -1689,7 +1691,7 @@ function consolidar_menciones_globales() {
   const summaryData = leerArchivo(inputPath);
   if (!summaryData || typeof summaryData !== "object") {
     console.error(
-      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+      "❌ El archivo tags_hashtags.json no tiene un formato válido",
     );
     return;
   }
@@ -1757,7 +1759,7 @@ function consolidar_menciones_globales() {
       (a, b) =>
         b.adjustedCount - a.adjustedCount ||
         b.count - a.count ||
-        a.username.localeCompare(b.username)
+        a.username.localeCompare(b.username),
     );
 
   // 📊 Consolidar HASHTAGS
@@ -1776,21 +1778,21 @@ function consolidar_menciones_globales() {
       (a, b) =>
         b.adjustedCount - a.adjustedCount ||
         b.count - a.count ||
-        a.hashtag.localeCompare(b.hashtag)
+        a.hashtag.localeCompare(b.hashtag),
     );
 
   // 💾 Guardar resultados
   crearArchivo(
     outputTagsPath,
     consolidatedTags.map(
-      (tag) => `${tag.username} - ${Math.round(tag.adjustedCount)}`
-    )
+      (tag) => `${tag.username} - ${Math.round(tag.adjustedCount)}`,
+    ),
   );
   crearArchivo(
     outputHashtagsPath,
     consolidatedHashtags.map(
-      (tag) => `${tag.hashtag} - ${Math.round(tag.adjustedCount)}`
-    )
+      (tag) => `${tag.hashtag} - ${Math.round(tag.adjustedCount)}`,
+    ),
   );
 
   console.log("✅ Consolidado generado con análisis ponderado:");
@@ -1812,7 +1814,7 @@ function consolidar_menciones_absolutas() {
   const summaryData = leerArchivo(inputPath);
   if (!summaryData || typeof summaryData !== "object") {
     console.error(
-      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+      "❌ El archivo tags_hashtags.json no tiene un formato válido",
     );
     return;
   }
@@ -1886,7 +1888,7 @@ function consolidar_menciones_globales_original() {
   const summaryData = leerArchivo(inputPath);
   if (!summaryData || typeof summaryData !== "object") {
     console.error(
-      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+      "❌ El archivo tags_hashtags.json no tiene un formato válido",
     );
     return;
   }
@@ -1937,7 +1939,7 @@ function consolidar_menciones_globales_original() {
       (a, b) =>
         b.adjustedCount - a.adjustedCount ||
         b.count - a.count ||
-        a.username.localeCompare(b.username)
+        a.username.localeCompare(b.username),
     );
 
   const consolidatedHashtags = Object.entries(hashtagCounts)
@@ -1952,7 +1954,7 @@ function consolidar_menciones_globales_original() {
       (a, b) =>
         b.adjustedCount - a.adjustedCount ||
         b.count - a.count ||
-        a.hashtag.localeCompare(b.hashtag)
+        a.hashtag.localeCompare(b.hashtag),
     );
 
   crearArchivo(outputTagsPath, consolidatedTags);
@@ -1965,7 +1967,7 @@ function consolidar_menciones_globales_original() {
 
 function generate_genres_from_tags_in_timeline() {
   const artistasFull = leerArchivo(
-    "./data/drive/2025/chunks/export/artist_hive.artists_related.json"
+    "./data/drive/2025/chunks/export/artist_hive.artists_related.json",
   );
 
   const artistsWithGenres: Record<string, any> = {};
@@ -1973,7 +1975,7 @@ function generate_genres_from_tags_in_timeline() {
 
   artistasFull
     .filter(
-      (artist: any) => !!artist.genres?.music?.length && !!artist.instagram
+      (artist: any) => !!artist.genres?.music?.length && !!artist.instagram,
     )
     .forEach((artist: any) => {
       artistsWithGenres[artist.instagram] = artist.genres.music;
@@ -1983,7 +1985,7 @@ function generate_genres_from_tags_in_timeline() {
   const tags = leerArchivo(`${timelinesPath}/processed/tags.json`);
 
   const placesFull = leerArchivo(
-    "./data/drive/2025/chunks/export/artist_hive.places.json"
+    "./data/drive/2025/chunks/export/artist_hive.places.json",
   );
 
   let totalSitios = 0;
@@ -1999,7 +2001,7 @@ function generate_genres_from_tags_in_timeline() {
           tagsInPlace
             .map((tag: string) => artistsWithGenres[tag])
             .flat()
-            .filter(Boolean)
+            .filter(Boolean),
         ),
       ];
       totalSitios += !!genres.length ? 1 : 0;
@@ -2012,7 +2014,7 @@ function generate_genres_from_tags_in_timeline() {
   console.log(placesFull.length, " => ", totalSitios);
   crearArchivo(
     `${timelinesPath}/processed/places_genres.json`,
-    placesWithGenres
+    placesWithGenres,
   );
 }
 
@@ -2079,16 +2081,16 @@ function generate_instagram_stats() {
       .filter((v: number) => v >= -1000000000);
 
     timelineSummary[key].minDeltaCreatedTime = Math.min(
-      ...timelineSummary[key].deltaCreatedTime
+      ...timelineSummary[key].deltaCreatedTime,
     );
     timelineSummary[key].maxDeltaCreatedTime = Math.max(
-      ...timelineSummary[key].deltaCreatedTime
+      ...timelineSummary[key].deltaCreatedTime,
     );
     timelineSummary[key].meanDeltaCreatedTime = mean(
-      timelineSummary[key].deltaCreatedTime
+      timelineSummary[key].deltaCreatedTime,
     );
     timelineSummary[key].medianDeltaCreatedTime = median(
-      timelineSummary[key].deltaCreatedTime
+      timelineSummary[key].deltaCreatedTime,
     );
 
     const human: string[] = [
@@ -2100,21 +2102,21 @@ function generate_instagram_stats() {
 
     human.forEach((attribute: string) => {
       timelineSummary[key][`${attribute}_H`] = forHumans(
-        timelineSummary[key][attribute]
+        timelineSummary[key][attribute],
       );
     });
 
     timelineSummary[key].minCreatedTime = Math.min(
-      ...timelineSummary[key].creationTime
+      ...timelineSummary[key].creationTime,
     );
     timelineSummary[key].maxCreatedTime = Math.max(
-      ...timelineSummary[key].creationTime
+      ...timelineSummary[key].creationTime,
     );
     timelineSummary[key].minCreatedTimeDate = new Date(
-      (timelineSummary[key].minCreatedTime || 0) * 1000
+      (timelineSummary[key].minCreatedTime || 0) * 1000,
     );
     timelineSummary[key].maxCreatedTimeDate = new Date(
-      (timelineSummary[key].maxCreatedTime || 0) * 1000
+      (timelineSummary[key].maxCreatedTime || 0) * 1000,
     );
   });
 
@@ -2137,10 +2139,10 @@ function generate_instagram_stats() {
 
   const res = Object.values(timelineSummary)
     .map((data: any) =>
-      copy.reduce((o: any, k: string) => ((o[k] = data[k]), o), {})
+      copy.reduce((o: any, k: string) => ((o[k] = data[k]), o), {}),
     )
     .sort(
-      (a: any, b: any) => a.medianDeltaCreatedTime - b.medianDeltaCreatedTime
+      (a: any, b: any) => a.medianDeltaCreatedTime - b.medianDeltaCreatedTime,
     );
 
   // console.log(res);
