@@ -1,0 +1,236 @@
+{
+  "Medellín": {
+    "aliases": ["La Ciudad de la Eterna Primavera", "Capital de la Montaña"],
+    "nicknames": ["Medallo", "La Tacita de Plata"],
+    "trending": true,
+    "priority": 1
+  },
+  "Bogotá DC": {
+    "aliases": ["La Atenas Sudamericana", "Capital de Colombia"],
+    "nicknames": ["Bogo"],
+    "trending": true,
+    "priority": 1
+  },
+  "Cali": {
+    "aliases": ["La Sultana del Valle", "Capital de la Salsa"],
+    "nicknames": ["La Sucursal del Cielo"],
+    "trending": true,
+    "priority": 1
+  },
+  "Cartagena": {
+    "aliases": ["La Heroica", "La Perla del Caribe", "Cartagena de Indias"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Barranquilla": {
+    "aliases": ["La Puerta de Oro de Colombia", "La Arenosa"],
+    "nicknames": ["Curramba"],
+    "trending": true,
+    "priority": 1
+  },
+  "París": {
+    "aliases": ["La Ciudad Luz", "La Ciudad del Amor", "La Ville Lumière"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Madrid": {
+    "aliases": ["La Villa y Corte", "Capital de España"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Barcelona": {
+    "aliases": ["La Ciudad Condal"],
+    "nicknames": ["Barna"],
+    "trending": true,
+    "priority": 1
+  },
+  "Nueva York": {
+    "aliases": ["La Gran Manzana", "The Big Apple", "The City That Never Sleeps"],
+    "nicknames": ["NYC"],
+    "trending": true,
+    "priority": 1
+  },
+  "Los Ángeles": {
+    "aliases": ["La Ciudad de los Ángeles", "City of Angels"],
+    "nicknames": ["LA"],
+    "trending": true,
+    "priority": 1
+  },
+  "Londres": {
+    "aliases": ["The Big Smoke"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Buenos Aires": {
+    "aliases": ["La Reina del Plata", "Paris de Sudamérica"],
+    "nicknames": ["CABA"],
+    "trending": true,
+    "priority": 1
+  },
+  "México City": {
+    "aliases": ["CDMX", "Ciudad de México", "Capital de México"],
+    "nicknames": ["Chilangolandia"],
+    "trending": true,
+    "priority": 1
+  },
+  "Santiago": {
+    "aliases": ["Santiago de Chile"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Lima": {
+    "aliases": ["La Ciudad de los Reyes"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "São Paulo": {
+    "aliases": ["Sampa"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Río de Janeiro": {
+    "aliases": ["A Cidade Maravilhosa", "La Ciudad Maravillosa"],
+    "nicknames": ["Rio"],
+    "trending": true,
+    "priority": 1
+  },
+  "Toronto": {
+    "aliases": ["T-Dot", "The 6ix"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Montreal": {
+    "aliases": ["La Ville de Montréal"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Berlín": {
+    "aliases": [],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Ámsterdam": {
+    "aliases": ["Mokum"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Roma": {
+    "aliases": ["La Ciudad Eterna", "The Eternal City"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Milán": {
+    "aliases": ["Milano"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Venecia": {
+    "aliases": ["La Serenísima", "La Ciudad de los Canales"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Dubái": {
+    "aliases": [],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Tokio": {
+    "aliases": ["Tokyo"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Seúl": {
+    "aliases": ["Seoul"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Pekín": {
+    "aliases": ["Beijing"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Shanghái": {
+    "aliases": ["Shanghai"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Sídney": {
+    "aliases": ["Sydney"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Melbourne": {
+    "aliases": [],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Miami": {
+    "aliases": ["La Capital del Sol", "The Magic City"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Chicago": {
+    "aliases": ["The Windy City"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "San Francisco": {
+    "aliases": ["The Golden City", "SF"],
+    "nicknames": ["Frisco"],
+    "trending": true,
+    "priority": 1
+  },
+  "Las Vegas": {
+    "aliases": ["Sin City", "La Ciudad del Pecado"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Moscú": {
+    "aliases": ["Moscow"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Estambul": {
+    "aliases": ["Istanbul", "Constantinopla"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "El Cairo": {
+    "aliases": ["Cairo"],
+    "nicknames": [],
+    "trending": true,
+    "priority": 1
+  },
+  "Johannesburgo": {
+    "aliases": ["Joburg", "Egoli"],
+    "nicknames": ["Jozi"],
+    "trending": true,
+    "priority": 1
+  }
+}

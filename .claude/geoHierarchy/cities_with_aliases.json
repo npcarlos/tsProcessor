@@ -1,0 +1,7325 @@
+[
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec606"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20b"
+    },
+    "stateName": "Bogotá DC",
+    "name": "Bogotá DC",
+    "nationalCode": null,
+    "aliases": [
+      "La Atenas Sudamericana",
+      "Capital de Colombia"
+    ],
+    "nicknames": [
+      "Bogo"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec607"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Medellín",
+    "nationalCode": null,
+    "aliases": [
+      "La Ciudad de la Eterna Primavera",
+      "Capital de la Montaña"
+    ],
+    "nicknames": [
+      "Medallo",
+      "La Tacita de Plata"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec608"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20d"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Cali",
+    "nationalCode": null,
+    "aliases": [
+      "La Sultana del Valle",
+      "Capital de la Salsa"
+    ],
+    "nicknames": [
+      "La Sucursal del Cielo"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec609"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20e"
+    },
+    "stateName": "Boyacá",
+    "name": "Villa de Leyva",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec60a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20e"
+    },
+    "stateName": "Boyacá",
+    "name": "Tunja",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec60b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20f"
+    },
+    "stateName": "Caldas",
+    "name": "Manizales",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec60c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d210"
+    },
+    "stateName": "Santander",
+    "name": "Bucaramanga",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec60d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d211"
+    },
+    "stateName": "Atlántico",
+    "name": "Barranquilla",
+    "nationalCode": null,
+    "aliases": [
+      "La Puerta de Oro de Colombia",
+      "La Arenosa"
+    ],
+    "nicknames": [
+      "Curramba"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec60e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d212"
+    },
+    "stateName": "Risaralda",
+    "name": "Pereira",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec60f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Fusagasugá",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec610"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20f"
+    },
+    "stateName": "Caldas",
+    "name": "Villamaría",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec611"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Gachancipá",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec612"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d214"
+    },
+    "stateName": "Quindío",
+    "name": "Armenia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec613"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Envigado",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec614"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Rionegro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec615"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20e"
+    },
+    "stateName": "Boyacá",
+    "name": "Duitama",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec616"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d215"
+    },
+    "stateName": "Bolívar",
+    "name": "Cartagena",
+    "nationalCode": null,
+    "aliases": [
+      "La Heroica",
+      "La Perla del Caribe",
+      "Cartagena de Indias"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec617"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Copacabana",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec618"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d212"
+    },
+    "stateName": "Risaralda",
+    "name": "Dosquebradas",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec619"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d216"
+    },
+    "stateName": "Nariño",
+    "name": "Pasto",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec61a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d217"
+    },
+    "stateName": "Norte de Santander",
+    "name": "Cúcuta",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec61b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d218"
+    },
+    "stateName": "Huila",
+    "name": "Neiva",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec61c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Facatativá",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec61d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Santa Elena",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec61e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Aranjuez",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec61f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Soacha",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec620"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d219"
+    },
+    "stateName": "Cauca",
+    "name": "Popayán",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec621"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d218"
+    },
+    "stateName": "Huila",
+    "name": "Pitalito",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec622"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Girardot",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec623"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21a"
+    },
+    "stateName": "Magdalena",
+    "name": "Santa Marta",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec624"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Apartadó",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec625"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Chía",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec626"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d214"
+    },
+    "stateName": "Quindío",
+    "name": "Salento",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec627"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Zipaquirá",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec628"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Retiro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec629"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "La Calera",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec62a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Sopó",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec62b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Marinilla",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec62c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Cajicá",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec62d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Santafé de Antioquia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec62e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Girardota",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec62f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d210"
+    },
+    "stateName": "Santander",
+    "name": "Piedecuesta",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec630"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21b"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Cali",
+    "nationalCode": null,
+    "aliases": [
+      "La Sultana del Valle",
+      "Capital de la Salsa"
+    ],
+    "nicknames": [
+      "La Sucursal del Cielo"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec631"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Guatape",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec632"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21c"
+    },
+    "stateName": "Tolima",
+    "name": "Ibagué",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec633"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21d"
+    },
+    "stateName": "Meta",
+    "name": "Villavicencio",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec634"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Bello",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec635"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Sabaneta",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec636"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "San Juan de Rio Seco",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec637"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "El Retiro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec638"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20d"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Yumbo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec639"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20d"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Rozo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec63a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20d"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Miraflores",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec63b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20e"
+    },
+    "stateName": "Boyacá",
+    "name": "Paipa",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec63c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Anapoima",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec63d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d217"
+    },
+    "stateName": "Norte de Santander",
+    "name": "Ocaña",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec63e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20d"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Cartago",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec63f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20d"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Palmira",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec640"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "El Carmen de Viboral",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec641"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Funza",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec642"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21b"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Palmira",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec643"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d216"
+    },
+    "stateName": "Nariño",
+    "name": "Ipiales",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec644"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d210"
+    },
+    "stateName": "Santander",
+    "name": "Florida blanca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec645"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d216"
+    },
+    "stateName": "Nariño",
+    "name": "Tumaco",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec646"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21e"
+    },
+    "stateName": "Atlantico",
+    "name": "Barranquilla",
+    "nationalCode": null,
+    "aliases": [
+      "La Puerta de Oro de Colombia",
+      "La Arenosa"
+    ],
+    "nicknames": [
+      "Curramba"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec647"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21f"
+    },
+    "stateName": "Antioqquia",
+    "name": "Medellín",
+    "nationalCode": null,
+    "aliases": [
+      "La Ciudad de la Eterna Primavera",
+      "Capital de la Montaña"
+    ],
+    "nicknames": [
+      "Medallo",
+      "La Tacita de Plata"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec648"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "stateName": "Antioquia",
+    "name": "Itagüi",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec649"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "Tenjo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec64a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d220"
+    },
+    "stateName": "Quindio",
+    "name": "Armenia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec64b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d221"
+    },
+    "stateName": "Bolivar",
+    "name": "Cartagena",
+    "nationalCode": null,
+    "aliases": [
+      "La Heroica",
+      "La Perla del Caribe",
+      "Cartagena de Indias"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec64c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d222"
+    },
+    "stateName": "Cordoba",
+    "name": "Montería",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec64d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d223"
+    },
+    "stateName": "Cesar",
+    "name": "Valledupar",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec64e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d212"
+    },
+    "stateName": "Risaralda",
+    "name": "Santa Rosa de Cabal",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec64f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d224"
+    },
+    "stateName": "Bogotá,",
+    "name": "Bogotá DC",
+    "nationalCode": null,
+    "aliases": [
+      "La Atenas Sudamericana",
+      "Capital de Colombia"
+    ],
+    "nicknames": [
+      "Bogo"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec650"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d225"
+    },
+    "stateName": "Bogotá",
+    "name": "Bogotá DC",
+    "nationalCode": null,
+    "aliases": [
+      "La Atenas Sudamericana",
+      "Capital de Colombia"
+    ],
+    "nicknames": [
+      "Bogo"
+    ],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec651"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d20e"
+    },
+    "stateName": "Boyacá",
+    "name": "Sogamoso",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec652"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21b"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Buga",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec653"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "stateName": "Cundinamarca",
+    "name": "La Mesa",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec654"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21b"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Ginebra",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec655"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d21b"
+    },
+    "stateName": "Valle del Cauca",
+    "name": "Cartago",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec656"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d226"
+    },
+    "stateName": "Cataluña",
+    "name": "Barcelona",
+    "nationalCode": null,
+    "aliases": [
+      "La Ciudad Condal"
+    ],
+    "nicknames": [
+      "Barna"
+    ],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec657"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d227"
+    },
+    "stateName": "Madrid",
+    "name": "Madrid",
+    "nationalCode": null,
+    "aliases": [
+      "La Villa y Corte",
+      "Capital de España"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": true,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec658"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d228"
+    },
+    "stateName": "Valencia",
+    "name": "Valencia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec659"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d228"
+    },
+    "stateName": "Valencia",
+    "name": "Alicante",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec65a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d229"
+    },
+    "stateName": "Andalucía",
+    "name": "Granada",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec65b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d229"
+    },
+    "stateName": "Andalucía",
+    "name": "Sevilla",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec65c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22a"
+    },
+    "stateName": "Murcia",
+    "name": "Murcia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec65d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22b"
+    },
+    "stateName": "Aragón",
+    "name": "Zaragoza",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec65e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22c"
+    },
+    "stateName": "Galicia",
+    "name": "Santiago de Compostela",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec65f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d229"
+    },
+    "stateName": "Andalucía",
+    "name": "Cádiz",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec660"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22d"
+    },
+    "stateName": "Canarias",
+    "name": "Las Palmas",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec661"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22e"
+    },
+    "stateName": "Alicante",
+    "name": "Alicante",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec662"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22f"
+    },
+    "stateName": "Pontevedra",
+    "name": "Vigo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec663"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d226"
+    },
+    "stateName": "Cataluña",
+    "name": "Tarragona",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec664"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d230"
+    },
+    "stateName": "Cáceres",
+    "name": "Plasencia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec665"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d226"
+    },
+    "stateName": "Cataluña",
+    "name": "Girona",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec666"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d231"
+    },
+    "stateName": "Navarra",
+    "name": "Navarra",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec667"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d232"
+    },
+    "stateName": "Sevilla",
+    "name": "Sevilla",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec668"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d233"
+    },
+    "stateName": "Zaragoza",
+    "name": "Zaragoza",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec669"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d234"
+    },
+    "stateName": "Valladolid",
+    "name": "Valladolid",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec66a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d235"
+    },
+    "stateName": "Málaga",
+    "name": "Málaga",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec66b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d229"
+    },
+    "stateName": "Andalucía",
+    "name": "Málaga",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec66c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22d"
+    },
+    "stateName": "Canarias",
+    "name": "Santa Cruz de Tenerife",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec66d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d236"
+    },
+    "stateName": "Región de Murcia",
+    "name": "Murcia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec66e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22c"
+    },
+    "stateName": "Galicia",
+    "name": "Orense",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec66f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d237"
+    },
+    "stateName": "Tarragona",
+    "name": "Cambrils",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec670"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d238"
+    },
+    "stateName": "Granada",
+    "name": "Granada",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec671"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d238"
+    },
+    "stateName": "Granada",
+    "name": "La Zubia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec672"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d239"
+    },
+    "stateName": "Cantabria",
+    "name": "Comillas",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec673"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23a"
+    },
+    "stateName": "Ourense",
+    "name": "Vilar de Santos",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec674"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23b"
+    },
+    "stateName": "A Coruña",
+    "name": "Boiro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec675"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23c"
+    },
+    "stateName": "Santa Cruz de Tenerife",
+    "name": "La Laguna",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec676"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23a"
+    },
+    "stateName": "Ourense",
+    "name": "Ourense",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec677"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23d"
+    },
+    "stateName": "Zamora",
+    "name": "Zamora",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec678"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23e"
+    },
+    "stateName": "Almería",
+    "name": "Almería",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec679"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23f"
+    },
+    "stateName": "León",
+    "name": "León",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec67a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23b"
+    },
+    "stateName": "A Coruña",
+    "name": "Santiago de Compostela",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec67b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d240"
+    },
+    "stateName": "Valencia/València",
+    "name": "Valencia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec67c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23c"
+    },
+    "stateName": "Santa Cruz de Tenerife",
+    "name": "Santa Cruz de Tenerife",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec67d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d241"
+    },
+    "stateName": "Toledo",
+    "name": "Toledo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec67e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d242"
+    },
+    "stateName": "Lugo",
+    "name": "Lugo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec67f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d230"
+    },
+    "stateName": "Cáceres",
+    "name": "Cáceres",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec680"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d243"
+    },
+    "stateName": "Baleares",
+    "name": "Palma de Mallorca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec681"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23b"
+    },
+    "stateName": "A Coruña",
+    "name": "A Coruña",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec682"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d244"
+    },
+    "stateName": "Principado de Asturias",
+    "name": "Oviedo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec683"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23b"
+    },
+    "stateName": "A Coruña",
+    "name": "Pontedeume",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec684"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22a"
+    },
+    "stateName": "Murcia",
+    "name": "El Palmar",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec685"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22a"
+    },
+    "stateName": "Murcia",
+    "name": "Algezares",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec686"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d245"
+    },
+    "stateName": "Vizcaya",
+    "name": "Bilbao",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec687"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22f"
+    },
+    "stateName": "Pontevedra",
+    "name": "Cambados",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec688"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d240"
+    },
+    "stateName": "Valencia/València",
+    "name": "Alboraia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec689"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d246"
+    },
+    "stateName": "Salamanca",
+    "name": "Salamanca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec68a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d247"
+    },
+    "stateName": "Islas Baleares",
+    "name": "Palma de Mallorca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec68b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23b"
+    },
+    "stateName": "A Coruña",
+    "name": "Ferrol",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec68c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d248"
+    },
+    "stateName": "Burgos",
+    "name": "Burgos",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec68d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d240"
+    },
+    "stateName": "Valencia/València",
+    "name": "Ayora",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec68e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d249"
+    },
+    "stateName": "Cádiz",
+    "name": "El Puerto de Santa María",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec68f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d24a"
+    },
+    "stateName": "Guadalajara",
+    "name": "Guadalajara",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec690"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d247"
+    },
+    "stateName": "Islas Baleares",
+    "name": "Menorca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec691"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d24b"
+    },
+    "stateName": "Barcelona",
+    "name": "Terrassa",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec692"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d24c"
+    },
+    "stateName": "Segovia",
+    "name": "La Lastrilla",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec693"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23b"
+    },
+    "stateName": "A Coruña",
+    "name": "Melide",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec694"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22a"
+    },
+    "stateName": "Murcia",
+    "name": "Cartagena",
+    "nationalCode": null,
+    "aliases": [
+      "La Heroica",
+      "La Perla del Caribe",
+      "Cartagena de Indias"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec695"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d240"
+    },
+    "stateName": "Valencia/València",
+    "name": "Mislata",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec696"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23a"
+    },
+    "stateName": "Ourense",
+    "name": "Allariz",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec697"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d23d"
+    },
+    "stateName": "Zamora",
+    "name": "Benavente",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec698"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d24d"
+    },
+    "stateName": "Huesca",
+    "name": "Sabiñánigo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec699"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d24e"
+    },
+    "stateName": "Cuenca",
+    "name": "Cuenca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec69a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d24d"
+    },
+    "stateName": "Huesca",
+    "name": "Huesca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec69b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d231"
+    },
+    "stateName": "Navarra",
+    "name": "Tafalla",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec69c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22f"
+    },
+    "stateName": "Pontevedra",
+    "name": "Pontevedra",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec69d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22f"
+    },
+    "stateName": "Pontevedra",
+    "name": "Mos",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec69e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d234"
+    },
+    "stateName": "Valladolid",
+    "name": "Mayorga",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec69f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d24f"
+    },
+    "stateName": "Alicante/Alacant",
+    "name": "San vicente del raspeig",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a0"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d250"
+    },
+    "stateName": "Castellón",
+    "name": "Castellón",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a1"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d251"
+    },
+    "stateName": "La Rioja",
+    "name": "Logroño",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a2"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d240"
+    },
+    "stateName": "Valencia/València",
+    "name": "Gandía",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a3"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d241"
+    },
+    "stateName": "Toledo",
+    "name": "Yuncler",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a4"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d22a"
+    },
+    "stateName": "Murcia",
+    "name": "CABO DE PALOS (CARTAGENA)",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a5"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d252"
+    },
+    "stateName": "Palencia",
+    "name": "Palencia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a6"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d253"
+    },
+    "stateName": "CDMX",
+    "name": "CDMX",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a7"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d254"
+    },
+    "stateName": "Jalisco",
+    "name": "Guadalajara",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a8"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d255"
+    },
+    "stateName": "León",
+    "name": "León",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6a9"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d256"
+    },
+    "stateName": "Chihuahua",
+    "name": "Ciudad Juárez",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6aa"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d257"
+    },
+    "stateName": "Estado de México",
+    "name": "Toluca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ab"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d258"
+    },
+    "stateName": "Puebla",
+    "name": "Puebla de Zaragoza",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ac"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d259"
+    },
+    "stateName": "Nuevo León",
+    "name": "Monterrey",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ad"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25a"
+    },
+    "stateName": "Querétaro",
+    "name": "Querétaro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ae"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25b"
+    },
+    "stateName": "Aguascalientes",
+    "name": "Aguascalientes",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6af"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25c"
+    },
+    "stateName": "Quintana Roo",
+    "name": "Tulum",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b0"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25d"
+    },
+    "stateName": "Morelos",
+    "name": "Cuernavaca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b1"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25e"
+    },
+    "stateName": "Veracruz",
+    "name": "Xalapa",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b2"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25f"
+    },
+    "stateName": "Oaxaca",
+    "name": "Oaxaca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b3"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d260"
+    },
+    "stateName": "CMDX",
+    "name": "Iztapalapa",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b4"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d261"
+    },
+    "stateName": "Nayarit",
+    "name": "San Pancho",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b5"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d262"
+    },
+    "stateName": "Guanajuato",
+    "name": "Irapuato",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b6"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25a"
+    },
+    "stateName": "Querétaro",
+    "name": "Santiago de Querétaro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b7"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25e"
+    },
+    "stateName": "Veracruz",
+    "name": "Veracruz",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b8"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d263"
+    },
+    "stateName": "Michoacán",
+    "name": "Morelia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6b9"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25c"
+    },
+    "stateName": "Quintana Roo",
+    "name": "Cancún",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ba"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25c"
+    },
+    "stateName": "Quintana Roo",
+    "name": "Playa del Carmen",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6bb"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d25e"
+    },
+    "stateName": "Veracruz",
+    "name": "Valle de Bravo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6bc"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d254"
+    },
+    "stateName": "Jalisco",
+    "name": "Zapopan",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6bd"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d254"
+    },
+    "stateName": "Jalisco",
+    "name": "Puerto Vallarta",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6be"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d264"
+    },
+    "stateName": "Baja California Sur",
+    "name": "San José del Cabo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6bf"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d265"
+    },
+    "stateName": "Hidalgo",
+    "name": "Pachuca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c0"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d259"
+    },
+    "stateName": "Nuevo León",
+    "name": "Santa Catarina",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c1"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d258"
+    },
+    "stateName": "Puebla",
+    "name": "Puebla",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c2"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d258"
+    },
+    "stateName": "Puebla",
+    "name": "Cholula",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio/Alcaldía",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c3"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Bahía Blanca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c4"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Buenos Aires",
+    "nationalCode": null,
+    "aliases": [
+      "La Reina del Plata",
+      "Paris de Sudamérica"
+    ],
+    "nicknames": [
+      "CABA"
+    ],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": true,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c5"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "San Isidro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c6"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "La Plata",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c7"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d267"
+    },
+    "stateName": "Entre ríos",
+    "name": "Paraná",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c8"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d268"
+    },
+    "stateName": "Córdoba",
+    "name": "Córdoba",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6c9"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d269"
+    },
+    "stateName": "Mendoza",
+    "name": "Mendoza",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ca"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Mar del Plata",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6cb"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Tigre",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6cc"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Chacarita",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6cd"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26a"
+    },
+    "stateName": "Río Negro",
+    "name": "General Roca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ce"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Haedo",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6cf"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Sierra de la Ventana",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d0"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Hurlingham",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d1"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Villa Ballester",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d2"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26b"
+    },
+    "stateName": "Provincia de Buenos Aires, Argentina",
+    "name": "Mar del Plata",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d3"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Bahía Blanca",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d4"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26c"
+    },
+    "stateName": "Sarmiento",
+    "name": "Buenos aires",
+    "nationalCode": null,
+    "aliases": [
+      "La Reina del Plata",
+      "Paris de Sudamérica"
+    ],
+    "nicknames": [
+      "CABA"
+    ],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": true,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d5"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26d"
+    },
+    "stateName": "Salvador de Jujuy",
+    "name": "Jujuy",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d6"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "stateName": "Buenos Aires",
+    "name": "Villa Sarmiento",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d7"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26e"
+    },
+    "stateName": "San Juan",
+    "name": "San Juan",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Departamento/Partido",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d8"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26f"
+    },
+    "stateName": "California",
+    "name": "Los Ángeles",
+    "nationalCode": null,
+    "aliases": [
+      "La Ciudad de los Ángeles",
+      "City of Angels"
+    ],
+    "nicknames": [
+      "LA"
+    ],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6d9"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d271"
+    },
+    "stateName": "Washington D.C.",
+    "name": "Washington D.C.",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": true,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6da"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d272"
+    },
+    "stateName": "NY",
+    "name": "NYC",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6db"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d273"
+    },
+    "stateName": "Illinois",
+    "name": "Chicago",
+    "nationalCode": null,
+    "aliases": [
+      "The Windy City"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6dc"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d274"
+    },
+    "stateName": "Texas",
+    "name": "Austin",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6dd"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d270"
+    },
+    "stateName": "Florida",
+    "name": "Miami",
+    "nationalCode": null,
+    "aliases": [
+      "La Capital del Sol",
+      "The Magic City"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6de"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d275"
+    },
+    "stateName": "Washington",
+    "name": "Bellingham",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6df"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26f"
+    },
+    "stateName": "California",
+    "name": "San José",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e0"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d274"
+    },
+    "stateName": "Texas",
+    "name": "San Antonio",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e1"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d274"
+    },
+    "stateName": "Texas",
+    "name": "Houston",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e2"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d276"
+    },
+    "stateName": "Virginia",
+    "name": "Richmond",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e3"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26f"
+    },
+    "stateName": "California",
+    "name": "Pomona",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e4"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d278"
+    },
+    "stateName": "Massachusetts",
+    "name": "Somerville",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e5"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d279"
+    },
+    "stateName": "Connecticut",
+    "name": "West Hartford",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e6"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d27a"
+    },
+    "stateName": "Louisiana",
+    "name": "New Orleans",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e7"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d26f"
+    },
+    "stateName": "California",
+    "name": "San Pedro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "City",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e8"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a3b"
+    },
+    "countryCode": "cr",
+    "countryName": "Costa Rica",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d27c"
+    },
+    "stateName": "San José",
+    "name": "San José",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Cantón",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": true,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6e9"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a3b"
+    },
+    "countryCode": "cr",
+    "countryName": "Costa Rica",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d27c"
+    },
+    "stateName": "San José",
+    "name": "San Pedro",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Cantón",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ea"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a3b"
+    },
+    "countryCode": "cr",
+    "countryName": "Costa Rica",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d27e"
+    },
+    "stateName": "Heredia",
+    "name": "Heredia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Cantón",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6eb"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d2a2"
+    },
+    "stateName": "São Paulo",
+    "name": "Bela Vista",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Município",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ec"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a71"
+    },
+    "countryCode": "gb",
+    "countryName": "Reino Unido",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d27f"
+    },
+    "stateName": "Gran Londres",
+    "name": "Londres",
+    "nationalCode": null,
+    "aliases": [
+      "The Big Smoke"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "County/Region",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ed"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a71"
+    },
+    "countryCode": "gb",
+    "countryName": "Reino Unido",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d280"
+    },
+    "stateName": "Merseyside",
+    "name": "Liverpool",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "County/Region",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ee"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d286"
+    },
+    "stateName": "Región Metropolitana",
+    "name": "Santiago",
+    "nationalCode": null,
+    "aliases": [
+      "Santiago de Chile"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": true,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ef"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d287"
+    },
+    "stateName": "Malleco",
+    "name": "Angol",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f0"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28c"
+    },
+    "stateName": "Bouches du Rhône",
+    "name": "Aix-en-Provence",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f1"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28d"
+    },
+    "stateName": "Loire-Atlantique",
+    "name": "BASSE INDRE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f2"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28e"
+    },
+    "stateName": "Nord",
+    "name": "BAILLEUL",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f3"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28f"
+    },
+    "stateName": "Gironde",
+    "name": "BORDEAUX",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f4"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28d"
+    },
+    "stateName": "Loire-Atlantique",
+    "name": "BOUGUENAIS",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f5"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d290"
+    },
+    "stateName": "Vosges",
+    "name": "BRUYERES",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f6"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28d"
+    },
+    "stateName": "Loire-Atlantique",
+    "name": "CARQUEFOU",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f7"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d291"
+    },
+    "stateName": "Ille et Vilaine",
+    "name": "CESSON SEVIGNE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f8"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d292"
+    },
+    "stateName": "Finistère",
+    "name": "CHATEAULIN",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6f9"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d293"
+    },
+    "stateName": "Maine et Loire",
+    "name": "CHOLET",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6fa"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d294"
+    },
+    "stateName": "Puy De Dôme",
+    "name": "CLERMONT-FERRAND",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6fb"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d295"
+    },
+    "stateName": "Loire Atlantique",
+    "name": "CLISSON",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6fc"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d292"
+    },
+    "stateName": "Finistère",
+    "name": "CONCARNEAU",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6fd"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d296"
+    },
+    "stateName": "Côtes d'Armor",
+    "name": "DINAN",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6fe"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d292"
+    },
+    "stateName": "Finistère",
+    "name": "DOUARNENEZ",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec6ff"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d297"
+    },
+    "stateName": "Creuse",
+    "name": "FLAYAT",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec700"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d298"
+    },
+    "stateName": "Isère",
+    "name": "GRENOBLE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec701"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28d"
+    },
+    "stateName": "Loire-Atlantique",
+    "name": "GUEMENE PENFAO",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec702"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d292"
+    },
+    "stateName": "Finistère",
+    "name": "GUIMAEC",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec703"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28d"
+    },
+    "stateName": "Loire-Atlantique",
+    "name": "LA BERNERIE EN RETZ",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec704"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28d"
+    },
+    "stateName": "Loire-Atlantique",
+    "name": "LA CHAPELLE SUR ERDRE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec705"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d299"
+    },
+    "stateName": "Vendée",
+    "name": "LA GUERINIERE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec706"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d299"
+    },
+    "stateName": "Vendée",
+    "name": "LA ROCHE SUR YON",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec707"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d29a"
+    },
+    "stateName": "Charente Maritime",
+    "name": "LA ROCHELLE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec708"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d29b"
+    },
+    "stateName": "Dordogne",
+    "name": "LALINDE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec709"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d296"
+    },
+    "stateName": "Côtes d'Armor",
+    "name": "LANNION",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec70a"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d29c"
+    },
+    "stateName": "Tarn et Garonne",
+    "name": "LAUZERTE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec70b"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d29d"
+    },
+    "stateName": "Seine Maritime",
+    "name": "LE HAVRE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec70c"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d29e"
+    },
+    "stateName": "Manche",
+    "name": "LES PIEUX",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec70d"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d299"
+    },
+    "stateName": "Vendée",
+    "name": "LES SABLES D'OLONNE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec70e"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28e"
+    },
+    "stateName": "Nord",
+    "name": "LILLE",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec70f"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d29f"
+    },
+    "stateName": "Haute Vienne",
+    "name": "LIMOGES",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec710"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d2a0"
+    },
+    "stateName": "Morbihan",
+    "name": "LORIENT",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec711"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d2a1"
+    },
+    "stateName": "Rhône",
+    "name": "LYON",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Département",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec712"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d281"
+    },
+    "stateName": "Ontario",
+    "name": "Toronto",
+    "nationalCode": null,
+    "aliases": [
+      "T-Dot",
+      "The 6ix"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Census Subdivision",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec713"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d282"
+    },
+    "stateName": "Quebec",
+    "name": "Montreal",
+    "nationalCode": null,
+    "aliases": [
+      "La Ville de Montréal"
+    ],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Census Subdivision",
+    "trending": true,
+    "priority": 1,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec714"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d281"
+    },
+    "stateName": "Ontario",
+    "name": "Orillia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Census Subdivision",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec715"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a2d"
+    },
+    "countryCode": "ch",
+    "countryName": "Suiza",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d28a"
+    },
+    "stateName": "Argovia",
+    "name": "Zofingen",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Bezirk",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec716"
+    },
+    "countryId": {
+      "$oid": "66d6197ea546e02c6ce65a8d"
+    },
+    "countryCode": "gt",
+    "countryName": "Guatemala",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d288"
+    },
+    "stateName": "Quetzaltenango",
+    "name": "Quetzaltenango",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Municipio",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec717"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659f1"
+    },
+    "countryCode": "au",
+    "countryName": "Australia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d289"
+    },
+    "stateName": "Northcote",
+    "name": "Victoria",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Local Government Area",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec718"
+    },
+    "countryId": {
+      "$oid": "66d61980a546e02c6ce65ab3"
+    },
+    "countryCode": "it",
+    "countryName": "Italia",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d284"
+    },
+    "stateName": "Sicilia",
+    "name": "Ortigia",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "Provincia",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec719"
+    },
+    "countryId": {
+      "$oid": "66d6198ca546e02c6ce65b97"
+    },
+    "countryCode": "tr",
+    "countryName": "Turquía",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d285"
+    },
+    "stateName": "Estambul",
+    "name": "Beyoğlu/İstanbul",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "İlçe",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec71a"
+    },
+    "countryId": {
+      "$oid": "66d6198ca546e02c6ce65b97"
+    },
+    "countryCode": "tr",
+    "countryName": "Turquía",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d285"
+    },
+    "stateName": "Estambul",
+    "name": "Provincia de Bartın",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "İlçe",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  },
+  {
+    "_id": {
+      "$oid": "69119c178f0de8f98ddec71b"
+    },
+    "countryId": {
+      "$oid": "66d6198ca546e02c6ce65b97"
+    },
+    "countryCode": "tr",
+    "countryName": "Turquía",
+    "stateId": {
+      "$oid": "69119c0e6bce07293357d285"
+    },
+    "stateName": "Estambul",
+    "name": "Kadıköy/İstanbul",
+    "nationalCode": null,
+    "aliases": [],
+    "nicknames": [],
+    "level": 2,
+    "levelName": "İlçe",
+    "trending": true,
+    "priority": 3,
+    "coordinates": null,
+    "timezone": null,
+    "isCapital": false,
+    "isStateCapital": false
+  }
+]

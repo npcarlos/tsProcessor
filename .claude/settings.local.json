@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(node dist/index.js:*)",
+      "Bash(node -e:*)",
+      "Bash(copy /Y states_complete.json states.json)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

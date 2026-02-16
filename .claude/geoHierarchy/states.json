@@ -1,0 +1,5420 @@
+[
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d266"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Buenos Aires",
+    "nationalCode": "B",
+    "aliases": [
+      "Provincia Buenos Aires"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa51"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Catamarca",
+    "nationalCode": "K",
+    "aliases": [
+      "Provincia Catamarca"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa52"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Chaco",
+    "nationalCode": "H",
+    "aliases": [
+      "Provincia Chaco"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa53"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Chubut",
+    "nationalCode": "U",
+    "aliases": [
+      "Provincia Chubut"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa54"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Ciudad Autónoma de Buenos Aires",
+    "nationalCode": "C",
+    "aliases": [
+      "Provincia Ciudad Autónoma de Buenos Aires"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d268"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Córdoba",
+    "nationalCode": "X",
+    "aliases": [
+      "Provincia Córdoba"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa55"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Corrientes",
+    "nationalCode": "W",
+    "aliases": [
+      "Provincia Corrientes"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d267"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Entre ríos",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia Entre ríos"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa56"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Entre Ríos",
+    "nationalCode": "E",
+    "aliases": [
+      "Provincia Entre Ríos"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa57"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Formosa",
+    "nationalCode": "P",
+    "aliases": [
+      "Provincia Formosa"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa58"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Jujuy",
+    "nationalCode": "Y",
+    "aliases": [
+      "Provincia Jujuy"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa59"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "La Pampa",
+    "nationalCode": "L",
+    "aliases": [
+      "Provincia La Pampa"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa5a"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "La Rioja",
+    "nationalCode": "F",
+    "aliases": [
+      "Provincia La Rioja"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d269"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Mendoza",
+    "nationalCode": "M",
+    "aliases": [
+      "Provincia Mendoza"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa5b"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Misiones",
+    "nationalCode": "N",
+    "aliases": [
+      "Provincia Misiones"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa5c"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Neuquén",
+    "nationalCode": "Q",
+    "aliases": [
+      "Provincia Neuquén"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d26b"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Provincia de Buenos Aires, Argentina",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia Provincia de Buenos Aires, Argentina"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d26a"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Río Negro",
+    "nationalCode": "R",
+    "aliases": [
+      "Provincia Río Negro"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa5d"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Salta",
+    "nationalCode": "A",
+    "aliases": [
+      "Provincia Salta"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d26d"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Salvador de Jujuy",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia Salvador de Jujuy"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d26e"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "San Juan",
+    "nationalCode": "J",
+    "aliases": [
+      "Provincia San Juan"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa5e"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "San Luis",
+    "nationalCode": "D",
+    "aliases": [
+      "Provincia San Luis"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa5f"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Santa Cruz",
+    "nationalCode": "Z",
+    "aliases": [
+      "Provincia Santa Cruz"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa60"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Santa Fe",
+    "nationalCode": "S",
+    "aliases": [
+      "Provincia Santa Fe"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa61"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Santiago del Estero",
+    "nationalCode": "G",
+    "aliases": [
+      "Provincia Santiago del Estero"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d26c"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Sarmiento",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia Sarmiento"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa62"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Tierra del Fuego",
+    "nationalCode": "V",
+    "aliases": [
+      "Provincia Tierra del Fuego"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa63"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659eb"
+    },
+    "countryCode": "ar",
+    "countryName": "Argentina",
+    "name": "Tucumán",
+    "nationalCode": "T",
+    "aliases": [
+      "Provincia Tucumán"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d289"
+    },
+    "countryId": {
+      "$oid": "66d61975a546e02c6ce659f1"
+    },
+    "countryCode": "au",
+    "countryName": "Australia",
+    "name": "Northcote",
+    "nationalCode": null,
+    "aliases": [
+      "State/Territory Northcote"
+    ],
+    "level": 1,
+    "levelName": "State/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa64"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Acre",
+    "nationalCode": "AC",
+    "aliases": [
+      "Estado Acre"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa65"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Alagoas",
+    "nationalCode": "AL",
+    "aliases": [
+      "Estado Alagoas"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa66"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Amapá",
+    "nationalCode": "AP",
+    "aliases": [
+      "Estado Amapá"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa67"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Amazonas",
+    "nationalCode": "AM",
+    "aliases": [
+      "Estado Amazonas"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa68"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Bahia",
+    "nationalCode": "BA",
+    "aliases": [
+      "Estado Bahia"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa69"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Ceará",
+    "nationalCode": "CE",
+    "aliases": [
+      "Estado Ceará"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa6a"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Distrito Federal",
+    "nationalCode": "DF",
+    "aliases": [
+      "Estado Distrito Federal"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa6b"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Espírito Santo",
+    "nationalCode": "ES",
+    "aliases": [
+      "Estado Espírito Santo"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa6c"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Goiás",
+    "nationalCode": "GO",
+    "aliases": [
+      "Estado Goiás"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa6d"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Maranhão",
+    "nationalCode": "MA",
+    "aliases": [
+      "Estado Maranhão"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa6e"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Mato Grosso",
+    "nationalCode": "MT",
+    "aliases": [
+      "Estado Mato Grosso"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa6f"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Mato Grosso do Sul",
+    "nationalCode": "MS",
+    "aliases": [
+      "Estado Mato Grosso do Sul"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa70"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Minas Gerais",
+    "nationalCode": "MG",
+    "aliases": [
+      "Estado Minas Gerais"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa71"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Pará",
+    "nationalCode": "PA",
+    "aliases": [
+      "Estado Pará"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa72"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Paraíba",
+    "nationalCode": "PB",
+    "aliases": [
+      "Estado Paraíba"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa73"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Paraná",
+    "nationalCode": "PR",
+    "aliases": [
+      "Estado Paraná"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa74"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Pernambuco",
+    "nationalCode": "PE",
+    "aliases": [
+      "Estado Pernambuco"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa75"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Piauí",
+    "nationalCode": "PI",
+    "aliases": [
+      "Estado Piauí"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa76"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Rio de Janeiro",
+    "nationalCode": "RJ",
+    "aliases": [
+      "Estado Rio de Janeiro"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa77"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Rio Grande do Norte",
+    "nationalCode": "RN",
+    "aliases": [
+      "Estado Rio Grande do Norte"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa78"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Rio Grande do Sul",
+    "nationalCode": "RS",
+    "aliases": [
+      "Estado Rio Grande do Sul"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa79"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Rondônia",
+    "nationalCode": "RO",
+    "aliases": [
+      "Estado Rondônia"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa7a"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Roraima",
+    "nationalCode": "RR",
+    "aliases": [
+      "Estado Roraima"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa7b"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Santa Catarina",
+    "nationalCode": "SC",
+    "aliases": [
+      "Estado Santa Catarina"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d2a2"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "São Paulo",
+    "nationalCode": "SP",
+    "aliases": [
+      "Estado São Paulo"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa7c"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Sergipe",
+    "nationalCode": "SE",
+    "aliases": [
+      "Estado Sergipe"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa7d"
+    },
+    "countryId": {
+      "$oid": "66d61977a546e02c6ce65a15"
+    },
+    "countryCode": "br",
+    "countryName": "Brasil",
+    "name": "Tocantins",
+    "nationalCode": "TO",
+    "aliases": [
+      "Estado Tocantins"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa8d"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Alberta",
+    "nationalCode": "AB",
+    "aliases": [
+      "Province/Territory Alberta"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa8e"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "British Columbia",
+    "nationalCode": "BC",
+    "aliases": [
+      "Province/Territory British Columbia"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa8f"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Manitoba",
+    "nationalCode": "MB",
+    "aliases": [
+      "Province/Territory Manitoba"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa90"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "New Brunswick",
+    "nationalCode": "NB",
+    "aliases": [
+      "Province/Territory New Brunswick"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa91"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Newfoundland and Labrador",
+    "nationalCode": "NL",
+    "aliases": [
+      "Province/Territory Newfoundland and Labrador"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa92"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Northwest Territories",
+    "nationalCode": "NT",
+    "aliases": [
+      "Province/Territory Northwest Territories"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa93"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Nova Scotia",
+    "nationalCode": "NS",
+    "aliases": [
+      "Province/Territory Nova Scotia"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa94"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Nunavut",
+    "nationalCode": "NU",
+    "aliases": [
+      "Province/Territory Nunavut"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d281"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Ontario",
+    "nationalCode": "ON",
+    "aliases": [
+      "Province/Territory Ontario"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d283"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Ottawa",
+    "nationalCode": null,
+    "aliases": [
+      "Province/Territory Ottawa"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa95"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Prince Edward Island",
+    "nationalCode": "PE",
+    "aliases": [
+      "Province/Territory Prince Edward Island"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d282"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Quebec",
+    "nationalCode": "QC",
+    "aliases": [
+      "Province/Territory Quebec"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa96"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Saskatchewan",
+    "nationalCode": "SK",
+    "aliases": [
+      "Province/Territory Saskatchewan"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa97"
+    },
+    "countryId": {
+      "$oid": "66d61978a546e02c6ce65a23"
+    },
+    "countryCode": "ca",
+    "countryName": "Canadá",
+    "name": "Yukon",
+    "nationalCode": "YT",
+    "aliases": [
+      "Province/Territory Yukon"
+    ],
+    "level": 1,
+    "levelName": "Province/Territory",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d28a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a2d"
+    },
+    "countryCode": "ch",
+    "countryName": "Suiza",
+    "name": "Argovia",
+    "nationalCode": null,
+    "aliases": [
+      "Kanton Argovia"
+    ],
+    "level": 1,
+    "levelName": "Kanton",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d28b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a2d"
+    },
+    "countryCode": "ch",
+    "countryName": "Suiza",
+    "name": "Suiza",
+    "nationalCode": null,
+    "aliases": [
+      "Kanton Suiza"
+    ],
+    "level": 1,
+    "levelName": "Kanton",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d287"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Malleco",
+    "nationalCode": null,
+    "aliases": [
+      "Región Malleco"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa80"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Antofagasta",
+    "nationalCode": "II",
+    "aliases": [
+      "Región Región de Antofagasta"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa7e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Arica y Parinacota",
+    "nationalCode": "XV",
+    "aliases": [
+      "Región Región de Arica y Parinacota"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa81"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Atacama",
+    "nationalCode": "III",
+    "aliases": [
+      "Región Región de Atacama"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa8b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Aysén",
+    "nationalCode": "XI",
+    "aliases": [
+      "Región Región de Aysén"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa82"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Coquimbo",
+    "nationalCode": "IV",
+    "aliases": [
+      "Región Región de Coquimbo"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa88"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de La Araucanía",
+    "nationalCode": "IX",
+    "aliases": [
+      "Región Región de La Araucanía"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa8a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Los Lagos",
+    "nationalCode": "X",
+    "aliases": [
+      "Región Región de Los Lagos"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa89"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Los Ríos",
+    "nationalCode": "XIV",
+    "aliases": [
+      "Región Región de Los Ríos"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa8c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Magallanes",
+    "nationalCode": "XII",
+    "aliases": [
+      "Región Región de Magallanes"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa7f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Tarapacá",
+    "nationalCode": "I",
+    "aliases": [
+      "Región Región de Tarapacá"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa83"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región de Valparaíso",
+    "nationalCode": "V",
+    "aliases": [
+      "Región Región de Valparaíso"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa87"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región del Biobío",
+    "nationalCode": "VIII",
+    "aliases": [
+      "Región Región del Biobío"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa84"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región del Libertador General Bernardo O'Higgins",
+    "nationalCode": "VI",
+    "aliases": [
+      "Región Región del Libertador General Bernardo O'Higgins"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa85"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región del Maule",
+    "nationalCode": "VII",
+    "aliases": [
+      "Región Región del Maule"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa86"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región del Ñuble",
+    "nationalCode": "XVI",
+    "aliases": [
+      "Región Región del Ñuble"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d286"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a33"
+    },
+    "countryCode": "cl",
+    "countryName": "Chile",
+    "name": "Región Metropolitana",
+    "nationalCode": "RM",
+    "aliases": [
+      "Región Región Metropolitana"
+    ],
+    "level": 1,
+    "levelName": "Región",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa04"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Amazonas",
+    "nationalCode": "91",
+    "aliases": [
+      "Departamento Amazonas"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d21f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Antioqquia",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Antioqquia"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d20c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Antioquia",
+    "nationalCode": "05",
+    "aliases": [
+      "Departamento Antioquia"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa05"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Arauca",
+    "nationalCode": "81",
+    "aliases": [
+      "Departamento Arauca"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa06"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Archipiélago de San Andrés, Providencia y Santa Catalina",
+    "nationalCode": "88",
+    "aliases": [
+      "Departamento Archipiélago de San Andrés, Providencia y Santa Catalina"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d21e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Atlantico",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Atlantico"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d211"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Atlántico",
+    "nationalCode": "08",
+    "aliases": [
+      "Departamento Atlántico"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d225"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Bogotá",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Bogotá"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa08"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Bogotá D.C.",
+    "nationalCode": "11",
+    "aliases": [
+      "Departamento Bogotá D.C."
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d20b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Bogotá DC",
+    "nationalCode": "11",
+    "aliases": [
+      "Departamento Bogotá DC"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d224"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Bogotá,",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Bogotá,"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d221"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Bolivar",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Bolivar"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d215"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Bolívar",
+    "nationalCode": "13",
+    "aliases": [
+      "Departamento Bolívar"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d20e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Boyacá",
+    "nationalCode": "15",
+    "aliases": [
+      "Departamento Boyacá"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d20f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Caldas",
+    "nationalCode": "17",
+    "aliases": [
+      "Departamento Caldas"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa09"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Caquetá",
+    "nationalCode": "18",
+    "aliases": [
+      "Departamento Caquetá"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa0a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Casanare",
+    "nationalCode": "85",
+    "aliases": [
+      "Departamento Casanare"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d219"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Cauca",
+    "nationalCode": "19",
+    "aliases": [
+      "Departamento Cauca"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d223"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Cesar",
+    "nationalCode": "20",
+    "aliases": [
+      "Departamento Cesar"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa0b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Chocó",
+    "nationalCode": "27",
+    "aliases": [
+      "Departamento Chocó"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d222"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Cordoba",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Cordoba"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa0c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Córdoba",
+    "nationalCode": "23",
+    "aliases": [
+      "Departamento Córdoba"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d213"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Cundinamarca",
+    "nationalCode": "25",
+    "aliases": [
+      "Departamento Cundinamarca"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa0d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Guainía",
+    "nationalCode": "94",
+    "aliases": [
+      "Departamento Guainía"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa0e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Guaviare",
+    "nationalCode": "95",
+    "aliases": [
+      "Departamento Guaviare"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d218"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Huila",
+    "nationalCode": "41",
+    "aliases": [
+      "Departamento Huila"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa0f"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "La Guajira",
+    "nationalCode": "44",
+    "aliases": [
+      "Departamento La Guajira"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d21a"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Magdalena",
+    "nationalCode": "47",
+    "aliases": [
+      "Departamento Magdalena"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d21d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Meta",
+    "nationalCode": "50",
+    "aliases": [
+      "Departamento Meta"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d216"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Nariño",
+    "nationalCode": "52",
+    "aliases": [
+      "Departamento Nariño"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d217"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Norte de Santander",
+    "nationalCode": "54",
+    "aliases": [
+      "Departamento Norte de Santander"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa10"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Putumayo",
+    "nationalCode": "86",
+    "aliases": [
+      "Departamento Putumayo"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d220"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Quindio",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Quindio"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d214"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Quindío",
+    "nationalCode": "63",
+    "aliases": [
+      "Departamento Quindío"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d212"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Risaralda",
+    "nationalCode": "66",
+    "aliases": [
+      "Departamento Risaralda"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa07"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "San Andrés y Providencia",
+    "nationalCode": "88",
+    "aliases": [
+      "Departamento San Andrés y Providencia"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d210"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Santander",
+    "nationalCode": "68",
+    "aliases": [
+      "Departamento Santander"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa11"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Sucre",
+    "nationalCode": "70",
+    "aliases": [
+      "Departamento Sucre"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d21c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Tolima",
+    "nationalCode": "73",
+    "aliases": [
+      "Departamento Tolima"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa12"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Valle",
+    "nationalCode": "76",
+    "aliases": [
+      "Departamento Valle"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d21b"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Valle del Cauca",
+    "nationalCode": "76",
+    "aliases": [
+      "Departamento Valle del Cauca"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d20d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Valle del Cauca",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Valle del Cauca"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa13"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Vaupés",
+    "nationalCode": "97",
+    "aliases": [
+      "Departamento Vaupés"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa14"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a39"
+    },
+    "countryCode": "co",
+    "countryName": "Colombia",
+    "name": "Vichada",
+    "nationalCode": "99",
+    "aliases": [
+      "Departamento Vichada"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d27d"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a3b"
+    },
+    "countryCode": "cr",
+    "countryName": "Costa Rica",
+    "name": "Cartago",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia Cartago"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d27e"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a3b"
+    },
+    "countryCode": "cr",
+    "countryName": "Costa Rica",
+    "name": "Heredia",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia Heredia"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d27c"
+    },
+    "countryId": {
+      "$oid": "66d61979a546e02c6ce65a3b"
+    },
+    "countryCode": "cr",
+    "countryName": "Costa Rica",
+    "name": "San José",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia San José"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d2a3"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a55"
+    },
+    "countryCode": "ec",
+    "countryName": "Ecuador",
+    "name": "Quito",
+    "nationalCode": null,
+    "aliases": [
+      "Provincia Quito"
+    ],
+    "level": 1,
+    "levelName": "Provincia",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d23b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "A Coruña",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma A Coruña"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d22e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Alicante",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Alicante"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d24f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Alicante/Alacant",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Alicante/Alacant"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d23e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Almería",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Almería"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d229"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Andalucía",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Andalucía"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d22b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Aragón",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Aragón"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d243"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Baleares",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Baleares"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d24b"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Barcelona",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Barcelona"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d248"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Burgos",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Burgos"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d230"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Cáceres",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Cáceres"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d249"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Cádiz",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Cádiz"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d22d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Canarias",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Canarias"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d239"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Cantabria",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Cantabria"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d250"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Castellón",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Castellón"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d226"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Cataluña",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Cataluña"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d24e"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Cuenca",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Cuenca"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d22c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Galicia",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Galicia"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d238"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Granada",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Granada"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d24a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Guadalajara",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Guadalajara"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d24d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Huesca",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Huesca"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d247"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Islas Baleares",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Islas Baleares"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d251"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "La Rioja",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma La Rioja"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d23f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "León",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma León"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d242"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Lugo",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Lugo"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d227"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Madrid",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Madrid"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d235"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Málaga",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Málaga"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d22a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Murcia",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Murcia"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d231"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Navarra",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Navarra"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d23a"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Ourense",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Ourense"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d252"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Palencia",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Palencia"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d22f"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Pontevedra",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Pontevedra"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d244"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Principado de Asturias",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Principado de Asturias"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d236"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Región de Murcia",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Región de Murcia"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d246"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Salamanca",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Salamanca"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d23c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Santa Cruz de Tenerife",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Santa Cruz de Tenerife"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d24c"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Segovia",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Segovia"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d232"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Sevilla",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Sevilla"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d237"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Tarragona",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Tarragona"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d241"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Toledo",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Toledo"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d228"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Valencia",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Valencia"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d240"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Valencia/València",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Valencia/València"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d234"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Valladolid",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Valladolid"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d245"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Vizcaya",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Vizcaya"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d23d"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Zamora",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Zamora"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d233"
+    },
+    "countryId": {
+      "$oid": "66d6197ba546e02c6ce65a5f"
+    },
+    "countryCode": "es",
+    "countryName": "España",
+    "name": "Zaragoza",
+    "nationalCode": null,
+    "aliases": [
+      "Comunidad Autónoma Zaragoza"
+    ],
+    "level": 1,
+    "levelName": "Comunidad Autónoma",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d28c"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Bouches du Rhône",
+    "nationalCode": null,
+    "aliases": [
+      "Région Bouches du Rhône"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d29a"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Charente Maritime",
+    "nationalCode": null,
+    "aliases": [
+      "Région Charente Maritime"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d296"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Côtes d'Armor",
+    "nationalCode": null,
+    "aliases": [
+      "Région Côtes d'Armor"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d297"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Creuse",
+    "nationalCode": null,
+    "aliases": [
+      "Région Creuse"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d29b"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Dordogne",
+    "nationalCode": null,
+    "aliases": [
+      "Région Dordogne"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d292"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Finistère",
+    "nationalCode": null,
+    "aliases": [
+      "Région Finistère"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d28f"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Gironde",
+    "nationalCode": null,
+    "aliases": [
+      "Région Gironde"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d29f"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Haute Vienne",
+    "nationalCode": null,
+    "aliases": [
+      "Région Haute Vienne"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d291"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Ille et Vilaine",
+    "nationalCode": null,
+    "aliases": [
+      "Région Ille et Vilaine"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d298"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Isère",
+    "nationalCode": null,
+    "aliases": [
+      "Région Isère"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d295"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Loire Atlantique",
+    "nationalCode": null,
+    "aliases": [
+      "Région Loire Atlantique"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d28d"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Loire-Atlantique",
+    "nationalCode": null,
+    "aliases": [
+      "Région Loire-Atlantique"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d293"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Maine et Loire",
+    "nationalCode": null,
+    "aliases": [
+      "Région Maine et Loire"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d29e"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Manche",
+    "nationalCode": null,
+    "aliases": [
+      "Région Manche"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d2a0"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Morbihan",
+    "nationalCode": null,
+    "aliases": [
+      "Région Morbihan"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d28e"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Nord",
+    "nationalCode": null,
+    "aliases": [
+      "Région Nord"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d294"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Puy De Dôme",
+    "nationalCode": null,
+    "aliases": [
+      "Région Puy De Dôme"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d2a1"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Rhône",
+    "nationalCode": null,
+    "aliases": [
+      "Région Rhône"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d29d"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Seine Maritime",
+    "nationalCode": null,
+    "aliases": [
+      "Région Seine Maritime"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d29c"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Tarn et Garonne",
+    "nationalCode": null,
+    "aliases": [
+      "Région Tarn et Garonne"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d299"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Vendée",
+    "nationalCode": null,
+    "aliases": [
+      "Région Vendée"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d290"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a6d"
+    },
+    "countryCode": "fr",
+    "countryName": "Francia",
+    "name": "Vosges",
+    "nationalCode": null,
+    "aliases": [
+      "Région Vosges"
+    ],
+    "level": 1,
+    "levelName": "Région",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d27f"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a71"
+    },
+    "countryCode": "gb",
+    "countryName": "Reino Unido",
+    "name": "Gran Londres",
+    "nationalCode": null,
+    "aliases": [
+      "Constituent Country Gran Londres"
+    ],
+    "level": 1,
+    "levelName": "Constituent Country",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d280"
+    },
+    "countryId": {
+      "$oid": "66d6197ca546e02c6ce65a71"
+    },
+    "countryCode": "gb",
+    "countryName": "Reino Unido",
+    "name": "Merseyside",
+    "nationalCode": null,
+    "aliases": [
+      "Constituent Country Merseyside"
+    ],
+    "level": 1,
+    "levelName": "Constituent Country",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d288"
+    },
+    "countryId": {
+      "$oid": "66d6197ea546e02c6ce65a8d"
+    },
+    "countryCode": "gt",
+    "countryName": "Guatemala",
+    "name": "Quetzaltenango",
+    "nationalCode": null,
+    "aliases": [
+      "Departamento Quetzaltenango"
+    ],
+    "level": 1,
+    "levelName": "Departamento",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d284"
+    },
+    "countryId": {
+      "$oid": "66d61980a546e02c6ce65ab3"
+    },
+    "countryCode": "it",
+    "countryName": "Italia",
+    "name": "Sicilia",
+    "nationalCode": null,
+    "aliases": [
+      "Regione Sicilia"
+    ],
+    "level": 1,
+    "levelName": "Regione",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d25b"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Aguascalientes",
+    "nationalCode": "AG",
+    "aliases": [
+      "Estado Aguascalientes"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa3d"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Baja California",
+    "nationalCode": "BC",
+    "aliases": [
+      "Estado Baja California"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d264"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Baja California Sur",
+    "nationalCode": "BS",
+    "aliases": [
+      "Estado Baja California Sur"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa3e"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Campeche",
+    "nationalCode": "CM",
+    "aliases": [
+      "Estado Campeche"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d253"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "CDMX",
+    "nationalCode": null,
+    "aliases": [
+      "Estado CDMX"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa3f"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Chiapas",
+    "nationalCode": "CS",
+    "aliases": [
+      "Estado Chiapas"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d256"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Chihuahua",
+    "nationalCode": "CH",
+    "aliases": [
+      "Estado Chihuahua"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa43"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Ciudad de México",
+    "nationalCode": "MX",
+    "aliases": [
+      "Estado Ciudad de México"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d260"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "CMDX",
+    "nationalCode": null,
+    "aliases": [
+      "Estado CMDX"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa40"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Coahuila",
+    "nationalCode": "CO",
+    "aliases": [
+      "Estado Coahuila"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa41"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Coahuila de Zaragoza",
+    "nationalCode": "CO",
+    "aliases": [
+      "Estado Coahuila de Zaragoza"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa42"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Colima",
+    "nationalCode": "CL",
+    "aliases": [
+      "Estado Colima"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa44"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Durango",
+    "nationalCode": "DG",
+    "aliases": [
+      "Estado Durango"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d257"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Estado de México",
+    "nationalCode": "EM",
+    "aliases": [
+      "Estado Estado de México"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d262"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Guanajuato",
+    "nationalCode": "GT",
+    "aliases": [
+      "Estado Guanajuato"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa45"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Guerrero",
+    "nationalCode": "GR",
+    "aliases": [
+      "Estado Guerrero"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d265"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Hidalgo",
+    "nationalCode": "HG",
+    "aliases": [
+      "Estado Hidalgo"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d254"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Jalisco",
+    "nationalCode": "JA",
+    "aliases": [
+      "Estado Jalisco"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d255"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "León",
+    "nationalCode": null,
+    "aliases": [
+      "Estado León"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa46"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "México",
+    "nationalCode": "EM",
+    "aliases": [
+      "Estado México"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d263"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Michoacán",
+    "nationalCode": "MI",
+    "aliases": [
+      "Estado Michoacán"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa47"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Michoacán de Ocampo",
+    "nationalCode": "MI",
+    "aliases": [
+      "Estado Michoacán de Ocampo"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d25d"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Morelos",
+    "nationalCode": "MO",
+    "aliases": [
+      "Estado Morelos"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d261"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Nayarit",
+    "nationalCode": "NA",
+    "aliases": [
+      "Estado Nayarit"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d259"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Nuevo León",
+    "nationalCode": "NL",
+    "aliases": [
+      "Estado Nuevo León"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d25f"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Oaxaca",
+    "nationalCode": "OA",
+    "aliases": [
+      "Estado Oaxaca"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d258"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Puebla",
+    "nationalCode": "PU",
+    "aliases": [
+      "Estado Puebla"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d25a"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Querétaro",
+    "nationalCode": "QT",
+    "aliases": [
+      "Estado Querétaro"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d25c"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Quintana Roo",
+    "nationalCode": "QR",
+    "aliases": [
+      "Estado Quintana Roo"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa48"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "San Luis Potosí",
+    "nationalCode": "SL",
+    "aliases": [
+      "Estado San Luis Potosí"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa49"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Sinaloa",
+    "nationalCode": "SI",
+    "aliases": [
+      "Estado Sinaloa"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa4a"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Sonora",
+    "nationalCode": "SO",
+    "aliases": [
+      "Estado Sonora"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa4b"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Tabasco",
+    "nationalCode": "TB",
+    "aliases": [
+      "Estado Tabasco"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa4c"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Tamaulipas",
+    "nationalCode": "TM",
+    "aliases": [
+      "Estado Tamaulipas"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa4d"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Tlaxcala",
+    "nationalCode": "TL",
+    "aliases": [
+      "Estado Tlaxcala"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d25e"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Veracruz",
+    "nationalCode": "VE",
+    "aliases": [
+      "Estado Veracruz"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa4e"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Veracruz de Ignacio de la Llave",
+    "nationalCode": "VE",
+    "aliases": [
+      "Estado Veracruz de Ignacio de la Llave"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa4f"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Yucatán",
+    "nationalCode": "YU",
+    "aliases": [
+      "Estado Yucatán"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa50"
+    },
+    "countryId": {
+      "$oid": "66d61985a546e02c6ce65b11"
+    },
+    "countryCode": "mx",
+    "countryName": "México",
+    "name": "Zacatecas",
+    "nationalCode": "ZA",
+    "aliases": [
+      "Estado Zacatecas"
+    ],
+    "level": 1,
+    "levelName": "Estado",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d285"
+    },
+    "countryId": {
+      "$oid": "66d6198ca546e02c6ce65b97"
+    },
+    "countryCode": "tr",
+    "countryName": "Turquía",
+    "name": "Estambul",
+    "nationalCode": null,
+    "aliases": [
+      "İl Estambul"
+    ],
+    "level": 1,
+    "levelName": "İl",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa15"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Alabama",
+    "nationalCode": "AL",
+    "aliases": [
+      "State Alabama"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa16"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Alaska",
+    "nationalCode": "AK",
+    "aliases": [
+      "State Alaska"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa17"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Arizona",
+    "nationalCode": "AZ",
+    "aliases": [
+      "State Arizona"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa18"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Arkansas",
+    "nationalCode": "AR",
+    "aliases": [
+      "State Arkansas"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d277"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Bostón",
+    "nationalCode": null,
+    "aliases": [
+      "State Bostón"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d26f"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "California",
+    "nationalCode": "CA",
+    "aliases": [
+      "State California"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa19"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Colorado",
+    "nationalCode": "CO",
+    "aliases": [
+      "State Colorado"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d279"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Connecticut",
+    "nationalCode": "CT",
+    "aliases": [
+      "State Connecticut"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa1a"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Delaware",
+    "nationalCode": "DE",
+    "aliases": [
+      "State Delaware"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d270"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Florida",
+    "nationalCode": "FL",
+    "aliases": [
+      "State Florida"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa1b"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Georgia",
+    "nationalCode": "GA",
+    "aliases": [
+      "State Georgia"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa1c"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Hawaii",
+    "nationalCode": "HI",
+    "aliases": [
+      "State Hawaii"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa1d"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Idaho",
+    "nationalCode": "ID",
+    "aliases": [
+      "State Idaho"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d273"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Illinois",
+    "nationalCode": "IL",
+    "aliases": [
+      "State Illinois"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa1e"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Indiana",
+    "nationalCode": "IN",
+    "aliases": [
+      "State Indiana"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa1f"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Iowa",
+    "nationalCode": "IA",
+    "aliases": [
+      "State Iowa"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa20"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Kansas",
+    "nationalCode": "KS",
+    "aliases": [
+      "State Kansas"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa21"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Kentucky",
+    "nationalCode": "KY",
+    "aliases": [
+      "State Kentucky"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d27a"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Louisiana",
+    "nationalCode": "LA",
+    "aliases": [
+      "State Louisiana"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa22"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Maine",
+    "nationalCode": "ME",
+    "aliases": [
+      "State Maine"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa23"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Maryland",
+    "nationalCode": "MD",
+    "aliases": [
+      "State Maryland"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d278"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Massachusetts",
+    "nationalCode": "MA",
+    "aliases": [
+      "State Massachusetts"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa24"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Michigan",
+    "nationalCode": "MI",
+    "aliases": [
+      "State Michigan"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa25"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Minnesota",
+    "nationalCode": "MN",
+    "aliases": [
+      "State Minnesota"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa26"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Mississippi",
+    "nationalCode": "MS",
+    "aliases": [
+      "State Mississippi"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa27"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Missouri",
+    "nationalCode": "MO",
+    "aliases": [
+      "State Missouri"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa28"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Montana",
+    "nationalCode": "MT",
+    "aliases": [
+      "State Montana"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa29"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Nebraska",
+    "nationalCode": "NE",
+    "aliases": [
+      "State Nebraska"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa2a"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Nevada",
+    "nationalCode": "NV",
+    "aliases": [
+      "State Nevada"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa2b"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "New Hampshire",
+    "nationalCode": "NH",
+    "aliases": [
+      "State New Hampshire"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d27b"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "New Jersey",
+    "nationalCode": "NJ",
+    "aliases": [
+      "State New Jersey"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa2c"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "New Mexico",
+    "nationalCode": "NM",
+    "aliases": [
+      "State New Mexico"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa2d"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "New York",
+    "nationalCode": "NY",
+    "aliases": [
+      "State New York"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa2e"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "North Carolina",
+    "nationalCode": "NC",
+    "aliases": [
+      "State North Carolina"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa2f"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "North Dakota",
+    "nationalCode": "ND",
+    "aliases": [
+      "State North Dakota"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d272"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "NY",
+    "nationalCode": null,
+    "aliases": [
+      "State NY"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa30"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Ohio",
+    "nationalCode": "OH",
+    "aliases": [
+      "State Ohio"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa31"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Oklahoma",
+    "nationalCode": "OK",
+    "aliases": [
+      "State Oklahoma"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa32"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Oregon",
+    "nationalCode": "OR",
+    "aliases": [
+      "State Oregon"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa33"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Pennsylvania",
+    "nationalCode": "PA",
+    "aliases": [
+      "State Pennsylvania"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa34"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Rhode Island",
+    "nationalCode": "RI",
+    "aliases": [
+      "State Rhode Island"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa35"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "South Carolina",
+    "nationalCode": "SC",
+    "aliases": [
+      "State South Carolina"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa36"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "South Dakota",
+    "nationalCode": "SD",
+    "aliases": [
+      "State South Dakota"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa37"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Tennessee",
+    "nationalCode": "TN",
+    "aliases": [
+      "State Tennessee"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d274"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Texas",
+    "nationalCode": "TX",
+    "aliases": [
+      "State Texas"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa38"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Utah",
+    "nationalCode": "UT",
+    "aliases": [
+      "State Utah"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa39"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Vermont",
+    "nationalCode": "VT",
+    "aliases": [
+      "State Vermont"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d276"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Virginia",
+    "nationalCode": "VA",
+    "aliases": [
+      "State Virginia"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d275"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Washington",
+    "nationalCode": "WA",
+    "aliases": [
+      "State Washington"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119c0e6bce07293357d271"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Washington D.C.",
+    "nationalCode": null,
+    "aliases": [
+      "State Washington D.C."
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa3a"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "West Virginia",
+    "nationalCode": "WV",
+    "aliases": [
+      "State West Virginia"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa3b"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Wisconsin",
+    "nationalCode": "WI",
+    "aliases": [
+      "State Wisconsin"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  },
+  {
+    "_id": {
+      "$oid": "69119d5fd7c3b8b65c2daa3c"
+    },
+    "countryId": {
+      "$oid": "66d6198da546e02c6ce65ba7"
+    },
+    "countryCode": "us",
+    "countryName": "Estados Unidos",
+    "name": "Wyoming",
+    "nationalCode": "WY",
+    "aliases": [
+      "State Wyoming"
+    ],
+    "level": 1,
+    "levelName": "State",
+    "capital": null
+  }
+]

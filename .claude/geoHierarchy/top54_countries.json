@@ -1,0 +1,479 @@
+[
+  {
+    "rank": 1,
+    "country": "Colombia",
+    "alpha2": "co",
+    "records": 898,
+    "percentage": "35.34",
+    "states": 28,
+    "cities": 72
+  },
+  {
+    "rank": 2,
+    "country": "España",
+    "alpha2": "es",
+    "records": 315,
+    "percentage": "12.40",
+    "states": 46,
+    "cities": 80
+  },
+  {
+    "rank": 3,
+    "country": "Francia",
+    "alpha2": "fr",
+    "records": 191,
+    "percentage": "7.52",
+    "states": 23,
+    "cities": 67
+  },
+  {
+    "rank": 4,
+    "country": "Estados Unidos",
+    "alpha2": "us",
+    "records": 189,
+    "percentage": "7.44",
+    "states": 10,
+    "cities": 39
+  },
+  {
+    "rank": 5,
+    "country": "México",
+    "alpha2": "mx",
+    "records": 157,
+    "percentage": "6.18",
+    "states": 20,
+    "cities": 38
+  },
+  {
+    "rank": 6,
+    "country": "Argentina",
+    "alpha2": "ar",
+    "records": 131,
+    "percentage": "5.16",
+    "states": 10,
+    "cities": 24
+  },
+  {
+    "rank": 7,
+    "country": "Alemania",
+    "alpha2": "de",
+    "records": 73,
+    "percentage": "2.87",
+    "states": 1,
+    "cities": 26
+  },
+  {
+    "rank": 8,
+    "country": "Reino Unido",
+    "alpha2": "gb",
+    "records": 71,
+    "percentage": "2.79",
+    "states": 3,
+    "cities": 9
+  },
+  {
+    "rank": 9,
+    "country": "Chile",
+    "alpha2": "cl",
+    "records": 60,
+    "percentage": "2.36",
+    "states": 3,
+    "cities": 11
+  },
+  {
+    "rank": 10,
+    "country": "Brasil",
+    "alpha2": "br",
+    "records": 51,
+    "percentage": "2.01",
+    "states": 2,
+    "cities": 13
+  },
+  {
+    "rank": 11,
+    "country": "Países Bajos",
+    "alpha2": "nl",
+    "records": 42,
+    "percentage": "1.65",
+    "states": 1,
+    "cities": 12
+  },
+  {
+    "rank": 12,
+    "country": "Suiza",
+    "alpha2": "ch",
+    "records": 37,
+    "percentage": "1.46",
+    "states": 3,
+    "cities": 14
+  },
+  {
+    "rank": 13,
+    "country": "Canadá",
+    "alpha2": "ca",
+    "records": 34,
+    "percentage": "1.34",
+    "states": 4,
+    "cities": 9
+  },
+  {
+    "rank": 14,
+    "country": "Estados Unidos",
+    "alpha2": "us",
+    "records": 32,
+    "percentage": "1.26",
+    "states": 8,
+    "cities": 11
+  },
+  {
+    "rank": 15,
+    "country": "Italia",
+    "alpha2": "it",
+    "records": 22,
+    "percentage": "0.87",
+    "states": 2,
+    "cities": 11
+  },
+  {
+    "rank": 16,
+    "country": "Cuba",
+    "alpha2": "cu",
+    "records": 20,
+    "percentage": "0.79",
+    "states": 1,
+    "cities": 5
+  },
+  {
+    "rank": 17,
+    "country": "Perú",
+    "alpha2": "pe",
+    "records": 18,
+    "percentage": "0.71",
+    "states": 1,
+    "cities": 3
+  },
+  {
+    "rank": 18,
+    "country": "Costa Rica",
+    "alpha2": "cr",
+    "records": 18,
+    "percentage": "0.71",
+    "states": 4,
+    "cities": 6
+  },
+  {
+    "rank": 19,
+    "country": "Austria",
+    "alpha2": "at",
+    "records": 17,
+    "percentage": "0.67",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 20,
+    "country": "Turquía",
+    "alpha2": "tr",
+    "records": 15,
+    "percentage": "0.59",
+    "states": 2,
+    "cities": 9
+  },
+  {
+    "rank": 21,
+    "country": "Ecuador",
+    "alpha2": "ec",
+    "records": 14,
+    "percentage": "0.55",
+    "states": 2,
+    "cities": 5
+  },
+  {
+    "rank": 22,
+    "country": "Portugal",
+    "alpha2": "pt",
+    "records": 12,
+    "percentage": "0.47",
+    "states": 1,
+    "cities": 3
+  },
+  {
+    "rank": 23,
+    "country": "Uruguay",
+    "alpha2": "uy",
+    "records": 12,
+    "percentage": "0.47",
+    "states": 1,
+    "cities": 4
+  },
+  {
+    "rank": 24,
+    "country": "Venezuela",
+    "alpha2": "ve",
+    "records": 10,
+    "percentage": "0.39",
+    "states": 1,
+    "cities": 5
+  },
+  {
+    "rank": 25,
+    "country": "Islandia",
+    "alpha2": "is",
+    "records": 10,
+    "percentage": "0.39",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 26,
+    "country": "Australia",
+    "alpha2": "au",
+    "records": 9,
+    "percentage": "0.35",
+    "states": 2,
+    "cities": 4
+  },
+  {
+    "rank": 27,
+    "country": "Polonia",
+    "alpha2": "pl",
+    "records": 8,
+    "percentage": "0.31",
+    "states": 1,
+    "cities": 8
+  },
+  {
+    "rank": 28,
+    "country": "Irlanda",
+    "alpha2": "ie",
+    "records": 7,
+    "percentage": "0.28",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 29,
+    "country": "Bélgica",
+    "alpha2": "be",
+    "records": 7,
+    "percentage": "0.28",
+    "states": 1,
+    "cities": 4
+  },
+  {
+    "rank": 30,
+    "country": "Sudáfrica",
+    "alpha2": "za",
+    "records": 6,
+    "percentage": "0.24",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 31,
+    "country": "Puerto Rico",
+    "alpha2": "pr",
+    "records": 5,
+    "percentage": "0.20",
+    "states": 1,
+    "cities": 3
+  },
+  {
+    "rank": 32,
+    "country": "El Salvador",
+    "alpha2": "sv",
+    "records": 4,
+    "percentage": "0.16",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 33,
+    "country": "República Checa",
+    "alpha2": "cz",
+    "records": 4,
+    "percentage": "0.16",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 34,
+    "country": "Suecia",
+    "alpha2": "se",
+    "records": 4,
+    "percentage": "0.16",
+    "states": 1,
+    "cities": 3
+  },
+  {
+    "rank": 35,
+    "country": "Corea del Sur",
+    "alpha2": "kr",
+    "records": 4,
+    "percentage": "0.16",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 36,
+    "country": "Bolivia",
+    "alpha2": "bo",
+    "records": 4,
+    "percentage": "0.16",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 37,
+    "country": "Noruega",
+    "alpha2": "no",
+    "records": 3,
+    "percentage": "0.12",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 38,
+    "country": "Guatemala",
+    "alpha2": "gt",
+    "records": 3,
+    "percentage": "0.12",
+    "states": 2,
+    "cities": 3
+  },
+  {
+    "rank": 39,
+    "country": "República Dominicana",
+    "alpha2": "do",
+    "records": 3,
+    "percentage": "0.12",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 40,
+    "country": "Senegal",
+    "alpha2": "sn",
+    "records": 3,
+    "percentage": "0.12",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 41,
+    "country": "Panamá",
+    "alpha2": "pa",
+    "records": 2,
+    "percentage": "0.08",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 42,
+    "country": "Japón",
+    "alpha2": "jp",
+    "records": 2,
+    "percentage": "0.08",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 43,
+    "country": "Hungría",
+    "alpha2": "hu",
+    "records": 2,
+    "percentage": "0.08",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 44,
+    "country": "Finlandia",
+    "alpha2": "fi",
+    "records": 2,
+    "percentage": "0.08",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 45,
+    "country": "China",
+    "alpha2": "cn",
+    "records": 2,
+    "percentage": "0.08",
+    "states": 1,
+    "cities": 2
+  },
+  {
+    "rank": 46,
+    "country": "Paraguay",
+    "alpha2": "py",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 47,
+    "country": "Andorra",
+    "alpha2": "ad",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 48,
+    "country": "Luxemburgo",
+    "alpha2": "lu",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 49,
+    "country": "Tailandia",
+    "alpha2": "th",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 50,
+    "country": "Nicaragua",
+    "alpha2": "ni",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 51,
+    "country": "Grecia",
+    "alpha2": "gr",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 52,
+    "country": "Lituania",
+    "alpha2": "lt",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  },
+  {
+    "rank": 53,
+    "country": "Israel",
+    "alpha2": "il",
+    "records": 1,
+    "percentage": "0.04",
+    "states": 1,
+    "cities": 1
+  }
+]
