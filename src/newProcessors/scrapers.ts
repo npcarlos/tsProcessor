@@ -3,23 +3,63 @@ import * as path from "path";
 import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 
 export async function main(args?: any) {
-  analizar_archivos_duplicados(
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/chartmetric/bands"
-  );
-  analizar_archivos_duplicados(
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_bio"
-  );
-  analizar_archivos_duplicados(
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_extra"
-  );
-  generate_chartmetric_config_file();
-  extract_socialnetworks_from_cm();
-  extract_non_scrapped_cm_ids();
-  extract_non_scrapped_cm_ids_sorted();
+  // analizar_archivos_duplicados(
+  //   "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/chartmetric/bands"
+  // );
+  // analizar_archivos_duplicados(
+  //   "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_bio"
+  // );
+  // analizar_archivos_duplicados(
+  //   "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/tsProcessor/data/scrapped/spotify/bands/artist_extra"
+  // );
+  // generate_chartmetric_config_file();
+  // extract_socialnetworks_from_cm();
+  // extract_non_scrapped_cm_ids();
+  // extract_non_scrapped_cm_ids_sorted();
   // extract_spotify_metadata();
   // extract_available_socialnetworks_from_cm();
   // obtenerEjemplo();
   // get_names_from_instagram();
+  organizar_spotify_config_by_popularity();
+}
+
+function organizar_spotify_config_by_popularity() {
+  const folder = "./data/scrapped/spotify/bands/artist_bio_A/";
+
+  const archivos = fs.readdirSync(folder);
+
+  const bands: any[] = [];
+
+  archivos.forEach((archivo) => {
+    const bandJSON = leerArchivo(`${folder}/${archivo}`);
+    const name = archivo.split("_")[0];
+    const download = parseInt(archivo.replace(".json", "").split("_")[1]);
+    bands.push({
+      spotify: name,
+      downloaded: 0,
+      artist_downloaded: download,
+      related_downloaded: 0,
+      popularity: bandJSON?.popularity || 0,
+      followers: bandJSON?.followers?.total || 0,
+    });
+  });
+
+  crearArchivo(
+    "./data/scrapped/spotify/bands/spotify_bands.json",
+    bands.sort((band1, band2) => {
+      // Primero ordenar por popularity (descendente)
+      if (band1.popularity !== band2.popularity) {
+        return band2.popularity - band1.popularity;
+      }
+      // Si popularity es igual, ordenar por followers (descendente)
+      if (band1.followers !== band2.followers) {
+        return band2.followers - band1.followers;
+      }
+      // Si followers también es igual, ordenar por spotify (alfabético)
+      return band1.spotify.localeCompare(band2.spotify);
+    }),
+  );
+  console.log("FIN FIN");
 }
 
 function analizar_archivos_duplicados(dirPath?: string) {
@@ -101,7 +141,7 @@ function analizar_archivos_duplicados(dirPath?: string) {
   entries.forEach(([id, files], index) => {
     if (index % 5000 === 0) {
       console.log(
-        `  Procesando IDs: ${index}/${entries.length} (Movidos: ${totalMoved})`
+        `  Procesando IDs: ${index}/${entries.length} (Movidos: ${totalMoved})`,
       );
     }
 
@@ -130,7 +170,7 @@ function analizar_archivos_duplicados(dirPath?: string) {
         console.log(
           `  ${id.padEnd(40)} - Kept: ${mostRecent.filename}, Moved: ${
             oldFiles.length
-          } files`
+          } files`,
         );
       }
     }
@@ -157,7 +197,7 @@ function analizar_archivos_duplicados(dirPath?: string) {
     console.log(
       `${(index + 1).toString().padStart(2)}. ${item.id.padEnd(40)} - ${
         item.count
-      } archivos (${item.count - 1} movidos)`
+      } archivos (${item.count - 1} movidos)`,
     );
   });
 
@@ -208,13 +248,13 @@ function generate_spotify_bands_config_file() {
         const feature = currentPath.endsWith("artist_bio")
           ? "artist_downloaded"
           : currentPath.endsWith("artist_extra")
-          ? "downloaded"
-          : "related_downloaded";
+            ? "downloaded"
+            : "related_downloaded";
 
         // Check for duplicates
         if (seenIds.has(id)) {
           console.error(
-            `❌ ERROR: ID duplicado encontrado: ${id} (archivo: ${file})`
+            `❌ ERROR: ID duplicado encontrado: ${id} (archivo: ${file})`,
           );
           duplicatesFound++;
         } else {
@@ -243,14 +283,14 @@ function generate_spotify_bands_config_file() {
 
   if (duplicatesFound > 0) {
     console.log(
-      `\n⚠️  ADVERTENCIA: Se encontraron ${duplicatesFound} IDs duplicados. Revisar arriba.`
+      `\n⚠️  ADVERTENCIA: Se encontraron ${duplicatesFound} IDs duplicados. Revisar arriba.`,
     );
   }
 
   crearArchivo(`${DIR_PATH}_config.json`, configData);
   console.log(
     `\n✅ Archivo de configuración listo ${DIR_PATH}_config.json`,
-    configData[0]
+    configData[0],
   );
 }
 
@@ -282,7 +322,7 @@ function generate_chartmetric_config_file() {
       // Check for duplicates
       if (seenIds.has(id)) {
         console.error(
-          `❌ ERROR: ID duplicado encontrado: ${id} (archivo: ${file})`
+          `❌ ERROR: ID duplicado encontrado: ${id} (archivo: ${file})`,
         );
         duplicatesFound++;
       } else {
@@ -305,14 +345,14 @@ function generate_chartmetric_config_file() {
 
   if (duplicatesFound > 0) {
     console.log(
-      `\n⚠️  ADVERTENCIA: Se encontraron ${duplicatesFound} IDs duplicados. Revisar arriba.`
+      `\n⚠️  ADVERTENCIA: Se encontraron ${duplicatesFound} IDs duplicados. Revisar arriba.`,
     );
   }
 
   crearArchivo(`${DIR_PATH}_config.json`, configData);
   console.log(
     `\n✅ Archivo de configuración listo ${DIR_PATH}_config.json`,
-    configData[0]
+    configData[0],
   );
 }
 
@@ -471,10 +511,10 @@ function extract_socialnetworks_from_cm() {
             ? [row_bio_data.primary?.name || row_bio_data.primary?.id]
             : [];
           const genres_secondary = (row_bio_data.genres?.secondary || []).map(
-            (g: any) => g.name || g.id || g
+            (g: any) => g.name || g.id || g,
           );
           const genres_sub = (row_bio_data.genres?.sub || []).map(
-            (g: any) => g.name || g.id || g
+            (g: any) => g.name || g.id || g,
           );
 
           const genres: any[] = [
@@ -510,10 +550,10 @@ function extract_socialnetworks_from_cm() {
             let related_genres_secondary: any[] = [];
             try {
               related_genres_primary = (related.genres || []).map(
-                (g: any) => g.name || g.id || g
+                (g: any) => g.name || g.id || g,
               );
               related_genres_secondary = (related.subgenres || []).map(
-                (g: any) => g.name || g.id || g
+                (g: any) => g.name || g.id || g,
               );
             } catch (error) {
               console.error(error);
@@ -617,7 +657,7 @@ function extract_non_scrapped_cm_ids() {
     file.replace("bands_non_scrapped", "chartmetric_bands.json"),
     ids.map((id: number) => {
       return { chartmetric: id, downloaded: 0 };
-    })
+    }),
   );
 }
 
@@ -667,7 +707,7 @@ function extract_available_socialnetworks_from_cm() {
       console.log(
         `  - Procesados (${Math.round(((index + 1) * 100) / files.length)})  ${
           index + 1
-        } / ${files.length} registros de Chartmetric`
+        } / ${files.length} registros de Chartmetric`,
       );
     }
     try {
@@ -741,7 +781,7 @@ function obtenerEjemplo() {
       console.log(
         `  - Procesados (${Math.round(((i + 1) * 100) / files.length)})  ${
           i + 1
-        } / ${files.length} registros de Chartmetric`
+        } / ${files.length} registros de Chartmetric`,
       );
     }
 
@@ -765,7 +805,7 @@ function obtenerEjemplo() {
           "se encontraron ",
           faltantesL - faltantes.length,
           "    faltan: ",
-          faltantes.length
+          faltantes.length,
         );
         faltantesL = faltantes.length;
       }
@@ -788,7 +828,7 @@ function obtenerEjemplo() {
 
 function extract_non_scrapped_cm_ids_sorted() {
   let artists_drive_json = leerArchivo(
-    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`
+    `./data/drive/2025/10-31/Nuevos Artistas - Bandas.json`,
   )
     .filter((a: any) => !!a.chartmetric_user && a.chartmetric !== "e")
     .map((a: any) => {
@@ -799,10 +839,10 @@ function extract_non_scrapped_cm_ids_sorted() {
     artists_drive_json.map((item: { num: number; cm: number }) => [
       item.num,
       item,
-    ])
+    ]),
   );
   let artists_old_db = leerArchivo(
-    `./data/drive/2025/10-31/bd/artist_hive.artists.json`
+    `./data/drive/2025/10-31/bd/artist_hive.artists.json`,
   ).filter((a: any) => !!a.chartmetric);
 
   let nuevos = 0;
@@ -814,7 +854,7 @@ function extract_non_scrapped_cm_ids_sorted() {
   });
 
   let chartmetric_artists = leerArchivo(
-    `./data/scrapped/chartmetric/bands_sn.json`
+    `./data/scrapped/chartmetric/bands_sn.json`,
   );
 
   // Función auxiliar para obtener datos de chartmetric
@@ -888,7 +928,7 @@ function extract_non_scrapped_cm_ids_sorted() {
     "./data/scrapped/chartmetric/ids_to_scrape_sorted.json",
     uniqueIdsToScrape.map((id: any) => {
       return { chartmetric: id, downloaded: 0 };
-    })
+    }),
   );
 
   console.log("\nEstadísticas:");

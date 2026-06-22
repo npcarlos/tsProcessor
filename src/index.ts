@@ -1,4 +1,3 @@
-// Import all processors
 import * as db from "./newProcessors/db";
 import * as drive_converter from "./newProcessors/drive_converter";
 import * as geoProcessor from "./newProcessors/geoProcessor";
@@ -56,9 +55,9 @@ const enabledProcessors: (keyof typeof processors)[] = [
   // "spotify",
   // "instagram_scrapers",
   // "drive_converter",
-  "har_instagram",
+  // "har_instagram",
   // "scrapers",
-  // "db",
+  "db",
   // "instagram_artists",
   // "linked_tree",
   // "posts_analytics",
@@ -67,6 +66,17 @@ const enabledProcessors: (keyof typeof processors)[] = [
 
 // Execute enabled processors
 function main() {
+  // const dirPath = //"E:/Data/places";
+  //   // "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/places";
+  //   "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download";
+  // const downloaded = fs.readdirSync(`C:/Users/fnp/Desktop/profile_pics_2`);
+  // crearArchivo(
+  //   "C:/Users/fnp/Desktop/profile_pics_2.txt",
+  //   downloaded.map((d) => d.replace(".jpg", "")).join("\n"),
+  //   false,
+  // );
+  // console.log(downloaded.length);
+
   enabledProcessors.forEach((processorKey) => {
     processors[processorKey].main();
   });

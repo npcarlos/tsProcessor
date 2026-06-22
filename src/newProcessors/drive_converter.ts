@@ -6,10 +6,10 @@ import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 export async function main(args?: any) {
   const dirPath = "./data/drive/2025/10-31";
   // Artists
-  // await convertTSVFileToJSON({
-  //   cleanDataProcessor: cleanArtistData,
-  //   filePath: `${dirPath}/Nuevos Artistas - Bandas.tsv`,
-  // });
+  await convertTSVFileToJSON({
+    cleanDataProcessor: cleanArtistData,
+    filePath: `${dirPath}/Nuevos Artistas - Bandas.tsv`,
+  });
 
   // // Artists
   // await convertTSVFileToJSON({
@@ -18,10 +18,10 @@ export async function main(args?: any) {
   // });
 
   // Venues
-  await convertTSVFileToJSON({
-    cleanDataProcessor: cleanVenuesData,
-    filePath: `${dirPath}/Sitios - Sitios.tsv`,
-  });
+  // await convertTSVFileToJSON({
+  //   cleanDataProcessor: cleanVenuesData,
+  //   filePath: `${dirPath}/Sitios - Sitios.tsv`,
+  // });
 
   // await convertTSVFileToJSON({
   //   cleanDataProcessor: cleanVenuesData,
@@ -38,29 +38,29 @@ export async function main(args?: any) {
   // console.log(docs.length);
   // crearArchivo(`${dirPath}/spotify_all_db.txt`, docs);
 
-  const sitios = leerArchivo(`${dirPath}/Sitios - Sitios.json`).filter(
-    (sitio: any) => !!sitio.instagram && sitio.existe.toLowerCase() !== "no",
-  );
-  console.log(sitios.length);
+  // const sitios = leerArchivo(`${dirPath}/Sitios - Sitios.json`).filter(
+  //   (sitio: any) => !!sitio.instagram && sitio.existe.toLowerCase() !== "no",
+  // );
+  // console.log(sitios.length);
 
-  const pics = fs.readdirSync("C:/Users/fnp/Desktop/profile_pics_2");
-  const picsDict: { [key: string]: true } = {};
-  pics.forEach((sitio: any) => (picsDict[sitio.replace(".jpg", "")] = true));
+  // const pics = fs.readdirSync("C:/Users/fnp/Desktop/profile_pics_2");
+  // const picsDict: { [key: string]: true } = {};
+  // pics.forEach((sitio: any) => (picsDict[sitio.replace(".jpg", "")] = true));
 
-  const already = fs.readdirSync(
-    "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/images",
-  );
+  // const already = fs.readdirSync(
+  //   "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/images",
+  // );
 
-  const sitiosFaltantes = sitios.filter(
-    (sitio: any) =>
-      !picsDict[sitio.instagram] &&
-      !already.find((alredySitio) => alredySitio === sitio.instagram),
-  );
-  crearArchivo(
-    `${dirPath}/Sitios - Faltantes.json`,
-    sitiosFaltantes.map((sitio: any) => sitio.instagram),
-  );
-  console.log(sitiosFaltantes.length);
+  // const sitiosFaltantes = sitios.filter(
+  //   (sitio: any) =>
+  //     !picsDict[sitio.instagram] &&
+  //     !already.find((alredySitio) => alredySitio === sitio.instagram),
+  // );
+  // crearArchivo(
+  //   `${dirPath}/Sitios - Faltantes.json`,
+  //   sitiosFaltantes.map((sitio: any) => sitio.instagram),
+  // );
+  // console.log(sitiosFaltantes.length);
 }
 
 async function convertTSVFileToJSON(params: {

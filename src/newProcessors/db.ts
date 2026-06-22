@@ -1,9 +1,153 @@
+import * as fs from "fs";
+import mongoose from "mongoose";
+import * as readline from "readline";
 import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
+import { cleanHtmlToString } from "../helpers/string.helpers";
 
 export async function main(args?: any) {
   // completar_generos_en_places();
   // unir_todos_los_artistas();
-  unir_todos_los_artistas_nuevo();
+  // unir_todos_los_artistas_nuevo();
+  consolidar_artistas_new_artist_completo();
+  // await dividir_archivo_grande();
+}
+
+/**
+ * Divide el archivo JSON grande en partes más pequeñas leyendo línea por línea
+ */
+async function dividir_archivo_grande() {
+  console.log("\n=== DIVIDIENDO ARCHIVO GRANDE ===\n");
+
+  const inputPath = "./data/drive/2025/10-31/bd/db2_junio_2026.json";
+  const outputDir = "./data/drive/2025/10-31/bd/chunks";
+  const chunkSize = 50000; // Artistas por chunk
+
+  // Crear directorio de salida si no existe
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  console.log(`Archivo de entrada: ${inputPath}`);
+  console.log(`Directorio de salida: ${outputDir}`);
+  console.log(`Tamaño de chunk: ${chunkSize} artistas\n`);
+
+  let currentChunk: any[] = [];
+  let chunkIndex = 0;
+  let artistCount = 0;
+  let currentLines: string[] = [];
+  let bracketDepth = 0;
+  let inArray = false;
+
+  const fileStream = fs.createReadStream(inputPath);
+  const rl = readline.createInterface({
+    input: fileStream,
+    crlfDelay: Infinity,
+  });
+
+  let lineCount = 0;
+  for await (const line of rl) {
+    lineCount++;
+    const trimmedLine = line.trim();
+
+    // Detectar inicio del array principal
+    if (!inArray && trimmedLine === "[") {
+      inArray = true;
+      console.log(
+        `✓ Detectado inicio de array principal en línea ${lineCount}`,
+      );
+      continue;
+    }
+
+    // Procesar líneas dentro del array
+    if (inArray) {
+      // Agregar línea a la colección actual SI NO ESTÁ VACÍA
+      if (trimmedLine.length > 0) {
+        currentLines.push(trimmedLine);
+
+        // Contar llaves DESPUÉS de agregar la línea
+        for (const char of trimmedLine) {
+          if (char === "{") bracketDepth++;
+          if (char === "}") bracketDepth--;
+        }
+      }
+
+      // Detectar fin del array principal (solo si está solo en la línea y bracketDepth es 0)
+      if (trimmedLine === "]" && bracketDepth === 0) {
+        console.log(`✓ Detectado fin de array principal en línea ${lineCount}`);
+        break;
+      }
+
+      // Debug: mostrar estado cada cierto número de líneas
+      if (lineCount % 1000000 === 0) {
+        console.log(
+          `  Línea ${lineCount}: depth=${bracketDepth}, linesAccum=${currentLines.length}, artists=${artistCount}`,
+        );
+      }
+
+      // Si completamos un objeto de nivel superior (bracketDepth vuelve a 0)
+      if (bracketDepth === 0 && currentLines.length > 0) {
+        // Unir todas las líneas en un solo string
+        const jsonString = currentLines.join(" ");
+        // Remover coma final si existe
+        const cleanObject = jsonString.replace(/,\s*$/, "");
+
+        try {
+          const artist = JSON.parse(cleanObject);
+          currentChunk.push(artist);
+          artistCount++;
+
+          // Log del primer artista para verificar
+          if (artistCount === 1) {
+            console.log(
+              `\n✓ Primer artista parseado: ${artist.name || "N/A"} (num: ${artist.num || "N/A"})\n`,
+            );
+          }
+
+          // Guardar chunk cuando alcance el tamaño deseado
+          if (currentChunk.length >= chunkSize) {
+            const outputPath = `${outputDir}/db2_chunk_${chunkIndex}.json`;
+            fs.writeFileSync(outputPath, JSON.stringify(currentChunk, null, 2));
+            console.log(
+              `✓ Chunk ${chunkIndex} guardado: ${currentChunk.length} artistas`,
+            );
+
+            currentChunk = [];
+            chunkIndex++;
+          }
+
+          // Mostrar progreso cada 10000 artistas
+          if (artistCount % 10000 === 0) {
+            console.log(`  Procesados: ${artistCount} artistas...`);
+          }
+        } catch (e: any) {
+          console.error(`\n❌ Error parseando objeto #${artistCount + 1}:`);
+          console.error(`   Mensaje: ${e.message}`);
+          console.error(`   Líneas acumuladas: ${currentLines.length}`);
+          console.error(
+            `   Primeros 300 chars: ${cleanObject.substring(0, 300)}...\n`,
+          );
+        }
+
+        // Resetear para el siguiente objeto
+        currentLines = [];
+      }
+    }
+  }
+
+  console.log(`\nTotal de líneas leídas: ${lineCount}`);
+
+  // Guardar el último chunk si tiene datos
+  if (currentChunk.length > 0) {
+    const outputPath = `${outputDir}/db2_chunk_${chunkIndex}.json`;
+    fs.writeFileSync(outputPath, JSON.stringify(currentChunk, null, 2));
+    console.log(
+      `✓ Chunk ${chunkIndex} guardado: ${currentChunk.length} artistas (final)`,
+    );
+  }
+
+  console.log(`\n=== DIVISIÓN COMPLETA ===`);
+  console.log(`Total artistas procesados: ${artistCount}`);
+  console.log(`Total chunks creados: ${chunkIndex + 1}`);
 }
 
 function completar_generos_en_places() {
@@ -1355,12 +1499,87 @@ function unir_todos_los_artistas_nuevo() {
     ),
   );
   console.log("creando archivo");
+  // crearArchivo(
+  //   "./data/drive/2025/10-31/bd/db2.txt",
+  //   Object.values(newDB).map(
+  //     (row: any) =>
+  //       `${row.num}	${row.spotify || ""}	${row.chartmetric || ""}	${row.name || ""}	`,
+  //   ),
+  // );
+  const artists = Object.values(newDB).filter((artist: any) => {
+    // Verificar que tenga al menos uno de los campos indexesFields (excepto "num")
+    return indexesFields
+      .filter((field) => field !== "num")
+      .some((field) => {
+        const value = artist[field];
+        return value !== null && value !== undefined && value !== "";
+      });
+  });
+
+  console.log(`Total artistas después del filtrado: ${artists.length}`);
+
+  // Escribir TXT con streams para evitar problemas de memoria
+  const txtPath = "./data/drive/2025/10-31/bd/db2_junio_2026.txt";
+  const txtStream = fs.createWriteStream(txtPath);
+
+  artists.forEach((row: any, index: number) => {
+    const line = indexesFields.map((field) => row[field] ?? "").join("\t");
+    txtStream.write(line + (index < artists.length - 1 ? "\n" : ""));
+  });
+
+  txtStream.end();
+  console.log(`Archivo TXT guardado: ${txtPath}`);
+
+  // Escribir JSON con streams para evitar problemas de memoria
+  const jsonPath = "./data/drive/2025/10-31/bd/db2_junio_2026.json";
+  const jsonStream = fs.createWriteStream(jsonPath);
+
+  jsonStream.write("[\n");
+
+  artists.forEach((row: any, index: number) => {
+    const jsonLine = JSON.stringify(row, null, 2);
+    // Indentar cada línea del objeto
+    const indentedJson = jsonLine
+      .split("\n")
+      .map((line) => "  " + line)
+      .join("\n");
+    jsonStream.write(indentedJson);
+
+    if (index < artists.length - 1) {
+      jsonStream.write(",\n");
+    } else {
+      jsonStream.write("\n");
+    }
+  });
+
+  jsonStream.write("]");
+  jsonStream.end();
+  console.log(`Archivo JSON guardado: ${jsonPath}`);
+
+  const scrappedBands = fs
+    .readdirSync("./data/scrapped/spotify/bands/artist_bio")
+    .filter((file) => file.endsWith(".json"));
+
+  const scrappedBandsMap = new Map<string, string>(
+    scrappedBands.map((name) => {
+      const n2 = name.split("_")[0];
+      const n3 = n2.replace("intl-pt", "").replace("intl-fr", "");
+      return [n2, n2];
+    }),
+  );
+  const spotify = Object.values(newDB)
+    .map((row: any) => row.spotify)
+    .filter((row: any) => !!row && !scrappedBandsMap.get(row));
   crearArchivo(
-    "./data/drive/2025/10-31/bd/db.txt",
-    Object.values(newDB).map(
-      (row: any) =>
-        `${row.num}	${row.spotify || ""}	${row.chartmetric || ""}	${row.name || ""}	`,
-    ),
+    "./data/drive/2025/10-31/bd/non_scrapped_spotify_2026_marzo.txt",
+    spotify.map((row) => {
+      return {
+        spotify: row,
+        downloaded: 0,
+        artist_downloaded: 0,
+        related_downloaded: 0,
+      };
+    }),
   );
 }
 
@@ -1720,4 +1939,462 @@ function unir_todos_los_artistas_nuevo_dos() {
   );
 
   // console.log(maxIndex);
+}
+
+function consolidar_artistas_new_artist_completo() {
+  console.log(
+    "\n=====================    CONSOLIDAR ARTISTAS COMPLETO =========================\n\n",
+    new Date(),
+  );
+
+  // CONFIGURACIÓN: Directorio de chunks
+  const CHUNKS_DIR = "./data/drive/2025/10-31/bd/chunks";
+
+  // Todos los artistas en el drive (ahora desde chunks)
+  let todosLosArtistas: any[] = [];
+  let infoInicial, driveInfo;
+
+  try {
+    console.log(
+      `\n[1/4] Cargando chunks de DB unificada desde ${CHUNKS_DIR}...`,
+    );
+
+    // Leer todos los archivos de chunks
+    const chunkFiles = fs
+      .readdirSync(CHUNKS_DIR)
+      .filter((file) => file.startsWith("db2_chunk_") && file.endsWith(".json"))
+      .sort((a, b) => {
+        // Ordenar por número de chunk
+        const numA = parseInt(a.match(/db2_chunk_(\d+)/)?.[1] || "0");
+        const numB = parseInt(b.match(/db2_chunk_(\d+)/)?.[1] || "0");
+        return numA - numB;
+      });
+
+    console.log(`   Encontrados ${chunkFiles.length} chunks`);
+
+    // Cargar cada chunk y concatenar
+    chunkFiles.forEach((file, index) => {
+      const chunkPath = `${CHUNKS_DIR}/${file}`;
+      console.log(`   [${index + 1}/${chunkFiles.length}] Cargando ${file}...`);
+      const chunkData = leerArchivo(chunkPath);
+      todosLosArtistas = todosLosArtistas.concat(chunkData);
+    });
+
+    console.log(`\n[2/4] Cargando info inicial...`);
+    infoInicial = leerArchivo("./data/drive/artists_drive_db_output.json");
+
+    console.log(`\n[3/4] Cargando drive info...`);
+    driveInfo = leerArchivo("./data/drive/2025/drive_artists.json");
+  } catch (error: any) {
+    console.error("\n❌ Error fatal al cargar archivos:", error.message);
+    console.error("El proceso se detendrá.");
+    return;
+  }
+
+  console.log("\n" + "=".repeat(60));
+  console.log("ARCHIVOS CARGADOS EXITOSAMENTE");
+  console.log("=".repeat(60));
+  console.log(
+    `Total artistas en DB unificada (chunks): ${todosLosArtistas.length || 0}`,
+  );
+  console.log(`Total artistas en info inicial: ${infoInicial?.length || 0}`);
+  console.log(`Total artistas en drive info: ${driveInfo?.length || 0}`);
+  console.log("=".repeat(60) + "\n");
+
+  const configSpotifyArtists = leerArchivo(
+    "./data/scrapped/config/spotify_bands.json",
+  );
+
+  const configChartmetricArtists = leerArchivo(
+    "./data/scrapped/config/chartmetric_bands.json",
+  );
+
+  const countries = leerArchivo(`./data/geo/mongo/artist_hive.countries.json`);
+
+  console.log(
+    new Date(),
+    "\n\n",
+    "Config: ",
+    todosLosArtistas.length,
+    ", Info previa: ",
+    infoInicial.length,
+    ", Drive: ",
+    driveInfo.length,
+    ", Spotify: ",
+    configSpotifyArtists.length,
+    ", CM: ",
+    configChartmetricArtists.length,
+  );
+
+  const mocks = leerArchivo("./data/drive/artists_mock.json");
+
+  const all = todosLosArtistas
+    // .filter(
+    //   (a: any) =>
+    //     // a.spotify_user === "4dxO8WyhmkXoF2gNAVgnay" ||
+    //     //     a.spotify_user === "7cC14jlZcFQueGrGHDYg51" ||
+    //     //     // a.spotify_user === "5OfRvW5SYGif5Q8LrklFjV" ||
+    //     //     // a.instagram_user === "prevalecen" ||
+    //     //     a.instagram_user === "lissdasilvaa"
+    //     a.num >= 436841,
+    // )
+    // .slice(0, 5)
+    .map((artistaConfig: any, artistIndex: number) => {
+      // Drive - adaptado para usar campos del DB unificado
+      const artistaDrive = !!artistaConfig.spotify
+        ? driveInfo.find(
+            (artistaEnDrive: any) =>
+              (!!artistaConfig.spotify &&
+                artistaEnDrive.spotify_user === artistaConfig.spotify) ||
+              (!!artistaConfig.instagram &&
+                artistaEnDrive.instagram_user === artistaConfig.instagram),
+          )
+        : undefined;
+
+      const artistaInfoPrevia = infoInicial.find(
+        (artistaEnInfoPrevia: any) =>
+          (!!artistaConfig.spotify &&
+            artistaEnInfoPrevia.spotify === artistaConfig.spotify) ||
+          (!!artistaConfig.instagram &&
+            !!artistaDrive &&
+            !!artistaDrive.instagram_user &&
+            !!artistaEnInfoPrevia.instagram &&
+            artistaDrive.instagram_user === artistaEnInfoPrevia.instagram),
+      );
+
+      const artistaMock = artistaConfig?.spotify
+        ? mocks.find(
+            (artistaEnMock: any) =>
+              artistaEnMock.spotify === artistaConfig?.spotify,
+          )
+        : undefined;
+
+      const artistaChartmetricConfig = !!artistaConfig?.chartmetric
+        ? configChartmetricArtists.find(
+            (artistEnCM: any) =>
+              artistEnCM.chartmetric === artistaConfig?.chartmetric,
+          )
+        : undefined;
+
+      const chartmetricBio =
+        artistaChartmetricConfig?.downloaded > 0 &&
+        fs.existsSync(
+          `./data/scrapped/chartmetric/bands/${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`,
+        )
+          ? leerArchivo(
+              `./data/scrapped/chartmetric/bands/${artistaChartmetricConfig["downloaded"]}_${artistaChartmetricConfig["chartmetric"]}.json`,
+            )
+          : undefined;
+
+      const artistaSpotifyConfig = !!artistaConfig?.spotify
+        ? configSpotifyArtists.find(
+            (artistEnSpotifyConfig: any) =>
+              artistEnSpotifyConfig.spotify === artistaConfig?.spotify,
+          )
+        : undefined;
+
+      const spotifyBio =
+        artistaSpotifyConfig?.artist_downloaded > 0 &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_bio/${artistaSpotifyConfig["artist_downloaded"]}_${artistaSpotifyConfig.spotify}.json`,
+        )
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_bio/${artistaSpotifyConfig["artist_downloaded"]}_${artistaSpotifyConfig.spotify}.json`,
+            )
+          : undefined;
+
+      const spotifyExtra =
+        artistaSpotifyConfig?.downloaded > 0 &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_extra/${artistaSpotifyConfig["downloaded"]}_${artistaSpotifyConfig.spotify}.json`,
+        )
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_extra/${artistaSpotifyConfig["downloaded"]}_${artistaSpotifyConfig.spotify}.json`,
+            )
+          : undefined;
+
+      const spotifyRelated =
+        !!artistaConfig?.spotify &&
+        fs.existsSync(
+          `./data/scrapped/spotify/bands/artist_related/${artistaConfig.spotify}.json`,
+        )
+          ? leerArchivo(
+              `./data/scrapped/spotify/bands/artist_related/${artistaConfig.spotify}.json`,
+            )
+          : undefined;
+
+      const albums = spotifyExtra?.albums?.items || [];
+      const lastAlbum =
+        albums && albums.length > 0 ? albums[albums.length - 1] : null;
+
+      const top_tracks = spotifyExtra
+        ? spotifyExtra["top-tracks"]
+        : { tracks: [] };
+
+      const countryCode =
+        artistaInfoPrevia?.["country"] ||
+        artistaInfoPrevia?.initial?.obj?.code2;
+
+      const artistCountryId = !!countryCode
+        ? countries.find((country: any) => country.alpha2 === countryCode)?._id
+        : null;
+
+      const languages = !!countryCode
+        ? countries.find((country: any) => country.alpha2 === countryCode)
+            ?.languages
+        : undefined;
+
+      const createdAt = new Date();
+
+      if (artistIndex % 20000 === 0) {
+        console.log("... ", artistIndex, " ....");
+      }
+
+      const albumsInfo = albums.map((album: any) => {
+        const albumInfo = fs.existsSync(
+          `./data/scrapped/spotify/albums/${album.id}.json`,
+        )
+          ? leerArchivo(`./data/scrapped/spotify/albums/${album.id}.json`)
+          : undefined;
+
+        return {
+          name: album.name,
+          images: album.images,
+          release_date: album.release_date,
+          release_date_precision: album.release_date_precision,
+          spotify: {
+            id: album.id,
+            url: album.external_urls?.spotify,
+          },
+          total_tracks: album?.total_tracks,
+          tracks:
+            albumInfo?.tracks?.items?.map((track: any) => {
+              return {
+                artists: track.artists,
+
+                disc_number: track.disc_number,
+                duration_ms: track.duration_ms,
+                explicit: track.explicit,
+                id: track.id,
+                name: track.name,
+                track_number: track.track_number,
+              };
+            }) || [],
+        };
+      });
+
+      return {
+        _id: { $oid: new mongoose.Types.ObjectId().toHexString() },
+        artistType: "musician",
+        is_inactive:
+          artistaInfoPrevia?.["is_inactive"] || artistaConfig["Inactivo"] || 0,
+        num: artistaConfig["num"] || -1,
+        name:
+          spotifyBio?.name ||
+          artistaInfoPrevia?.["name"] ||
+          artistaConfig["name"] ||
+          null,
+        username:
+          artistaInfoPrevia?.["username"] ||
+          artistaConfig["instagram"] ||
+          artistaConfig["username"] ||
+          null,
+        subtitle: artistaInfoPrevia?.["subtitle"] || "",
+        verified_status: artistaInfoPrevia?.["verified_status"] || 1,
+        profile_pic:
+          artistaInfoPrevia?.["profile_pic"] ||
+          (spotifyBio?.images?.length
+            ? spotifyBio?.images?.[0].url
+            : undefined) ||
+          "",
+        photo: artistaInfoPrevia?.["photo"] || "",
+        description: cleanHtmlToString(
+          chartmetricBio?.initial?.obj?.description ||
+            artistaInfoPrevia?.["description"] ||
+            "",
+        ),
+
+        country: artistCountryId,
+        city: artistaInfoPrevia?.["city"] || artistaConfig["Inactivo"] || null,
+        since:
+          lastAlbum && lastAlbum.release_date
+            ? `${lastAlbum.release_date}T00:00:00-05:00`
+            : null,
+        home_city: artistaInfoPrevia?.["home_city"] || "",
+        genres: (!!spotifyBio?.genres?.length && {
+          music: spotifyBio.genres,
+        }) ||
+          artistaInfoPrevia?.["genres"] || {
+            music: [],
+          },
+        spoken_languages:
+          languages || artistaInfoPrevia?.["spoken_languages"] || [],
+        stage_languages:
+          languages || artistaInfoPrevia?.["stage_languages"] || [],
+        arts_languages:
+          languages || artistaInfoPrevia?.["arts_languages"] || [],
+        website:
+          artistaInfoPrevia?.["website"] || artistaConfig["website"] || "",
+        email: artistaInfoPrevia?.["email"] || artistaConfig["website"] || "",
+        mobile_phone:
+          artistaInfoPrevia?.["mobile_phone"] || artistaConfig["website"] || "",
+        whatsapp:
+          artistaInfoPrevia?.["whatsapp"] || artistaConfig["website"] || "",
+        facebook:
+          artistaInfoPrevia?.["facebook"] ||
+          artistaConfig["facebook"] ||
+          artistaConfig["website"] ||
+          "",
+        tiktok:
+          artistaInfoPrevia?.["tiktok"] ||
+          artistaConfig["tiktok"] ||
+          artistaConfig["website"] ||
+          "",
+        twitter:
+          artistaInfoPrevia?.["twitter"] || artistaConfig["twitter"] || "",
+        twitch:
+          artistaInfoPrevia?.["twitch"] ||
+          artistaConfig["twitch"] ||
+          artistaConfig["website"] ||
+          "",
+        instagram:
+          artistaInfoPrevia?.["instagram"] || artistaConfig["instagram"] || "",
+        spotify:
+          artistaInfoPrevia?.["spotify"] || artistaConfig["spotify"] || "",
+        soundcloud:
+          artistaInfoPrevia?.["soundcloud"] ||
+          artistaConfig["soundcloud"] ||
+          "",
+        songkick:
+          artistaInfoPrevia?.["songkick"] || artistaConfig["songkick"] || "",
+        youtube:
+          artistaInfoPrevia?.["youtube"] || artistaConfig["youtube"] || "",
+        youtube_widget_id:
+          artistaMock?.["youtube_widget_id"] ||
+          artistaInfoPrevia?.["youtube_widget_id"] ||
+          "",
+        chartmetric:
+          artistaInfoPrevia?.["chartmetric"] ||
+          artistaConfig["chartmetric"] ||
+          "",
+        spotify_data: !!spotifyBio
+          ? {
+              followers: spotifyBio?.followers?.total || 0,
+              name: spotifyBio?.name || 0,
+              popularity: spotifyBio?.popularity || 0,
+            }
+          : artistaInfoPrevia?.["spotify_data"] || {},
+
+        chartmetric_data: !!chartmetricBio
+          ? {
+              name: chartmetricBio?.initial?.obj?.name || "",
+              sp_where_people_listen:
+                chartmetricBio?.cmStats?.obj?.sp_where_people_listen,
+              stats: chartmetricBio?.cmStats?.obj?.latest,
+            }
+          : artistaInfoPrevia?.["chartmetric_data"] || {},
+        general_rate: Math.random() * 2 + 3,
+        followers: 0,
+        event_followers: 0,
+        stats: {
+          rating: {
+            overall: Math.random() * 2 + 3,
+            talent: Math.random() * 2 + 3,
+            performance: Math.random() * 2 + 3,
+            proffesionalism: Math.random() * 2 + 3,
+            stage_presence: Math.random() * 2 + 3,
+            charisma: Math.random() * 2 + 3,
+            timeliness: Math.random() * 2 + 3,
+            communication: Math.random() * 2 + 3,
+            respectfulness: Math.random() * 2 + 3,
+            total_rates: 269 + Math.floor(Math.random() * 2500),
+          },
+        },
+        arts: {
+          music: {
+            albums: [], // albumsInfo,
+            top_tracks: top_tracks,
+            related_artist_spotify:
+              spotifyRelated?.data?.artistUnion?.relatedContent?.relatedArtist
+                ?.items ||
+              artistaInfoPrevia?.arts?.music?.related_artist_spotify ||
+              [],
+          },
+        },
+        followed_by: [],
+        followed_profiles: [],
+        createdAt: createdAt,
+        updatedAt: createdAt,
+        __v: 0,
+      };
+    });
+
+  // const fakeChartmetricFiles =
+  //   fs.readdirSync("D:/har/scrapped/chartmetric/bands") || [];
+
+  // const files = fakeChartmetricFiles.map((f) => {
+  //   const partes = f.replace(".json", "").split("_");
+  //   return partes[0] + " " + partes[1];
+  // });
+
+  // crearArchivo("./data/drive/2025/fake_chartmetric.json", files);
+
+  const creationDate = new Date();
+  const formattedDate = `${creationDate.getFullYear()}_${String(creationDate.getMonth() + 1).padStart(2, "0")}_${String(creationDate.getDate()).padStart(2, "0")}`;
+  console.log("Creando Database", creationDate);
+
+  // Función para dividir una lista en chunks de tamaño `size`
+  function chunkArray<T>(arr: T[], size: number): T[][] {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (_, i) =>
+      arr.slice(i * size, i * size + size),
+    );
+  }
+  const chunkSize = 50000; // MÁXIMO 50,000 artistas por chunk
+
+  // Directorio de salida para chunks consolidados
+  const OUTPUT_CHUNKS_DIR = "./data/drive/2025/chunks";
+  if (!fs.existsSync(OUTPUT_CHUNKS_DIR)) {
+    fs.mkdirSync(OUTPUT_CHUNKS_DIR, { recursive: true });
+  }
+
+  // 🟢 Dividir `all` en partes de `chunkSize`
+  const chunks = chunkArray(all, chunkSize);
+  console.log(
+    `\n🔹 Total de chunks a generar: ${chunks.length} (${chunkSize} artistas cada uno)`,
+  );
+
+  // 🔹 Guardar cada chunk con un sufijo (_0, _1, _2, ...)
+  chunks.forEach((chunk, index) => {
+    console.log(
+      `\n📦 Guardando CHUNK ${index + 1}/${chunks.length} (${chunk.length} artistas)...`,
+    );
+    const filename = `${OUTPUT_CHUNKS_DIR}/all_artists_db_${index}_${formattedDate}.json`;
+    crearArchivo(filename, chunk);
+
+    console.log("   Creando índice Entity Directories...");
+
+    crearArchivo(
+      `${OUTPUT_CHUNKS_DIR}/all_artists_db_entity_directory_${index}_${formattedDate}.json`,
+      chunk.map((a: any) => {
+        return {
+          id: a._id,
+          entityType: "Artist",
+          profile_pic: a.profile_pic,
+          name: a.name,
+          username: a.username,
+          subtitle: a.subtitle,
+          verified_status: a.verified_status,
+          isActive: a.isActive,
+          location: [],
+          createdAt: a.createdAt,
+          updatedAt: a.updatedAt,
+          __v: 0,
+        };
+      }),
+    );
+  });
+
+  // crearArchivo("./data/drive/2025/artists_db.json", all);
+
+  console.log(" FIN ", new Date());
 }

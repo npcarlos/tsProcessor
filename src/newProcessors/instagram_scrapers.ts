@@ -2,7 +2,8 @@ import * as fs from "fs";
 import { crearArchivo, leerArchivo } from "../helpers/files.helpers";
 
 const PROFILES_DIR_PATH =
-  "C:/Users/fnp/Documents/Artist Hive/Data Octubre 2025/places_3";
+  // "C:/Users/fnp/Documents/Artist Hive/Data Octubre 2025/places_3";
+  "C:/Users/fnp/Documents/Proyectos/QuarenDevs/2024/ProyectoAppMusica/download/profiles";
 
 export async function main(args?: any) {
   //   joinTimeLineOfUser(
@@ -13,26 +14,25 @@ export async function main(args?: any) {
   //     "C:/Users/fnp/Documents/Artist Hive/Data Octubre 2025/places_1/timeline/joined",
   //     "fabricadeartecubano"
   //   );
-  // extract_tags_in_timeline_with_frequency();
-  // simplify_tags_per_username();
-  // generate_genres_from_tags_in_timeline();
-  //   consolidar_menciones_globales();
-  //   consolidar_menciones_absolutas();
+  extract_tags_in_timeline_with_frequency();
+  simplify_tags_per_username();
+  generate_genres_from_tags_in_timeline();
+  consolidar_menciones_globales();
+  consolidar_menciones_absolutas();
   //
   // create_artists_related_genres();
-
-  unify_timeline(
-    [
-      "C:/Users/fnp/Documents/Artist Hive/Data/places_timeline",
-      "C:/Users/fnp/Documents/Artist Hive/Data/tm",
-      "C:/Users/fnp/Documents/Artist Hive/Data/timeline",
-      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_2",
-      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_last",
-      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_old",
-      "C:/Users/fnp/Documents/Artist Hive/Data/timeline_b",
-    ],
-    "C:/Users/fnp/Documents/Artist Hive/Data/complete"
-  );
+  // unify_timeline(
+  //   [
+  //     "C:/Users/fnp/Documents/Artist Hive/Data/places_timeline",
+  //     "C:/Users/fnp/Documents/Artist Hive/Data/tm",
+  //     "C:/Users/fnp/Documents/Artist Hive/Data/timeline",
+  //     "C:/Users/fnp/Documents/Artist Hive/Data/timeline_2",
+  //     "C:/Users/fnp/Documents/Artist Hive/Data/timeline_last",
+  //     "C:/Users/fnp/Documents/Artist Hive/Data/timeline_old",
+  //     "C:/Users/fnp/Documents/Artist Hive/Data/timeline_b",
+  //   ],
+  //   "C:/Users/fnp/Documents/Artist Hive/Data/complete"
+  // );
 }
 
 export function unify_timeline(input_dirs: string[], output_dir: string) {
@@ -80,7 +80,7 @@ export function unify_timeline(input_dirs: string[], output_dir: string) {
         process.stdout.write(
           `\r   Progreso: ${progress.toFixed(1)}% (${(
             fileIndex + 1
-          ).toLocaleString()}/${totalFiles.toLocaleString()})`
+          ).toLocaleString()}/${totalFiles.toLocaleString()})`,
         );
       }
 
@@ -115,20 +115,20 @@ export function unify_timeline(input_dirs: string[], output_dir: string) {
 
   console.log(`\n✅ Fase 1 completada`);
   console.log(
-    `   Total archivos escaneados: ${totalFilesScanned.toLocaleString()}`
+    `   Total archivos escaneados: ${totalFilesScanned.toLocaleString()}`,
   );
   console.log(
-    `   Total archivos únicos encontrados: ${fileRegistry.size.toLocaleString()}`
+    `   Total archivos únicos encontrados: ${fileRegistry.size.toLocaleString()}`,
   );
   console.log(
     `   Duplicados detectados: ${(
       totalFilesScanned - fileRegistry.size
-    ).toLocaleString()}`
+    ).toLocaleString()}`,
   );
 
   // Fase 2: Mover solo los archivos más recientes al directorio de salida
   console.log(
-    `\n📊 Fase 2: Moviendo archivos más recientes a ${output_dir}...`
+    `\n📊 Fase 2: Moviendo archivos más recientes a ${output_dir}...`,
   );
 
   const filesToMove = Array.from(fileRegistry.entries());
@@ -148,7 +148,7 @@ export function unify_timeline(input_dirs: string[], output_dir: string) {
       process.stdout.write(
         `\r   Progreso: ${progress.toFixed(1)}% (${(
           index + 1
-        ).toLocaleString()}/${totalToMove.toLocaleString()}) | Movidos: ${movedCount.toLocaleString()} | Errores: ${errorCount}`
+        ).toLocaleString()}/${totalToMove.toLocaleString()}) | Movidos: ${movedCount.toLocaleString()} | Errores: ${errorCount}`,
       );
     }
 
@@ -172,14 +172,14 @@ export function unify_timeline(input_dirs: string[], output_dir: string) {
   console.log(
     `   📊 Archivos viejos que permanecieron en origen: ${(
       totalFilesScanned - movedCount
-    ).toLocaleString()}`
+    ).toLocaleString()}`,
   );
 }
 
 export function joinTimeLineOfUser(dirPath: string, username?: string) {
   const filesInDir = fs.readdirSync(dirPath);
   const filesOfUsername = filesInDir.filter(
-    (file: string) => !username || file.includes(`${username}_`)
+    (file: string) => !username || file.includes(`${username}_`),
   );
 
   const outputDir = `${dirPath}/joined`;
@@ -193,7 +193,7 @@ export function joinTimeLineOfUser(dirPath: string, username?: string) {
     try {
       const currentFileUsername = filePath.substring(
         0,
-        filePath.lastIndexOf("_")
+        filePath.lastIndexOf("_"),
       );
       const isSameUser = lastUser === currentFileUsername;
       const posts = leerArchivo(`${dirPath}/${filePath}`);
@@ -284,7 +284,7 @@ function generate_instagram_stats() {
 
     // Extract taken_at values for calculations
     const creationTimes = timelineSummary[key].posts.map(
-      (p: any) => p.taken_at
+      (p: any) => p.taken_at,
     );
 
     // Calculate delta times with post codes
@@ -303,7 +303,7 @@ function generate_instagram_stats() {
 
     // Extract just the delta values for numeric calculations
     const deltaValues = deltaCreatedTimeWithCodes.map(
-      (item: any) => item.delta
+      (item: any) => item.delta,
     );
 
     timelineSummary[key].minDeltaCreatedTime = Math.min(...deltaValues);
@@ -320,25 +320,25 @@ function generate_instagram_stats() {
 
     human.forEach((attribute: string) => {
       timelineSummary[key][`${attribute}_H`] = forHumans(
-        timelineSummary[key][attribute]
+        timelineSummary[key][attribute],
       );
     });
 
     timelineSummary[key].minCreatedTime = Math.min(...creationTimes);
     timelineSummary[key].maxCreatedTime = Math.max(...creationTimes);
     timelineSummary[key].minCreatedTimeDate = new Date(
-      (timelineSummary[key].minCreatedTime || 0) * 1000
+      (timelineSummary[key].minCreatedTime || 0) * 1000,
     );
     timelineSummary[key].maxCreatedTimeDate = new Date(
-      (timelineSummary[key].maxCreatedTime || 0) * 1000
+      (timelineSummary[key].maxCreatedTime || 0) * 1000,
     );
 
     // Find codes for min and max created times
     const minPost = timelineSummary[key].posts.find(
-      (p: any) => p.taken_at === timelineSummary[key].minCreatedTime
+      (p: any) => p.taken_at === timelineSummary[key].minCreatedTime,
     );
     const maxPost = timelineSummary[key].posts.find(
-      (p: any) => p.taken_at === timelineSummary[key].maxCreatedTime
+      (p: any) => p.taken_at === timelineSummary[key].maxCreatedTime,
     );
     timelineSummary[key].minCreatedTimeCode = minPost?.code || "";
     timelineSummary[key].maxCreatedTimeCode = maxPost?.code || "";
@@ -365,10 +365,10 @@ function generate_instagram_stats() {
 
   const res = Object.values(timelineSummary)
     .map((data: any) =>
-      copy.reduce((o: any, k: string) => ((o[k] = data[k]), o), {})
+      copy.reduce((o: any, k: string) => ((o[k] = data[k]), o), {}),
     )
     .sort(
-      (a: any, b: any) => a.medianDeltaCreatedTime - b.medianDeltaCreatedTime
+      (a: any, b: any) => a.medianDeltaCreatedTime - b.medianDeltaCreatedTime,
     );
 
   // console.log(res);
@@ -515,25 +515,25 @@ function extract_tags_in_timeline_with_frequency() {
     const posts = content.map((post: any) => {
       const info = post.node;
       const { tags_in_text, hashtags } = extractTagsAndHashtags(
-        info?.caption?.text || ""
+        info?.caption?.text || "",
       );
 
       const tagsInPost = {
         "user.username": info.user?.username,
         "owner.username": info.owner?.username,
         "coauthor_producers.username": (info.coauthor_producers || []).map(
-          (user: any) => user.username
+          (user: any) => user.username,
         ),
         "invited_coauthor_producers.username": (
           info.invited_coauthor_producers || []
         ).map((user: any) => user.username),
         "usertags.username": (info.usertags?.in || []).map(
-          (user: any) => user.user.username
+          (user: any) => user.user.username,
         ),
         tags_in_text,
         hashtags,
         carousel_media_tags: (info.carousel_media || []).map((media: any) =>
-          media.usertags?.in?.map((tag: any) => tag.user?.username)
+          media.usertags?.in?.map((tag: any) => tag.user?.username),
         ),
       };
 
@@ -602,7 +602,7 @@ function extract_tags_in_timeline_with_frequency() {
     const tagsArray = Object.entries(userTagAccumulator[userId])
       .map(([username, count]) => ({ username, count }))
       .sort(
-        (a, b) => b.count - a.count || a.username.localeCompare(b.username)
+        (a, b) => b.count - a.count || a.username.localeCompare(b.username),
       );
 
     const hashtagsArray = Object.entries(userHashtagAccumulator[userId])
@@ -622,7 +622,7 @@ function extract_tags_in_timeline_with_frequency() {
 
   crearArchivo(
     `${timelinesPath}/processed/tags_hashtags.json`,
-    timelineSummary
+    timelineSummary,
   );
 
   // 📢 Validar si hubo usuarios no encontrados
@@ -649,7 +649,7 @@ function simplify_tags_per_username() {
   const summaryData = leerArchivo(inputPath);
   if (!summaryData || typeof summaryData !== "object") {
     console.error(
-      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+      "❌ El archivo tags_hashtags.json no tiene un formato válido",
     );
     return;
   }
@@ -670,7 +670,7 @@ function simplify_tags_per_username() {
   Array.from(filterSet).forEach((userId) => {
     // Encontrar la key original (con mayúsculas/minúsculas correctas)
     const originalKey = Object.keys(summaryData).find(
-      (key) => key.toLowerCase() === userId
+      (key) => key.toLowerCase() === userId,
     );
 
     if (!originalKey) return;
@@ -679,12 +679,12 @@ function simplify_tags_per_username() {
 
     // Extraer solo los usernames de los tags
     const tags = (data.tags || []).map(
-      (tag: { username: string; count: number }) => tag.username
+      (tag: { username: string; count: number }) => tag.username,
     );
 
     // Extraer solo los hashtags
     const hashtags = (data.hashtags || []).map(
-      (h: { hashtag: string; count: number }) => h.hashtag
+      (h: { hashtag: string; count: number }) => h.hashtag,
     );
 
     result[originalKey] = {
@@ -702,7 +702,7 @@ function simplify_tags_per_username() {
 
 function generate_genres_from_tags_in_timeline() {
   const artistasFull = leerArchivo(
-    "./data/drive/2025/chunks/export/artists_genres_related_full_list.json"
+    "./data/drive/2025/chunks/export/artists_genres_related_full_list.json",
   );
 
   const artistsWithGenres: Record<string, any> = {};
@@ -711,21 +711,20 @@ function generate_genres_from_tags_in_timeline() {
   artistasFull
     .filter(
       (artist: any) =>
-        !!artist.genres_combined_list.length && !!artist.instagram
+        !!artist.genres_combined_list.length && !!artist.instagram,
     )
     .forEach((artist: any) => {
       artistsWithGenres[artist.instagram] = artist.genres_combined_list;
     });
 
-  const placesDir =
-    "C:/Users/fnp/Documents/Artist Hive/Data Octubre 2025/places_3/processed";
+  const placesDir = `${PROFILES_DIR_PATH}/processed`;
   const placesFull = leerArchivo(`${placesDir}/simple_tags_per_username.json`);
 
   let totalSitios = 0;
 
   // const genres_taxonomy = leerArchivo("./data/parametrics/server-genres.json");
   const genres_taxonomy = leerArchivo(
-    "./data/parametrics/genres-taxonomy.json"
+    "./data/parametrics/genres-taxonomy.json",
   );
 
   Object.keys(placesFull)
@@ -744,7 +743,7 @@ function generate_genres_from_tags_in_timeline() {
             tagsInPlace
               .map((tag: string) => artistsWithGenres[tag])
               .flat()
-              .filter(Boolean)
+              .filter(Boolean),
           ),
         ];
         totalSitios += !!genres.length ? 1 : 0;
@@ -782,7 +781,7 @@ function consolidar_menciones_globales() {
   const summaryData = leerArchivo(inputPath);
   if (!summaryData || typeof summaryData !== "object") {
     console.error(
-      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+      "❌ El archivo tags_hashtags.json no tiene un formato válido",
     );
     return;
   }
@@ -850,7 +849,7 @@ function consolidar_menciones_globales() {
       (a, b) =>
         b.adjustedCount - a.adjustedCount ||
         b.count - a.count ||
-        a.username.localeCompare(b.username)
+        a.username.localeCompare(b.username),
     );
 
   // 📊 Consolidar HASHTAGS
@@ -869,21 +868,21 @@ function consolidar_menciones_globales() {
       (a, b) =>
         b.adjustedCount - a.adjustedCount ||
         b.count - a.count ||
-        a.hashtag.localeCompare(b.hashtag)
+        a.hashtag.localeCompare(b.hashtag),
     );
 
   // 💾 Guardar resultados
   crearArchivo(
     outputTagsPath,
     consolidatedTags.map(
-      (tag) => `${tag.username} - ${Math.round(tag.adjustedCount)}`
-    )
+      (tag) => `${tag.username} - ${Math.round(tag.adjustedCount)}`,
+    ),
   );
   crearArchivo(
     outputHashtagsPath,
     consolidatedHashtags.map(
-      (tag) => `${tag.hashtag} - ${Math.round(tag.adjustedCount)}`
-    )
+      (tag) => `${tag.hashtag} - ${Math.round(tag.adjustedCount)}`,
+    ),
   );
 
   console.log("✅ Consolidado generado con análisis ponderado:");
@@ -905,7 +904,7 @@ function consolidar_menciones_absolutas() {
   const summaryData = leerArchivo(inputPath);
   if (!summaryData || typeof summaryData !== "object") {
     console.error(
-      "❌ El archivo tags_hashtags.json no tiene un formato válido"
+      "❌ El archivo tags_hashtags.json no tiene un formato válido",
     );
     return;
   }
@@ -951,7 +950,7 @@ function consolidar_menciones_absolutas() {
 
 function create_artists_related_genres() {
   const artistasFull = leerArchivo(
-    "./data/drive/2025/chunks/export/artist_hive.artists_related.json"
+    "./data/drive/2025/chunks/export/artist_hive.artists_related.json",
   );
 
   console.log(`Total artistas en archivo: ${artistasFull.length}`);
@@ -1026,7 +1025,7 @@ function create_artists_related_genres() {
             ({ count }) =>
               count >= MIN_ABSOLUTE_COUNT &&
               (totalRelatedArtists === 0 ||
-                count / totalRelatedArtists >= THRESHOLD_PERCENTAGE)
+                count / totalRelatedArtists >= THRESHOLD_PERCENTAGE),
           )
           .map(({ genre }) => genre);
       } else {
@@ -1036,7 +1035,7 @@ function create_artists_related_genres() {
             ({ count }) =>
               count >= FALLBACK_MIN_ABSOLUTE_COUNT &&
               (totalRelatedArtists === 0 ||
-                count / totalRelatedArtists >= FALLBACK_THRESHOLD_PERCENTAGE)
+                count / totalRelatedArtists >= FALLBACK_THRESHOLD_PERCENTAGE),
           )
           .map(({ genre }) => genre)
           .slice(0, 5); // Limitar a top 5 géneros para evitar ruido
@@ -1047,7 +1046,7 @@ function create_artists_related_genres() {
       const inferredSet = new Set(inferred_genres);
 
       const genres_combined = Array.from(
-        new Set([...genres, ...inferred_genres])
+        new Set([...genres, ...inferred_genres]),
       ).map((genre) => ({
         genre,
         source: genresSet.has(genre)
@@ -1059,7 +1058,7 @@ function create_artists_related_genres() {
 
       // Lista simple de géneros combinados (sin clasificación)
       const genres_combined_list = Array.from(
-        new Set([...genres, ...inferred_genres])
+        new Set([...genres, ...inferred_genres]),
       );
 
       // Actualizar contadores
@@ -1098,7 +1097,7 @@ function create_artists_related_genres() {
       };
     })
     .filter(
-      (artist: any) => artist.spotify || artist.instagram || artist.chartmetric
+      (artist: any) => artist.spotify || artist.instagram || artist.chartmetric,
     );
 
   console.log(`\n${"=".repeat(60)}`);
@@ -1106,29 +1105,29 @@ function create_artists_related_genres() {
   console.log(`${"=".repeat(60)}`);
   console.log(`\nEstadísticas de géneros:`);
   console.log(
-    `  • Artistas con géneros propios únicamente: ${artistsWithOwnGenres}`
+    `  • Artistas con géneros propios únicamente: ${artistsWithOwnGenres}`,
   );
   console.log(
-    `  • Artistas con géneros inferidos únicamente: ${artistsWithInferredGenres}`
+    `  • Artistas con géneros inferidos únicamente: ${artistsWithInferredGenres}`,
   );
   console.log(
-    `  • Artistas con ambos (propios + inferidos): ${artistsWithBothGenres}`
+    `  • Artistas con ambos (propios + inferidos): ${artistsWithBothGenres}`,
   );
   console.log(`  • Artistas sin géneros: ${artistsWithNoGenres}`);
   console.log(`\nDiagnóstico de artistas sin géneros:`);
   console.log(
-    `  • Sin artistas relacionados en Spotify: ${artistsWithNoRelatedArtists}`
+    `  • Sin artistas relacionados en Spotify: ${artistsWithNoRelatedArtists}`,
   );
   console.log(
-    `  • Con artistas relacionados pero sin géneros: ${artistsWithRelatedButNoGenres}`
+    `  • Con artistas relacionados pero sin géneros: ${artistsWithRelatedButNoGenres}`,
   );
   console.log(
-    `\n  • Total de géneros inferidos (suma): ${totalInferredGenresCount}`
+    `\n  • Total de géneros inferidos (suma): ${totalInferredGenresCount}`,
   );
   console.log(
     `  • Promedio de géneros inferidos por artista: ${(
       totalInferredGenresCount / artistsGenresRelated.length
-    ).toFixed(2)}`
+    ).toFixed(2)}`,
   );
 
   const percentageWithoutGenres = (
@@ -1179,7 +1178,7 @@ function simplify_genres(genres_taxonomy: any, genres: string[]) {
         } else {
           console.warn(
             `Invalid genre type in ${level1Key}.${level2Key}:`,
-            genre
+            genre,
           );
         }
       });
@@ -1210,11 +1209,11 @@ function simplify_genres(genres_taxonomy: any, genres: string[]) {
   // Extraer categorías únicas
   const genres_l1 = Array.from(new Set(mappedGenres.map((g: any) => g.level1)));
   const genres_l1_names = Array.from(
-    new Set(mappedGenres.map((g: any) => g.level1_name))
+    new Set(mappedGenres.map((g: any) => g.level1_name)),
   );
   const genres_l2 = Array.from(new Set(mappedGenres.map((g: any) => g.level2)));
   const genres_l2_names = Array.from(
-    new Set(mappedGenres.map((g: any) => g.level2_name))
+    new Set(mappedGenres.map((g: any) => g.level2_name)),
   );
 
   return {
